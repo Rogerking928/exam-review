@@ -1,0 +1,1452 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>
+<title>LC-MS/MS 與精準腫瘤 複習</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: 窄欄講義本，頂部兩個分頁（兩堂課），每頁＝一句話重點 → 白話概念 → 必背數字 → 自我測驗 */
+:root{
+  --bg:#f3f6f6; --paper:#ffffff; --ink:#15262a; --muted:#56696d; --line:#d5dfe0;
+  --lab:#0b6f6c; --lab-soft:#dcefee; --onc:#8c3463; --onc-soft:#f5e3ec;
+  --ok:#1f7a3d; --ok-soft:#e1f2e6; --bad:#b3261e; --bad-soft:#f9e1df; --warn-soft:#fff3d6; --warn:#7a5200;
+  --display:"Noto Serif TC","Songti TC",serif; --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --acc:var(--lab); --acc-soft:var(--lab-soft);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1719; --paper:#162224; --ink:#e3ecec; --muted:#9db0b3; --line:#2b3b3e;
+  --lab:#5cc6c1; --lab-soft:#163634; --onc:#e48ab9; --onc-soft:#3a1d2c;
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3b1b19; --warn-soft:#352a10; --warn:#f2c76b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1719; --paper:#162224; --ink:#e3ecec; --muted:#9db0b3; --line:#2b3b3e;
+  --lab:#5cc6c1; --lab-soft:#163634; --onc:#e48ab9; --onc-soft:#3a1d2c;
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3b1b19; --warn-soft:#352a10; --warn:#f2c76b; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+body.onc{--acc:var(--onc);--acc-soft:var(--onc-soft)}
+.wrap{max-width:760px;margin:0 auto}
+header.top{padding-block:28px 8px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(26px,5vw,36px);line-height:1.25;margin:6px 0 8px;text-wrap:balance}
+.lede{color:var(--muted);margin:0}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:8px;padding-block:12px;border-bottom:1px solid var(--line);margin-bottom:24px;flex-wrap:wrap}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.tab{font:inherit;font-weight:700;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{border-color:var(--acc);background:var(--acc-soft);color:var(--acc)}
+.tab:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+h2{font-family:var(--display);font-weight:900;font-size:24px;line-height:1.35;margin:40px 0 10px;text-wrap:balance}
+h2 small{display:block;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h3{font-size:18px;margin:26px 0 6px;text-wrap:balance}
+p{margin:8px 0}
+.en{font-family:var(--mono);font-size:.86em;font-weight:700;color:var(--acc);white-space:nowrap}
+.big{background:var(--acc-soft);border-radius:14px;padding:18px 20px;font-size:17px}
+.big b{color:var(--acc)}
+.note{background:var(--warn-soft);color:var(--ink);border-radius:10px;padding:10px 14px;font-size:14.5px}
+.note b{color:var(--warn)}
+.src{font-size:13px;color:var(--muted)}
+ul{padding-left:1.2em;margin:6px 0} li{margin:3px 0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:12px 0}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:0}
+.box h4{margin:0 0 4px;font-size:16px}
+.tbl{overflow-x:auto;margin:12px 0;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12.5px;letter-spacing:.04em;color:var(--muted);font-weight:700;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td.num{font-family:var(--mono);font-weight:700;color:var(--acc);white-space:nowrap;font-variant-numeric:tabular-nums}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin:12px 0}
+.flow .step{flex:1 1 130px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14.5px;min-width:0}
+.flow .step b{display:block;font-family:var(--mono);font-size:12px;color:var(--acc)}
+details.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;margin:8px 0}
+details.card summary{cursor:pointer;padding:12px 16px;font-weight:700;list-style:none}
+details.card summary::-webkit-details-marker{display:none}
+details.card summary::before{content:"＋";color:var(--acc);margin-right:8px}
+details.card[open] summary::before{content:"－"}
+details.card .in{padding:0 16px 14px}
+.quiz{display:grid;gap:14px;margin-top:12px}
+.q{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.q .stem{font-weight:700;margin-bottom:8px}
+.q .opts{display:grid;gap:6px}
+.q button.opt{font:inherit;text-align:left;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer}
+.q button.opt:hover{border-color:var(--acc)}
+.q button.opt.right{background:var(--ok-soft);border-color:var(--ok);color:var(--ink)}
+.q button.opt.wrong{background:var(--bad-soft);border-color:var(--bad);color:var(--ink)}
+.q .why{margin-top:8px;font-size:14.5px;color:var(--muted)}
+.score{font-family:var(--mono);font-weight:700;color:var(--acc)}
+.reset{font:inherit;font-size:14px;background:none;border:1.5px solid var(--line);color:var(--ink);border-radius:999px;padding:4px 12px;cursor:pointer;margin-left:8px}
+svg text{fill:var(--ink);font-family:var(--body)}
+.diagram{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px;overflow-x:auto}
+@media (prefers-reduced-motion:no-preference){.q button.opt{transition:background .15s,border-color .15s}}
+</style>
+<style>
+.slide{display:grid;grid-template-columns:76px 1fr;gap:4px 14px;padding-block:16px;border-top:1px solid var(--line)}
+.slide:first-of-type{border-top:0}
+.pno{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--acc);background:var(--acc-soft);border-radius:8px;padding:4px 6px;text-align:center;align-self:start;white-space:nowrap}
+.slide>div{min-width:0}
+.full{font-size:.88em;color:var(--muted)}
+.slide h3{margin:0 0 4px;font-size:17px}
+.sec{scroll-margin-top:72px;font-family:var(--display);font-weight:900;font-size:22px;margin:36px 0 4px;text-wrap:balance}
+.sec small{display:block;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.calc{font-family:var(--mono);font-size:14px;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:8px 0;overflow-x:auto;white-space:pre}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.toc a{font-size:13.5px;color:var(--acc);text-decoration:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:3px 10px}
+.toc a:hover{border-color:var(--acc)}
+.q .why{white-space:normal}
+.q .why b{color:var(--ink)}
+.filter{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.memo{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin:12px 0}
+.mm{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
+.mm .k{font-family:var(--display);font-weight:900;font-size:18px;color:var(--acc);line-height:1.4}
+.mm .d{font-size:14.5px;color:var(--muted);margin-top:4px}
+.mm .ty{display:inline-block;font-size:12px;font-weight:700;color:var(--acc);border:1px solid var(--acc);border-radius:999px;padding:0 8px;margin-right:6px}
+.mm .pg{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.tip{border-left:0;background:var(--acc-soft);border-radius:8px;padding:6px 10px;font-size:14.5px;margin:8px 0}
+.tip b{color:var(--acc)}
+
+.q .why ul.each{list-style:none;padding:0;margin:8px 0;display:grid;gap:6px}
+.q .why ul.each li{padding:6px 10px;border-radius:8px;background:var(--bg);color:var(--ink);font-size:14.5px}
+.q .why ul.each li.ok{background:var(--ok-soft)}
+.q .why ul.each li.ok b{color:var(--ok)} .q .why ul.each li.no b{color:var(--bad)}
+.q .why .verdict{font-weight:700;color:var(--ink)} .q .why .verdict.no{color:var(--bad)} .q .why .verdict.ok{color:var(--ok)}
+.q .why .sum{color:var(--ink);font-size:14.5px}
+.rep{font:inherit;font-size:13px;margin-top:10px;background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;padding:0}
+.rep:hover{color:var(--acc)}
+
+
+#report-fab{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;font:inherit;font-weight:700;font-size:14px;background:var(--acc);color:var(--paper);border:0;border-radius:999px;padding:10px 16px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+#report-panel{position:fixed;inset:auto 0 0 0;z-index:30;background:var(--paper);border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(0,0,0,.18);max-height:82vh;overflow:auto;
+ padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:14px calc(16px + env(safe-area-inset-bottom,0px))}
+#report-panel .in{max-width:760px;margin:0 auto;display:grid;gap:8px}
+#report-panel h3{margin:0;font-size:18px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+#report-panel label{font-size:13px;color:var(--muted);font-weight:700}
+#report-panel input,#report-panel select,#report-panel textarea{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:8px 10px;width:100%;box-sizing:border-box}
+#report-panel textarea{min-height:90px;resize:vertical}
+#report-panel .row{display:grid;grid-template-columns:120px 1fr;gap:8px} @media (max-width:480px){#report-panel .row{grid-template-columns:1fr}}
+#rp-send{font:inherit;font-weight:700;background:var(--acc);color:var(--paper);border:0;border-radius:8px;padding:9px 16px;cursor:pointer;justify-self:start}
+#rp-send:disabled{opacity:.6}
+#rp-close{font:inherit;background:none;border:1.5px solid var(--line);color:var(--ink);border-radius:999px;padding:2px 12px;cursor:pointer}
+#rp-msg{font-size:14px;color:var(--acc);min-height:1.2em}
+.rp-item{border-top:1px solid var(--line);padding-block:8px;font-size:14.5px}
+.rp-top{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.chip{font-size:12px;font-weight:700;border-radius:999px;padding:0 8px;background:var(--warn-soft);color:var(--warn)}
+.chip.done{background:var(--ok-soft);color:var(--ok)} .chip.k{background:var(--acc-soft);color:var(--acc)}
+.rp-where{font-weight:700}
+.rp-reply{margin-top:4px;background:var(--ok-soft);border-radius:8px;padding:6px 10px}
+@media (max-width:480px){.slide{grid-template-columns:1fr}.pno{justify-self:start}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">期中複習 · 照投影片頁碼</div>
+  <h1>LC-MS/MS 方法確效 ＋ 癌症精準醫療</h1>
+  <p class="lede">每一段前面的 <span class="en">p.X</span> 是老師投影片的頁碼，可以對照原檔看圖。用中文講清楚，但考試要的細節（數字、名詞、例題算法）都保留；英文關鍵字照考卷上會出現的寫法。最後是自我測驗，點選項就有詳解。</p>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button class="tab" role="tab" id="tab-lcms" aria-controls="lcms" aria-selected="true">① LC-MS/MS 確效（62 頁）</button>
+  <button class="tab" role="tab" id="tab-onco" aria-controls="onco" aria-selected="false">② 精準腫瘤醫學（89 頁）</button>
+</nav>
+
+<!-- ======================= LC-MS/MS ======================= -->
+<main id="lcms" role="tabpanel" aria-labelledby="tab-lcms">
+<div class="big">整堂課的主線：<b>LC-MS/MS 是量藥物濃度最靈敏、最專一的工具</b>，但它不是「丟進去就出答案」的黑盒子。<b>Validation</b> 是一套事先寫好允收標準的實驗，用來證明這個方法量出來的數字可以信。講義原話：沒確效好的 LC-MS/MS，有研究顯示甚至比亂數產生器還不準。</div>
+<div class="toc" aria-label="本講目錄">
+  <a href="#L-abbr">縮寫全名</a><a href="#L-memo">記憶法</a><a href="#L-a">p.1–6 為何確效</a><a href="#L-b">p.7–13 儀器與定量</a><a href="#L-c">p.14–19 規範</a><a href="#L-d">p.20–25 流程</a><a href="#L-e">p.26–37 準確／精密／靈敏</a><a href="#L-f">p.38–44 範圍與干擾</a><a href="#L-g">p.45–53 基質、安定、殘留</a><a href="#L-h">p.54–61 上線與 CRO</a><a href="#L-cheat">必背表</a><a href="#L-quiz">測驗</a>
+</div>
+
+<details class="card" id="L-abbr"><summary>縮寫全名表（35 個）</summary><div class="in"><div class="tbl"><table><tr><th>縮寫</th><th>全名</th></tr><tr><td class="num">LC-MS/MS</td><td>liquid chromatography–tandem mass spectrometry，液相層析串聯質譜</td></tr><tr><td class="num">NDA</td><td>New Drug Application，新藥查驗登記</td></tr><tr><td class="num">BLA</td><td>Biologics License Application，生物製劑許可申請</td></tr><tr><td class="num">ANDA</td><td>Abbreviated New Drug Application，學名藥簡化申請</td></tr><tr><td class="num">PK</td><td>pharmacokinetics，藥物動力學</td></tr><tr><td class="num">TK</td><td>toxicokinetics，毒物動力學</td></tr><tr><td class="num">SOP</td><td>standard operating procedure，標準作業程序</td></tr><tr><td class="num">LLOQ</td><td>lower limit of quantification，最低定量極限</td></tr><tr><td class="num">ULOQ</td><td>upper limit of quantification，最高定量極限</td></tr><tr><td class="num">HPLC</td><td>high-performance liquid chromatography，高效液相層析</td></tr><tr><td class="num">UHPLC</td><td>ultra-high-performance liquid chromatography，超高效液相層析</td></tr><tr><td class="num">ESI</td><td>electrospray ionization，電灑游離</td></tr><tr><td class="num">LOQ</td><td>limit of quantification，定量極限</td></tr><tr><td class="num">LOD</td><td>limit of detection，偵測極限</td></tr><tr><td class="num">GLP</td><td>Good Laboratory Practice，優良實驗室操作規範</td></tr><tr><td class="num">CAP</td><td>College of American Pathologists，美國病理學會</td></tr><tr><td class="num">CLIA</td><td>Clinical Laboratory Improvement Amendments，美國臨床實驗室改進修正法案</td></tr><tr><td class="num">FDA</td><td>Food and Drug Administration，美國食品藥物管理局</td></tr><tr><td class="num">BMV</td><td>Bioanalytical Method Validation，生物分析方法確效</td></tr><tr><td class="num">ICH</td><td>International Council for Harmonisation，國際醫藥法規協和會</td></tr><tr><td class="num">BMVB</td><td>Bioanalytical Method Validation for Biomarkers，生物標記的生物分析方法確效</td></tr><tr><td class="num">CLSI</td><td>Clinical and Laboratory Standards Institute，臨床與實驗室標準協會</td></tr><tr><td class="num">CRM</td><td>certified reference material，有證參考物質</td></tr><tr><td class="num">QC</td><td>quality control，品管樣本</td></tr><tr><td class="num">PT</td><td>proficiency testing，能力試驗</td></tr><tr><td class="num">JCTLM</td><td>Joint Committee for Traceability in Laboratory Medicine，檢驗醫學追溯性聯合委員會</td></tr><tr><td class="num">RMP</td><td>reference measurement procedure，參考量測程序</td></tr><tr><td class="num">S/N</td><td>signal-to-noise ratio，訊雜比</td></tr><tr><td class="num">AMR</td><td>analytical measurement range，分析量測範圍</td></tr><tr><td class="num">LLE</td><td>liquid–liquid extraction，液液萃取</td></tr><tr><td class="num">PPT</td><td>protein precipitation，蛋白沉澱</td></tr><tr><td class="num">RRt</td><td>relative retention time，相對滯留時間</td></tr><tr><td class="num">SST</td><td>system suitability test，系統適用性測試</td></tr><tr><td class="num">LIMS</td><td>laboratory information management system，實驗室資訊管理系統</td></tr><tr><td class="num">CRO</td><td>contract research organization，委託研究機構</td></tr></table></div></div></details>
+<h2 class="sec" id="L-memo"><small>Memory aids</small>記憶法（比喻、畫面、推理、數字分組）</h2><div class="memo"><div class="mm"><div class="pg"><span class="ty">推理</span>p.27, 34, 49</div><div class="k">為什麼 LLOQ 可以放寬到 20%？</div><div class="d">濃度越低越難量準，所以多給一點誤差空間。想通這點就不用背：準確度、精密度、安定性、稀釋一律 ±15%，只有 LLOQ 是 20%。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.10</div><div class="k">三段四極柱＝機場兩道安檢</div><div class="d">Q1 查護照（只放某個 m/z 的母離子），Q2 拆行李（氬氣撞碎），Q3 只找行李裡指定的東西（子離子）。兩道都過才算數，所以又專一又安靜。</div></div><div class="mm"><div class="pg"><span class="ty">畫面</span>p.9</div><div class="k">四極柱＝甩跳繩</div><div class="d">四根棒子的 DC＋RF 電場像在甩繩子，只有「體重」（m/z）剛好的離子能一直跳過不被絆倒，其他都撞到棒子出局。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.8, 11</div><div class="k">同位素內標＝雙胞胎替身</div><div class="d">內標和藥一起萃取、一起被干擾、一起出場，只是體重差一點讓質譜分得出。損失多少兩人一樣，所以看兩人的比例就把誤差除掉。</div></div><div class="mm"><div class="pg"><span class="ty">套路</span>p.11</div><div class="k">內標回推濃度三步</div><div class="d">① 未知樣本面積比 ② 除以標準品面積比 ③ 乘 IS 濃度。例：0.7 ÷ 1.2 × 100 ≈ 58 ppm。看到這種題就套這三步。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.12</div><div class="k">1/x 加權＝給小聲的人麥克風</div><div class="d">高濃度點誤差的絕對值大、講話大聲，不加權時迴歸被它們帶走。1/x 給低濃度點較大權重，LLOQ 附近才會準。</div></div><div class="mm"><div class="pg"><span class="ty">對比</span>p.32–33</div><div class="k">Within vs Between：一天之內 vs 二十天之間</div><div class="d">Between-run 多了換天、換試劑批、重新校正，變異來源比較多，CV 自然較大（2.8% vs 5.5%），所以次數也要多一倍：10 次 vs 20 次。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.38</div><div class="k">不准 serial dilution＝傳話遊戲</div><div class="d">第一管稀釋錯一點，下一管從錯的開始稀釋，錯誤一路往下傳、越傳越大。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.39–40</div><div class="k">AMR vs Reportable＝體重計</div><div class="d">體重計直接秤得到的範圍是 AMR（0.5–2000）。太重的人分成兩半各秤再加回去（稀釋後乘回倍數），能報的範圍就更大（0.5–5000）。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.42</div><div class="k">Isomer＝同卵雙胞胎；Isobar＝陌生人剛好同體重</div><div class="d">質譜只會量體重。雙胞胎（289.30 的兩個類固醇）和同體重的陌生人（438.00 vs 438.20）它都分不出，只能靠 LC 讓他們不同時間出場。</div></div><div class="mm"><div class="pg"><span class="ty">畫面</span>p.44</div><div class="k">Ion ratio＝指紋</div><div class="d">同一個化合物兩條 transition 的比例是它的指紋。比例跑掉超過 20%（1.00 變 1.45），代表有別人的指紋混進來，峰上也會看到肩峰。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.45–46</div><div class="k">基質效應＝KTV 搶麥克風</div><div class="d">別人的成分在離子化時搶麥克風。100% 正常音量，&gt;100% 被放大（enhancement），&lt;100% 被蓋過（suppression）。最愛搶麥的是磷脂質。人人不同，所以至少找 10 個人來唱。</div></div><div class="mm"><div class="pg"><span class="ty">畫面</span>p.47–48</div><div class="k">Post-column infusion＝一直播同一首歌</div><div class="d">持續打純標準品，訊號是平線；打進髒樣本時音量往下掉的地方，就是被干擾的時段。蛋白沉澱只是粗過濾，掉最多。</div></div><div class="mm"><div class="pg"><span class="ty">推理</span>p.52–53</div><div class="k">Carryover 為什麼是 3 低→1 高→3 低</div><div class="d">先量乾淨的低濃度當基準，打一支很高的，再量低濃度；如果變多了，多出來的就是上一支殘留的。</div></div><div class="mm"><div class="pg"><span class="ty">數字分組</span>全講</div><div class="k">10、20、40 三個數字一族</div><div class="d">10：within-run 次數、matrix 個數。20：between-run 次數與天數、LLOQ CV、干擾物 &lt; LLOQ 的 20%、ion ratio ±20%。40：method comparison 樣本數（再加 5 天）。</div></div><div class="mm"><div class="pg"><span class="ty">數字分組</span>p.38, 55</div><div class="k">80–120 就是 ±20</div><div class="d">Linearity、每輪校正品、QC 都是 80–120%，跟 ion ratio ±20% 是同一個數字，一起記。</div></div><div class="mm"><div class="pg"><span class="ty">推理</span>p.19, 22</div><div class="k">PK vs Biomarker：外來的 vs 本來就有的</div><div class="d">藥是外來的，有純品可以 spike、空白基質真的是零。Biomarker 本來就在體內，找不到真空白、也常沒有一模一樣的標準品，所以要證明 parallelism。</div></div><div class="mm"><div class="pg"><span class="ty">時間線</span>p.18</div><div class="k">先一部全包，後來分家</div><div class="d">2018 FDA BMV 什麼都管 → 2022 國際的 ICH M10 只管 PK → 2025 FDA 另出 BMVB 管 biomarker。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.56</div><div class="k">上線後監測＝養一台車</div><div class="d">每天出門前檢查（SST）、每趟看儀表板（QC、IS 面積）、定期驗車（PT、CRM、試劑批）、每半年跟別台比（儀器比對）。</div></div><div class="mm"><div class="pg"><span class="ty">故事</span>p.58–60</div><div class="k">CRO C＝沒執照的水電工</div><div class="d">便宜又快，但沒有 GLP、沒 PT、紙本紀錄，做完 FDA 不收。送審的數據只能找 A。</div></div></div>
+<h2 class="sec" id="L-a"><small>p.1–6</small>什麼是生物分析、為什麼要確效</h2>
+
+<div class="slide"><div class="pno">p.1–2</div><div><h3>這堂課要學什麼</h3>
+<p>老師一開始列了五個學習目標，這五點基本上就是考試的範圍：</p>
+<ol><li>生物分析方法在藥物開發裡<b>為什麼</b>要開發和確效、<b>怎麼</b>做。</li>
+<li>LC-MS/MS<span class="full">（liquid chromatography–tandem mass spectrometry，液相層析串聯質譜）</span> 這幾個字母代表什麼，以及它在概念上怎麼運作。</li>
+<li>確效計畫怎麼寫、正式確效前要先做哪些準備。</li>
+<li>幾個核心參數怎麼測：precision、linearity、matrix effects、extraction recovery、accuracy。</li>
+<li>選 CRO<span class="full">（contract research organization，委託研究機構）</span>（委外實驗室）時要看什麼。</li></ol>
+<p>副標題叫「Inside the Black Box」：很多人把質譜當黑盒子，樣本丟進去、數字跑出來就相信它。這堂課要做的，就是把盒子打開，教你判斷那個數字能不能信。</p></div></div>
+
+<div class="slide"><div class="pno">p.3</div><div><h3>生物分析是什麼？哪些研究一定要確效？</h3>
+<p><b>Bioanalytical method</b> 就是在生物樣本裡「量濃度」的方法。量的對象可能是藥物本身、它的代謝物、治療用的蛋白質，或是 biomarker；樣本可能是血、血清、血漿、尿、組織。</p>
+<p>藥物開發時，臨床研究裡要算 <b>PK<span class="full">（pharmacokinetics，藥物動力學）</span></b>（藥在體內怎麼吸收、分布、排除）、<b>TK<span class="full">（toxicokinetics，毒物動力學）</span></b>（毒理研究裡的藥物暴露量）或 biomarker 濃度，用的方法都<b>必須確效</b>。因為後面所有結論（劑量多少、安不安全）都建立在這些濃度數字上。</p>
+<p>確效要做到多嚴？講義用了一個詞：<b>fit for purpose（符合用途）</b>。</p>
+<ul><li>要送 FDA<span class="full">（Food and Drug Administration，美國食品藥物管理局）</span> 審查的關鍵研究，也就是新藥 <b>NDA<span class="full">（New Drug Application，新藥查驗登記）</span></b>、生物製劑 <b>BLA<span class="full">（Biologics License Application，生物製劑許可申請）</span></b>、學名藥 <b>ANDA<span class="full">（Abbreviated New Drug Application，學名藥簡化申請）</span></b> 裡的 pivotal study：方法必須<b>完整確效</b>。</li>
+<li>只用在臨床前（動物、in vitro）的方法：通常不需要那麼嚴格。</li></ul>
+<div class="tip"><b>比喻：</b>自己在家量體重，體重計差 0.5 公斤無所謂；但醫院用來算化療劑量的體重計就一定要校正過。用途越重要，要求越嚴。</div></div></div>
+
+<div class="slide"><div class="pno">p.4</div><div><h3>為什麼這堂課專講 LC-MS/MS</h3>
+<p>在所有生物分析方法裡，LC-MS/MS 通常是<b>最靈敏</b>（量得到很低的濃度）、也<b>最專一</b>（不容易被別的東西騙）的，所以藥物開發用它用得最多。這堂課就用 LC-MS/MS 當例子，把確效的每一步講清楚。</p></div></div>
+
+<div class="slide"><div class="pno">p.5</div><div><h3>確效要回答的四個問題</h3>
+<p>這頁很重要，因為後面所有確效參數，其實都是在回答這四個問題：</p>
+<ol><li><b>量到的是不是我要的東西？</b>有沒有別的物質干擾？→ 後面的 specificity／selectivity、interference。</li>
+<li><b>每次量出來差多少？</b>→ accuracy（準不準）和 precision（穩不穩）。</li>
+<li><b>可靠的範圍有多大？</b>最低能量到多少（<b>LLOQ<span class="full">（lower limit of quantification，最低定量極限）</span></b>）、最高到多少（<b>ULOQ<span class="full">（upper limit of quantification，最高定量極限）</span></b>）？→ sensitivity、linearity。</li>
+<li><b>收檢、運送、保存會不會影響結果？</b>要不要冷凍運送？存幾度？能存多久？→ stability。</li></ol>
+<div class="tip"><b>考試重點：</b>給你一個情境（例如「樣本在室溫放了兩天」），要能說出它對應哪一個確效參數。</div></div></div>
+
+<div class="slide"><div class="pno">p.6</div><div><h3>Method development 和 validation 不一樣</h3>
+<p>這兩個詞常被混用，但老師特別分開：</p>
+<ul><li><b>Method development（開發）</b>：決定方法怎麼設計、條件怎麼設、有什麼限制。主要工作是把<b>萃取</b>（怎麼把藥從血漿裡抽出來）和<b>偵測</b>（質譜參數）調到最好，然後寫成 protocol 或 SOP<span class="full">（standard operating procedure，標準作業程序）</span>。</li>
+<li><b>Method validation（確效）</b>：方法定型之後，用實驗<b>證明</b>它適合拿來量研究樣本。</li></ul>
+<div class="tip"><b>比喻：</b>開發像是研發一道菜的食譜，一直試、一直調味；確效像是請評審照著寫好的食譜做十次，證明每次都做得出一樣的味道。確效期間不能再偷改食譜。</div></div></div>
+
+<h2 class="sec" id="L-b"><small>p.7–13</small>儀器怎麼運作、濃度怎麼算出來</h2>
+
+<div class="slide"><div class="pno">p.7</div><div><h3>LC：液相層析，先把東西分開</h3>
+<p>圖上是 HPLC<span class="full">（high-performance liquid chromatography，高效液相層析）</span> 的基本流程：<b>溶劑瓶 → 幫浦 → 進樣器（打入樣本）→ 層析管柱 → 偵測器 → 電腦</b>，用過的液體流到廢液瓶。</p>
+<p>層析的目的是把樣本裡的成分<b>依時間分開</b>。生物分析通常用 <b>reverse-phase（逆相）</b>層析，現在多是更高壓、更快的 UHPLC<span class="full">（ultra-high-performance liquid chromatography，超高效液相層析）</span>。逆相管柱的表面是疏水的（像 C18），所以越疏水的分子黏得越久、越晚出來；越極性（親水）的分子越早出來。每個分子從打入到出來的時間，叫 <b>retention time（滯留時間）</b>。</p>
+<div class="tip"><b>比喻：</b>一群人走過一條很黏的走廊，穿膠鞋的（疏水）一直被黏住、最後才出來，光腳的（極性）很快就走出去了。這樣一來，原本擠在一起的人就變成一個一個依序出場。</div>
+<p>記住「極性分子先出來」，p.45 講基質效應時會用到。</p></div></div>
+
+<div class="slide"><div class="pno">p.8</div><div><h3>MS：質譜，用重量認出分子</h3>
+<p>質譜儀量的是離子的 <b>m/z（質荷比）</b>，也就是質量除以電荷。知道 m/z，就能推回分子量。</p>
+<ul><li>分子要先帶電才能被質譜量到。生物分析常用 <b>ESI<span class="full">（electrospray ionization，電灑游離）</span>（電灑游離）</b>，小分子藥物在 ESI 下通常只帶<b>一個電荷</b>（多一個 H⁺），所以 m/z ≈ 分子量 + 1。</li>
+<li>小分子定量大多用 <b>triple-quadrupole（三段四極柱）</b>質譜。</li>
+<li>定量通常用 <b>isotope dilution（同位素稀釋）</b>：加入一個跟藥一模一樣、只是把幾個原子換成重的版本（氘 D 或 ¹³C）的分子當<b>內標（internal standard）</b>。p.11 會詳細講。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.9</div><div><h3>四極柱怎麼篩選離子</h3>
+<p>四極柱是四根平行的金屬圓棒，分成兩組。一組接<b>正的直流電（DC）</b>，另一組接<b>負的直流電</b>；四根再同時加上一個<b>固定頻率、在正負之間來回振盪的 RF 電壓</b>。</p>
+<p>離子從中間飛過去時，這個電場會一直把它往不同方向拉扯。在特定的電壓設定下，只有某一個 m/z 的離子軌跡是穩定的，能從頭飛到尾；其他 m/z 的離子會越晃越大，最後撞到棒子被淘汰。改變電壓，就能換成讓另一個 m/z 通過。</p>
+<div class="tip"><b>比喻：</b>像兩個人在甩跳繩。甩繩的節奏一設定，只有體重剛好的人能一直跳過去不被絆倒，太重或太輕的都會被絆倒出局。四極柱就是一個可以調的「質量篩子」。</div></div></div>
+
+<div class="slide"><div class="pno">p.10</div><div><h3>MRM：兩道篩子，所以又專一又安靜</h3>
+<p>三段四極柱的運作方式叫 <b>MRM（multiple reaction monitoring）</b>：</p>
+<div class="flow">
+<div class="step"><b>ESI</b>樣本變成各種離子一起進來</div>
+<div class="step"><b>Q1 · 選母離子</b>只讓藥物本身的 m/z 通過（圖例 m/z 399）</div>
+<div class="step"><b>Q2 · 碰撞室</b>通入氬氣（Ar），把母離子撞成碎片</div>
+<div class="step"><b>Q3 · 選子離子</b>只讓某一個特定碎片通過（m/z 223）→ 偵測器出峰</div>
+</div>
+<p>一組「母離子 → 子離子」叫一個 <b>transition</b>，寫成 precursor &gt; product。要被算進來，必須重量對、而且撞碎後的碎片也對，兩關都過。其他分子剛好一樣重的機會不小，但一樣重、碎片也一樣的機會就很小，所以 MRM 雜訊很低。</p>
+<div class="tip"><b>比喻：</b>機場兩道安檢。第一道查護照（只放某國籍的人），第二道打開行李找一樣指定的東西。兩道都過的人非常少，所以抓得很準。</div>
+<div class="note"><b>投影片小錯：</b>Q1 標 m/z 399，底下 transition 卻寫 339 – 223，數字前後不一致。概念懂就好。</div></div></div>
+
+<div class="slide"><div class="pno">p.11</div><div><h3>Isotope dilution：用內標算濃度（有例題）</h3>
+<p>做法是每支樣本都加入<b>同樣量的內標（IS）</b>，然後不看分析物的面積本身，而是看 <b>peak area ratio ＝ 分析物面積 ÷ IS 面積</b>。</p>
+<p>為什麼要這麼麻煩？因為從萃取、注射到離子化，每一步都可能有損失或干擾。同位素內標的化學性質跟藥物幾乎一樣，滯留時間也一樣，所以這些損失會<b>同比例</b>發生在兩者身上。算比值時，損失就被除掉了。</p>
+<div class="tip"><b>比喻：</b>內標是藥物的雙胞胎替身。兩人一起走過整個流程，一起被絆倒、一起被擋住，只是替身穿了不同顏色的衣服（質量不同），質譜分得出誰是誰。看兩人剩下的比例，就知道藥物原本有多少。</div>
+<p><b>講義的例題：</b></p>
+<div class="calc">標準品：分析物 100 ppm、IS 100 ppm → 面積 1200 / 1000 → 面積比 1.2（對應濃度比 1）
+未知樣本：IS 100 ppm → 分析物面積 700 / IS 1000 → 面積比 0.7
+回推：濃度比 = 0.7 ÷ 1.2 ≈ 0.58  →  分析物 ≈ 0.58 × 100 = 58 ppm</div>
+<div class="tip"><b>考試重點：</b>常見錯誤是直接把 0.7 當成 70 ppm。要記得標準品的面積比是 1.2，不是 1。</div></div></div>
+
+<div class="slide"><div class="pno">p.12</div><div><h3>Calibration curve：檢量線</h3>
+<p>拿一系列<b>已知濃度</b>的標準品去量，得到每個濃度對應的反應（面積或面積比），畫成一條線，用迴歸算出方程式 <b>Y = mx + b</b>。之後量到未知樣本的 Y，就能反推出濃度 x。</p>
+<p>通常會用 <b>1/x weighting（加權）</b>。原因是：高濃度點的誤差絕對值比較大，不加權時，迴歸線會被高濃度點拉著走，低濃度那端就偏掉了。1/x 加權讓低濃度點的份量變重，所以<b>靠近 LLOQ 的地方會更準</b>。</p>
+<div class="tip"><b>比喻：</b>開會時大嗓門（高濃度點）的意見總是蓋過小聲的人。1/x 加權等於發一支麥克風給小聲的人，讓低濃度點也被聽見。</div></div></div>
+
+<div class="slide"><div class="pno">p.13</div><div><h3>實際的檢量線長什麼樣子</h3>
+<p>Amoxicillin（安莫西林）的檢量線：r = 0.9997、r² = 0.9995，方程式 y = 0.000664x + 0.000102，用內標法、線性、1/x 加權。</p>
+<p>圖下方有 <b>residual（殘差）圖</b>，畫每個點離直線差多少。好的檢量線，殘差應該隨機散在 0 上下，不會一邊全是正、另一邊全是負（那代表其實不是直線）。上圖是全範圍，下圖把低濃度那段放大，讓你看低濃度也貼得很好。</p></div></div>
+
+<h2 class="sec" id="L-c"><small>p.14–19</small>為什麼重要、評估什麼、依什麼規範</h2>
+
+<div class="slide"><div class="pno">p.14</div><div><h3>為什麼確效這麼重要</h3>
+<p>PK 研究、生體相等性研究（證明學名藥和原廠藥在體內表現一樣）成功與否，全靠一個又專一又靈敏的定量方法。而且方法要針對<b>每一種基質</b>（血漿、全血、腦脊髓液……）分別證明可靠。</p>
+<p>老師講了一句很重的話：有研究顯示，<b>亂數產生器比確效做得很差的 LC-MS/MS 還準</b>。意思是：儀器再高級，沒有確效，出來的數字可能比亂猜還糟。只有在方法確效紮實的前提下，才可以放心把它當黑盒子用。</p></div></div>
+
+<div class="slide"><div class="pno">p.15</div><div><h3>確效要評估哪些指標</h3>
+<p>Accuracy（準確度）、Precision（精密度）、<b>LOQ<span class="full">（limit of quantification，定量極限）</span></b>（定量極限）、<b>LOD<span class="full">（limit of detection，偵測極限）</span></b>（偵測極限）、Sensitivity（靈敏度）、Specificity／selectivity（專一性）、Stability（安定性），而且如果是 GLP<span class="full">（Good Laboratory Practice，優良實驗室操作規範）</span> 研究，<b>每一個步驟都要有紀錄</b>。</p>
+<p>LOD 和 LOQ 的差別：LOD 是「看得到有東西」，LOQ 是「不只看得到，還能量得準」。所以 LOD 一定比 LOQ 低。</p>
+<div class="tip"><b>比喻：</b>Accuracy 和 precision 用射飛鏢來想。全部射在靶心附近＝又準又穩；全部擠在一起但離靶心很遠＝很穩但不準（precision 好、accuracy 差）；散得到處都是、平均剛好在靶心＝準但不穩。</div></div></div>
+
+<div class="slide"><div class="pno">p.16–17</div><div><h3>允收標準從哪裡來</h3>
+<p>確效的「及格線」不是實驗室自己想的，有三個來源：</p>
+<ul><li><b>法規與認證</b>：CAP<span class="full">（College of American Pathologists，美國病理學會）</span>、CLIA<span class="full">（Clinical Laboratory Improvement Amendments，美國臨床實驗室改進修正法案）</span>、COLA（美國的實驗室認證與法規）。</li>
+<li><b>指引文件</b>：FDA 的 Guidance for Industry: Bioanalytical Method Validation。p.17 秀的是 FDA 新的 biomarker 確效指引封面。</li>
+<li><b>生物變異資料</b>：Westgard 資料庫、歐洲臨床化學聯盟的 biological variation 資料庫。概念是：如果一個指標在健康人身上本來就每天波動 10%，那方法的誤差就要比這個小，才分得出真正的變化。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.18</div><div><h3>指引的演變時間線</h3>
+<div class="tbl"><table><tr><th>年</th><th>文件</th><th>範圍</th></tr>
+<tr><td class="num">2018</td><td>FDA BMV<span class="full">（Bioanalytical Method Validation，生物分析方法確效）</span></td><td>藥物、代謝物、biomarker 全部都管</td></tr>
+<tr><td class="num">2022</td><td>ICH<span class="full">（International Council for Harmonisation，國際醫藥法規協和會）</span> M10</td><td>國際一致的指引，<b>只管 PK assay</b>，<b>排除 biomarker</b></td></tr>
+<tr><td class="num">2025</td><td>FDA BMVB<span class="full">（Bioanalytical Method Validation for Biomarkers，生物標記的生物分析方法確效）</span></td><td>專門給 biomarker；承認 biomarker 的確效和 PK 不一樣。屬於 <b>Level 2 guidance</b>，意思是用來澄清解釋，沒有加入重大新要求</td></tr></table></div>
+<p>可以把它想成：一開始一部法全部包，後來發現藥物和 biomarker 性質差太多，就分家了。</p></div></div>
+
+<div class="slide"><div class="pno">p.19</div><div><h3>PK assay 和 biomarker assay 差在哪</h3>
+<p>關鍵在於：<b>藥是外來的，biomarker 是身體本來就有的。</b></p>
+<ul><li><b>PK assay</b>：有和分析物一模一樣的標準品。可以拿不含藥的血漿，加進已知量的藥，看量回來多少（spike–recovery）。準確度是<b>絕對</b>的，因為你確切知道加了多少。</li>
+<li><b>Biomarker assay</b>：常常找不到真正一模一樣的標準品，只能用重組或合成的替代品；而且身體本來就有，很難找到「零」的空白樣本。所以準確度要能<b>轉移</b>到身體裡那個真正的分子。</li></ul>
+<p>為此要做 <b>parallelism（平行性）</b>：把病人的真實樣本一路稀釋，看它的反應是不是和校正品的檢量線平行。平行，代表替代品和體內分子行為一致。</p>
+<p>此外，biomarker 本身有生物變異，基質又複雜，這些都會影響結果判讀。</p></div></div>
+
+<h2 class="sec" id="L-d"><small>p.20–25</small>從零開始：確效流程</h2>
+
+<div class="slide"><div class="pno">p.20</div><div><h3>情境：你要量 Drug X</h3>
+<p>老師從這裡開始用一個虛構的「Drug X」當例子，把整個確效流程跑一遍。圖上的結構有兩個硫酸根和鈉，看起來是 indigo carmine（靛胭脂），不過老師只叫它 Drug X。後面的例題數字大多來自它。</p></div></div>
+
+<div class="slide"><div class="pno">p.21</div><div><h3>確效分兩階段</h3>
+<ul><li><b>Pre-validation（mini-validation，小確效）</b>：小規模先試，在花大錢做正式確效前把問題找出來。</li>
+<li><b>Full validation（正式確效）</b>：把 accuracy、imprecision、sensitivity、linearity、interference、matrix effects、carryover 等全部做完。</li></ul>
+<div class="tip"><b>比喻：</b>正式考試前先寫一份模擬考，發現哪裡不會就先補強，不要等到正式考試才發現。</div></div></div>
+
+<div class="slide"><div class="pno">p.22</div><div><h3>Pre-validation 的第一件事：空白基質</h3>
+<p>要先有<b>空白基質（blank matrix）</b>，也就是不含這個藥的血漿等，才能確認「沒有藥時，訊號真的是零」。</p>
+<p>及格標準：最好完全沒有峰；有的話，在分析物通道要 <b>&lt; LLOQ 的 20%</b>，在 IS 通道要 <b>&lt; IS 的 5%</b>（CLSI<span class="full">（Clinical and Laboratory Standards Institute，臨床與實驗室標準協會）</span> C62）。</p>
+<p>如果要量的是<b>內源性</b>物質（身體本來就有，例如荷爾蒙），就很難找到真正的空白：</p>
+<ul><li>可以買 <b>stripped matrix</b>（被處理過、把那個物質剝除的血漿），但它可能也少了天然血漿裡會造成干擾的東西，評估就不夠真實。</li>
+<li>建議盡量測<b>多個不同批（lot）</b>的基質，pooled matrix（混合多人的）也有幫助。</li>
+<li>也可以用 <b>surrogate matrix</b>（替代基質，例如緩衝液），但比較不理想。</li></ul>
+<p>另外要檢查校正品會不會因為基質效應而偏掉：把<b>有證參考物質（CRM<span class="full">（certified reference material，有證參考物質）</span>）</b>加到天然基質裡量量看，或用真人樣本做方法比對、能力試驗。</p></div></div>
+
+<div class="slide"><div class="pno">p.23</div><div><h3>Pre-validation 要先試哪些實驗</h3>
+<p>基本上就是正式確效的縮小版：linearity（檢量線）、accuracy（跑參考物質、跑參考方法量過的人類樣本）、imprecision（用 QC<span class="full">（quality control，品管樣本）</span> 做 within-run 和 between-run）、LLOQ（精密度和 S/N<span class="full">（signal-to-noise ratio，訊雜比）</span>）、matrix effects 和 recovery（定量和定性都做）、interference（測已知的干擾物）。</p></div></div>
+
+<div class="slide"><div class="pno">p.24</div><div><h3>確效一定要事先規劃</h3>
+<p>開始前要把所有東西寫下來：耗材、試劑、QC、校正品、操作程序、要用的人類樣本、PT<span class="full">（proficiency testing，能力試驗）</span> 樣本、標準品、內標，以及每個實驗的細節。最重要的是：<b>事先定好允收標準</b>。</p>
+<div class="note"><b>必考句：</b><i>Don't change acceptance criteria to fit the validation data!</i> 不可以看到結果之後才改及格線。</div>
+<div class="tip"><b>比喻：</b>考試考完才把及格分數從 60 改成 40，那這場考試就沒有意義了。</div></div></div>
+
+<div class="slide"><div class="pno">p.25</div><div><h3>正式確效的建議順序</h3>
+<ol><li>Linearity、within-run imprecision、blank matrix、LLOQ（先確認方法基本可行）</li>
+<li>Matrix effects</li><li>Recovery 和 interferences</li>
+<li>Accuracy：用 CRM、真人樣本、PT 樣本</li><li>Stability（最花時間，放後面）</li></ol>
+<p>另外兩個提醒：<b>每一輪都放幾支樣本</b>，一路累積起來就能算 between-run imprecision；carryover 和稀釋放在最後做。</p></div></div>
+
+<h2 class="sec" id="L-e"><small>p.26–37</small>準確度、精密度、靈敏度</h2>
+
+<div class="slide"><div class="pno">p.26–27</div><div><h3>Accuracy：量到的值離真值多遠</h3>
+<p>Accuracy 是方法量出來的值和<b>真值</b>有多接近。問題是「真值」從哪來？不同規範用不同的方法：</p>
+<ul><li><b>FDA</b>：拿已知濃度的 control 來量。及格標準：<b>bias ≤ 15%、precision ≤ 15%；LLOQ 放寬到 ≤ 20%</b>。低濃度本來就難量準，所以多給一點空間。</li>
+<li><b>CLSI EP9</b>：和一個更高等級的參考方法比對，<b>至少 40 個樣本</b>，而且最好用真人樣本，而不是 control 或人工加藥的基質，因為真人樣本才有真實世界的干擾。</li>
+<li><b>CLSI EP15</b>：拿參考物質在 <b>3–5 個不同的 run</b> 裡量，每次<b>重複兩次</b>。</li></ul>
+<p>麻煩的是，不是每一種分析物都有現成的 CRM。</p></div></div>
+
+<div class="slide"><div class="pno">p.28</div><div><h3>Accuracy 的最佳做法（CLSI C62）</h3>
+<p>CLSI C62 建議<b>用好幾種方法交叉確認</b>，不要只靠一種：</p>
+<ul><li>用 <b>JCTLM<span class="full">（Joint Committee for Traceability in Laboratory Medicine，檢驗醫學追溯性聯合委員會）</span></b>（檢驗醫學追溯性聯合委員會）認可的「更高等級參考」來驗證 trueness。</li>
+<li>和 JCTLM 核准的<b>參考量測程序（RMP<span class="full">（reference measurement procedure，參考量測程序）</span>）</b>做比對。</li>
+<li>用基質相符的 <b>CRM</b>。</li><li>如果有 CRM，就做 spike and recovery。</li></ul>
+<p>「追溯性」的概念像是量尺的源頭：你的尺要能一路對回國際標準尺，量出來的長度才有意義。</p></div></div>
+
+<div class="slide"><div class="pno">p.29</div><div><h3>找不到參考方法時的替代做法</h3>
+<ul><li>用以準確度為基礎的 <b>PT（能力試驗）樣本</b>：外部機構寄未知樣本給各家實驗室量，再比大家的結果。</li>
+<li>跟<b>別家實驗室</b>交換同一批樣本來比。</li>
+<li>樣本要盡量接近日後真正要量的樣本。</li>
+<li>和其他方法比較時：<b>至少 40 個樣本、涵蓋整個量測範圍、至少跑 5 天</b>。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.30</div><div><h3>怎麼讀方法比對的圖（重要）</h3>
+<p>這頁是「你的方法 vs 比較方法」的實際結果，要會讀：</p>
+<ul><li><b>左圖（散佈圖）</b>：橫軸是比較方法、縱軸是你的方法。灰線是 1:1（完全一樣），紅線是 <b>Deming 迴歸</b>。相關係數 R = 0.9896。</li>
+<li><b>右圖（percent bias）</b>：每個樣本你的方法比對方高或低幾 %。平均 bias = <b>6%</b>。</li>
+<li><b>Deming 結果</b>：斜率 1.068（95% CI 1.030–1.106）；截距 −1.9（95% CI −37.8 到 34.0）。</li></ul>
+<p><b>判讀規則：斜率看 1，截距看 0。</b></p>
+<ul><li>斜率的 CI <b>不包含 1</b> → 有<b>比例誤差</b>：濃度越高，你的方法偏高越多，大約多 7%。</li>
+<li>截距的 CI <b>包含 0</b> → 沒有明顯的<b>固定誤差</b>（不是每個值都固定多一截）。</li>
+<li>平均偏差 6%，在 ±15% 之內，可以接受。</li></ul>
+<p>為什麼用 Deming 而不用一般的直線迴歸？一般迴歸假設 x 軸沒有誤差，但這裡兩個方法都是量出來的，<b>兩邊都有誤差</b>，Deming 迴歸把兩邊的誤差都考慮進去。</p></div></div>
+
+<div class="slide"><div class="pno">p.31–32</div><div><h3>Imprecision：同一個樣本量很多次，差多少</h3>
+<p>Imprecision（不精密度）看的是「同一個樣本重複量，結果多一致」，用 <b>CV（變異係數）＝ 標準差 ÷ 平均 × 100%</b> 表示。要分兩種：</p>
+<div class="tbl"><table><tr><th></th><th>濃度數</th><th>重複次數</th><th>及格</th></tr>
+<tr><td><b>Within-run</b>（同一輪內）</td><td class="num">≥ 2</td><td class="num">≥ 10 次，同一輪</td><td class="num">CV &lt; 15%</td></tr>
+<tr><td><b>Between-run</b>（跨輪、跨天）</td><td class="num">≥ 2</td><td class="num">≥ 20 次，最好跨 20 天</td><td class="num">CV &lt; 15%</td></tr></table></div>
+<p>材料可以用基質相符的混合樣本、市售品或 QC。</p>
+<div class="tip"><b>比喻：</b>Within-run 像同一天、同一個人、同一台機器連拍十張證件照，看臉型差多少；between-run 像連續二十天每天拍一張，中間換了燈光、換了攝影師，差異自然會大一點。</div></div></div>
+
+<div class="slide"><div class="pno">p.33</div><div><h3>Imprecision 的實際數據</h3>
+<div class="calc">Within-run ： 平均 12.46 ng/mL，SD 0.34（95% CI 0.24–0.63），CV 2.8%
+Between-run： 平均 11.86 ng/mL，SD 0.65（95% CI 0.51–0.88），CV 5.5%</div>
+<p>圖的縱軸是 <b>SD index</b>，也就是每個點離平均幾個標準差，大部分點落在 ±2 SD 之內。</p>
+<p>注意 between-run 的 CV（5.5%）比 within-run（2.8%）大。這很正常：between-run 除了包含同一輪內的變異，<b>再加上</b>天與天之間的變異（換試劑批、重新校正、儀器狀態不同）。兩者都 &lt; 15%，合格。</p>
+<p>可以自己驗算：0.65 ÷ 11.86 × 100 ≈ 5.5%。</p></div></div>
+
+<div class="slide"><div class="pno">p.34</div><div><h3>Sensitivity＝LLOQ</h3>
+<p>方法的靈敏度用 <b>LLOQ（最低定量極限）</b>表示：能夠<b>重現地</b>量到的最低濃度。判斷 LLOQ 有兩個條件，要同時滿足：</p>
+<ul><li><b>精密度</b>：between-run CV <b>&lt; 20%</b>（至少 20 個基質樣本、跨 20 天）。</li>
+<li><b>訊雜比 S/N ≥ 10:1</b>：峰的高度至少是背景雜訊的 10 倍。</li></ul>
+<p>如果方法有監測 ion ratio，LLOQ 的 ion ratio 也要合格。</p>
+<div class="tip"><b>比喻：</b>在吵雜的餐廳裡聽人講話。訊號是對方的聲音，雜訊是背景吵雜聲。聲音要比背景大十倍，你才不只是「聽到有人在講話」（LOD），而是「聽得清楚講什麼」（LOQ）。</div></div></div>
+
+<div class="slide"><div class="pno">p.35</div><div><h3>用 %CV 決定 LLOQ（實例）</h3>
+<p>目標濃度 <b>0.5 ng/mL</b>，量了 20 次，結果落在 0.44–0.52 ng/mL 之間，<b>%CV = 4.8%</b>，遠低於 20%。所以 0.5 ng/mL 可以當作 LLOQ。左邊的檢量線（0–10 ng/mL）也顯示，低濃度端的反應仍然分辨得出來。</p></div></div>
+
+<div class="slide"><div class="pno">p.36–37</div><div><h3>好的和不好的訊雜比</h3>
+<p><b>p.36（好的例子）</b>：Amoxicillin 和它的內標 Amoxicillin-D4 在約 1.35 分鐘一起出峰，峰形清楚，<b>S/N = 20:1</b>，超過 10:1，合格。注意分析物和內標的滯留時間幾乎一樣，這就是同位素內標「同進同出」的特性。</p>
+<p><b>p.37（不好的例子）</b>：Sulfamethoxazole 的兩條 transition 在目標峰附近有很多雜峰，峰和背景雜訊糊在一起分不開，S/N 不夠。這個濃度就不能當 LLOQ，要往上調，或改善萃取和層析。</p></div></div>
+
+<h2 class="sec" id="L-f"><small>p.38–44</small>線性、範圍、專一性與干擾</h2>
+
+<div class="slide"><div class="pno">p.38</div><div><h3>Linearity：訊號跟濃度要成正比</h3>
+<p>線性是指方法的訊號和濃度<b>成正比</b>：濃度加倍，訊號也加倍。重點：</p>
+<ul><li><b>每一種</b>要接受的基質都要做（血漿做過，不代表尿也可以）。</li>
+<li><b>不要用 serial dilution（序列稀釋）</b>來做線性的材料。序列稀釋是拿上一管去稀釋成下一管，第一管只要稀釋錯一點點，後面每一管都跟著錯，而且越錯越多。</li>
+<li>及格：每個點的準確度在 <b>80–120%</b>。</li>
+<li>最佳做法：<b>至少 5 個非零濃度點、每點重複 5 次</b>，常用 1/x 加權。</li></ul>
+<div class="tip"><b>比喻：</b>序列稀釋像傳話遊戲，第一個人聽錯一個字，傳到最後一個人可能整句都變了。每一管都從原液直接配，就不會互相傳染錯誤。</div></div></div>
+
+<div class="slide"><div class="pno">p.39–40</div><div><h3>AMR<span class="full">（analytical measurement range，分析量測範圍）</span> 和 Reportable range：兩種「範圍」</h3>
+<ul><li><b>AMR（Analytical Measurement Range，分析量測範圍）</b>：<b>不稀釋、不濃縮</b>，直接打進機器就能量的範圍，通常從 LLOQ（最低校正品）到最高校正品。Drug X 的例子是 <b>0.5–2000 ng/mL</b>。</li>
+<li><b>Reportable range（可報告範圍）</b>：實驗室最後會報出去的範圍，包含把太濃的樣本<b>稀釋</b>後再量、或把量不夠、太稀的樣本<b>濃縮</b>後再量。Drug X 是 <b>0.5–5000 ng/mL</b>。</li></ul>
+<p>稀釋或濃縮本身也要確效：稀釋液用不含分析物的基質，或替代基質（例如水）；稀釋後的準確度要在目標的 <b>±15%</b>、CV <b>≤ 15%</b>（CLSI C62）。</p>
+<div class="tip"><b>比喻：</b>家裡的體重計最多秤到 150 公斤（AMR）。要秤 200 公斤的東西，就分成兩半各秤一次再加起來（稀釋後乘回去），這樣能報的範圍就變大了（reportable range），前提是「分一半」這個動作本身要準。</div>
+<p>超過最高校正品的樣本<b>不能</b>直接把檢量線往外延伸去算，一定要稀釋。</p></div></div>
+
+<div class="slide"><div class="pno">p.41</div><div><h3>Specificity：只量到你要的東西</h3>
+<p>專一性是方法<b>只量到目標分析物</b>的能力。兩個及格標準：</p>
+<ul><li>干擾物（身體本來就有的、或外來的藥物等）造成的訊號，要 <b>&lt; LLOQ 的 20%</b>。</li>
+<li>樣本本身的狀態，<b>溶血（hemolysis）、黃疸（icterus）、脂血（lipemia）</b>，造成的偏差要 <b>&lt; 15%</b>。這三種是臨床樣本最常見的「不完美」：紅血球破掉、膽紅素太高、血脂太高。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.42</div><div><h3>哪些東西最可能干擾？</h3>
+<p>老師列了三類一定要測的：</p>
+<ul><li><b>Isomeric compounds（同分異構物）</b>：分子式一樣、重量<b>完全一樣</b>，只是結構排列不同。圖上兩個類固醇加 H 後都是 <b>289.30</b>，差別只在一個 OH 朝上還是朝下（看起來是 testosterone 和 epitestosterone）。質譜只會秤重，完全分不出來，<b>只能靠層析</b>讓它們在不同時間出來。</li>
+<li><b>Isobaric compounds（同質量數化合物）</b>：分子式不同，但重量<b>幾乎一樣</b>。例如 Drug X 加 NH₄ 是 <b>438.00</b>，另一個化合物加 H 是 <b>438.20</b>。三段四極柱的解析度大約只到 1，0.2 的差距分不開，所以也要靠層析。</li>
+<li><b>常用藥物</b>：病人同時在吃的藥。</li></ul>
+<div class="tip"><b>比喻：</b>質譜是一台只會量體重的機器。同分異構物像同卵雙胞胎，一樣重；isobar 像剛好同體重的陌生人。機器都分不出來，只能讓他們排隊時一前一後出場（層析）。</div></div></div>
+
+<div class="slide"><div class="pno">p.43</div><div><h3>干擾的實際樣子</h3>
+<p>同一條 transition <b>792.6 &gt; 283.2</b>，在 1.101、1.158、1.189、1.302 分鐘出現好幾個峰。代表有別的化合物剛好也會產生這組母離子與子離子。這時候只能靠<b>滯留時間</b>認出哪一個才是真正的分析物，而且層析要把這些峰分得夠開，不然面積會算進別人的。</p></div></div>
+
+<div class="slide"><div class="pno">p.44</div><div><h3>Ion ratio：抓出「你不知道的干擾」（有例題）</h3>
+<p>每個分析物通常監測兩條 transition：一條拿來算濃度（quantifier），一條拿來確認身分（qualifier）。同一個化合物，這兩條的面積比例是固定的，就像它的指紋。</p>
+<div class="calc">校正品：438 &gt; 138 和 438 &gt; 100 的比例 = 1.19 / 1.19 = 1.00
+未知樣本：1.71 / 1.18 = 1.45  → 偏離 45%，超過 ±20% → 不合格</div>
+<p>再看圖：未知樣本的峰有一個<b>肩峰</b>（紅色箭頭）。代表有某個東西和 Drug X 幾乎同時出來，而且只會產生其中一條 transition，所以把比例拉歪了。</p>
+<p>老師的標題叫「monitoring the unknown unknown」：這種干擾你事前根本不知道要測，但 ion ratio 會替你抓出來。這個樣本的結果就不能直接報。</p>
+<div class="tip"><b>比喻：</b>兩條 transition 的比例是指紋。指紋比對不上，就代表現場混進了別人。</div></div></div>
+
+<h2 class="sec" id="L-g"><small>p.45–53</small>基質效應、安定性、殘留</h2>
+
+<div class="slide"><div class="pno">p.45</div><div><h3>Matrix effect：樣本裡的其他東西干擾離子化</h3>
+<p>樣本進到 ESI 時，藥物要和樣本裡其他成分<b>搶著帶電</b>。如果別的東西搶走電荷，藥物的訊號就變小（<b>ion suppression，離子抑制</b>）；少數情況反而被放大（enhancement）。</p>
+<ul><li>老師說「<b>No two people are the same!</b>」：每個人的血漿成分都不一樣，所以干擾程度也不一樣。</li>
+<li>血清和血漿裡最主要的抑制來源是<b>磷脂質（phospholipids）</b>，來自細胞膜。</li>
+<li>逆相層析中，<b>早出來</b>的化合物最容易被極性成分壓制（p.7：極性的東西先出來，會和早出峰的藥擠在一起）。</li>
+<li>確效好的方法，至少要用 <b>10 個不同人</b>的基質，各加入同濃度的藥來比較。</li>
+<li>比較的基準：純 mobile phase（＝完全沒有基質效應），以及萃取後才加藥的基質（把萃取回收率的影響分開）。</li>
+<li><b>方法只對評估過的基質有效！</b></li></ul>
+<div class="tip"><b>比喻：</b>KTV 包廂裡大家搶麥克風。藥物想唱歌，但旁邊的人（磷脂質等）一直搶麥，藥物的聲音就變小。每個包廂的人不同，所以要多試幾個包廂（10 個人）。</div></div></div>
+
+<div class="slide"><div class="pno">p.46</div><div><h3>Matrix effect 怎麼算（例題）</h3>
+<div class="calc">% matrix effect = 基質中 Drug X 的面積 ÷ mobile phase 中的面積 × 100
+Mobile phase = 0.961（× 10⁶）
+Matrix 1：1.08 ÷ 0.961 × 100 = 112%      Matrix 4：0.841 ÷ 0.961 × 100 = 88%
+10 個基質範圍 88%–113%，平均 104.7%</div>
+<p>判讀：<b>100% ＝ 沒有基質效應；&gt; 100% ＝ ion enhancement（被放大）；&lt; 100% ＝ ion suppression（被壓低）</b>。</p>
+<p>平均 104.7%，代表整體有大約 5% 的輕微增強，這也是 p.57 摘要表寫「約 5% enhancement」的由來。個別基質從 88% 到 113%，說明人與人之間確實有差異。</p></div></div>
+
+<div class="slide"><div class="pno">p.47</div><div><h3>定性評估：post-column infusion</h3>
+<p>除了算百分比，還可以「看」基質效應發生在哪個時間點。裝置是這樣：層析管柱出口接一個 <b>T 型接頭</b>，另一端用 <b>syringe pump 持續打入純的分析物標準品</b>，兩股一起進質譜。</p>
+<p>因為標準品一直穩定地進來，訊號應該是一條平線。這時候從前面打入一支<b>萃取過的空白基質</b>（裡面沒有藥）：當基質裡的成分從管柱出來、壓制離子化，平線就會往下凹。凹下去的時段，就是「這個時間出峰的藥會被干擾」的時段。</p>
+<div class="tip"><b>比喻：</b>房間裡一直播放同一首歌，音量固定。有人推一台吸塵器進來走一圈，音量在哪幾秒被蓋掉，就知道吸塵器經過了哪裡。</div></div></div>
+
+<div class="slide"><div class="pno">p.48</div><div><h3>比較不同前處理方法（Annesley 2003, Clin Chem）</h3>
+<div class="tbl"><table><tr><th>打入的樣本</th><th>訊號長怎樣</th><th>意思</th></tr>
+<tr><td>A · 純 mobile phase</td><td>整條平穩</td><td>沒有基質效應（對照）</td></tr>
+<tr><td>B · 血清，<b>液液萃取（LLE<span class="full">（liquid–liquid extraction，液液萃取）</span>）</b></td><td>0.5–1 分鐘一個深凹，5 分鐘附近一個淺凹</td><td>比較乾淨</td></tr>
+<tr><td>C · 血清，<b>蛋白沉澱（PPT<span class="full">（protein precipitation，蛋白沉澱）</span>）</b></td><td>0.7、3.3、5 分鐘都有凹，而且更深更寬</td><td>最髒，壓制最多</td></tr></table></div>
+<p>原因：蛋白沉澱只是加溶劑把蛋白質沉下來，其他像磷脂質的東西大多還留在樣本裡；液液萃取是用不互溶的溶劑把藥「挑」出來，帶出的雜質少很多。</p>
+<p><b>結論：前處理越簡單粗糙，ion suppression 越嚴重。</b>設計方法時，要讓藥的滯留時間避開凹陷的時段，或改用更乾淨的萃取。</p></div></div>
+
+<div class="slide"><div class="pno">p.49–50</div><div><h3>Stability：樣本能放多久、放哪裡</h3>
+<p>安定性在確效時很難做完整，因為要真的等時間過去，<b>又花時間又花錢</b>。原則是：藥物在現實中可能遇到的每一種情況都要測，例如室溫、冷藏、−80 °C；校正品、QC、試劑本身也要測。可以先查文獻，看有沒有人做過。</p>
+<p>及格標準：和新鮮取得或新鮮萃取的樣本比，變化 <b>&lt; 15%</b>，LLOQ <b>&lt; 20%</b>。</p>
+<p>p.50 列出要思考的問題：</p>
+<ul><li>樣本在分析前要存多久？幾度？</li>
+<li>儀器突然壞掉時，<b>已經萃取好</b>的樣本可以放多久？</li>
+<li>如果日後要重跑，樣本可以保存多久？</li>
+<li>校正品、QC、樣本可以<b>冷凍解凍幾次</b>？</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.51</div><div><h3>Stability 例題：萃取後放 4 °C 七天</h3>
+<div class="calc">% recovery = 第 7 天濃度 ÷ 第 0 天濃度 × 100
+樣本 1：372 ÷ 414 × 100 = 89.9%
+樣本 5：625 ÷ 723 × 100 = 86.4%（最低）     樣本 8：891 ÷ 893 × 100 = 99.8%（最高）</div>
+<p>10 個樣本的回收從 86.4% 到 99.8%，全部在 85% 以上，也就是變化都 &lt; 15%，所以結論是：<b>萃取好的樣本可以在 4 °C 放 7 天</b>。儀器壞掉時，有一週的時間可以修。</p></div></div>
+
+<div class="slide"><div class="pno">p.52–53</div><div><h3>Carryover：上一支有沒有殘留到下一支（例題）</h3>
+<p>LC-MS/MS 是連續流動的系統，一支很濃的樣本打完，管路或針頭裡可能殘留一點，跑進下一支樣本。及格標準是：不能明顯影響 bias 或 precision（依分析物和用途而定）。</p>
+<p>實驗設計：<b>3 支低濃度 → 1 支高濃度 → 3 支低濃度</b>，比較高濃度<b>前後</b>的低濃度結果。先量乾淨的基準，打一支很濃的，再量一次；如果後面變多了，多出來的就是殘留。</p>
+<div class="calc">高濃度樣本：10,000 ng/mL
+高之前：12.2、11.7、11.5 → 平均 11.8      高之後：12.8、11.8、11.7 → 平均 12.1
+% carryover = (12.1 − 11.8) ÷ 10,000 × 100</div>
+<div class="note"><b>注意：</b>照式子算是 <b>0.003%</b>，投影片寫 0.03%。考試若要你算，寫 0.003% 並附上式子；不管哪一個數字，都代表殘留可以忽略。</div>
+<div class="tip"><b>比喻：</b>用同一個杯子先裝清水、再裝濃咖啡、再裝清水。看最後那杯清水有沒有咖啡味，就知道杯子有沒有洗乾淨。</div></div></div>
+
+<h2 class="sec" id="L-h"><small>p.54–62</small>其他參數、每輪允收、上線後監測、CRO</h2>
+
+<div class="slide"><div class="pno">p.54</div><div><h3>其他可以確效和記錄的參數</h3>
+<p>除了前面的主要參數，還可以記錄：一批最多能跑幾支（最大批次量）、<b>萃取回收率</b>（萃取過程中藥損失多少）、滯留時間穩不穩（相對滯留時間）、檢量線斜率、PT 成績、多台儀器之間的相關性、不同批 mobile phase 之間的差異。</p></div></div>
+
+<div class="slide"><div class="pno">p.55</div><div><h3>每一輪（run）都要過的關卡</h3>
+<p>確效做完、方法開始用了，<b>每一批</b>樣本跑完，都要檢查以下條件才能放行結果：</p>
+<ul><li>分析物和內標的<b>滯留時間吻合</b>（相對滯留時間 RRt<span class="full">（relative retention time，相對滯留時間）</span>）。</li>
+<li>沒有干擾峰；峰形是漂亮的<b>高斯形</b>（對稱的鐘形）。</li>
+<li>校正品回收在 <b>80–120%</b>；檢量線 <b>R² &gt; 0.99</b>。</li>
+<li>QC 在目標的 <b>80–120%</b>。</li>
+<li>Ion ratio 在 <b>±20%</b>。</li>
+<li>內標面積整批要一致（突然掉很多，代表那支樣本萃取或注射出問題）。</li></ul>
+<p>小技巧：80–120% 其實就是 ±20%，和 ion ratio 是同一個數字，一起記。</p></div></div>
+
+<div class="slide"><div class="pno">p.56</div><div><h3>方法上線之後，怎麼持續監測</h3>
+<div class="tbl"><table><tr><th>監測什麼</th><th>用什麼</th></tr>
+<tr><td>儀器狀況</td><td><b>System suitability test（SST<span class="full">（system suitability test，系統適用性測試）</span>）</b>：每次開始前先打一支標準樣本，確認機器正常</td></tr>
+<tr><td>這一批樣本</td><td>整批的 QC 結果和內標面積</td></tr>
+<tr><td>長期的方法表現</td><td>① PT 能力試驗 ② 用 CRM 評估準確度 ③ 試劑、耗材換批時的確效 ④ 多台儀器互相比對（<b>每 6 個月</b>）</td></tr>
+<tr><td>儀器保養</td><td>每日、每週、定期保養</td></tr></table></div>
+<div class="tip"><b>比喻：</b>像養一台車：每天出門前看一下胎壓（SST）、開車時看儀表板（QC、IS）、定期去驗車（PT、CRM）、每半年和別台車比一下油耗（儀器比對）。</div></div></div>
+
+<div class="slide"><div class="pno">p.57</div><div><h3>確效摘要：Drug X 的成績單</h3>
+<p>最後把 Drug X 的確效結果整理成一張表：accuracy 可接受；LOQ <b>0.5 ng/mL</b>；AMR <b>0.5–2000 ng/mL</b>；同一天內 imprecision <b>&lt; 3%</b>；跨天 <b>&lt; 6%</b>；matrix effects 大約 <b>5% enhancement</b>。</p>
+<p>這張表其實是前面例題的總結：p.35 的 LLOQ、p.40 的 AMR、p.33 的 CV、p.46 的基質效應。考試如果給你一張這樣的摘要，你要能說出每一格是用什麼實驗得到的。</p></div></div>
+
+<div class="slide"><div class="pno">p.58–60</div><div><h3>課堂活動：選哪一家 CRO？</h3>
+<p>任務是：①找出選 CRO 的科學與法規標準 ②評估它們在確效、儀器、GLP 上的能力 ③評估風險、問對問題、推薦一家。</p>
+<div class="tbl"><table><tr><th></th><th>CRO A</th><th>CRO B</th><th>CRO C</th></tr>
+<tr><td>平台</td><td>SCIEX 6500+ triple quad（小分子已確效）</td><td>Thermo Exploris 480（生物製劑）／Waters TQ-S</td><td>Thermo Q-Exactive</td></tr>
+<tr><td>GLP</td><td>FDA 認證，2023 年稽核</td><td>待更新，上次 2018</td><td>沒有</td></tr>
+<tr><td>人員</td><td>4 PhD＋6 分析師，10 年經驗</td><td>2 PhD＋4 人，平均 3 年</td><td>1 PhD＋2 人，多為學術背景</td></tr>
+<tr><td>確效紀錄</td><td>&gt; 20 個，文件完整</td><td>10 個，部分紀錄缺漏</td><td>5 個，報告不完整</td></tr>
+<tr><td>時間／費用</td><td>16 週／$250k（完整確效）</td><td>8 週／$125k（半確效）</td><td>4 週／$50k（有限確效）</td></tr>
+<tr><td>QC／PT</td><td>參加 CAP PT，QC 系統完善</td><td>PT 有限</td><td>沒有 PT</td></tr>
+<tr><td>資料追溯</td><td>全電子化，LIMS<span class="full">（laboratory information management system，實驗室資訊管理系統）</span> 整合</td><td>Excel</td><td>紙本</td></tr>
+<tr><td>客戶評價</td><td>很好</td><td>好壞參半</td><td>沒有</td></tr></table></div>
+<p class="src">「平台」那一格從 PDF 抽出來順序有點亂，以原投影片為準。</p>
+<p><b>怎麼回答：</b>如果數據要送 FDA（pivotal 研究），應該選 <b>A</b>。它最貴、最慢，但只有它同時具備：適合小分子的 triple quad、有效的 GLP、完整的確效紀錄、參加 PT、電子化可追溯的資料。B 的 GLP 從 2018 年就沒更新、紀錄有缺，是法規風險。C 沒有 GLP、沒有 PT、紙本紀錄、只做有限確效，數據根本不能用在受規範的研究。</p>
+<div class="tip"><b>比喻：</b>C 像沒有執照的水電工，便宜又快，但做完過不了驗收，最後要拆掉重做，反而更貴。</div></div></div>
+
+<div class="slide"><div class="pno">p.61</div><div><h3>總結</h3>
+<ul><li>LC-MS/MS 不必是黑盒子：<b>去看它的確效數據</b>，就能判斷這家實驗室和這個方法可不可靠。</li>
+<li>確效很難、很花時間，但<b>不準、不穩的結果，比沒有結果更有害</b>，因為人會根據錯的數字做錯的決定。</li>
+<li>從零開始開發並確效一個方法要準備花錢；但一個穩健的方法，長期下來會回本。</li></ul></div></div>
+
+
+<h2 class="sec" id="L-cheat"><small>Cheat sheet</small>必背數字一張表</h2>
+<div class="tbl"><table>
+<tr><th>項目</th><th>標準</th><th>頁</th></tr>
+<tr><td>Accuracy bias／precision CV</td><td class="num">≤ 15%（LLOQ ≤ 20%）</td><td>p.27</td></tr>
+<tr><td>Method comparison</td><td class="num">≥ 40 樣本、≥ 5 天</td><td>p.27, 29</td></tr>
+<tr><td>EP15 trueness</td><td class="num">3–5 run × 2 重複</td><td>p.27</td></tr>
+<tr><td>Within-run</td><td class="num">≥2 濃度 × ≥10 次，CV &lt;15%</td><td>p.32</td></tr>
+<tr><td>Between-run</td><td class="num">≥2 濃度 × ≥20 次／20 天，CV &lt;15%</td><td>p.32</td></tr>
+<tr><td>LLOQ</td><td class="num">CV &lt;20%、S/N ≥10:1</td><td>p.34</td></tr>
+<tr><td>空白基質</td><td class="num">&lt;20% LLOQ；IS &lt;5%</td><td>p.22</td></tr>
+<tr><td>Linearity</td><td class="num">80–120%；≥5 點 × 5 重複</td><td>p.38</td></tr>
+<tr><td>稀釋</td><td class="num">±15%、CV ≤15%</td><td>p.39</td></tr>
+<tr><td>干擾物訊號</td><td class="num">&lt;20% LLOQ</td><td>p.41</td></tr>
+<tr><td>溶血／黃疸／脂血</td><td class="num">偏差 &lt;15%</td><td>p.41</td></tr>
+<tr><td>Matrix effect</td><td class="num">≥10 個基質；100% = 無</td><td>p.45–46</td></tr>
+<tr><td>Stability</td><td class="num">變化 &lt;15%（LLOQ &lt;20%）</td><td>p.49</td></tr>
+<tr><td>每 run：校正品、QC</td><td class="num">80–120%；R² &gt;0.99</td><td>p.55</td></tr>
+<tr><td>Ion ratio</td><td class="num">±20%</td><td>p.55</td></tr>
+<tr><td>儀器比對</td><td class="num">每 6 個月</td><td>p.56</td></tr>
+</table></div>
+
+<h2 class="sec" id="L-quiz"><small>Self-test</small>自我測驗 <span class="score" id="score-lcms"></span><button class="reset" data-reset="lcms">重來</button></h2>
+<div class="quiz" id="quiz-lcms"></div>
+</main>
+
+<!-- ======================= Oncology ======================= -->
+<main id="onco" role="tabpanel" aria-labelledby="tab-onco" hidden>
+<div class="big">整堂課的主線：<b>先找出腫瘤的分子變化，再配對打得中的藥</b>。傳統化療一體適用、存活增加常只有幾週到幾個月；精準醫療用 NGS 剖析突變，在試驗設計上衍生出 basket、umbrella 等新設計。UCSD 的 I-PREDICT 顯示<b>配對越完整（matching score &gt; 50%）效果越好</b>。最大挑戰是<b>異質性</b>：每個病人的突變組合都不同（malignant snowflakes），還會隨時間演化。</div>
+<div class="toc" aria-label="本講目錄">
+  <a href="#P-abbr">縮寫全名</a><a href="#P-memo">記憶法</a><a href="#P-a">p.1–9 概念</a><a href="#P-b">p.10–13 試驗設計</a><a href="#P-c">p.14–19 突變分類</a><a href="#P-d">p.20–31 分子剖析</a><a href="#P-e">p.32–33 標靶藥表</a><a href="#P-f">p.34–52 為何要配對</a><a href="#P-g">p.53–74 UCSD 與病例</a><a href="#P-h">p.75–89 免疫治療</a><a href="#P-quiz">測驗</a>
+</div>
+
+<details class="card" id="P-abbr"><summary>縮寫全名表（65 個）</summary><div class="in"><div class="tbl"><table><tr><th>縮寫</th><th>全名</th></tr><tr><td class="num">NSCLC</td><td>non-small cell lung cancer，非小細胞肺癌</td></tr><tr><td class="num">CML</td><td>chronic myeloid leukemia，慢性骨髓性白血病</td></tr><tr><td class="num">AML</td><td>acute myeloid leukemia，急性骨髓性白血病</td></tr><tr><td class="num">BCG</td><td>Bacillus Calmette–Guérin，卡介苗</td></tr><tr><td class="num">HER2</td><td>human epidermal growth factor receptor 2，第二型人類表皮生長因子受體</td></tr><tr><td class="num">CAR-T</td><td>chimeric antigen receptor T cell，嵌合抗原受體 T 細胞</td></tr><tr><td class="num">T-VEC</td><td>talimogene laherparepvec，溶瘤病毒藥</td></tr><tr><td class="num">KRAS</td><td>Kirsten rat sarcoma viral oncogene homolog</td></tr><tr><td class="num">BRAF</td><td>B-Raf proto-oncogene</td></tr><tr><td class="num">RP2D</td><td>recommended phase 2 dose，建議第二期劑量</td></tr><tr><td class="num">PRO</td><td>patient-reported outcomes，病人自述結果</td></tr><tr><td class="num">TP53</td><td>tumor protein p53</td></tr><tr><td class="num">BRCA</td><td>breast cancer gene，乳癌易感基因</td></tr><tr><td class="num">PIK3CA</td><td>phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha</td></tr><tr><td class="num">EGFR</td><td>epidermal growth factor receptor，表皮生長因子受體</td></tr><tr><td class="num">ALK</td><td>anaplastic lymphoma kinase，間變性淋巴瘤激酶</td></tr><tr><td class="num">ER</td><td>estrogen receptor，雌激素受體</td></tr><tr><td class="num">PD-L1</td><td>programmed death-ligand 1，計畫性死亡配體 1</td></tr><tr><td class="num">qPCR</td><td>quantitative polymerase chain reaction，定量聚合酶連鎖反應</td></tr><tr><td class="num">FISH</td><td>fluorescence in situ hybridization，螢光原位雜交</td></tr><tr><td class="num">CISH</td><td>chromogenic in situ hybridization，呈色原位雜交</td></tr><tr><td class="num">NGS</td><td>next-generation sequencing，次世代定序</td></tr><tr><td class="num">IHC</td><td>immunohistochemistry，免疫組織化學染色</td></tr><tr><td class="num">ROS1</td><td>ROS proto-oncogene 1</td></tr><tr><td class="num">MET</td><td>MET proto-oncogene（hepatocyte growth factor receptor）</td></tr><tr><td class="num">RET</td><td>rearranged during transfection</td></tr><tr><td class="num">NTRK</td><td>neurotrophic tyrosine receptor kinase</td></tr><tr><td class="num">CUP</td><td>cancer of unknown primary，原發部位不明癌</td></tr><tr><td class="num">ctDNA</td><td>circulating tumor DNA，循環腫瘤 DNA</td></tr><tr><td class="num">WES</td><td>whole exome sequencing，全外顯子定序</td></tr><tr><td class="num">WGS</td><td>whole genome sequencing，全基因體定序</td></tr><tr><td class="num">VUS</td><td>variant of uncertain significance，意義未明變異</td></tr><tr><td class="num">PCT</td><td>Personalized Cancer Therapy（MD Anderson 的資料庫）</td></tr><tr><td class="num">OncoKB</td><td>Precision Oncology Knowledge Base</td></tr><tr><td class="num">CKB</td><td>Clinical Knowledgebase（The Jackson Laboratory 的資料庫）</td></tr><tr><td class="num">ACMG</td><td>American College of Medical Genetics and Genomics，美國醫學遺傳與基因體學會</td></tr><tr><td class="num">RTK</td><td>receptor tyrosine kinase，受體酪胺酸激酶</td></tr><tr><td class="num">FGFR</td><td>fibroblast growth factor receptor，纖維母細胞生長因子受體</td></tr><tr><td class="num">FLT3</td><td>FMS-like tyrosine kinase 3</td></tr><tr><td class="num">ITD</td><td>internal tandem duplication，內部串聯重複</td></tr><tr><td class="num">TKD</td><td>tyrosine kinase domain，酪胺酸激酶區</td></tr><tr><td class="num">NCCN</td><td>National Comprehensive Cancer Network，美國國家綜合癌症網絡</td></tr><tr><td class="num">ToGA</td><td>Trastuzumab for Gastric Cancer 試驗</td></tr><tr><td class="num">OS</td><td>overall survival，整體存活</td></tr><tr><td class="num">HR</td><td>hazard ratio，風險比</td></tr><tr><td class="num">ERBB2</td><td>erb-b2 receptor tyrosine kinase 2，即 HER2 的基因名</td></tr><tr><td class="num">CDK4/6</td><td>cyclin-dependent kinase 4/6，細胞週期蛋白依賴性激酶 4/6</td></tr><tr><td class="num">CDKN2A</td><td>cyclin-dependent kinase inhibitor 2A（編碼 p16）</td></tr><tr><td class="num">TMB</td><td>tumor mutational burden，腫瘤突變負荷</td></tr><tr><td class="num">MSI</td><td>microsatellite instability，微衛星不穩定</td></tr><tr><td class="num">PFS</td><td>progression-free survival，無惡化存活</td></tr><tr><td class="num">MEK</td><td>mitogen-activated protein kinase kinase</td></tr><tr><td class="num">CA125</td><td>cancer antigen 125，卵巢癌腫瘤指標</td></tr><tr><td class="num">RECIST</td><td>Response Evaluation Criteria in Solid Tumors，實體腫瘤療效評估標準</td></tr><tr><td class="num">CTLA-4</td><td>cytotoxic T-lymphocyte–associated protein 4</td></tr><tr><td class="num">PD-1</td><td>programmed cell death protein 1，計畫性死亡受體 1</td></tr><tr><td class="num">dMMR</td><td>deficient mismatch repair，錯配修復缺陷</td></tr><tr><td class="num">PTEN</td><td>phosphatase and tensin homolog</td></tr><tr><td class="num">MHC</td><td>major histocompatibility complex，主要組織相容性複合體</td></tr><tr><td class="num">TCR</td><td>T-cell receptor，T 細胞受體</td></tr><tr><td class="num">VEGF</td><td>vascular endothelial growth factor，血管內皮生長因子</td></tr><tr><td class="num">JAK</td><td>Janus kinase</td></tr><tr><td class="num">MDM2</td><td>mouse double minute 2</td></tr><tr><td class="num">IFN-γ</td><td>interferon gamma，干擾素 γ</td></tr><tr><td class="num">QOL</td><td>quality of life，生活品質</td></tr></table></div></div></details>
+<h2 class="sec" id="P-memo"><small>Memory aids</small>記憶法（比喻、畫面、推理、數字分組）</h2><div class="memo"><div class="mm"><div class="pg"><span class="ty">比喻</span>p.18</div><div class="k">Oncogene＝油門卡住；Tumor suppressor＝煞車壞掉</div><div class="d">油門卡住一個就暴衝（顯性，一個 allele 就夠）；煞車有兩個，兩個都壞才停不住（隱性，two-hit）。</div></div><div class="mm"><div class="pg"><span class="ty">推理</span>p.18, 29</div><div class="k">Oncogene 小 panel 就抓得到，TSG 要大 panel</div><div class="d">Oncogene 只有幾個熱點（hot-spot）能讓油門卡住；煞車壞的方式到處都是，要定序整個基因。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.17</div><div class="k">Driver＝公車司機；Passenger＝乘客</div><div class="d">司機只有 1–10 個，決定往哪開；乘客可以上萬，但不決定方向。藥要打的是司機。</div></div><div class="mm"><div class="pg"><span class="ty">推理</span>p.16</div><div class="k">Germline 只有 5–10%</div><div class="d">大多數是後天（somatic）。家族裡很多人得癌，也可能只是大家一起抽菸、吃一樣的東西。</div></div><div class="mm"><div class="pg"><span class="ty">對比</span>p.8</div><div class="k">化療＝地毯式轟炸；標靶＝狙擊；免疫＝訓練自己的軍隊</div><div class="d">副作用跟著來：轟炸傷到快速分裂的頭髮和腸道；狙擊打錯也會傷肝、皮膚；自己的軍隊太兇會打自己人（自體免疫）。</div></div><div class="mm"><div class="pg"><span class="ty">畫面</span>p.11</div><div class="k">Basket＝同一種水果裝一籃；Umbrella＝同一把傘下分組</div><div class="d">Basket：同突變、不同癌，一顆藥。Umbrella：同一種癌，依突變分到不同藥。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.12</div><div class="k">Basket 的缺點＝同一把鑰匙不一定開每扇門</div><div class="d">同一個突變在不同組織不一定是 driver，抗藥方式也不同，而且常沒有對照組。</div></div><div class="mm"><div class="pg"><span class="ty">數字分組</span>p.10</div><div class="k">試驗期別人數一路加</div><div class="d">I 找劑量（20–30 人）→ II 看有沒有效（50–100）→ III 跟標準治療比（&gt;500）。Seamless 把它們接成一個大 Phase I（100–1000）。</div></div><div class="mm"><div class="pg"><span class="ty">對比</span>p.22</div><div class="k">Prognostic＝天氣預報；Predictive＝這把傘有沒有用</div><div class="d">Oncotype DX 告訴你會不會下雨（復發）；HER2 告訴你 trastuzumab 這把傘撐不撐得住。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.22</div><div class="k">KRAS 在 EGFR 下游＝下游水龍頭壞了</div><div class="d">水龍頭關不起來，跑去關上游閥門也沒用 → KRAS 活化的大腸癌用 EGFR 抑制劑無效。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.27–28</div><div class="k">組織切片＝照片；液態切片＝監視器</div><div class="d">照片只拍到某一刻、某一角；監視器可以一直看（縱向追蹤），而且所有房間的畫面都會進來（抓到異質性）。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.29</div><div class="k">Panel 越大＝同一桶油漆刷越大面積</div><div class="d">面積越大漆越薄（depth 變淺），也越花時間、錢和電腦。</div></div><div class="mm"><div class="pg"><span class="ty">畫面</span>p.26, 32</div><div class="k">T315I 和 T790M 都是守門員突變</div><div class="d">兩個都是舊藥被擋在門外的抗藥突變，各自只有一個新一代藥開得了門：CML 用 ponatinib，肺癌用 osimertinib。</div></div><div class="mm"><div class="pg"><span class="ty">字首</span>p.32</div><div class="k">ALK：A-B-C-C-L；EGFR：A-D-E-G-O</div><div class="d">alectinib、brigatinib、ceritinib、crizotinib、lorlatinib；afatinib、dacomitinib、erlotinib、gefitinib、osimertinib。剛好都是字母順序。</div></div><div class="mm"><div class="pg"><span class="ty">對比</span>p.33</div><div class="k">HER2 量太多 vs HER2 長歪了</div><div class="d">過度表現（乳癌、胃癌）→ trastuzumab 等；突變（NSCLC，exon 20）→ ado-trastuzumab emtansine。</div></div><div class="mm"><div class="pg"><span class="ty">時間線</span>p.7</div><div class="k">奇數年都是「第一個」</div><div class="d">1997 rituximab（第一個標靶）、1999 trastuzumab（第一個乳癌標靶）、2001 imatinib（第一個 kinase inhibitor）、2003 gefitinib（第一個肺癌標靶）。</div></div><div class="mm"><div class="pg"><span class="ty">故事</span>p.41–44</div><div class="k">11 天的故事</div><div class="d">胰臟癌加 erlotinib 只多活 11 天，卻是核准藥。這就是為什麼老師說要用 biomarker 挑病人。</div></div><div class="mm"><div class="pg"><span class="ty">畫面</span>p.49–51</div><div class="k">惡性雪花</div><div class="d">每片雪花都不一樣：HER2 擴增的胃癌同時還有細胞週期、其他 RTK、PI3K 的變化，只打 HER2 擋不住。ToGA 只多 2.7 個月（13.8 vs 11.1）就是這個原因。</div></div><div class="mm"><div class="pg"><span class="ty">數字漏斗</span>p.54</div><div class="k">410 → 209 → 175</div><div class="d">一半的人有治療（51%）；有治療的人裡八成多有配對（84%）；佔全部則是四成多（43%）。</div></div><div class="mm"><div class="pg"><span class="ty">對比</span>p.55</div><div class="k">配過半：接近一半 vs 六分之一</div><div class="d">Matching score &gt; 50% 的反應率 45.0%（接近一半），≤ 50% 只有 16.3%（約六分之一）。</div></div><div class="mm"><div class="pg"><span class="ty">推理</span>p.56–63</div><div class="k">一個突變一個藥：77 歲胰臟癌</div><div class="d">HER2 擴增 → 雙重 HER2 藥；KRAS 沒藥 → 守下一道門 MEK（trametinib）；CDKN2A（p16）是 CDK4/6 的煞車 → 直接關 CDK4/6（palbociclib）。</div></div><div class="mm"><div class="pg"><span class="ty">對比</span>p.56–85</div><div class="k">四個病例各教一件事</div><div class="d">77 男胰臟：三突變三藥。37 女卵巢：DNA（KRAS）＋蛋白（ER）兩條路。68 女胃：血液抓到 EGFR，抗體＋TKI 雙重封鎖，也用來追蹤。64 女子宮內膜：四藥 7 個月後腦轉移，配對不保證持久。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.70</div><div class="k">異質性＝一棵樹</div><div class="d">不同人是不同的樹；同一棵樹不同枝不一樣（瘤內）；明年還會長新枝（隨時間）。切片只剪了一枝。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.76–78</div><div class="k">花園：土壤是免疫、雜草是癌</div><div class="d">免疫治療是除草肥料，讓土壤自己控制雜草；肥料太多會傷整個花園（免疫副作用）。</div></div><div class="mm"><div class="pg"><span class="ty">推理</span>p.80</div><div class="k">為什麼 TMB、MSI-H、dMMR 會有反應</div><div class="d">這三個都代表突變多 → 長出很多新抗原 → T 細胞比較認得出來。PD-L1 則代表藥的靶在那裡。</div></div><div class="mm"><div class="pg"><span class="ty">比喻</span>p.80</div><div class="k">β2M＝展示櫃的腳</div><div class="d">MHC I 是癌細胞把抗原拿出來給 T 細胞看的展示櫃，β2M 是它的腳。腳斷了櫃子立不起來，T 細胞看不到 → 後天抗藥。JAK1/2 壞掉則是聽不到 IFN-γ 的命令。</div></div><div class="mm"><div class="pg"><span class="ty">故事</span>p.81</div><div class="k">癌症免疫循環＝一趟抓犯人的任務</div><div class="d">① 留下線索（抗原釋放）② 帶回總部（抗原呈現）③ 在淋巴結訓練士兵（priming，CTLA-4 在這）④ 出發（血流）⑤ 進城（浸潤，VEGF 擋門）⑥ 認人（TCR）⑦ 動手（殺死，PD-1 在這）。</div></div><div class="mm"><div class="pg"><span class="ty">分組</span>p.80</div><div class="k">抗藥 biomarker 四格</div><div class="d">原發抗藥：PTEN 沒了、WNT 開了。後天抗藥：β2M 掉了、JAK 壞了。暴衝：MDM2/4 擴增、EGFR 變化。假性惡化：還沒有 biomarker。</div></div></div>
+<h2 class="sec" id="P-a"><small>p.1–9</small>精準醫療是什麼</h2>
+
+<div class="slide"><div class="pno">p.1–2</div><div><h3>這堂課要學什麼</h3>
+<p>四個學習目標：</p>
+<ol><li>精準醫療是什麼，怎麼用在癌症。</li>
+<li>基因突變怎麼影響細胞裡的訊號路徑，進而造成癌症。</li>
+<li>精準醫療怎麼改變<b>臨床試驗的設計</b>和病人照護。</li>
+<li>精準腫瘤現在的挑戰和未來方向。</li></ol>
+<p>整堂課的故事線是：傳統化療效果有限 → 找出每個病人的分子變化 → 配對打得中的藥 → 但每個人都不一樣，還會一直變 → 所以需要新的試驗設計、液態切片和免疫治療。</p></div></div>
+
+<div class="slide"><div class="pno">p.3–4</div><div><h3>Precision 和 Personalized 不一樣</h3>
+<p>老師特別區分這兩個詞：</p>
+<ul><li><b>Personalized medicine（個人化醫療）</b>：常被<b>誤解</b>成「替每個人設計一套獨一無二的治療」。</li>
+<li><b>Precision medicine（精準醫療）</b>：依據每位病人的<b>個別特徵</b>來調整治療。實際上是把病人<b>分類</b>，找出一群有相同特徵的人，給這一群最適合的治療。</li></ul>
+<div class="tip"><b>比喻：</b>Personalized 像每個人都請裁縫從零做一件衣服；precision 像先量好你的尺寸，再從 S、M、L、XL 裡挑最合身的那一件。後者才是現實可行的做法。</div></div></div>
+
+<div class="slide"><div class="pno">p.5</div><div><h3>為什麼現在做得到，又卡在哪</h3>
+<p>精準醫療的目標是<b>辨識並分類病人</b>，讓治療決策做到最好。現在做得到，是因為基因定序和各種 omics 技術<b>越來越便宜、品質越來越好</b>；大型世代研究也累積了大量分子資料，可以用來開發 biomarker，把病人分成不同亞型。</p>
+<p>但 biomarker 開發有三個限制：</p>
+<ol><li><b>罕見亞型人太少</b>，統計力不夠。</li>
+<li>如果沒有在<b>另一群獨立的病人</b>身上驗證，也沒做機轉實驗，很容易得到<b>偽陽性</b>（看起來有關，其實是巧合）。</li>
+<li>技術上的<b>再現性</b>問題（換一家實驗室量就不一樣）。</li></ol>
+<p>目前做得最成熟的是<b>基因體</b>和<b>蛋白質 IHC<span class="full">（immunohistochemistry，免疫組織化學染色）</span></b>；代謝體和微生物體還在初期，多半沒有外部驗證。</p></div></div>
+
+<div class="slide"><div class="pno">p.6</div><div><h3>從化療走到標靶</h3>
+<ul><li><b>傳統化療</b>：一體適用（one-size-fits-all），攻擊所有<b>快速分裂</b>的細胞。癌細胞分裂快，所以會被打到；但頭髮、腸胃黏膜、骨髓也分裂很快，所以副作用大。</li>
+<li><b>標靶治療</b>：設計來專門打癌細胞身上特有的<b>分子變化</b>，更精準、毒性通常也比較低。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.7</div><div><h3>里程碑時間線（Liu 2024）</h3>
+<div class="tbl"><table><tr><th>年</th><th>事件</th></tr>
+<tr><td class="num">1990</td><td>FDA 核准 <b>BCG<span class="full">（Bacillus Calmette–Guérin，卡介苗）</span></b> 膀胱內灌注，治療表淺膀胱癌（最早的免疫療法之一）</td></tr>
+<tr><td class="num">1997</td><td><b>Rituximab</b>：第一個標靶癌症藥（B 細胞淋巴瘤）</td></tr>
+<tr><td class="num">1999</td><td><b>Trastuzumab</b>：第一個乳癌標靶藥，打 HER2<span class="full">（human epidermal growth factor receptor 2，第二型人類表皮生長因子受體）</span></td></tr>
+<tr><td class="num">2001</td><td><b>Imatinib</b>：第一個 kinase inhibitor（激酶抑制劑）</td></tr>
+<tr><td class="num">2003</td><td><b>Gefitinib</b>：第一個肺癌（NSCLC<span class="full">（non-small cell lung cancer，非小細胞肺癌）</span>）標靶藥</td></tr>
+<tr><td class="num">2004</td><td>Erlotinib（肺癌）；<b>Bevacizumab</b>：第一個抗血管新生藥；Rigvir（拉脫維亞，黑色素瘤）</td></tr>
+<tr><td class="num">2005</td><td>Sorafenib（腎細胞癌）</td></tr>
+<tr><td class="num">2011</td><td>CAR-T<span class="full">（chimeric antigen receptor T cell，嵌合抗原受體 T 細胞）</span> 細胞治療白血病</td></tr>
+<tr><td class="num">2014</td><td><b>Pembrolizumab、Nivolumab</b>（免疫檢查點抑制劑，黑色素瘤）；Trametinib＋Dabrafenib（BRAF<span class="full">（B-Raf proto-oncogene）</span> 突變黑色素瘤）；Gardasil 9 疫苗</td></tr>
+<tr><td class="num">2015</td><td>T-VEC<span class="full">（talimogene laherparepvec，溶瘤病毒藥）</span>（溶瘤病毒，黑色素瘤）</td></tr>
+<tr><td class="num">2020–21</td><td><b>Sotorasib</b>：第一個打特定 KRAS<span class="full">（Kirsten rat sarcoma viral oncogene homolog）</span> 突變的小分子；Delytact（惡性膠質瘤）；atezolizumab＋bevacizumab 成為肝癌首選一線治療</td></tr></table></div>
+<p>記法：1997、1999、2001、2003 這幾個奇數年都是「第一個」。年份照投影片的時間軸。</p></div></div>
+
+<div class="slide"><div class="pno">p.8</div><div><h3>化療、標靶、免疫治療的比較</h3>
+<div class="tbl"><table><tr><th></th><th>化療</th><th>標靶治療</th><th>免疫治療</th></tr>
+<tr><td>怎麼作用</td><td>打快速分裂的細胞（大多是癌細胞）</td><td>打癌細胞生長需要的<b>蛋白質</b></td><td>動員<b>自己的免疫系統</b>去打癌細胞</td></tr>
+<tr><td>副作用</td><td>掉髮、腸道損傷、噁心</td><td>肝功能問題、腹瀉、皮疹</td><td><b>自體免疫</b>反應</td></tr>
+<tr><td>限制</td><td>會產生抗藥性、不專一</td><td>會產生抗藥性</td><td>需要量身、很昂貴</td></tr></table></div>
+<div class="tip"><b>比喻：</b>化療是地毯式轟炸，好人壞人一起炸；標靶是狙擊手，只打有特定標記的目標；免疫治療是訓練自己的軍隊，但軍隊太兇時會打到自己人（自體免疫）。</div></div></div>
+
+<div class="slide"><div class="pno">p.9</div><div><h3>精準醫療的四個核心原則</h3>
+<ol><li><b>個體差異</b>：每個人因為基因、環境、生活型態不同，對治療的反應也不同。</li>
+<li><b>基因剖析</b>：分析病人的腫瘤，找出可以被藥物打的分子變化。</li>
+<li><b>個人化治療計畫</b>：依照病人的特徵調整治療。</li>
+<li><b>真實世界資料與學習型醫療系統</b>：持續收集、分析治療結果，回頭改進治療策略。</li></ol></div></div>
+
+<h2 class="sec" id="P-b"><small>p.10–13</small>精準醫療下的臨床試驗設計</h2>
+
+<div class="slide"><div class="pno">p.10</div><div><h3>傳統三期 vs 無縫擴展（Bui &amp; Kummar 2018）</h3>
+<p><b>傳統做法</b>是一期一期依序來：</p>
+<ul><li><b>Phase I（20–30 人）</b>：在多種腫瘤的病人身上做<b>劑量爬升</b>，從低劑量一路往上加，找出安全又有效的 <b>RP2D<span class="full">（recommended phase 2 dose，建議第二期劑量）</span></b>（建議第二期劑量）。</li>
+<li><b>Phase II（50–100 人）</b>：挑一種腫瘤，單一組別看有沒有效。</li>
+<li><b>Phase III（&gt; 500 人）</b>：和標準治療做<b>隨機對照</b>，結果好才拿到 FDA 核准。</li></ul>
+<p><b>Seamless expansion（無縫擴展）</b>則把這些接成一個大型 Phase I，可以收到 <b>100–1000 人</b>：劑量爬升完，馬上在特定腫瘤開 expansion cohort（擴展組），再依病人亞群、biomarker 細分，數據夠好就直接申請核准。</p>
+<p>為什麼要這樣做？標靶藥常常只對帶某個突變的一小群人有效。如果還照傳統方式一期一期慢慢來，太慢了；在早期就把對的人挑出來擴大，可以更快把藥帶給病人。</p>
+<p class="src">補充（講義沒寫）：pembrolizumab 的 KEYNOTE-001 就是這種超大型 Phase I 的代表。</p></div></div>
+
+<div class="slide"><div class="pno">p.11</div><div><h3>Basket 和 Umbrella 試驗</h3>
+<ul><li><b>Basket trial（籃子試驗）</b>：圖上肺、肝、胰、大腸四種器官的腫瘤，都帶<b>同一個突變</b>（紫色菱形），全部收進來吃<b>同一顆藥</b>。也就是「一種分子變化，多種組織型態」。看的是突變，不管腫瘤長在哪。</li>
+<li><b>Umbrella trial（雨傘試驗）</b>：同一種癌症的病人，依各自帶的突變（不同顏色）<b>分到不同的藥物組</b>。也就是「一種組織型態，多種分子變化」。</li></ul>
+<div class="tip"><b>比喻：</b>籃子裡裝的是同一種水果（同一個突變），但來自不同的果樹（不同的癌症）。雨傘是一把（同一種癌症），底下站著不同的人，各自分到不同的藥。</div></div></div>
+
+<div class="slide"><div class="pno">p.12–13</div><div><h3>各種試驗設計的優缺點（Fountzilas 2022, Table 2）</h3>
+<p>老師貼了一張很大的表，重點整理如下。考試最可能考前幾種的特點和缺點：</p>
+<div class="tbl"><table><tr><th>設計</th><th>特點</th><th>優點</th><th>缺點／挑戰</th></tr>
+<tr><td><b>Basket</b></td><td>一個分子變化、多種組織型</td><td>能研究<b>罕見</b>突變；同時在多種腫瘤測試</td><td>那個突變<b>不一定在每種腫瘤都是驅動因子</b>；不同腫瘤的抗藥機轉不同；<b>常沒有對照組</b>；跨癌別招募罕見病人很難</td></tr>
+<tr><td><b>Umbrella</b></td><td>一種組織型、多個分子變化</td><td>可以評估 biomarker；biomarker 少見時也容易收案；<b>同時</b>比較多種藥；可淘汰沒效的藥</td><td>每組人數不夠；一個病人可能同時有好幾個突變可以配對；標靶選擇不一定最佳；病人內部的異質性難分類</td></tr>
+<tr><td><b>Platform</b></td><td>結合 basket＋umbrella</td><td>試驗進行中可以<b>新增或移除</b>藥物組；一個計畫測多個假說；省時、省錢</td><td>設計複雜、行政繁重、時間長、執行成本高</td></tr>
+<tr><td><b>Adaptive</b></td><td>邊收資料邊調整設計</td><td>及早停掉沒效的組；把更多病人分到有效的組；需要的人數少、追蹤時間短</td><td>設計複雜；提早停掉的組可能漏掉次要結果；需要密集統計監測，結果較難解讀</td></tr>
+<tr><td><b>Telescope（seamless）</b></td><td>Phase I→II（有時到 III）無縫銜接</td><td>縮短開發和核准時間；降低成本；聚焦在有反應的亞群</td><td>設計複雜；整個試驗都依早期數據規劃；時間拉長，中途標準治療可能已經改變</td></tr>
+<tr><td><b>N-of-1</b></td><td>每個病人拿到<b>客製化組合</b>；評估的是<b>配對策略</b>，不是單一藥</td><td>依病人和腫瘤特徵設計；能處理分子複雜度和異質性</td><td>沒有對照；每人治療都不同；分析和演算法複雜</td></tr>
+<tr><td>Exceptional responders</td><td>深入研究反應特別好的少數病人</td><td>找出 biomarker 和相關路徑</td><td>個案罕見、需要驗證</td></tr>
+<tr><td>Registry／Real-world data</td><td>病歷、保險等真實世界資料</td><td>平行收集大量資料、成本低、代表真實病人、可看弱勢族群安全性</td><td>紀錄不準、資料不一致、療效判斷主觀</td></tr>
+<tr><td>PRO<span class="full">（patient-reported outcomes，病人自述結果）</span></td><td>病人用手機等裝置自己回報症狀</td><td>改善症狀控制與生活品質、減少急診住院</td><td>成本、科技使用困難、症狀可能少報</td></tr>
+<tr><td>Home-based</td><td>試驗到病人家裡做</td><td>偏遠地區、疫情期間、行動不便的人也能參加</td><td>收案、監測、病人安全</td></tr></table></div></div></div>
+
+<h2 class="sec" id="P-c"><small>p.14–19</small>基因突變與分子路徑</h2>
+
+<div class="slide"><div class="pno">p.14–15</div><div><h3>癌症是訊號路徑壞掉的結果</h3>
+<p>正常細胞要不要分裂、要不要死，都由細胞內的<b>訊號路徑</b>控制。癌症就是這些路徑出了問題：</p>
+<ul><li>腫瘤細胞不再聽從正常的控制，一開始不受控制地增生，也逃過細胞死亡。</li>
+<li>進展時，還會誘發<b>血管新生</b>（替自己接水管、拿養分），並獲得<b>移動能力</b>（轉移）。</li>
+<li>造成訊號失調的主要原因就是<b>基因突變</b>。</li></ul>
+<p><b>Mutation（突變）</b>的定義：DNA 相對於假設「正常」序列的任何改變。改變發生在 DNA，但效果最後表現在<b>蛋白質</b>上（因為蛋白質才是真正做事的分子）。</p></div></div>
+
+<div class="slide"><div class="pno">p.16</div><div><h3>依來源分：Germline 和 Somatic</h3>
+<div class="tbl"><table><tr><th></th><th>Germline（生殖細胞）</th><th>Somatic（體細胞）</th></tr>
+<tr><td>發生在</td><td>卵子、精子</td><td>身體其他細胞</td></tr>
+<tr><td>怎麼來的</td><td>從父母一方或雙方<b>遺傳</b>而來，全身每個細胞都有</td><td>後天<b>偶然</b>發生，或因為<b>致癌物暴露</b>（例如抽菸）</td></tr>
+<tr><td>遺傳性癌症症候群</td><td>是。但帶突變不一定會得癌，只是<b>終生風險較高</b>，需要提早篩檢或預防性處置</td><td>不是。家族裡很多人得癌，也可能只是大家有相同的暴露</td></tr>
+<tr><td>佔比</td><td class="num">約 5–10%</td><td><b>大多數</b>癌症</td></tr></table></div>
+<p>考試常考：大部分癌症是 somatic，遺傳的只佔一成以內。</p></div></div>
+
+<div class="slide"><div class="pno">p.17</div><div><h3>Driver 和 Passenger 突變（Stratton 2009）</h3>
+<p>這張圖從受精卵畫到癌症復發。重點是：細胞從出生開始就一直在累積突變，來源包括細胞本身複製時出錯，以及環境和生活型態的暴露。</p>
+<ul><li><b>Driver mutation（驅動突變，星號）</b>：真正讓細胞有生長優勢、推動癌化的突變。一個癌症大約只有 <b>1–10 個以上</b>。</li>
+<li><b>Passenger mutation（乘客突變，圓點）</b>：只是剛好一起帶著，對癌化沒有貢獻。可以多到<b>數十個到十萬個以上</b>。</li></ul>
+<p>隨著腫瘤進展（良性 → 早期侵襲 → 晚期侵襲），後期會出現 <b>mutator phenotype</b>（突變速度變快）；接受化療後還會冒出<b>抗藥突變</b>（三角形），導致化療抗藥的復發。</p>
+<div class="tip"><b>比喻：</b>腫瘤像一台公車。司機（driver）只有幾個，決定車往哪裡開；乘客（passenger）可能上萬，但不決定方向。治療要打的是司機。NGS<span class="full">（next-generation sequencing，次世代定序）</span> 報告上一長串突變，大多數是乘客。</div></div></div>
+
+<div class="slide"><div class="pno">p.18</div><div><h3>依功能分：Gain of function 和 Loss of function</h3>
+<p><b>Gain of function → Oncogene（致癌基因）</b></p>
+<ul><li>原本負責促進生長的基因叫 <b>proto-oncogene</b>，例如 RAS、RAF、PIK3CA<span class="full">（phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha）</span>。</li>
+<li>發生 gain-of-function 突變後，訊號一直開著，細胞一直長。活化後的版本就叫 <b>oncogene</b>。</li>
+<li>活化方式是<b>特定、反覆出現</b>的事件：基因融合、基因擴增，或少數幾個關鍵位置的突變（<b>hot-spot</b>）。</li>
+<li><b>顯性</b>：兩個 allele 裡只要一個突變就足以致癌。</li></ul>
+<p><b>Loss of function → Tumor suppressor（抑癌基因）</b></p>
+<ul><li>原本負責踩煞車、防止腫瘤的基因，例如 TP53<span class="full">（tumor protein p53）</span>、BRCA<span class="full">（breast cancer gene，乳癌易感基因）</span>。</li>
+<li>Loss-of-function 突變讓煞車失靈。</li>
+<li>讓它壞掉的方式比 oncogene <b>雜很多</b>，基因上很多位置、很多種變化都可能讓它失去功能。</li>
+<li><b>隱性</b>：兩個 allele 都要壞掉才會出事，因為一個好的通常就足以控制細胞增生（two-hit 假說）。</li></ul>
+<div class="tip"><b>比喻：</b>Oncogene 是油門卡住，只要一個卡住車就暴衝（顯性）。Tumor suppressor 是煞車，車上有兩套煞車，兩套都壞掉才停不下來（隱性）。</div>
+<p>延伸推論：oncogene 只有幾個熱點，所以小的熱點 panel 就測得到；tumor suppressor 壞的位置散落各處，要定序整個基因才找得到。</p></div></div>
+
+<div class="slide"><div class="pno">p.19</div><div><h3>依 DNA 改變的型態分</h3>
+<ul><li><b>點突變</b>（base pair substitution）：一個鹼基被換掉。例：EGFR<span class="full">（epidermal growth factor receptor，表皮生長因子受體）</span> L858R。</li>
+<li><b>插入／缺失</b>（insertion/deletion，indel）：多了或少了幾個鹼基。例：EGFR exon 19 deletion。</li>
+<li><b>染色體重排</b>：易位、倒位、重複、缺失，以及因此產生的 <b>fusion gene（融合基因）</b>。例：EML4-ALK、BCR-ABL。</li>
+<li><b>拷貝數變化</b>（copy number alteration）：整個基因多了好幾份（擴增）或少了。例：HER2 擴增。</li></ul>
+<div class="tip"><b>比喻：</b>把基因想成一本書。點突變是改錯一個字；indel 是多印或漏印幾個字；融合是把兩本書各撕一半黏成一本；擴增是同一頁被影印了幾十份夾進書裡。</div></div></div>
+
+<h2 class="sec" id="P-d"><small>p.20–31</small>腫瘤分子剖析</h2>
+
+<div class="slide"><div class="pno">p.20–21</div><div><h3>Molecular profiling：替腫瘤做分子體檢</h3>
+<p>想知道某個病人的癌症是哪些突變、哪些路徑在推動，就要替腫瘤做 <b>molecular profiling（分子剖析）</b>：檢查癌細胞的 <b>DNA、RNA 和／或蛋白質</b>。</p>
+<p>這個詞一開始只指看 DNA（genomics），後來擴大到看 mRNA（transcriptomics）和蛋白質（proteomics）。原因是：<b>DNA 有改變，不一定真的造成功能改變</b>。突變可能根本沒有被表現出來，或表現出來的蛋白還是正常運作，所以要在好幾個層次確認。</p></div></div>
+
+<div class="slide"><div class="pno">p.22</div><div><h3>Prognostic 和 Predictive（必考）</h3>
+<p><b>Prognostic（預後型）</b>：告訴你這個病人<b>整體</b>的結局，例如會不會復發、會不會惡化，<b>不管接受什麼治療</b>。</p>
+<ul><li>例子：<b>Oncotype DX</b>，一個 21 基因的檢測，用在早期、ER<span class="full">（estrogen receptor，雌激素受體）</span> 陽性、HER2 陰性、淋巴結陰性或 1–3 顆陽性的乳癌，估算遠端復發的風險，以及做化療能得到多少好處。</li></ul>
+<p><b>Predictive（預測型）</b>：告訴你<b>某一種治療</b>對這個病人有沒有效。</p>
+<ul><li><b>HER2 擴增</b> → 預測乳癌對 <b>trastuzumab</b> 會有反應。</li>
+<li><b>KRAS 活化突變</b> → 預測大腸癌對 <b>EGFR 抑制劑沒有反應</b>。</li></ul>
+<p>為什麼 KRAS 突變會讓 EGFR 抑制劑沒用？因為訊號是從 EGFR 往下傳到 KRAS。如果 KRAS 自己已經卡在「開」，上游的 EGFR 關掉也沒用。</p>
+<div class="tip"><b>比喻：</b>Prognostic 是天氣預報，告訴你明天會不會下雨；predictive 是告訴你手上這把傘撐不撐得住。KRAS 的情況就像水管下游的水龍頭壞了關不起來，跑去關上游的閥門也沒用。</div></div></div>
+
+<div class="slide"><div class="pno">p.23</div><div><h3>剖析用的技術</h3>
+<ul><li><b>qPCR<span class="full">（quantitative polymerase chain reaction，定量聚合酶連鎖反應）</span></b>：放大並定量特定的 DNA 或 RNA 片段，快又便宜，適合查已知的熱點。</li>
+<li><b>CISH<span class="full">（chromogenic in situ hybridization，呈色原位雜交）</span>／FISH<span class="full">（fluorescence in situ hybridization，螢光原位雜交）</span></b>：用帶顏色或螢光的探針貼在組織切片上，看基因有沒有擴增或重排（例如 HER2、ALK<span class="full">（anaplastic lymphoma kinase，間變性淋巴瘤激酶）</span>）。</li>
+<li><b>Sanger sequencing</b>：傳統定序，一次讀一段，準但量少。</li>
+<li><b>Pyrosequencing、Fragment analysis</b>：其他第一代技術。</li>
+<li><b>NGS（次世代定序）</b>：又叫 high-throughput 或 massively parallel sequencing，一次同時讀幾百萬段。</li>
+<li><b>IHC（免疫組織化學）</b>：用抗體染色，看組織裡某個<b>蛋白質的表現量</b>（例如 HER2、ER、PD-L1<span class="full">（programmed death-ligand 1，計畫性死亡配體 1）</span>）。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.24</div><div><h3>NGS 為什麼成為主流</h3>
+<p>和舊技術比，NGS：<b>快很多</b>，可以同時跑很多樣本；<b>比較便宜</b>；<b>一次就能測多種類型的突變</b>（點突變、indel、擴增、融合）；需要的<b>檢體比較少</b>；<b>偵測靈敏度高</b>。</p>
+<p>現在大部分商業檢測都用 NGS，但第一代技術在特定情境下還是有用（例如只需要確認一個熱點時，qPCR 更快更便宜）。</p>
+<div class="tip"><b>比喻：</b>舊技術像一頁一頁影印書；NGS 像把整本書拆成碎片同時掃描，再用電腦拼回去。</div></div></div>
+
+<div class="slide"><div class="pno">p.25</div><div><h3>臨床上哪些病人要做</h3>
+<ol><li><b>標準治療本來就依據分子結果</b>：例如非小細胞肺腺癌，診斷時常規就要驗 <b>ALK、EGFR、ROS1<span class="full">（ROS proto-oncogene 1）</span>、BRAF、KRAS、PD-L1</b>，可能還有 MET<span class="full">（MET proto-oncogene（hepatocyte growth factor receptor））</span>、RET<span class="full">（rearranged during transfection）</span>、ERBB2<span class="full">（erb-b2 receptor tyrosine kinase 2，即 HER2 的基因名）</span>、NTRK<span class="full">（neurotrophic tyrosine receptor kinase）</span>。因為驗到哪一個，就有對應的標靶藥。</li>
+<li><b>標準治療選擇很少的癌症</b>：例如肉瘤、膽管癌、原發不明癌（CUP<span class="full">（cancer of unknown primary，原發部位不明癌）</span>），剖析後可能找到別的藥或臨床試驗。</li>
+<li><b>晚期、傳統治療都用完了</b>，但身體狀況還能接受治療的病人：剖析後可能找到新的選擇。</li></ol>
+<p>肺癌那串可以記成「<b>AE-RB-KP</b>」。</p></div></div>
+
+<div class="slide"><div class="pno">p.26</div><div><h3>未來的用法</h3>
+<ul><li>趨勢是<b>所有晚期病人在診斷時</b>就做分子剖析，讓醫師一開始就能規劃後面的治療順序和可以參加的試驗。</li>
+<li>研究中的做法是<b>每次惡化時重新剖析</b>（serial profiling），找出新長出來的抗藥機轉，再調整治療。</li>
+<li>已經成為標準的例子：肺癌病人用第一或第二代 EGFR 抑制劑後惡化，要驗有沒有 <b>EGFR T790M</b>，有的話換藥。但在其他大多數情境，這種重複剖析還屬於實驗性。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.27</div><div><h3>組織切片的考量</h3>
+<p>組織切片需要<b>侵入性</b>的處置（手術或穿刺）。另外要考慮三件事：</p>
+<ul><li><b>量</b>：切下來的組織夠不夠做檢測。</li>
+<li><b>位置</b>：取的是原發腫瘤還是轉移處？同一個病人不同地方的腫瘤，突變可能不同（腫瘤內異質性）。</li>
+<li><b>時間</b>：取完切片之後如果用過標靶藥，腫瘤的突變可能已經變了（例如長出抗藥突變），舊的報告就<b>不能代表現在的狀況</b>。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.28</div><div><h3>液態切片（Liquid biopsy）</h3>
+<p>新興的方法，目前就是<b>抽血</b>，比較不侵入。原理是：有些腫瘤會把 DNA 小片段釋放到血液裡，叫做 <b>ctDNA<span class="full">（circulating tumor DNA，循環腫瘤 DNA）</span>（circulating tumor DNA，循環腫瘤 DNA）</b>。驗血就能偵測 ctDNA，找出有預後或治療意義的突變。</p>
+<p>四個優點：</p>
+<ol><li>檢體<b>容易取得</b>。</li><li>可以<b>反覆抽、縱向追蹤</b>。</li><li>報告<b>快</b>。</li>
+<li>能抓到<b>異質性</b>：不同轉移處的腫瘤都會把 DNA 放到血裡，所以看到的是整體的樣貌。</li></ol>
+<div class="tip"><b>比喻：</b>組織切片像拍一張照片，只拍到某一刻、某一個角落；液態切片像監視器，可以一直看，而且每個房間的畫面都會傳進來。</div>
+<p>注意講義的用字是「some tumors」：不是每個腫瘤都會放出足夠的 ctDNA，所以液態切片不一定比組織準。</p></div></div>
+
+<div class="slide"><div class="pno">p.29</div><div><h3>要測多大的範圍（Panel size）</h3>
+<p>由小到大：<b>小 panel</b>（只測已知熱點的少數基因）→ <b>大 panel</b>（比熱點多、比全外顯子少，例如 Foundation Medicine、Guardant 的商業檢測）→ <b>全外顯子定序（WES<span class="full">（whole exome sequencing，全外顯子定序）</span>）</b>→ <b>全基因體定序（WGS<span class="full">（whole genome sequencing，全基因體定序）</span>）</b>。</p>
+<p>範圍越大：<b>每個位置的定序深度越淺</b>，而<b>報告時間、費用、生物資訊分析的需求都越高</b>。深度淺的壞處是：只佔一小部分細胞的突變（例如剛長出來的抗藥克隆）比較容易漏掉。</p>
+<div class="tip"><b>比喻：</b>同一桶油漆，刷的牆越大，每一塊就刷得越薄。</div>
+<p class="src">投影片上的箭頭是圖，這裡寫的是標準答案的方向。</p></div></div>
+
+<div class="slide"><div class="pno">p.30</div><div><h3>報告上的變化有沒有意義</h3>
+<ul><li><b>Known significance（意義已知）</b>：這個變化對基因功能和訊號的影響已經很清楚，平常就拿來決定治療。</li>
+<li><b>Unknown significance（意義未明，VUS<span class="full">（variant of uncertain significance，意義未明變異）</span>）</b>：影響還不清楚，或從來沒被報告過，平常不拿來決定治療。</li></ul>
+<p>老師的原則：報告上的變化如果<b>沒被描述或報告過</b>，一般<b>不應該</b>根據它建議治療。</p></div></div>
+
+<div class="slide"><div class="pno">p.31</div><div><h3>查資料庫，以及想到遺傳的可能</h3>
+<p>要查一個體細胞突變有什麼意義，可以用這幾個資料庫：MD Anderson 的 <b>PCT<span class="full">（Personalized Cancer Therapy（MD Anderson 的資料庫））</span></b>、<b>OncoKB<span class="full">（Precision Oncology Knowledge Base）</span></b>、JAX 的 <b>CKB<span class="full">（Clinical Knowledgebase（The Jackson Laboratory 的資料庫））</span></b>、<b>My Cancer Genome</b>。</p>
+<p>腫瘤 NGS 驗的是腫瘤組織，裡面同時有遺傳來的變化和後天的變化。如果看到可能是 germline 的變化：</p>
+<ul><li>要請<b>遺傳諮詢師</b>參與。</li>
+<li>檢視相關基因，看是不是屬於某個<b>遺傳性癌症症候群</b>。</li>
+<li><b>ACMG<span class="full">（American College of Medical Genetics and Genomics，美國醫學遺傳與基因體學會）</span></b>（美國醫學遺傳學會）有一份建議要回報的基因清單。</li></ul>
+<p>這很重要，因為如果是遺傳的，病人的家人也可能帶著，需要一起篩檢。</p></div></div>
+
+<h2 class="sec" id="P-e"><small>p.32–33</small>Treatment planning：標靶 ↔ 藥 ↔ 適應症</h2>
+<div class="slide"><div class="pno">p.32–33</div><div><h3>哪個變化配哪個藥</h3>
+<p>這兩頁是一張大表，把「受體酪胺酸激酶（RTK<span class="full">（receptor tyrosine kinase，受體酪胺酸激酶）</span>）、怎麼被活化、對應的藥、核准的適應症」列在一起。</p>
+<div class="tbl"><table><tr><th>標靶</th><th>活化機制</th><th>藥</th><th>適應症</th></tr>
+<tr><td><b>ABL</b></td><td>重排，主要是 <b>BCR-ABL</b></td><td>bosutinib、dasatinib、imatinib、nilotinib、ponatinib</td><td>CML<span class="full">（chronic myeloid leukemia，慢性骨髓性白血病）</span></td></tr>
+<tr><td></td><td><b>T315I</b> 突變</td><td><b>ponatinib</b></td><td>CML</td></tr>
+<tr><td><b>ALK</b></td><td>重排，主要是 <b>ALK-EML4</b></td><td>alectinib、brigatinib、ceritinib、crizotinib、lorlatinib</td><td>轉移性 NSCLC</td></tr>
+<tr><td><b>EGFR</b></td><td><b>exon 19 deletion</b> 或 <b>L858R</b></td><td>afatinib、dacomitinib、erlotinib、gefitinib、osimertinib</td><td>轉移性 NSCLC</td></tr>
+<tr><td></td><td><b>T790M</b></td><td><b>osimertinib</b></td><td>轉移性 NSCLC</td></tr>
+<tr><td><b>FGFR<span class="full">（fibroblast growth factor receptor，纖維母細胞生長因子受體）</span></b></td><td>FGFR3 突變（R248C、S249C、G370C、Y373C）；FGFR2/3 重排（FGFR3-TACC3 等）</td><td>erdafitinib</td><td>局部晚期／轉移性泌尿上皮癌</td></tr>
+<tr><td><b>FLT3<span class="full">（FMS-like tyrosine kinase 3）</span></b></td><td><b>ITD<span class="full">（internal tandem duplication，內部串聯重複）</span></b>（內部串聯重複）或 TKD<span class="full">（tyrosine kinase domain，酪胺酸激酶區）</span> D835／I836</td><td>gilteritinib</td><td>復發／難治 AML<span class="full">（acute myeloid leukemia，急性骨髓性白血病）</span></td></tr>
+<tr><td><b>HER2</b></td><td>蛋白過度表現</td><td>trastuzumab、pertuzumab、lapatinib</td><td>乳癌</td></tr>
+<tr><td></td><td>蛋白過度表現</td><td>trastuzumab</td><td>轉移性胃／胃食道交界癌；轉移性大腸癌（NCCN<span class="full">（National Comprehensive Cancer Network，美國國家綜合癌症網絡）</span>）</td></tr>
+<tr><td></td><td>HER2 <b>突變</b>（exon 20 最常見）</td><td>ado-trastuzumab emtansine</td><td>轉移性 NSCLC（NCCN）</td></tr></table></div>
+<p><b>怎麼記這張表：</b></p>
+<ul><li><b>守門員突變</b>：T315I（CML）和 T790M（肺癌 EGFR）都是舊藥用一陣子後長出來的抗藥突變，像守門員把舊藥擋在門外。各自只有一個新一代的藥打得開：<b>T315I → ponatinib，T790M → osimertinib</b>。</li>
+<li><b>字首</b>：ALK 的藥是 <b>A-B-C-C-L</b>（alectinib、brigatinib、ceritinib、crizotinib、lorlatinib）；EGFR 的藥是 <b>A-D-E-G-O</b>（afatinib、dacomitinib、erlotinib、gefitinib、osimertinib），剛好都照字母順序。</li>
+<li><b>HER2 有兩種狀況</b>：「量太多」（過度表現，乳癌、胃癌）和「長歪了」（突變，肺癌），對應不同的藥。</li></ul></div></div>
+
+<h2 class="sec" id="P-f"><small>p.34–52</small>為什麼要配對：傳統藥的效益與基因的複雜度</h2>
+<p class="src">p.34 起的投影片改編自 UCSD 的 Dr. Shumei Kato 和 Dr. Razelle Kurzrock。</p>
+
+<div class="slide"><div class="pno">p.35–38</div><div><h3>傳統做法的困境</h3>
+<p>這幾頁是圖。p.36 畫的是傳統流程：病人先試第一線治療，沒效換第二線、第三線、第四線，一路試下去。p.37–38 畫的是療效和毒性的天秤：一體適用的治療，常常毒性壓過療效；如果挑對病人，療效才會壓過毒性。</p></div></div>
+
+<div class="slide"><div class="pno">p.39–40</div><div><h3>轉移性胃腸道癌的 2 年存活率</h3>
+<p>老師先讓大家猜，再公布答案：大腸直腸癌約 <b>40%</b>（5 年只有 13%）、胃食道癌約 <b>10%</b>、肝細胞癌約 <b>10%</b>、胰臟癌約 <b>7%</b>，還有一項是膽囊癌（數字在 PDF 抽不出來）。重點是：這些癌症一旦轉移，預後都很差。</p></div></div>
+
+<div class="slide"><div class="pno">p.41–44</div><div><h3>傳統核准藥物到底帶來多少好處</h3>
+<p>同一張表放了四頁，讓大家慢慢看：</p>
+<div class="tbl"><table><tr><th>藥</th><th>對照組</th><th>腫瘤</th><th>多活多久</th></tr>
+<tr><td>Sorafenib</td><td>安慰劑</td><td>肝</td><td class="num">2.3 個月</td></tr>
+<tr><td>Paclitaxel＋ramucirumab</td><td>Paclitaxel</td><td>胃</td><td class="num">2.2 個月</td></tr>
+<tr><td>Gemcitabine</td><td>支持療法</td><td>胰</td><td class="num">1.5 個月</td></tr>
+<tr><td>Gemcitabine＋erlotinib</td><td>Gemcitabine</td><td>胰</td><td class="num">11 天</td></tr>
+<tr><td>Gemcitabine＋Abraxane</td><td>Gemcitabine</td><td>胰</td><td class="num">1.8 個月</td></tr>
+<tr><td>FOLFIRINOX</td><td>Gemcitabine</td><td>胰</td><td class="num">4.3 個月</td></tr>
+<tr><td>XELOX/FOLFOX＋bevacizumab</td><td>XELOX/FOLFOX</td><td>大腸</td><td class="num">1.4 個月</td></tr></table></div>
+<p>這些都是 FDA 核准的藥，但多活的時間大多只有一到四個月，完全緩解的比例幾乎是 0。胰臟癌加 erlotinib 甚至只多了 <b>11 天</b>。</p>
+<p>p.44 的結論：<b>Patient selection based on the biomarker is likely required.</b> 也就是說，問題可能不在藥不好，而是給錯了人：真正會有反應的那一小群，被其他沒反應的人稀釋掉了。</p></div></div>
+
+<div class="slide"><div class="pno">p.45–46</div><div><h3>顯微鏡和「分子顯微鏡」</h3>
+<p>光學顯微鏡在 1590 年就發明了，到今天仍然是診斷癌症的主要工具：看細胞長什麼樣子、長在哪個器官。NGS 是新的「分子顯微鏡」，看的是 DNA。老師的意思是：只看形態和器官已經不夠了，還要看分子。</p></div></div>
+
+<div class="slide"><div class="pno">p.47</div><div><h3>Divide and Conquer：先分群，再各個擊破</h3>
+<p>圖是 139 株肺癌細胞株，依驅動基因切成一塊一塊，每塊旁邊寫著有效的藥：EGFR → gefitinib 或 erlotinib；ALK → TAE684；ERBB2 → lapatinib；BRAF → PLX4032；PDGFR → sunitinib；MET、ROS、PIK3CA、MEK1 也各有對應藥。而 <b>KRAS 那塊寫的是「None」</b>（當時沒有藥）。</p>
+<p>重點句：<b>藥只對帶有敏感變化（sensitizing aberration）的那一群有效</b>。如果把所有肺癌病人混在一起試 EGFR 抑制劑，有效的那一小塊被其他人稀釋，整個試驗看起來就像失敗。</p></div></div>
+
+<div class="slide"><div class="pno">p.48</div><div><h3>基因定序技術的進步</h3>
+<p>到 2019 年，定序一個人的基因體大約只要 <b>1 天</b>、<b>1000 美元</b>，深度 <b>30–50X</b>（每個位置平均讀 30–50 次）。老師用「人類史上前所未見的進步」來形容，這也是精準醫療現在做得到的原因。</p></div></div>
+
+<div class="slide"><div class="pno">p.49–50</div><div><h3>ToGA<span class="full">（Trastuzumab for Gastric Cancer 試驗）</span> 試驗：已經挑了 HER2 陽性，為什麼效果還是普通？</h3>
+<p>ToGA 是晚期 <b>HER2 陽性</b>胃癌（包含胃食道交界）的試驗：化療（5-FU 或 capecitabine＋cisplatin）加或不加 trastuzumab。</p>
+<p>結果：中位存活 <b>13.8 vs 11.1 個月</b>，<b>HR<span class="full">（hazard ratio，風險比）</span> 0.74</b>，P = 0.0046。有統計上的進步，但只多了不到 3 個月。</p>
+<p>p.50 老師問：<b>What are we missing here?</b> 明明已經用 biomarker 挑過病人了，為什麼效果還是有限？答案在下一頁。</p></div></div>
+
+<div class="slide"><div class="pno">p.51</div><div><h3>答案：每個病人還帶著很多其他突變（Kim 2014, JCI）</h3>
+<p>研究 42 例 HER2（ERBB2）擴增的胃食道腺癌，發現它們除了 HER2，還同時帶著很多其他變化：</p>
+<ul><li><b>細胞週期</b>：CCNE1、CDK6、CCND1 擴增。</li>
+<li><b>其他受體</b>：EGFR、ERBB3、MET、FGFR2。</li>
+<li><b>PI3K 路徑</b>：PIK3CA、PIK3R1、PTEN<span class="full">（phosphatase and tensin homolog）</span>。</li></ul>
+<p>而且每個病人的組合都不一樣。老師用了一個詞叫 <b>malignant snowflakes（惡性雪花）</b>：每一片都不同。只打 HER2，其他路徑照樣讓腫瘤長大。這就是為什麼後面 UCSD 要做<b>組合式、客製化</b>的治療。</p></div></div>
+
+<div class="slide"><div class="pno">p.52</div><div><h3>原發不明癌的 10 位病人（Kato 2017）</h3>
+<p>10 個病人的突變列出來，幾乎沒有兩個人一樣：1 號只有 ALK E802V，2 號是 EGFR V765M，7 號同時有 BRAF V600E、NRAS Q61K、JAK2 V617F，10 號同時有 APC、CDKN2A<span class="full">（cyclin-dependent kinase inhibitor 2A（編碼 p16））</span>、ERBB2 擴增、RB1、TP53 好幾個變化。再一次說明：<b>每個病人都是獨一無二的</b>，很難用同一套治療套在所有人身上。</p></div></div>
+
+<h2 class="sec" id="P-g"><small>p.53–74</small>UCSD 的做法與真實病例</h2>
+
+<div class="slide"><div class="pno">p.53</div><div><h3>Molecular Tumor Board（分子腫瘤委員會）</h3>
+<p>UCSD Moores 癌症中心從 <b>2012 年 12 月 12 日</b>開始，每週開會（必要時線上臨時開），由不同專科一起討論病人的分子報告，替病人挑選標靶、量身治療。已經剖析了大約 <b>12,000 人</b>。</p>
+<p>由此延伸出臨床試驗（UMBRELLA master protocol）、基礎研究、CLIA 認證的分子檢測，以及 <b>PREDICT</b> 研究（2013 年 9 月核准，約 3,400 人）。</p></div></div>
+
+<div class="slide"><div class="pno">p.54</div><div><h3>I-PREDICT 試驗（Sicklick 2019, Nat Med）</h3>
+<p>I-PREDICT 的特別之處有兩點：給病人<b>客製化的藥物組合</b>，而且收的是<b>新診斷</b>的致命癌症病人（不是治療都失敗的末期病人）。</p>
+<ul><li>2015 年 2 月 13 日開始。</li>
+<li>同意參加 <b>410 人</b> → 實際接受治療 <b>209 人（51%）</b> → 拿到配對治療 <b>175 人</b>（佔全部的 43%、佔有治療者的 84%）。</li>
+<li>決策依據：FoundationOne（組織 NGS）、Foundation ACT（<b>血液 ctDNA</b>）、PD-1/PD-L1 IHC、<b>TMB<span class="full">（tumor mutational burden，腫瘤突變負荷）</span></b>、<b>MSI<span class="full">（microsatellite instability，微衛星不穩定）</span></b>。</li></ul>
+<p>數字記法：<b>410 進、209 治、175 配</b>。考試要注意分母：問「佔全部」是 43%，問「佔有治療者」是 84%。</p></div></div>
+
+<div class="slide"><div class="pno">p.55</div><div><h3>配得越完整，效果越好</h3>
+<p><b>Matching score（配對分數）</b>是指：病人身上的變化，有多少比例被所用的藥打到。例如病人有 4 個變化，用的藥打到其中 3 個，分數就是 75%。</p>
+<div class="tbl"><table><tr><th>結果</th><th>配對分數 &gt; 50%</th><th>配對分數 ≤ 50%</th></tr>
+<tr><td>部分或完全緩解</td><td class="num">45.0%</td><td class="num">16.3%</td></tr>
+<tr><td>穩定 ≥ 6 個月</td><td class="num">5.0%</td><td class="num">6.1%</td></tr>
+<tr><td>穩定 &lt; 6 個月</td><td class="num">25.0%</td><td class="num">34.7%</td></tr>
+<tr><td>惡化</td><td class="num">25.0%</td><td class="num">42.9%</td></tr></table></div>
+<p>P = 0.028。配對超過一半的人，接近一半有緩解；配對不到一半的人，只有大約六分之一。結論：<b>配對分數高的病人，反應、無惡化存活（PFS<span class="full">（progression-free survival，無惡化存活）</span>）、整體存活（OS<span class="full">（overall survival，整體存活）</span>）都顯著比較好。</b></p></div></div>
+
+<div class="slide"><div class="pno">p.56–64</div><div><h3>病例一：77 歲男性，胰臟癌</h3>
+<p>已經用過 gemcitabine/Abraxane 和 FOLFIRINOX 兩線化療。組織 NGS 找到：ERBB2 擴增、KRAS G12D、CDKN2A（p16INK4a R80*）、FAM123B、RARA-WIPF2 融合、TOP2A 擴增、TP53。加入 I-PREDICT。</p>
+<p>老師示範怎麼「一個突變配一個藥」：</p>
+<div class="tbl"><table><tr><th>變化</th><th>配對藥</th><th>為什麼</th><th>劑量</th></tr>
+<tr><td>ERBB2 擴增</td><td>trastuzumab＋lapatinib</td><td>一個抗體從外面抓 HER2、一個小分子從裡面堵 HER2</td><td>trastuzumab 每 3 週；lapatinib 250 mg（目標 500 mg）每日</td></tr>
+<tr><td>KRAS G12D</td><td>trametinib</td><td>KRAS 當時沒藥，改打它下游的 MEK<span class="full">（mitogen-activated protein kinase kinase）</span></td><td>0.5 mg（目標 1 mg）每日</td></tr>
+<tr><td>CDKN2A</td><td>palbociclib</td><td>CDKN2A 做出的 p16 本來是 CDK4/6<span class="full">（cyclin-dependent kinase 4/6，細胞週期蛋白依賴性激酶 4/6）</span> 的煞車；煞車壞了，就直接把 CDK4/6 關掉</td><td>75 mg 每日 × 3 週，停 1 週（28 天一循環）</td></tr></table></div>
+<p>p.62–63 列了副作用：trastuzumab/lapatinib 有心衰竭、貧血、嗜中性球低下、水腫、腹瀉、噁心、輸注反應；trametinib 有心衰竭、皮疹、腹瀉；palbociclib 有血球低下、腹瀉、掉髮。多藥合併時副作用會疊加（例如兩種都會造成心衰竭），所以<b>劑量都從低開始</b>。</p>
+<p>p.64：治療<b>一個月</b>後影像明顯縮小。</p></div></div>
+
+<div class="slide"><div class="pno">p.65–69</div><div><h3>病例二：37 歲女性，漿液性乳突狀卵巢癌</h3>
+<p>病理：漿液性交界性腫瘤合併微乳突增生，IHC 顯示 <b>ER 陽性</b>。已經用過多線化療、bevacizumab、Doxil，也參加過 PI3K＋MEK 抑制劑的試驗。NGS：<b>KRAS G12V</b>、MS-stable、TMB-low、PD-L1 陰性。</p>
+<p>配對兩條路：</p>
+<ul><li>DNA 層次：KRAS G12V → <b>trametinib</b>（打 MEK）。</li>
+<li>蛋白層次：ER 陽性 → 先用 <b>tamoxifen</b>，後來換 <b>letrozole</b>（都是荷爾蒙治療）。</li></ul>
+<p>結果：CA125<span class="full">（cancer antigen 125，卵巢癌腫瘤指標）</span>（卵巢癌腫瘤指數）從超過檢測上限（&gt; 15,000 U/mL）大幅下降，<b>PFS 超過 19 個月</b>。這個病例說明：配對不只看 DNA，蛋白質的檢測（IHC）也能找到可打的目標。</p></div></div>
+
+<div class="slide"><div class="pno">p.70</div><div><h3>配對治療的最大挑戰：異質性（Hiley 2014）</h3>
+<p>三種異質性：</p>
+<ul><li><b>病人和病人之間</b>：每個人的突變都不同。</li>
+<li><b>同一個腫瘤內部</b>：同一顆腫瘤裡，不同區域的細胞突變可能不同。</li>
+<li><b>隨時間演化</b>：腫瘤會一直長出新的突變。</li></ul>
+<p>圖畫了腫瘤 A、B、C 三種演化史。每一顆在某個時間點取一次切片，只是一張<b>快照（snap-shot）</b>；未來長成主角的克隆，可能是快照裡很小的那一塊。所以只靠一次組織切片，可能會誤導治療方向。</p>
+<div class="tip"><b>比喻：</b>腫瘤像一棵樹。不同人是不同的樹；同一棵樹不同枝長得不一樣；明年還會長出新的枝。一次切片只剪下其中一枝。</div></div></div>
+
+<div class="slide"><div class="pno">p.71–74</div><div><h3>病例三：68 歲女性，新診斷轉移性胃癌（液態切片）</h3>
+<p>組織 NGS 找到一大串擴增：CCND3、EGFR、MAP2K1、VEGFA、AURKA、ARFRP1、GNAS、PIK3CG、ZNF217，還有 TP53 G245S。這麼多，要打哪一個？</p>
+<p><b>血液 ctDNA</b> 給了答案：其中 <b>EGFR 擴增特別高（3+，143 個拷貝）</b>。於是用 <b>cetuximab＋erlotinib</b>，也就是兩種方式一起封鎖 EGFR：cetuximab 是抗體，從細胞外面擋；erlotinib 是小分子，從細胞裡面堵。</p>
+<p>治療持續了 <b>18 個月</b>。p.74 的圖顯示：開始抗 EGFR 治療後，<b>血中 EGFR 拷貝數下降，腫瘤大小（RECIST<span class="full">（Response Evaluation Criteria in Solid Tumors，實體腫瘤療效評估標準）</span> 1.1）也同步下降</b>。</p>
+<p>這個病例展示液態切片的兩個用途：<b>挑選標靶</b>，以及<b>追蹤療效</b>。</p></div></div>
+
+<h2 class="sec" id="P-h"><small>p.75–89</small>個人化免疫治療</h2>
+
+<div class="slide"><div class="pno">p.75–78</div><div><h3>用花園來理解免疫治療</h3>
+<p>老師用一個花園的比喻：</p>
+<ul><li>身體是花園；<b>免疫系統是土壤</b>；健康細胞是好的植物；<b>癌細胞是雜草</b>。</li>
+<li>健康的時候，土壤肥沃、照顧得好，能夠防止雜草失控。</li>
+<li>有時候土壤讓雜草長了起來，而且越長越多，好植物被搶走空間和養分，整個花園都受影響。這就是癌症。</li>
+<li><b>免疫治療就像在土壤裡加除草肥料</b>：不是直接去拔雜草，而是讓原本的土壤變強，重新把雜草控制住。</li>
+<li>但是<b>肥料加太多也會傷害花園</b>，這就是免疫治療的副作用：免疫系統被放大後，也去攻擊正常組織（自體免疫）。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.79</div><div><h3>免疫合併治療的試驗大爆發（Tang 2018）</h3>
+<p>和 PD-1/PD-L1 抑制劑合併的試驗數量：合併 anti-CTLA-4 有 <b>251</b> 個、合併化療 170、合併放療 64、合併 anti-VEGFA 43、合併化放療 42。</p>
+<p>在 ClinicalTrials.gov 搜尋「immunotherapy」加「combination」：2018 年 8 月有 919 筆 → 2019 年 9 月有 1,597 筆 → 2025 年 11 月有 <b>4,251</b> 筆。問題是：這麼多組合，要怎麼知道哪個病人該用哪一種？這就是後面 biomarker 要回答的。</p></div></div>
+
+<div class="slide"><div class="pno">p.80</div><div><h3>免疫檢查點抑制劑的 biomarker</h3>
+<div class="tbl"><table><tr><th>結果</th><th>相關的 biomarker</th></tr>
+<tr><td>有反應（部分或完全緩解）</td><td><b>PD-L1、TMB（腫瘤突變負荷）、MSI-high、dMMR<span class="full">（deficient mismatch repair，錯配修復缺陷）</span></b></td></tr>
+<tr><td>穩定</td><td>—</td></tr>
+<tr><td>假性惡化（pseudoprogression）</td><td>還沒有 biomarker</td></tr>
+<tr><td>原發性抗藥（一開始就沒效）</td><td><b>PTEN 缺失</b>、<b>WNT/β-catenin 活化</b></td></tr>
+<tr><td>後天抗藥（先有效後失效）</td><td><b>β2-microglobulin 缺失</b>、<b>JAK1/2 失活突變</b></td></tr>
+<tr><td>過度惡化（hyperprogression）</td><td><b>MDM2/4 擴增</b>、<b>EGFR 變化</b></td></tr></table></div>
+<p><b>為什麼是這些？</b></p>
+<ul><li><b>TMB 高、MSI-high、dMMR</b>：三者都代表腫瘤的突變很多（dMMR＝DNA 錯誤修復機制壞了，所以突變累積）。突變多，就會做出很多「長得怪」的蛋白（新抗原），T 細胞比較容易認出來。</li>
+<li><b>PD-L1</b>：代表藥要打的目標確實存在。</li>
+<li><b>β2-microglobulin 缺失</b>：β2M 是 MHC<span class="full">（major histocompatibility complex，主要組織相容性複合體）</span> class I 的零件，MHC 是癌細胞把抗原展示給 T 細胞看的「展示櫃」。β2M 沒了，展示櫃立不起來，T 細胞看不到癌細胞，藥再怎麼放開煞車也沒用。</li>
+<li><b>JAK1/2 失活</b>：癌細胞聽不到 T 細胞發出的 interferon-γ 訊號，不會被逼著自我毀滅。</li></ul>
+<p class="src">講義寫「beta-2 macroglobulin」，正確名稱是 β2-microglobulin。上面「為什麼」的機轉是補充說明。</p></div></div>
+
+<div class="slide"><div class="pno">p.81</div><div><h3>Cancer-immunity cycle：免疫系統抓癌細胞的七個步驟（Chen &amp; Mellman 2013）</h3>
+<p>這張圖把免疫系統殺癌細胞的過程畫成一個循環。綠色是促進的因子，紅色是抑制的因子，紅色的常常就是藥物標靶：</p>
+<div class="tbl"><table><tr><th>步驟</th><th>發生什麼</th><th>抑制因子（可以當藥物標靶）</th></tr>
+<tr><td>1</td><td>癌細胞死掉，釋放出抗原</td><td>耐受性細胞死亡</td></tr>
+<tr><td>2</td><td>樹突細胞把抗原撿起來、呈現出來</td><td>IL-10、IL-4、IL-13</td></tr>
+<tr><td>3</td><td>在淋巴結裡把 T 細胞活化（priming）</td><td><b>CTLA4/B7.1</b>、PD-L1/PD-1、PD-L1/B7.1、前列腺素</td></tr>
+<tr><td>4</td><td>T 細胞經血流前往腫瘤（靠 CXCL9、CXCL10、CCL5 等趨化因子引路）</td><td></td></tr>
+<tr><td>5</td><td>T 細胞穿過血管壁、進入腫瘤</td><td><b>VEGF<span class="full">（vascular endothelial growth factor，血管內皮生長因子）</span></b>、endothelin B receptor</td></tr>
+<tr><td>6</td><td>T 細胞認出癌細胞（TCR<span class="full">（T-cell receptor，T 細胞受體）</span> 對上抗原）</td><td>癌細胞表面的 pMHC 減少</td></tr>
+<tr><td>7</td><td>殺死癌細胞</td><td><b>PD-L1/PD-1</b>、IDO、TGF-β、BTLA、VISTA、<b>LAG-3</b>、arginase、B7-H4、<b>TIM-3</b> 等</td></tr></table></div>
+<div class="tip"><b>比喻：</b>一趟抓犯人的任務。① 犯人留下線索 ② 線索送回總部 ③ 在總部（淋巴結）訓練士兵，<b>CTLA-4<span class="full">（cytotoxic T-lymphocyte–associated protein 4）</span> 在這裡踩煞車</b> ④ 士兵出發 ⑤ 進城，<b>VEGF 把城門關起來</b> ⑥ 認出犯人 ⑦ 動手逮捕，<b>PD-1<span class="full">（programmed cell death protein 1，計畫性死亡受體 1）</span> 在現場踩煞車</b>。</div>
+<p>這張圖的用處是：看病人卡在哪一步，就知道該怎麼合併。例如 anti-CTLA-4（第 3 步）＋ anti-PD-1（第 7 步）是兩個不同地方的煞車一起放開；anti-PD-L1＋anti-VEGF 則是一邊放開煞車、一邊打開城門讓 T 細胞進得去。</p></div></div>
+
+<div class="slide"><div class="pno">p.82</div><div><h3>每個腫瘤的免疫樣貌也都不一樣</h3>
+<p>和基因一樣，把很多病人的免疫標記畫出來，會發現<b>每個腫瘤都有自己獨特的免疫標記組合</b>（Kato，投稿中）。所以免疫治療也需要個人化：同樣是 PD-L1 陽性，卡住的步驟可能不同。</p></div></div>
+
+<div class="slide"><div class="pno">p.83–85</div><div><h3>病例四：64 歲女性，子宮內膜癌</h3>
+<p>她已經接受過非常多治療：手術加陰道近接放療、carboplatin/taxol、doxorubicin、Megace、everolimus＋letrozole、Avastin、Taxotere。</p>
+<p>NGS：AKT1 E17K、MTOR V2006F、CTNNB1 G34E、ARID1A Y915*、CTCF W191*、MYCN P44L；MS-stable；<b>TMB 中等（8 Muts/Mb）</b>；PD-L1（IHC）陰性。</p>
+<p>給了四藥組合：<b>everolimus＋sulindac＋olaparib＋pembrolizumab</b>。4 個月後影像改善，<b>PFS 7 個月</b>，之後因為出現<b>新的腦轉移</b>而惡化。</p>
+<p>這個病例提醒：就算配對很努力，反應也不一定持久，這呼應 p.88 的問題。</p>
+<p class="src">講義只列了藥，沒寫每個藥對哪個變化。合理的推論是：everolimus 打 AKT1/MTOR 路徑、sulindac 打 WNT/β-catenin（CTNNB1）、olaparib 打 ARID1A 缺失造成的 DNA 修復缺陷、pembrolizumab 依據中等的 TMB。寫進答案前，以老師上課講的為準。</p></div></div>
+
+<div class="slide"><div class="pno">p.86–87</div><div><h3>Tip of the iceberg：基因以外的五層</h3>
+<p>老師在 p.86–87 畫了一座冰山：我們做 NGS 看到的基因變化，只是浮在水面上的那一角；水面下還有轉錄體、蛋白體、表觀遺傳、免疫剖析。下面用同一個比喻一路講下去：<b>把一顆癌細胞想成一家餐廳</b>。</p>
+
+<div class="box" style="margin:12px 0"><h4>① Genomics（基因體）：整本食譜</h4>
+<p><b>是什麼：</b>細胞裡全部的 DNA 序列。每個細胞都帶著同一本食譜，裡面寫著所有菜（蛋白質）的做法。</p>
+<p><b>比喻：</b>突變就是食譜上的錯字。有的錯字不影響味道（passenger），有的錯字讓整道菜變成另一道菜（driver）。擴增像同一頁被影印了好幾十份夾在書裡，融合基因則像兩頁被撕下來黏成一頁。</p>
+<p><b>怎麼量：</b>NGS、Sanger、FISH（看擴增或重排）。</p>
+<p><b>限制：</b>食譜上寫了，不代表今天真的有在煮。這就是 p.21 說的「DNA 有改變，不一定造成生物功能改變」，所以才要往下看。</p></div>
+
+<div class="box" style="margin:12px 0"><h4>② Transcriptomics（轉錄體）：今天影印出來貼在廚房的那幾頁</h4>
+<p><b>是什麼：</b>細胞把要用的基因從 DNA 抄成 mRNA，這個過程叫轉錄。轉錄體就是「此刻所有 mRNA 的清單和數量」。</p>
+<p><b>比喻：</b>食譜很厚，但廚房今天只影印了幾頁貼在牆上，而且某些頁印了很多份（表現量高）。同一本食譜，皮膚細胞和肝細胞印的頁完全不同，所以它們長得不一樣。</p>
+<p><b>怎麼量：</b>RNA 定序（RNA-seq）、qPCR、基因表現 panel。</p>
+<p><b>跟癌症的關係：</b>可以知道哪條路徑真的在運轉。講義的例子：<b>Oncotype DX</b> 量 21 個基因的表現量，估乳癌復發風險（p.22）。融合基因用 RNA 驗也常比 DNA 好抓，因為融合後會產生一段特別的 mRNA。</p></div>
+
+<div class="box" style="margin:12px 0"><h4>③ Proteomics（蛋白體）：真的端上桌的菜</h4>
+<p><b>是什麼：</b>mRNA 被翻譯成蛋白質，蛋白質才是真正做事的分子：受體、酵素、訊號開關。蛋白體就是這些蛋白的種類、數量，以及有沒有被「打開」（例如磷酸化）。</p>
+<p><b>比喻：</b>影印了食譜，不代表菜一定煮得出來；煮出來的份量也不一定跟影印份數成正比，菜端上桌之後還可能再加醬（修飾）。<b>藥打的就是這一層</b>：trastuzumab 抓的是細胞表面的 HER2 蛋白，kinase inhibitor 塞住的是激酶蛋白的口袋。</p>
+<p><b>怎麼量：</b><b>IHC</b>（p.23，看組織切片上蛋白多不多），也可以用質譜（就是另一堂課的 LC-MS/MS）。</p>
+<p><b>跟課的連結：</b>HER2「過度表現」、ER 陽性、PD-L1 都是蛋白層次的結果。37 歲卵巢癌的病人就是靠 IHC 看到 ER 陽性才加上 tamoxifen（p.66）。</p></div>
+
+<div class="box" style="margin:12px 0"><h4>④ Epigenetics（表觀遺傳）：食譜上的便利貼和膠帶</h4>
+<p><b>是什麼：</b>不改 DNA 序列，但改變基因能不能被讀取。常見的兩種：<b>DNA 甲基化</b>（在 DNA 上加小標記，通常讓基因關掉）和<b>組蛋白修飾</b>（DNA 纏在組蛋白上，纏得緊就讀不到，鬆開才讀得到）。</p>
+<p><b>比喻：</b>食譜的字一個都沒改，但有人用膠帶把某幾頁封起來，翻不開就影印不了；也有人在某頁貼了「每天必做」的便利貼。</p>
+<p><b>跟癌症的關係：</b>癌細胞不一定要靠突變把煞車（tumor suppressor）弄壞，也可以把那一頁封起來，效果一樣。這種改變理論上是可逆的，所以有藥物專門去撕膠帶（例如去甲基化藥物，用在某些血液癌）。</p>
+<p class="src">講義只列了名稱，上面的機轉與藥物例子是補充。</p></div>
+
+<div class="box" style="margin:12px 0"><h4>⑤ Immune profiling（免疫剖析）：餐廳裡的保全和稽查員</h4>
+<p><b>是什麼：</b>看腫瘤周圍的免疫環境：有沒有 T 細胞進到腫瘤裡、有多少；檢查點分子（PD-L1 等）表現多少；腫瘤有多少新抗原可以被認出來（TMB、MSI）。</p>
+<p><b>比喻：</b>就算廚房在做違法的菜，只要保全在場、醒著、認得出問題，餐廳就會被查封。癌細胞的招數有三種：把保全擋在門外（T 細胞進不來），收買保全讓他睡著（PD-L1 踩住 T 細胞的 PD-1），或把證據藏起來（MHC／β2M 壞掉，T 細胞看不到抗原）。</p>
+<p><b>跟課的連結：</b>p.80 的反應與抗藥 biomarker、p.81 的癌症免疫循環、p.82「每個腫瘤的免疫組合都不同」。免疫治療（p.76–78 的肥料）就是把保全叫醒、讓他們進得去。</p></div>
+
+<div class="tip"><b>一句話串起來：</b>食譜（DNA）→ 影印（RNA）→ 上菜（蛋白）；便利貼（表觀遺傳）決定哪幾頁能被影印；保全（免疫）決定這家店會不會被查封。只看食譜，看不出今天實際端出了什麼菜。這就是老師說基因只是「冰山一角」的意思。</div>
+<p class="src">p.5 還提到兩層：<b>metabolomics</b>（代謝體，像廚房裡的食材和廚餘，是細胞實際在用和產出的小分子）、<b>microbiomics</b>（微生物體，像住在餐廳裡的其他房客，例如腸道菌，會影響治療反應和毒性，p.88 也問到）。講義說這兩層還在初期、多半沒有外部驗證。比喻都是補充說明，講義沒寫。</p></div></div>
+
+<div class="slide"><div class="pno">p.88</div><div><h3>老師留下的思考題（申論題素材）</h3>
+<p>最後一頁不是答案，而是問題。這些很適合當申論題：</p>
+<ul><li>這麼複雜的組合療法，對病人的<b>生活品質</b>、<b>病人自述結果（PRO）</b>有什麼影響？</li>
+<li><b>財務毒性</b>：對病人和家屬造成多大的經濟負擔？</li>
+<li>如果找一個同年齡、同疾病、接受標準化療的人來比，結果會怎樣？也就是說，需要<b>對照組</b>來比較 PFS、生活品質、費用。</li>
+<li>不同研究的<b>配對分數定義</b>一致嗎？如果不一致，結果能比較嗎？</li>
+<li>微生物體、代謝體等，怎麼影響病人的反應和毒性？</li>
+<li>為什麼有人反應<b>非常持久</b>？為什麼有人配對得很好，卻<b>很快就惡化</b>？</li></ul></div></div>
+
+
+<h2 class="sec" id="P-quiz"><small>Self-test</small>自我測驗 <span class="score" id="score-onco"></span><button class="reset" data-reset="onco">重來</button></h2>
+<div class="quiz" id="quiz-onco"></div>
+</main>
+</div>
+
+
+<script>
+// 每題：[頁碼, 題幹, [[選項, 該選項詳解] ×4], 正解索引, 總結]
+const QUIZ = {
+lcms: [
+["p.3","一個藥要送 NDA，樞紐 PK 研究用的生物分析方法需要？",[
+ ["只要 pre-validation","Pre-validation 只是正式確效前的小規模測試，用來先抓問題，不能取代正式確效。"],
+ ["完整確效（fully validated）","正確。p.3：NDA、BLA、ANDA 的 pivotal 研究必須用 fully validated 的方法。"],
+ ["臨床前那種較寬鬆的確效","較寬鬆的確效只適用於臨床前（動物、in vitro）研究，送 FDA 的人體樞紐研究不行。"],
+ ["不用確效，用 CRO 的數據即可","交給 CRO 做也一樣要確效；p.58–61 的重點就是要看 CRO 的確效數據。"]],1,"確效程度看用途（fit for purpose）：送審樞紐研究要完整確效。"],
+["p.5","「運送時樣本要不要冷凍、可以存幾天」屬於確效要回答的哪一類問題？",[
+ ["Specificity","Specificity 問的是有沒有東西干擾、是不是只量到目標分析物，和保存無關。"],
+ ["Accuracy","Accuracy 問的是量到的值和真值差多少，不是保存條件。"],
+ ["Sensitivity","Sensitivity 問的是能量多低（LLOQ），不是保存條件。"],
+ ["收檢、處理與保存（stability）","正確。p.5 第四個問題：採樣、運送、儲存如何影響數據，對應 p.49–51 的 stability。"]],3,"p.5 四大問題：專一性、變異、範圍、收檢保存。"],
+["p.6","下列何者屬於 method development 而不是 validation？",[
+ ["證明方法適合分析研究樣本","這正是 validation 的定義（p.6）。"],
+ ["最佳化萃取與偵測條件並寫成 SOP","正確。Development＝最佳化萃取與偵測條件，寫成 protocol／SOP。"],
+ ["量 20 天的 between-run CV","這是確效實驗（p.32）。"],
+ ["測 10 個基質的 matrix effect","這也是確效實驗（p.45）。"]],1,"先開發（調條件），再確效（證明可用）。"],
+["p.7","生物分析在進質譜前通常用哪種層析？",[
+ ["Normal-phase","正相層析在生物分析很少用；水相的生物樣本和它不相容。"],
+ ["Reverse-phase（UHPLC）","正確。p.7：bioanalytical methods typically use reverse-phase chromatography (UHPLC)。"],
+ ["Gas chromatography","GC 是氣相層析，要接 GC-MS，不是這堂課的 LC-MS/MS。"],
+ ["Size exclusion","粒徑排阻用在依分子大小分蛋白，不是小分子藥物定量的標準做法。"]],1,"逆相管柱疏水，極性分子先出來 → 早出來的最容易被壓制（p.45）。"],
+["p.8","小分子藥物在 ESI 下通常帶幾個電荷？",[
+ ["0","不帶電就不能被質譜偵測，ESI 的目的就是讓分子帶電。"],
+ ["1","正確。p.8：small molecules are singly charged under ESI，所以 m/z ≈ 分子量＋1。"],
+ ["2","多電荷常見於蛋白質、胜肽等大分子。"],
+ ["視濃度而定","電荷數取決於分子結構與游離方式，不是濃度。"]],1,"單電荷 → p.42 的 [M+H]⁺ 數值就是分子量＋1。"],
+["p.9","四極柱怎麼篩選離子？",[
+ ["用磁場彎曲","那是磁扇型質譜，不是四極柱。"],
+ ["兩組棒子分別加正、負 DC，四根再加固定頻率的 RF，只有特定 m/z 能穩定通過","正確。p.9 原文的描述；DC＋RF 組合決定哪個 m/z 軌跡穩定。"],
+ ["用飛行時間","那是 TOF（time-of-flight）質譜。"],
+ ["用碰撞氣體","碰撞氣體是 Q2 碰撞室用來打碎離子的，不負責篩選。"]],1,"四極柱＝可調的質量過濾器。"],
+["p.10","MRM 中 Q2 的功能是？",[
+ ["選母離子","那是 Q1（fixed precursor m/z）。"],
+ ["選子離子","那是 Q3（fixed product m/z）。"],
+ ["碰撞室：用 Ar 把母離子撞碎","正確。p.10：Q2 – collision chamber，通入氬氣。"],
+ ["偵測器","偵測器在 Q3 之後。"]],2,"一選母、二撞碎、三選子。"],
+["p.11","標準品分析物與 IS 都是 100 ppm，面積比 1.2。未知樣本加 IS 100 ppm，面積比 0.7。分析物濃度約？",[
+ ["42 ppm","可能是算成 (1.2−0.7)/1.2 之類，方向錯了。"],
+ ["58 ppm","正確。濃度比 = 0.7 ÷ 1.2 ≈ 0.58，乘 IS 濃度 100 → 約 58 ppm。"],
+ ["70 ppm","直接把面積比 0.7 當濃度比；忽略了標準品面積比是 1.2 不是 1。"],
+ ["84 ppm","可能是算成 0.7 × 1.2 × 100，乘反了。"]],1,"套路：未知比 ÷ 標準比 × IS 濃度。"],
+["p.8, 11","為什麼內標要用 deuterated 或 ¹³C 標記的同一個分子？",[
+ ["比較便宜","同位素標記內標通常比較貴，選它是為了準。"],
+ ["化學性質與滯留時間幾乎相同，萃取損失與基質效應會同比例影響兩者，比值可以抵消","正確。這就是 isotope dilution 的原理。"],
+ ["讓峰變大","內標不會讓分析物的峰變大。"],
+ ["可以不用做檢量線","p.11 的標題就是「用內標做外部檢量線」，還是要檢量線。"]],1,"雙胞胎替身：一起受苦，看比例就抵消。"],
+["p.12","檢量線為什麼常用 1/x weighting？",[
+ ["讓 r² 變大","加權的目的不是美化 r²，而且加權後 r² 不一定變大。"],
+ ["讓高濃度更準","剛好相反：不加權時高濃度點本來就主導迴歸。"],
+ ["讓靠近 LLOQ 的低濃度端更準","正確。p.12：1/x weighting is used to favor accuracy closer to the LLOQ。"],
+ ["法規強制","p.12 寫的是 generally（通常），不是法規強制。"]],2,"給小聲的低濃度點麥克風。"],
+["p.14","講義說明確效重要性時，提到哪個驚人的比較？",[
+ ["LC-MS/MS 比 ELISA 慢","講義沒有做這個比較。"],
+ ["有研究顯示亂數產生器比確效差的 LC-MS/MS 還準","正確。p.14 最後一點。"],
+ ["免疫分析比質譜準","講義 p.4 說 LC-MS/MS 通常最靈敏、最專一，沒說免疫分析比較準。"],
+ ["手動計算比軟體準","講義沒有提。"]],1,"機器好不代表數字對。"],
+["p.18","ICH M10（2022）的適用範圍是？",[
+ ["所有 biomarker","剛好相反：ICH M10 排除 biomarker。"],
+ ["PK assay，不包括 biomarker","正確。p.18。"],
+ ["只有 ELISA","ICH M10 涵蓋層析法與配體結合法，不只 ELISA。"],
+ ["只有動物研究","講義沒有這樣說；它是給藥物開發的 PK 分析。"]],1,"18 全包、22 只 PK、25 給標記。"],
+["p.19","Biomarker assay 確效時特別需要證明 parallelism，原因是？",[
+ ["biomarker 太貴","和成本無關。"],
+ ["常沒有和內源性分析物完全相同的標準品，要證明替代校正品與內源性分析物行為一致","正確。p.19：biomarker 常用重組或合成替代品，accuracy 要能轉移到內源性分析物。"],
+ ["biomarker 不會被基質影響","p.19 明說生物變異與基質複雜度會影響 biomarker。"],
+ ["FDA 不要求 accuracy","有要求，只是 biomarker 的 accuracy 不是絕對的，要 transferable。"]],1,"藥是外來的、biomarker 本來就有。"],
+["p.22","Pre-validation 時，空白基質在 IS 通道的訊號上限是？",[
+ ["< IS 的 5%","正確。p.22（CLSI C62）。"],
+ ["< IS 的 20%","20% 是分析物通道對 LLOQ 的標準，搞混了。"],
+ ["< LLOQ 的 20%","這是分析物（quantifier）通道的標準，不是 IS 通道。"],
+ ["不能有任何訊號","「No peak」是最理想，但允收標準允許低於上述比例的小峰。"]],0,"分析二十、內標五。"],
+["p.22","測內源性化合物買 stripped matrix 當空白，缺點是？",[
+ ["太便宜","價格不是講義提到的問題。"],
+ ["可能少了天然基質中的干擾物，評估不到真實情況","正確。p.22：may lack interferences found in native matrix。"],
+ ["會增加 matrix effect","沒有這種說法；問題是它和真實基質不同。"],
+ ["沒有缺點","講義明確列了缺點。"]],1,"所以要測多個 lot、用 pooled matrix；surrogate matrix 更不理想。"],
+["p.24","確效時某項沒通過，正確做法？",[
+ ["把允收標準改寬","這正是 p.24 禁止的：Don't change acceptance criteria to fit the validation data!"],
+ ["刪掉離群值直到通過","選擇性刪數據等於操弄結果。"],
+ ["接受不合格、找原因修方法後重做","正確。標準事先定，沒過就回去修方法。"],
+ ["只報通過的部分","選擇性報告也是操弄，而且 GLP 要求所有活動都要記錄（p.15）。"]],2,"標準別事後改。"],
+["p.27","FDA 對 accuracy／precision 的允收標準？",[
+ ["bias ≤ 10%、CV ≤ 10%","太嚴，不是 FDA 的數字。"],
+ ["bias ≤ 15%、CV ≤ 15%，LLOQ 放寬到 20%","正確。p.27。"],
+ ["bias ≤ 20%、CV ≤ 20%","20% 只用在 LLOQ。"],
+ ["bias ≤ 15%，LLOQ 放寬到 25%","LLOQ 是 20% 不是 25%。"]],1,"一般十五，底線二十。"],
+["p.27","CLSI EP9 做 method comparison 的最低樣本數與建議樣本類型？",[
+ ["20 個，用 spike 的合成基質","數量錯，而且講義說人類樣本優於合成基質。"],
+ ["40 個，最好是人類樣本","正確。p.27。"],
+ ["10 個，用 QC","數量太少；QC 也不如人類樣本。"],
+ ["100 個，用 CRM","最低是 40 個，不是 100；EP9 是和參考方法比，不是只跑 CRM。"]],1,"四十個樣、五天量（p.29）。"],
+["p.30","Method comparison 的 Deming 斜率 1.068（95% CI 1.030–1.106），截距 −1.9（−37.8 到 34.0）。最正確的解讀？",[
+ ["沒有任何偏差","斜率的 CI 不包含 1，所以有比例偏差。"],
+ ["有比例誤差（約 +7%），沒有明顯固定誤差","正確。斜率 CI 不含 1 → 比例誤差；截距 CI 含 0 → 固定誤差不顯著。"],
+ ["有固定誤差，沒有比例誤差","剛好相反：截距 CI 包含 0，看不出固定誤差。"],
+ ["兩者都有","截距的 CI 包含 0，固定誤差不顯著。"]],1,"判讀規則：斜率看 1、截距看 0。"],
+["p.32","Between-run imprecision 的最低要求？",[
+ ["1 個濃度、10 次","至少要 2 個濃度，而且 10 次是 within-run 的數字。"],
+ ["2 個濃度、10 次、1 個 run","這是 within-run 的規格。"],
+ ["2 個濃度、20 次、最好跨 20 天","正確。p.32。"],
+ ["3 個濃度、40 次","講義沒有這組數字；40 是 method comparison 樣本數。"]],2,"內十、外二十，雙濃度。"],
+["p.33","實例中 within-run CV 2.8%、between-run CV 5.5%。為什麼 between-run 通常比較大？",[
+ ["算錯了","沒算錯：0.65 ÷ 11.86 ≈ 5.5%。"],
+ ["跨天多了試劑批、校正、儀器狀態、操作者等變異來源","正確。Between-run 包含 within-run 的變異再加上天與天之間的變異。"],
+ ["between-run 樣本數少","Between-run 反而要 20 次，比 within-run 的 10 次多。"],
+ ["within-run 有加權","加權是檢量線的事，和 CV 無關。"]],1,"一天之內 vs 二十天之間。"],
+["p.34","LLOQ 要同時滿足哪兩個條件？",[
+ ["CV < 15%、S/N ≥ 3","15% 是一般濃度的標準；S/N 3:1 是一般 LOD 的說法。"],
+ ["CV < 20%、S/N ≥ 10:1","正確。p.34。"],
+ ["CV < 5%、S/N ≥ 100","太嚴，不是講義的標準。"],
+ ["只要 S/N ≥ 3","LLOQ 要定量得準，不只偵測得到。"]],1,"CV 二十、訊雜十。"],
+["p.35–36","某濃度 20 次重複 CV 4.8%，S/N 20:1。可以當 LLOQ 嗎？",[
+ ["不行，CV 太低","CV 低代表精密，越低越好，沒有下限。"],
+ ["可以，CV < 20% 且 S/N > 10:1","正確。這就是講義 0.5 ng/mL 的例子。"],
+ ["不行，S/N 要 100","S/N 只要 ≥ 10:1。"],
+ ["要再做 40 次","LLOQ 是 20 個樣本、20 天；40 是 method comparison。"]],1,"兩個條件都過就合格。"],
+["p.38","做 linearity 時，哪個做法是錯的？",[
+ ["每個基質都做","p.38 要求每種可接受的基質都要做，這是對的。"],
+ ["至少 5 個非零點","最佳做法，對的。"],
+ ["用 serial dilution 一路稀釋做材料","正確（這是錯誤做法）。p.38：Do not use serial dilutions。"],
+ ["用 1/x 加權","p.38：Common to use 1/x weighting，對的。"]],2,"傳話遊戲：錯誤一路往下傳。"],
+["p.39–40","Drug X 的 AMR 是 0.5–2000 ng/mL，reportable range 是 0.5–5000 ng/mL。一個樣本量到超過 2000，怎麼辦？",[
+ ["直接報 >2000","Reportable range 到 5000，可以稀釋後報出確切數值。"],
+ ["用無分析物基質稀釋後再量，乘回稀釋倍數，稀釋準確度須 ±15%","正確。p.39：稀釋液用 analyte-free 或 surrogate matrix；準確度 ±15%、CV ≤ 15%。"],
+ ["丟掉","不需要丟，稀釋就能量。"],
+ ["延長檢量線到 5000","超過最高校正品不能外插；要改檢量線就要重新確效。"]],1,"AMR 不稀釋，Reportable 可稀釋。"],
+["p.41","溶血、黃疸、脂血干擾的允收標準？",[
+ ["偏差 < 5%","太嚴。"],
+ ["偏差 < 15%","正確。p.41。"],
+ ["訊號 < LLOQ 的 5%","搞混了：干擾物訊號是 < LLOQ 的 20%；5% 是空白基質 IS 通道。"],
+ ["不需要評估","p.41 明列要評估。"]],1,"干擾二十，溶黃脂十五。"],
+["p.42","兩個類固醇同分異構物加 H 後都是 289.30。triple quad 怎麼區分它們？",[
+ ["用更高解析度","質量完全一樣，解析度再高也分不開。"],
+ ["沒辦法，只能靠層析把它們在時間上分開","正確。Isomer 只能靠 LC 分離。"],
+ ["用不同碰撞氣","碰撞氣不能區分同分異構物，碎片常也一樣。"],
+ ["改用負離子模式就好","游離模式改了，兩者的質量還是一樣。"]],1,"同卵雙胞胎只能看出場時間。"],
+["p.44","校正品 ion ratio = 1.00，未知樣本 = 1.71 / 1.18 = 1.45。結論？",[
+ ["合格，ion ratio 越高越好","Ion ratio 應該和校正品一致，不是越高越好。"],
+ ["偏離 45%，超過 ±20%，代表有干擾，結果不能直接報","正確。p.44 的例子，峰上還有肩峰。"],
+ ["只要 R² > 0.99 就沒關係","R² 是檢量線的標準，不能取代 ion ratio。"],
+ ["IS 有問題","Ion ratio 是分析物自己兩條 transition 的比例，跟 IS 無關。"]],1,"指紋跑掉，有別人混進來。"],
+["p.45","血清／血漿 ion suppression 的主要來源？",[
+ ["葡萄糖","講義沒有提。"],
+ ["磷脂質","正確。p.45。"],
+ ["鈉","講義沒有提。"],
+ ["尿素","講義沒有提。"]],1,"KTV 最愛搶麥的是磷脂。"],
+["p.46","Mobile phase 面積 0.961，某基質 0.841。% matrix effect 與解讀？",[
+ ["88%，ion suppression","正確。0.841 ÷ 0.961 × 100 ≈ 88%，< 100% 是 suppression。"],
+ ["88%，ion enhancement","數字對、方向錯：< 100% 是被壓低。"],
+ ["112%，ion suppression","112% 是 Matrix 1；而且 > 100% 是 enhancement。"],
+ ["12%，可忽略","算成了差值；講義的寫法是比值（%）。"]],0,"過百加油、未百壓抑。"],
+["p.45–46","評估 matrix effect 最少用幾個不同來源的基質？",[
+ ["1","一個人的血漿代表不了所有人（No two people are the same!）。"],
+ ["3","太少。"],
+ ["10","正確。p.45。"],
+ ["40","40 是 method comparison 的樣本數。"]],2,"十個人來唱 KTV。"],
+["p.47–48","Post-column infusion 中，打入蛋白沉澱處理的空白血清後，在 0.7、3.3、5 分鐘訊號往下凹。代表？",[
+ ["那些時間有分析物","打入的是空白基質，沒有分析物；分析物是持續從 syringe pump 打的。"],
+ ["那些時間有基質成分出來壓制離子化；分析物滯留時間應避開","正確。凹陷＝suppression 的時段。"],
+ ["儀器故障","打 mobile phase（A）時訊號平穩，所以不是儀器問題。"],
+ ["IS 加太多","這個實驗沒有用到 IS。"]],1,"一直播同一首歌，音量掉的地方就是被干擾。"],
+["p.49","Stability 的允收標準？",[
+ ["變化 < 5%","太嚴。"],
+ ["變化 < 15%（LLOQ < 20%）","正確。p.49。"],
+ ["變化 < 30%","太寬。"],
+ ["沒有標準","p.49 有明確標準。"]],1,"又是一般十五，底線二十。"],
+["p.51","萃取後 4 °C 放 7 天，第 0 天 723 ng/mL、第 7 天 625 ng/mL。% recovery 與判定？",[
+ ["86.4%，合格","正確。625 ÷ 723 × 100 = 86.4%，變化 13.6% < 15%。"],
+ ["86.4%，不合格","數字對，判定錯：13.6% 的變化在 15% 內。"],
+ ["115%，合格","算反了（723 ÷ 625）。"],
+ ["13.6%，合格","13.6% 是變化量，不是 % recovery。"]],0,"% recovery＝後 ÷ 前 × 100。"],
+["p.52–53","Carryover：高濃度 10,000 ng/mL，高之前平均 11.8、高之後平均 12.1。% carryover？",[
+ ["0.003%","正確。(12.1 − 11.8) ÷ 10,000 × 100 = 0.003%（投影片寫 0.03%，按計算機是 0.003%）。"],
+ ["0.3%","忘了除以 10,000，或把 0.3 ng/mL 直接當百分比。"],
+ ["3%","單位換算錯。"],
+ ["30%","單位換算錯。"]],0,"三低一高三低；差值 ÷ 高濃度。"],
+["p.55","每一個 run 的允收條件不包括？",[
+ ["校正品 80–120%","這是 run 允收條件。"],
+ ["R² > 0.99","這是 run 允收條件。"],
+ ["QC 80–120%","這是 run 允收條件。"],
+ ["Between-run CV < 15%","正確（不包括）。Between-run CV 是確效階段的參數，不是每一輪的判定。"]],3,"八十到一二〇，R 方點九九，離子比兩成。"],
+["p.56","上線後，用什麼監測「儀器效能」？",[
+ ["PT","PT 監測的是長期方法效能。"],
+ ["System suitability test（SST）","正確。p.56。"],
+ ["CRM","CRM 用在長期準確度評估。"],
+ ["Lot-to-lot","Lot-to-lot 是試劑耗材批間確效。"]],1,"SST 管機器、QC 管批次、PT 管長期。"],
+["p.58–60","要送 FDA 的 pivotal 研究，CRO 該選？",[
+ ["C：4 週、$50k","沒有 GLP、沒有 PT、紙本紀錄、只有有限確效，數據不能用在受規範研究。"],
+ ["B：8 週、$125k","GLP 從 2018 未更新、紀錄有缺、PT 有限 → 法規風險。"],
+ ["A：GLP 有效、完整確效、PT、LIMS","正確。最貴最慢，但數據能被接受。"],
+ ["挑最快的","時間不是第一考量；數據被退的代價更高（p.61）。"]],2,"GLP、PT、LIMS 三樣齊才選。"]
+],
+onco: [
+["p.4","講義怎麼區分 precision 與 personalized medicine？",[
+ ["兩者相同","p.4 就是在講兩者的差別。"],
+ ["Personalized 常被誤解為替每人設計獨特治療；precision 是依個人特徵分類並調整治療","正確。p.4–5。"],
+ ["Precision 只用於化療","精準醫療的核心反而是標靶與免疫治療。"],
+ ["Personalized 是新名詞，取代 precision","講義沒有這樣說，而且方向反了：是 precision 用來避免 personalized 的誤解。"]],1,"重點是分類，不是一人一藥。"],
+["p.5","下列何者不是講義列的 biomarker 開發限制？",[
+ ["罕見亞型統計力低","是限制之一。"],
+ ["沒在獨立世代驗證導致偽陽性","是限制之一。"],
+ ["技術再現性","是限制之一。"],
+ ["定序成本持續上升","正確（不是限制）。p.5 說的是成本下降、品質上升。"]],3,"三個限制：低統計力、偽陽性、再現性。"],
+["p.7","第一個 kinase inhibitor 是？",[
+ ["Rituximab","1997，第一個標靶癌症藥（抗體，B 細胞淋巴瘤），不是 kinase inhibitor。"],
+ ["Trastuzumab","1999，第一個乳癌標靶藥（HER2 抗體）。"],
+ ["Imatinib","正確。2001，第一個 kinase inhibitor。"],
+ ["Gefitinib","2003，第一個 NSCLC 標靶藥。"]],2,"奇數年都是「第一個」。"],
+["p.8","免疫治療典型的副作用？",[
+ ["掉髮","化療的副作用（打快速分裂細胞）。"],
+ ["肝問題與皮疹","標靶治療的副作用。"],
+ ["自體免疫反應","正確。p.8。"],
+ ["骨髓抑制為主","骨髓抑制是化療的典型副作用。"]],2,"自己的軍隊太兇會打自己人。"],
+["p.10","傳統 Phase I 試驗的主要目的？",[
+ ["和標準治療隨機比較","那是 Phase III。"],
+ ["在多種腫瘤中做劑量爬升、找出 RP2D","正確。p.10。"],
+ ["單一腫瘤看療效","那是 Phase II。"],
+ ["上市後監測","那是 Phase IV，講義沒提。"]],1,"I 找劑量、II 看有效、III 和標準比。"],
+["p.11","一個試驗收肺、大腸、甲狀腺癌中所有 BRAF V600E 的病人，都給同一個 BRAF 抑制劑。這是？",[
+ ["Umbrella","Umbrella 是同一種癌、依不同突變分到不同藥。"],
+ ["Basket","正確。一種分子變化、多種組織型。"],
+ ["Platform","Platform 是可增減藥物組的大型設計，題目沒提到。"],
+ ["N-of-1","N-of-1 是每人一套客製組合。"]],1,"籃子裝同一種水果，來自不同樹。"],
+["p.12","Basket 試驗的主要缺點之一？",[
+ ["沒辦法研究罕見突變","剛好相反，研究罕見突變是 basket 的優點。"],
+ ["同一變化不一定在每種腫瘤都是 driver，且常缺對照組","正確。p.12 Table 2 的 disadvantages。"],
+ ["需要隨機","Basket 通常不隨機，所以才說缺對照。"],
+ ["太便宜","成本不是講義列的缺點。"]],1,"同一把鑰匙不一定開每扇門。"],
+["p.12","可以在試驗進行中新增或移除藥物組的設計是？",[
+ ["Basket","Basket 是一個突變、多種癌。"],
+ ["Umbrella","Umbrella 可以淘汰失敗的藥，但「新增或移除新藥物組」是 platform 的定義特徵。"],
+ ["Platform","正確。allows the addition or exclusion of new investigational arms。"],
+ ["Telescope","Telescope 是 Phase I→II→III 無縫銜接。"]],2,"Platform 能加能減。"],
+["p.12","N-of-1 試驗評估的是什麼？",[
+ ["單一藥物的療效","每人用的藥都不同，評估不了單一藥。"],
+ ["配對策略（matching strategy）的效果，而非各別療法","正確。p.12：the efficacy of the matching strategy rather than the individual therapies is evaluated。"],
+ ["劑量","不是 N-of-1 的重點。"],
+ ["副作用","不是主要評估目標。"]],1,"每人一套 → 評估的是挑藥的方法。"],
+["p.16","Germline 突變約佔癌症多少比例？",[
+ ["< 1%","太低。"],
+ ["5–10%","正確。p.16。"],
+ ["25%","太高。"],
+ ["> 50%","大多數是 somatic。"]],1,"遺傳一成內。"],
+["p.17","一個癌症大約有多少個 driver mutation？",[
+ ["0","沒有 driver 就沒有癌化。"],
+ ["1–10 個以上","正確。p.17（Stratton 2009）。"],
+ ["約 1,000 個","太多；大量的是 passenger。"],
+ ["10 萬個以上","這是 passenger 的上限量級。"]],1,"司機少、乘客多。"],
+["p.18","Oncogene 的特性？",[
+ ["Loss of function、隱性、變化型態雜","這是 tumor suppressor 的特性。"],
+ ["Gain of function、顯性、常見 hot-spot／融合／擴增","正確。p.18。"],
+ ["兩個 allele 都要壞","那是 tumor suppressor（隱性）。"],
+ ["只能遺傳","大多數是 somatic；與遺傳無關。"]],1,"油門卡住一個就暴衝。"],
+["p.18","為什麼 tumor suppressor 是「隱性」？",[
+ ["因為它只在生殖細胞","Tumor suppressor 突變可以是 somatic 也可以是 germline。"],
+ ["因為一個正常 allele 通常就足以控制增生，兩個都壞才失控","正確。p.18。"],
+ ["因為它是 gain of function","它是 loss of function。"],
+ ["因為它沒有蛋白產物","它有蛋白產物（如 p53），是突變讓蛋白失去功能。"]],1,"煞車有兩個，兩個都壞才停不住。"],
+["p.19","EML4-ALK 屬於哪一類 DNA 改變？",[
+ ["點突變","點突變是單一鹼基替換，例如 EGFR L858R。"],
+ ["Copy number alteration","拷貝數變化例如 HER2 擴增。"],
+ ["染色體重排形成的 fusion gene","正確。兩個基因接在一起成為融合基因。"],
+ ["Indel","Indel 例如 EGFR exon 19 deletion。"]],2,"順便記：L858R＝點突變、ex19del＝缺失、HER2＝擴增、EML4-ALK＝融合。"],
+["p.21","為什麼分子剖析要擴展到 RNA 與蛋白？",[
+ ["DNA 太貴","不是成本問題。"],
+ ["DNA 層次的改變不一定造成生物功能改變","正確。p.21。"],
+ ["RNA 比較穩定","RNA 其實比 DNA 不穩定。"],
+ ["FDA 規定","講義沒有這樣說。"]],1,"多層次確認功能。"],
+["p.22","Oncotype DX 在講義中被當作？",[
+ ["Predictive biomarker","講義把它放在 prognostic 的例子；它雖然也估化療效益，但考試照講義分類。"],
+ ["Prognostic biomarker","正確。p.22。"],
+ ["Germline test","它驗的是腫瘤組織的基因表現，不是遺傳檢測。"],
+ ["Liquid biopsy","它用腫瘤組織，不是血液。"]],1,"預後是天氣預報。"],
+["p.22","大腸癌病人帶 KRAS 活化突變，代表？",[
+ ["EGFR 抑制劑會有效","剛好相反。"],
+ ["EGFR 抑制劑不會有效（predictive）","正確。p.22。"],
+ ["預後一定好","講義沒這樣說；這裡講的是對治療的預測。"],
+ ["要用 trastuzumab","Trastuzumab 打 HER2，和 KRAS 無關。"]],1,"下游水龍頭壞了，關上游沒用。"],
+["p.23","哪個技術量的是「蛋白表現量」？",[
+ ["qPCR","qPCR 量的是 DNA／RNA。"],
+ ["FISH","FISH 看基因擴增或重排（DNA 層次）。"],
+ ["NGS","NGS 看序列。"],
+ ["IHC","正確。p.23：Immunohistochemistry measures level of protein expression。"]],3,"IHC 例子：HER2、PD-L1、ER。"],
+["p.24","NGS 相較舊技術的優點不包括？",[
+ ["更快","是優點。"],
+ ["一次測多類突變","是優點。"],
+ ["需要更多檢體","正確（不是優點）。NGS 需要的檢體更少。"],
+ ["靈敏度高","是優點。"]],2,"快、便宜、一次多類、檢體少、靈敏。"],
+["p.25","NSCLC 腺癌診斷時常規要驗的 biomarker 不包括？",[
+ ["ALK","有列。"],
+ ["EGFR","有列。"],
+ ["BRCA1","正確（不包括）。BRCA 主要跟乳癌、卵巢癌等相關。"],
+ ["ROS1","有列。"]],2,"AE-RB-KP（＋MET、RET、HER2、NTRK）。"],
+["p.26","在第一／二代 EGFR 抑制劑治療下惡化的肺癌病人，標準是驗什麼？",[
+ ["KRAS G12C","講義沒有把它列為這個情境的標準。"],
+ ["EGFR T790M","正確。p.26。"],
+ ["ALK","ALK 是診斷時就驗的，不是 EGFR 抑制劑抗藥時驗的。"],
+ ["HER2 擴增","不是這個情境的標準。"]],1,"守門員突變 T790M → osimertinib。"],
+["p.27","組織切片的限制不包括？",[
+ ["侵入性","是限制。"],
+ ["原發與轉移處的異質性","是限制。"],
+ ["切片後用過標靶藥，報告可能不反映現況","是限制。"],
+ ["可以縱向追蹤","正確（不是限制）。這是 liquid biopsy 的優點。"]],3,"組織切片三慮：量、位、時。"],
+["p.28","Liquid biopsy 的優點不包括？",[
+ ["檢體容易取得","是優點。"],
+ ["可縱向追蹤","是優點。"],
+ ["報告快","是優點。"],
+ ["一定比組織準","正確（不是優點）。不是每個腫瘤都會釋放足夠 ctDNA（講義：some tumors secrete）。"]],3,"液態切片四好：易、追、快、全。"],
+["p.29","從 hot-spot panel 換成 whole exome，哪一項會下降？",[
+ ["Cost","會上升。"],
+ ["Turn-around time","會上升。"],
+ ["Depth of coverage","正確。範圍越大，每個位置讀得越淺。"],
+ ["Bioinformatics needs","會上升。"]],2,"同一桶油漆刷越大面積越薄。"],
+["p.30","NGS 報告出現從未被描述過的變化（VUS），該怎麼做？",[
+ ["直接用相關標靶藥","p.30：generally should not make a treatment recommendation。"],
+ ["一般不應根據它建議治療","正確。"],
+ ["當作 germline 通報","VUS 不代表是 germline；有 germline 可能時才找遺傳諮詢（p.31）。"],
+ ["重做三次","重做不會讓意義變明確。"]],1,"VUS 不下藥；可查 OncoKB 等資源。"],
+["p.31","腫瘤 NGS 看到可能與遺傳性癌症症候群有關的變化，下一步？",[
+ ["忽略","可能影響病人與家屬，不能忽略。"],
+ ["找遺傳諮詢師，參考 ACMG 建議基因清單","正確。p.31。"],
+ ["直接告訴家屬都要手術","沒有確認也沒有諮詢就建議手術，不合理。"],
+ ["改做 liquid biopsy","Liquid biopsy 不能確認是不是 germline。"]],1,"Germline 可能 → genetic counselor ＋ ACMG。"],
+["p.32","CML 帶 BCR-ABL 且有 T315I 突變，用？",[
+ ["Imatinib","T315I 對 imatinib 抗藥。"],
+ ["Dasatinib","T315I 對 dasatinib 抗藥。"],
+ ["Ponatinib","正確。表上 T315I 唯一對應的藥。"],
+ ["Nilotinib","T315I 對 nilotinib 抗藥。"]],2,"三一五找普納。"],
+["p.32","NSCLC 帶 EGFR L858R，下列哪個藥不在表上的選項中？",[
+ ["Osimertinib","在表上。"],
+ ["Erlotinib","在表上。"],
+ ["Crizotinib","正確（不在）。它是 ALK 的藥。"],
+ ["Afatinib","在表上。"]],2,"EGFR 是 A-D-E-G-O；ALK 是 A-B-C-C-L。"],
+["p.33","FLT3-ITD 的復發／難治 AML 用？",[
+ ["Erdafitinib","FGFR（泌尿上皮癌）。"],
+ ["Gilteritinib","正確。p.33。"],
+ ["Lapatinib","HER2（乳癌）。"],
+ ["Ponatinib","ABL T315I（CML）。"]],1,"FLT3 找 Gilt，FGFR 找 Erda。"],
+["p.33","HER2「突變」（exon 20）的轉移性 NSCLC，表上的藥是？",[
+ ["Trastuzumab","用在 HER2 過度表現（乳癌、胃癌）。"],
+ ["Pertuzumab","用在 HER2 過度表現的乳癌。"],
+ ["Ado-trastuzumab emtansine","正確。p.33（NCCN only）。"],
+ ["Lapatinib","用在 HER2 過度表現的乳癌。"]],2,"HER2 量太多 vs HER2 長歪了。"],
+["p.41–44","Gemcitabine＋erlotinib 比 gemcitabine 單用在胰臟癌多了多少存活？這張表的結論？",[
+ ["4.3 個月；化療很有效","4.3 個月是 FOLFIRINOX；而且結論不是化療很有效。"],
+ ["11 天；需要用 biomarker 挑病人","正確。p.44：Patient selection based on the biomarker is likely required。"],
+ ["2 年；夠了","沒有這個數字。"],
+ ["沒有差別；不用治療","有差（11 天），結論也不是不用治療。"]],1,"11 天的故事。"],
+["p.47","NSCLC 細胞株依驅動基因分塊的圖（Divide and Conquer）想說明？",[
+ ["所有肺癌對同一藥反應一樣","剛好相反。"],
+ ["藥只對帶有敏感變化的那一群有效，不分群就會被稀釋","正確。p.47：Agents work only in those with a sensitizing aberration。"],
+ ["KRAS 最好治","圖上 KRAS 對應「None」（當時沒有藥）。"],
+ ["細胞株不重要","不是這張圖的重點。"]],1,"先分，再各個擊破。"],
+["p.49–51","ToGA 試驗中 HER2+ 胃癌加 trastuzumab，OS 13.8 vs 11.1 個月。「我們漏了什麼？」",[
+ ["HER2 檢測錯誤","講義沒有說檢測錯誤。"],
+ ["ERBB2 擴增腫瘤還有很多共同變化，每人不同，只打一個靶不夠","正確。p.51（Kim 2014）。"],
+ ["應該用化療","兩組都有化療；問題不在化療。"],
+ ["樣本數不夠","結果有統計顯著（P = 0.0046），問題不是樣本數。"]],1,"惡性雪花。"],
+["p.54","I-PREDICT 中，有接受治療的病人裡多少比例拿到配對治療？",[
+ ["43%","43% 是佔全部同意者（175 ÷ 410）。"],
+ ["51%","51% 是有接受治療的比例（209 ÷ 410）。"],
+ ["84%","正確。175 ÷ 209 = 84%。"],
+ ["100%","不是每個治療者都有配對。"]],2,"410 → 209 → 175。"],
+["p.55","I-PREDICT 中 matching score > 50% 與 ≤ 50% 的部分／完全緩解率？",[
+ ["16.3% vs 45.0%","順序反了。"],
+ ["45.0% vs 16.3%","正確。p.55（P = 0.028）。"],
+ ["25% vs 42.9%","這是兩組的惡化（PD）比例。"],
+ ["差不多","差了快三倍。"]],1,"配過半：接近一半 vs 六分之一。"],
+["p.56–63","77 歲胰臟癌病人 CDKN2A 變化，配對的藥與理由？",[
+ ["Trametinib，因為 CDKN2A 活化 MEK","Trametinib 是配 KRAS（打下游 MEK）。"],
+ ["Palbociclib，因為 CDKN2A（p16）本來抑制 CDK4/6，它失去後 CDK4/6 失控","正確。"],
+ ["Trastuzumab，因為 CDKN2A 是 HER2","Trastuzumab 是配 ERBB2 擴增。"],
+ ["Olaparib，因為 DNA 修復","這個病人沒用 olaparib；olaparib 出現在子宮內膜癌病例。"]],1,"p16 是 CDK4/6 的煞車。"],
+["p.62–63","多藥合併時，劑量策略與重疊副作用？",[
+ ["全部用足量","講義的劑量都從低開始。"],
+ ["從較低劑量開始；trastuzumab／lapatinib 與 trametinib 都可能造成心衰竭","正確。lapatinib 250→500 mg、trametinib 0.5→1 mg。"],
+ ["只要監測肝功能","講義列的重疊副作用主要是心衰竭、血球低下、腹瀉。"],
+ ["不會有交互作用","多藥合併副作用會疊加。"]],1,"劑量從低、副作用疊加要顧。"],
+["p.65–69","37 歲卵巢癌病人用了哪兩類配對？",[
+ ["KRAS → trametinib；ER+ → tamoxifen 後 letrozole","正確。"],
+ ["HER2 → trastuzumab；PD-L1 → pembrolizumab","她 PD-L1 陰性，也沒有 HER2 變化。"],
+ ["BRCA → olaparib；TMB → nivolumab","她 TMB-low，沒有 BRCA。"],
+ ["沒有配對","有，而且 PFS 19 個月以上。"]],0,"DNA（KRAS）＋蛋白（ER）兩條路。"],
+["p.70","「一次切片只是快照」說的是哪種挑戰？",[
+ ["費用","不是這頁的主題。"],
+ ["異質性：腫瘤內與隨時間演化，未來的主要克隆可能是現在的小克隆","正確。p.70（Hiley 2014）。"],
+ ["副作用","不是這頁的主題。"],
+ ["病人不配合","不是這頁的主題。"]],1,"人與人、瘤內、隨時間。"],
+["p.71–74","68 歲胃癌病人的液態切片示範了哪兩個用途？",[
+ ["診斷與分期","她已經診斷；液態切片在這裡不是用來分期。"],
+ ["選擇標靶（血中 EGFR 擴增 → cetuximab＋erlotinib）與追蹤療效（EGFR 拷貝數隨腫瘤縮小下降）","正確。"],
+ ["篩檢與預防","不是這個病例的用途。"],
+ ["只用來確認 germline","液態切片看的是 ctDNA（腫瘤），不是 germline。"]],1,"監視器：選靶＋追蹤。"],
+["p.76–78","花園比喻中，免疫治療相當於？",[
+ ["除草劑直接殺雜草","直接殺比較像化療；免疫治療是加強土壤。"],
+ ["加除草肥料增強土壤（免疫系統）；但太多會傷花園","正確。p.77–78。"],
+ ["把好植物拔掉","不是。"],
+ ["換一塊地","不是。"]],1,"土壤是免疫、雜草是癌。"],
+["p.80","下列哪個與免疫檢查點抑制劑的「反應」相關？",[
+ ["MDM2/4 擴增","和 hyperprogression（過度惡化）相關。"],
+ ["PTEN 缺失","和原發抗藥相關。"],
+ ["MSI-high","正確。和反應相關。"],
+ ["JAK1/2 失活","和後天抗藥相關。"]],2,"一 L 三多：PD-L1、TMB、MSI-H、dMMR。"],
+["p.80","β2-microglobulin 缺失為什麼造成後天抗藥？",[
+ ["讓 PD-L1 增加","和 PD-L1 表現無關。"],
+ ["它是 MHC class I 的組成，缺了癌細胞無法呈現抗原給 T 細胞","正確。"],
+ ["讓藥物代謝變快","和藥物代謝無關。"],
+ ["讓 TMB 變高","和突變負荷無關。"]],1,"展示櫃的腳斷了。"],
+["p.81","Cancer-immunity cycle 中，CTLA-4 主要作用在哪一步？",[
+ ["第 1 步抗原釋放","第 1 步的抑制因子是 tolerogenic cell death。"],
+ ["第 3 步淋巴結內 T 細胞 priming 與活化","正確。p.81。"],
+ ["第 5 步浸潤","第 5 步的抑制因子是 VEGF、endothelin B receptor。"],
+ ["第 6 步辨認","第 6 步的問題是癌細胞 pMHC 減少。"]],1,"CTLA-4 在總部（淋巴結）、PD-1 在現場（腫瘤）。"],
+["p.88","評估精準醫療組合療法時，講義提醒要考慮？",[
+ ["只看腫瘤縮小","p.88 特別提醒不只看腫瘤。"],
+ ["生活品質、PRO、財務毒性，並需要配對的標準治療對照組","正確。p.88。"],
+ ["只看費用","費用只是其中一項。"],
+ ["只看基因","p.86–88 提到基因只是冰山一角。"]],1,"QOL、PRO、財務毒性、對照組。"]
+]};
+
+
+const TABNAME={lcms:"LC-MS/MS",onco:"精準腫瘤"};
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+function renderQuiz(key){
+  const box=document.getElementById("quiz-"+key); box.innerHTML="";
+  let done=0, right=0; const total=QUIZ[key].length;
+  const score=document.getElementById("score-"+key);
+  const upd=()=>{score.textContent=done?`${right}/${done}（共 ${total} 題）`:`共 ${total} 題`;};
+  QUIZ[key].forEach(([pg,stem,opts,ans,sum],i)=>{
+    const q=document.createElement("div"); q.className="q";
+    q.innerHTML=`<div class="stem">${i+1}. ${stem} <span class="src">（${pg}）</span></div><div class="opts"></div><div class="why" hidden></div>`;
+    const o=q.querySelector(".opts"), w=q.querySelector(".why");
+    opts.forEach(([t,note],j)=>{
+      const b=document.createElement("button"); b.className="opt"; b.type="button"; b.id=`q-${key}-${i}-${j}`;
+      b.textContent=String.fromCharCode(65+j)+". "+t;
+      b.addEventListener("click",()=>{
+        if(q.dataset.done) return; q.dataset.done=1; done++;
+        const L=String.fromCharCode(65+ans);
+        if(j===ans){b.classList.add("right"); right++;} else {b.classList.add("wrong"); o.children[ans].classList.add("right");}
+        const rows=opts.map(([t2,n2],k)=>`<li class="${k===ans?'ok':'no'}"><b>${String.fromCharCode(65+k)}${k===ans?' ✓':' ✗'}</b>　${n2}</li>`).join("");
+        w.innerHTML=`<div class="verdict ${j===ans?'ok':'no'}">${j===ans?'✓ 答對':'✗ 答錯'}，正確答案是 ${L}。</div><ul class="each">${rows}</ul><div class="sum"><b>重點：</b>${sum}</div>`;
+        w.hidden=false; upd();
+      });
+      o.appendChild(b);
+    });
+    
+    box.appendChild(q);
+  });
+  upd();
+}
+renderQuiz("lcms"); renderQuiz("onco");
+document.querySelectorAll(".reset").forEach(b=>b.addEventListener("click",()=>renderQuiz(b.dataset.reset)));
+
+const tabs={lcms:document.getElementById("tab-lcms"),onco:document.getElementById("tab-onco")};
+let cur="lcms";
+function show(k){
+  cur=k;
+  for(const [name,t] of Object.entries(tabs)){
+    const on=name===k; t.setAttribute("aria-selected",on); document.getElementById(name).hidden=!on;
+  }
+  document.body.classList.toggle("onc",k==="onco");
+  try{localStorage.setItem("tab",k)}catch(e){}
+}
+tabs.lcms.addEventListener("click",()=>{show("lcms");scrollTo({top:0})});
+tabs.onco.addEventListener("click",()=>{show("onco");scrollTo({top:0})});
+document.querySelectorAll(".toc a").forEach(a=>a.addEventListener("click",e=>{
+  e.preventDefault(); const t=document.querySelector(a.getAttribute("href")); if(t) t.scrollIntoView({behavior:"smooth",block:"start"});
+}));
+let start=(location.hash||"").slice(1);
+if(!tabs[start]){try{start=localStorage.getItem("tab")}catch(e){start=null}}
+show(tabs[start]?start:"lcms");
+
+</script>
+
+</body></html>
