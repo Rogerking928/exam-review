@@ -1,5 +1,5 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>
-<title>201 期中複習</title>
+<title>201 期中／期末複習</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
@@ -15,16 +15,19 @@
   --cv:#a8322d; --cv-soft:#f7e1df;
   --hep:#7a5a00; --hep-soft:#f6edd2;
   --ca:#2f6f2a; --ca-soft:#e2f0df;
+  --cvdev:#b34d12; --cvdev-soft:#f8e6da;
+  --auto:#0f6e8c; --auto-soft:#dcedf3;
+  --dm:#5c6b00; --dm-soft:#ecefd2;
   --acc:var(--lab); --acc-soft:var(--lab-soft);
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0f1719; --paper:#162224; --ink:#e3ecec; --muted:#9db0b3; --line:#2b3b3e;
   --lab:#5cc6c1; --lab-soft:#163634; --onc:#e48ab9; --onc-soft:#3a1d2c;
-  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3b1b19; --warn-soft:#352a10; --warn:#f2c76b;  --pd:#8fb4ff; --pd-soft:#1a2840;  --pk:#c4a3f0; --pk-soft:#2a1f3a;  --cv:#ff9a90; --cv-soft:#3a1c1a;  --hep:#e8c160; --hep-soft:#33290f;  --ca:#8fd48a; --ca-soft:#1b3019; color-scheme:dark}}
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3b1b19; --warn-soft:#352a10; --warn:#f2c76b;  --pd:#8fb4ff; --pd-soft:#1a2840;  --pk:#c4a3f0; --pk-soft:#2a1f3a;  --cv:#ff9a90; --cv-soft:#3a1c1a;  --hep:#e8c160; --hep-soft:#33290f;  --ca:#8fd48a; --ca-soft:#1b3019;  --cvdev:#ffa36b; --cvdev-soft:#3a2314;  --auto:#6cc7e6; --auto-soft:#14303a;  --dm:#c9d66a; --dm-soft:#2a2f10; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0f1719; --paper:#162224; --ink:#e3ecec; --muted:#9db0b3; --line:#2b3b3e;
   --lab:#5cc6c1; --lab-soft:#163634; --onc:#e48ab9; --onc-soft:#3a1d2c;
-  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3b1b19; --warn-soft:#352a10; --warn:#f2c76b;  --pd:#8fb4ff; --pd-soft:#1a2840;  --pk:#c4a3f0; --pk-soft:#2a1f3a;  --cv:#ff9a90; --cv-soft:#3a1c1a;  --hep:#e8c160; --hep-soft:#33290f;  --ca:#8fd48a; --ca-soft:#1b3019; color-scheme:dark}
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3b1b19; --warn-soft:#352a10; --warn:#f2c76b;  --pd:#8fb4ff; --pd-soft:#1a2840;  --pk:#c4a3f0; --pk-soft:#2a1f3a;  --cv:#ff9a90; --cv-soft:#3a1c1a;  --hep:#e8c160; --hep-soft:#33290f;  --ca:#8fd48a; --ca-soft:#1b3019;  --cvdev:#ffa36b; --cvdev-soft:#3a2314;  --auto:#6cc7e6; --auto-soft:#14303a;  --dm:#c9d66a; --dm-soft:#2a2f10; color-scheme:dark}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
 body.onc{--acc:var(--onc);--acc-soft:var(--onc-soft)}
@@ -33,6 +36,9 @@ body[data-tab="pk"]{--acc:var(--pk);--acc-soft:var(--pk-soft)}
 body[data-tab="cv"]{--acc:var(--cv);--acc-soft:var(--cv-soft)}
 body[data-tab="hep"]{--acc:var(--hep);--acc-soft:var(--hep-soft)}
 body[data-tab="ca"]{--acc:var(--ca);--acc-soft:var(--ca-soft)}
+body[data-tab="cvdev"]{--acc:var(--cvdev);--acc-soft:var(--cvdev-soft)}
+body[data-tab="auto"]{--acc:var(--auto);--acc-soft:var(--auto-soft)}
+body[data-tab="dm"]{--acc:var(--dm);--acc-soft:var(--dm-soft)}
 .wrap{max-width:760px;margin:0 auto}
 header.top{padding-block:28px 8px}
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -147,8 +153,8 @@ nav.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin} .tab{flex:none;w
 
 <div class="wrap">
 <header class="top">
-  <div class="eyebrow">期中複習 · 照投影片頁碼</div>
-  <h1>藥理學 · 藥動學 · 心血管 · 肝炎 · 癌症 · LC-MS/MS</h1>
+  <div class="eyebrow">期中／期末複習 · 照投影片頁碼</div>
+  <h1>藥理學 · 藥動學 · 心血管 · 肝炎 · 癌症 · 藥物開發 · 糖尿病 · LC-MS/MS</h1>
   <p class="lede">每一段前面的 <span class="en">p.X</span> 是老師投影片的頁碼，可以對照原檔看圖。用中文講清楚，但考試要的細節（數字、名詞、例題算法）都保留；英文關鍵字照考卷上會出現的寫法。最後是自我測驗，點選項就有詳解。</p>
 </header>
 
@@ -158,8 +164,11 @@ nav.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin} .tab{flex:none;w
   <button class="tab" role="tab" id="tab-cv" aria-controls="cv" aria-selected="false">③ 心血管藥物 W3（90 頁）</button>
   <button class="tab" role="tab" id="tab-hep" aria-controls="hep" aria-selected="false">④ 病毒性肝炎 W3（35 頁）</button>
   <button class="tab" role="tab" id="tab-ca" aria-controls="ca" aria-selected="false">⑤ 癌症總論 W4（44 頁）</button>
-  <button class="tab" role="tab" id="tab-lcms" aria-controls="lcms" aria-selected="false">⑥ LC-MS/MS 確效（62 頁）</button>
-  <button class="tab" role="tab" id="tab-onco" aria-controls="onco" aria-selected="false">⑦ 精準腫瘤醫學（89 頁）</button>
+  <button class="tab" role="tab" id="tab-cvdev" aria-controls="cvdev" aria-selected="false">⑥ 心血管藥物開發 W5（43 頁）</button>
+  <button class="tab" role="tab" id="tab-auto" aria-controls="auto" aria-selected="false">⑦ 自動化藥物探索 W5（34 頁）</button>
+  <button class="tab" role="tab" id="tab-dm" aria-controls="dm" aria-selected="false">⑧ 糖尿病與肥胖 W7（47 頁）</button>
+  <button class="tab" role="tab" id="tab-lcms" aria-controls="lcms" aria-selected="false">⑨ LC-MS/MS 確效（62 頁）</button>
+  <button class="tab" role="tab" id="tab-onco" aria-controls="onco" aria-selected="false">⑩ 精準腫瘤醫學（89 頁）</button>
 </nav>
 
 <!-- ======================= 藥效學 ======================= -->
@@ -3238,6 +3247,1488 @@ SOF/VEL 學名版：$343 × 84 = $28,812</div>
 <div class="quiz" id="quiz-ca"></div>
 </main>
 
+<main id="cvdev" role="tabpanel" aria-labelledby="tab-cvdev" hidden>
+<div class="big">整堂課的主線：<b>心血管（CV）是最大的市場，卻是創新最少的領域</b>。CV＋代謝藥在 2024 年全球前 20 大藥物裡賣了約 $93B，但 2000–2020 年新上市的藥只有約 6% 是 CV。原因是開發一個藥本來就是<b>機率 × 成本 × 時間</b>的賭局（進 Phase I 的藥只有約 8% 會核准），而 CV 試驗要用<b>硬終點</b>、人數又多、時間又長。老師用三個案例教你用生意的角度看：<b>tafamidis</b>（罕見病、約 14 年、靠孤兒藥定價變成 $6.4B 的大藥）、<b>Eliquis</b>（18,201 人的大型試驗打贏便宜的 warfarin，2024 年 BMS 賣 $13.3B）、<b>pelacarsen</b>（Lp(a) 降了約 80%，8,323 人的試驗卻沒有減少事件，失敗）。最後講 AI：<b>AI 讓每一次嘗試更便宜、更快，但還沒有提高「假說是對的」的機率</b>。</div>
+<div class="toc" aria-label="本講目錄">
+  <a href="#R-abbr">縮寫全名</a><a href="#R-memo">記憶法</a><a href="#R-a">p.1–6 CV 的版圖與矛盾</a><a href="#R-b">p.7–10 藥怎麼開發：階段、FDA、機率與成本</a><a href="#R-c">p.11–16 案例 1 tafamidis</a><a href="#R-d">p.17–23 案例 2 Eliquis</a><a href="#R-e">p.24–29 案例 3 pelacarsen 與共通模式</a><a href="#R-f">p.30–33 CV 為什麼落後</a><a href="#R-g">p.34–39 AI 與藥物開發</a><a href="#R-h">p.40–43 未來五年與重點整理</a><a href="#R-cheat">必背表</a><a href="#R-quiz">測驗</a>
+</div>
+
+<details class="card" id="R-abbr"><summary>縮寫全名表（62 個）</summary><div class="in"><div class="tbl"><table><tr><th>縮寫</th><th>全名</th></tr>
+<tr><td class="num">CV</td><td>cardiovascular，心血管</td></tr>
+<tr><td class="num">CVD</td><td>cardiovascular disease，心血管疾病</td></tr>
+<tr><td class="num">BMS</td><td>Bristol Myers Squibb，必治妥施貴寶（講者的公司，和 Pfizer 共同行銷 Eliquis）</td></tr>
+<tr><td class="num">PhD／MBA</td><td>Doctor of Philosophy 博士／Master of Business Administration 企管碩士（講者學歷）</td></tr>
+<tr><td class="num">ACE inhibitor</td><td>angiotensin-converting enzyme inhibitor，血管收縮素轉化酶抑制劑</td></tr>
+<tr><td class="num">SGLT2i</td><td>sodium-glucose cotransporter 2 inhibitor，鈉-葡萄糖共同轉運蛋白 2 抑制劑</td></tr>
+<tr><td class="num">GLP-1</td><td>glucagon-like peptide-1，類升糖素胜肽-1（GLP-1 agonist＝GLP-1 受體促效劑，例如 Ozempic、Mounjaro/Zepbound）</td></tr>
+<tr><td class="num">PCSK9</td><td>proprotein convertase subtilisin/kexin type 9，降 LDL 的標靶（Repatha、inclisiran、enlicitide）</td></tr>
+<tr><td class="num">LDL-C</td><td>low-density lipoprotein cholesterol，低密度脂蛋白膽固醇（FDA 接受的替代指標）</td></tr>
+<tr><td class="num">IND</td><td>Investigational New Drug application，試驗用新藥申請（進人體試驗前送 FDA）</td></tr>
+<tr><td class="num">ADME</td><td>absorption, distribution, metabolism, excretion，吸收、分布、代謝、排除</td></tr>
+<tr><td class="num">ADMET</td><td>ADME 再加 toxicity（毒性）</td></tr>
+<tr><td class="num">NDA</td><td>New Drug Application，新藥上市申請（小分子）</td></tr>
+<tr><td class="num">BLA</td><td>Biologics License Application，生物製劑上市申請</td></tr>
+<tr><td class="num">ANDA</td><td>Abbreviated New Drug Application，簡化新藥申請（學名藥）</td></tr>
+<tr><td class="num">FDA</td><td>Food and Drug Administration，美國食品藥物管理局</td></tr>
+<tr><td class="num">CDER</td><td>Center for Drug Evaluation and Research，FDA 藥品審查中心</td></tr>
+<tr><td class="num">FAERS</td><td>FDA Adverse Event Reporting System，FDA 不良事件通報系統（上市後監測）</td></tr>
+<tr><td class="num">EMA</td><td>European Medicines Agency，歐洲藥品管理局</td></tr>
+<tr><td class="num">rNPV</td><td>risk-adjusted net present value，風險調整後淨現值</td></tr>
+<tr><td class="num">ROI</td><td>return on investment，投資報酬</td></tr>
+<tr><td class="num">CSDD</td><td>Tufts Center for the Study of Drug Development，塔夫茲藥物開發研究中心（$2.6B 的出處）</td></tr>
+<tr><td class="num">R&amp;D</td><td>research and development，研究開發</td></tr>
+<tr><td class="num">ATTR-CM</td><td>transthyretin amyloid cardiomyopathy，轉甲狀腺素蛋白類澱粉沉積心肌病變</td></tr>
+<tr><td class="num">TTR</td><td>transthyretin，轉甲狀腺素蛋白</td></tr>
+<tr><td class="num">ATTR-ACT</td><td>tafamidis 的樞紐 Phase 3 試驗名稱</td></tr>
+<tr><td class="num">HR</td><td>hazard ratio，風險比（&lt; 1 代表藥物組事件較少）</td></tr>
+<tr><td class="num">RR</td><td>relative risk，相對風險</td></tr>
+<tr><td class="num">RNAi／siRNA</td><td>RNA interference，RNA 干擾／small interfering RNA，小干擾 RNA</td></tr>
+<tr><td class="num">AF</td><td>atrial fibrillation，心房顫動（講義寫 non-valvular AF，非瓣膜性）</td></tr>
+<tr><td class="num">INR</td><td>international normalized ratio，國際標準化比值（warfarin 要定期抽血監測）</td></tr>
+<tr><td class="num">ARISTOTLE</td><td>Eliquis vs warfarin 的 AF 試驗（18,201 人）</td></tr>
+<tr><td class="num">APPRAISE-2</td><td>apixaban 在 ACS 的試驗，2010 年因出血中止</td></tr>
+<tr><td class="num">ACS</td><td>acute coronary syndrome，急性冠心症</td></tr>
+<tr><td class="num">CRL</td><td>complete response letter，FDA 完整回覆函（＝這次先不核准）</td></tr>
+<tr><td class="num">LOE</td><td>loss of exclusivity，專屬權到期（學名藥可進場）</td></tr>
+<tr><td class="num">IRA</td><td>Inflation Reduction Act，降低通膨法案（Medicare 議價）</td></tr>
+<tr><td class="num">Lp(a)</td><td>lipoprotein(a)，脂蛋白(a)</td></tr>
+<tr><td class="num">apo(a)</td><td>apolipoprotein(a)，載脂蛋白(a)</td></tr>
+<tr><td class="num">Lp(a)HORIZON</td><td>pelacarsen 的 Phase 3 結果試驗（8,323 人）</td></tr>
+<tr><td class="num">ADC</td><td>antibody-drug conjugate，抗體藥物複合體</td></tr>
+<tr><td class="num">HF</td><td>heart failure，心衰竭</td></tr>
+<tr><td class="num">EF</td><td>ejection fraction，射出分率（low EF＝收縮功能差）</td></tr>
+<tr><td class="num">HFpEF</td><td>heart failure with preserved EF，射出分率保留的心衰竭（講義寫全名）</td></tr>
+<tr><td class="num">MACE</td><td>major adverse cardiovascular events，主要心血管不良事件</td></tr>
+<tr><td class="num">MI</td><td>myocardial infarction，心肌梗塞（heart attack）</td></tr>
+<tr><td class="num">IL-6</td><td>interleukin-6，介白素-6</td></tr>
+<tr><td class="num">hsCRP</td><td>high-sensitivity C-reactive protein，高敏感度 C 反應蛋白</td></tr>
+<tr><td class="num">AI</td><td>artificial intelligence，人工智慧</td></tr>
+<tr><td class="num">IPF</td><td>idiopathic pulmonary fibrosis，特發性肺纖維化</td></tr>
+<tr><td class="num">FVC</td><td>forced vital capacity，用力肺活量</td></tr>
+<tr><td class="num">hERG</td><td>human ether-à-go-go-related gene，一種心臟鉀離子通道（擋到會 QT 延長）</td></tr>
+<tr><td class="num">ECG</td><td>electrocardiogram，心電圖</td></tr>
+<tr><td class="num">EAGLE</td><td>Mayo Clinic 的 AI-ECG 篩檢 low EF 試驗（22,641 人）</td></tr>
+<tr><td class="num">510(k)</td><td>FDA 的上市前通知途徑（醫療器材，和已上市器材「實質相等」即可）</td></tr>
+<tr><td class="num">RWD</td><td>real-world data，真實世界資料</td></tr>
+<tr><td class="num">EHR</td><td>electronic health record，電子病歷</td></tr>
+<tr><td class="num">AHA</td><td>American Heart Association，美國心臟協會</td></tr>
+<tr><td class="num">NHANES</td><td>National Health and Nutrition Examination Survey，美國國民健康與營養調查</td></tr>
+<tr><td class="num">CFO</td><td>chief financial officer，財務長</td></tr>
+<tr><td class="num">H1／Q1</td><td>first half（上半年）／first quarter（第一季）</td></tr>
+</table></div></div></details>
+
+<h2 class="sec" id="R-memo"><small>Memory aids</small>記憶法（比喻、畫面、推理、數字分組）</h2><div class="memo">
+<div class="mm"><div class="pg"><span class="ty">對比</span>p.4–6</div><div class="k">最大的市場，最少的新藥</div><div class="d">CV＋代謝佔前 20 大藥物銷售 $93B（6 個藥），但新上市藥只有約 6% 是 CV。這就是 CV paradox：藥很多、死亡沒少（p.5 More drugs. Same deaths.）。</div></div>
+<div class="mm"><div class="pg"><span class="ty">畫面</span>p.4</div><div class="k">36 秒一個、3 分 30 秒一個</div><div class="d">美國每 36 秒有一人死於 CVD（每天約 2,396 人）；每 3 分 30 秒有一人死於中風（每天約 411 人），都是 2019 資料。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.8</div><div class="k">2.3＋3.6＋3.3＋1.3＝10.5</div><div class="d">Phase 1、2、3、FDA 審查的平均年數，加起來就是「Phase 1 到核准平均約 10.5 年」。Phase 2 最久（3.6 年）。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.10</div><div class="k">100 → 52 → 15 → 8.7 → 7.9</div><div class="d">進 Phase I 的藥，還活著的比例：進 Phase II 52%、進 Phase III 15%、送件 8.7%、核准 7.9%（約 8%）。最大的斷崖在 Phase II → III。</div></div>
+<div class="mm"><div class="pg"><span class="ty">口訣</span>p.9</div><div class="k">孤快突優：12、17、18、18 → 19</div><div class="d">tafamidis 一路拿齊四種 FDA 快速通道：Orphan（2012）、Fast Track（2017/6）、Breakthrough（2018/5）、Priority Review（2018/11），2019/5 核准。但「法規能加速審查，不能加速科學」：還是要做 441 人的 Phase 3。</div></div>
+<div class="mm"><div class="pg"><span class="ty">比喻</span>p.10</div><div class="k">賭場的贏家付全部的帳</div><div class="d">rNPV ＝成功機率 × 利潤 − 成本。約 92% 的藥會失敗，成功的那 8% 要把失敗的錢都賺回來。越晚失敗（Phase 3）越貴。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.11</div><div class="k">441／18,201／8,323</div><div class="d">三個案例的樞紐試驗人數：tafamidis 441 人（罕見病，小）、Eliquis 18,201 人（常見病，超大）、pelacarsen 8,323 人（大，但失敗）。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.8, 11</div><div class="k">14、6、7</div><div class="d">tafamidis 從第一次人體試驗到核准約 14 年；Eliquis 從結盟到核准約 6 年；pelacarsen 從授權到 Phase 3 失敗約 7 年、沒有核准。</div></div>
+<div class="mm"><div class="pg"><span class="ty">畫面</span>p.12</div><div class="k">摺壞的四聚體，tafamidis 把它鎖住</div><div class="d">TTR 蛋白摺錯 → 變成類澱粉沉積在心臟 → 心臟又厚又硬。tafamidis 讓 TTR 穩定、不會摺錯。死亡 29.5% vs 42.9%（HR 0.70），住院少 32%（RR 0.68）。</div></div>
+<div class="mm"><div class="pg"><span class="ty">推理</span>p.14</div><div class="k">少病人 × 超高價 × 長專屬權 ＝ 大藥</div><div class="d">罕見病的經濟學：病人少，但每年約 $270K、7 年孤兒藥專屬權，加上先行者優勢，2025 年 Pfizer 賣 $6.4B（+17%）。美國學名藥最早約 2031 年中。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.19–20</div><div class="k">0.79／0.69／0.89</div><div class="d">Eliquis vs warfarin（ARISTOTLE）：中風或全身栓塞 HR 0.79、大出血 HR 0.69、全死因 HR 0.89。三個都贏，是「superior」不只是「non-inferior」。</div></div>
+<div class="mm"><div class="pg"><span class="ty">口訣</span>p.21–22</div><div class="k">60／40 出錢，50／50 分錢</div><div class="d">Eliquis：開發費 Pfizer 60%、BMS 40%；上市後商業成本與利潤 50/50。Pfizer 付 BMS $250M 前金（＋最多 $750M 里程碑）。三種合作：共同開發（Eliquis）→ 授權（pelacarsen）→ 收購（tafamidis），從分擔風險到自己扛。</div></div>
+<div class="mm"><div class="pg"><span class="ty">對比</span>p.25–26</div><div class="k">指標動了，結局沒動</div><div class="d">pelacarsen 把 Lp(a) 降約 80%（目標有打到），但心血管事件沒有減少。LDL-C 是 FDA 接受的替代指標，可以先靠它核准；Lp(a) 不是，所以一定要跑結果試驗。</div></div>
+<div class="mm"><div class="pg"><span class="ty">計算</span>p.27</div><div class="k">3 × 10 × 30% ＝ 9；× 50% ＝ 4.5 &gt; 0.8</div><div class="d">尖峰年銷 $3B × 10 年 × 營業利益率 30% ＝ 成功時利潤 $9B；成功率 50% → 期望值 $4.5B，遠大於約 $0.8B 試驗成本。事前合理，事後仍可能輸。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.30</div><div class="k">腫瘤 28／30／35／15，CV 8／6／8／7</div><div class="d">2025 FDA 新藥核准、2000–2020 新上市、2024 R&amp;D 投資占比、Phase I 到核准成功率，腫瘤都遠高於 CV。CV 試驗大 67–107%、長 28–32%。</div></div>
+<div class="mm"><div class="pg"><span class="ty">對比</span>p.35</div><div class="k">AI：Phase I 80–90%，Phase II 還是 40%</div><div class="d">AI 分子 Phase I 成功率 80–90%（傳統 40–65%），但 Phase II 約 40%，和歷史一樣；完全被 FDA 核准的 AI 藥物：0 個（2026/10）。AI 很會回答「做得出來、安不安全」，還沒證明「對病人有沒有效」。</div></div>
+</div>
+
+<h2 class="sec" id="R-a"><small>p.1–6</small>CV 的版圖：頭號殺手、最大市場、最少創新</h2>
+
+<div class="slide"><div class="pno">p.1</div><div><h3>這堂課是誰講、講什麼</h3>
+<p>題目是 <i>Drug Development in Cardiovascular (CV) Diseases</i>（心血管疾病的藥物開發）。講者 <b>Wenda Ramma, PhD MBA</b>，任職 <b>Bristol Myers Squibb（BMS）Medical Affairs</b>（醫學事務部）。這份是 Fall 2026 的 student pre-read（課前閱讀）。</p>
+<p class="src">講義第 1 頁的利益揭露（disclosure）：講者受雇於 BMS，而 BMS 共同行銷 Eliquis；所有內容都來自公開資料。</p></div></div>
+
+<div class="slide"><div class="pno">p.2–3</div><div><h3>學習目標與路線圖</h3>
+<p>四個學習目標：</p>
+<ul><li>解釋為什麼 CV 仍是<b>頭號殺手</b>，以及它的市場和創新跟<b>腫瘤（oncology）</b>比起來如何。</li>
+<li>描述一個藥怎麼從發現走到核准：<b>階段、美國法規途徑、成功機率和成本</b>。</li>
+<li>用<b>生意思維（時程 timeline、障礙 barriers、投資報酬 ROI）</b>分析三個案例：tafamidis、Eliquis、pelacarsen。</li>
+<li>評估 <b>AI 和新療法</b>在未來 5 年會怎麼改變 CV 藥物開發。</li></ul>
+<p>p.3 路線圖把每一段配一個關鍵問題（考試很可能這樣問）：</p>
+<div class="tbl"><table><tr><th>Segment（段落）</th><th>Key question（關鍵問題）</th></tr>
+<tr><td>Landscape, revenue and the CV paradox</td><td>為什麼最大的市場最不創新？</td></tr>
+<tr><td>How drugs are developed</td><td>核准的機率、成本、時間是多少？</td></tr>
+<tr><td>Case 1 – Tafamidis：罕見病、約 14 年、孤兒藥定價</td><td>罕見病藥物怎麼回本？</td></tr>
+<tr><td>Case 2 – Eliquis：靠大型試驗打造的 blockbuster</td><td>怎麼打贏便宜的標準治療？</td></tr>
+<tr><td>Case 3 – Pelacarsen：指標動了、結局沒動</td><td>生物標記改善但結局沒改善時會怎樣？</td></tr>
+<tr><td>Why CV lags, and how AI is changing development</td><td>AI 改變的是機率，還是只有成本？</td></tr>
+<tr><td>Outlook, takeaways</td><td>未來 5 年要看什麼？</td></tr></table></div>
+<p>三個案例的定位：<b>一個罕見病成功、一個 blockbuster（年銷 10 億美元以上的大藥）、一個失敗</b>。</p></div></div>
+
+<div class="slide"><div class="pno">p.4</div><div><h3>Introduction：CV 是全球第一死因</h3>
+<ul><li>全球 CV 疾病是<b>第一大死因</b>。CV 領域進步很多，但是……</li>
+<li>美國：<b>超過 1,800 萬人</b>有 CV 疾病；2022 年約 <b>94 萬人</b>死於 CVD<span class="full">（cardiovascular disease，心血管疾病）</span>。</li>
+<li>全球 CVD 死亡 1990–2021 年<b>增加約 70%</b>（<b>1,210 萬 → 2,050 萬</b>）。</li></ul>
+<p>右邊兩張計時器圖（2019 年資料）：</p>
+<ul><li>美國平均<b>每 36 秒</b>有一人死於 CVD，約每天 <b>2,396 人</b>。</li>
+<li>美國平均<b>每 3 分 30 秒</b>有一人死於中風，約每天 <b>411 人</b>。</li></ul>
+<p>底部結論：<b>但只有 6% 的新上市藥物針對心血管疾病</b>。死最多人的病，新藥最少，這是整堂課的起點。</p></div></div>
+
+<div class="slide"><div class="pno">p.5</div><div><h3>The Cardiovascular Paradox（心血管的矛盾）</h3>
+<div class="grid2"><div class="box"><h4>We have（我們已經有）</h4><ul><li>Statins</li><li>ACE inhibitors<span class="full">（angiotensin-converting enzyme inhibitors）</span>和 beta-blockers</li><li>Anticoagulants（抗凝血劑）</li><li>SGLT2 inhibitors</li><li>GLP-1 agonists</li><li>PCSK9 inhibitors</li></ul></div>
+<div class="box"><h4>YET（但是）</h4><ul><li>CVD 死亡率的下降已經<b>停滯（stalled）</b></li><li>美國 2022 年 <b>941,652</b> 人死於 CVD</li><li>比<b>癌症加意外事故加起來</b>還多</li><li>死於<b>心衰竭</b>的人在上升</li></ul></div></div>
+<p>結論句：<b>More drugs. Same deaths. Why?</b>（藥更多了，死亡沒少，為什麼？）這個問題後面有兩種答案：一是新藥難開發（p.30–31），二是現有便宜的藥沒被好好使用（p.33 lever B：「the gap is use, not invention」）。</p>
+<p class="src">出處：AHA Heart Disease and Stroke Statistics 2025（2022 美國死亡資料）；CDC。p.4 寫約 940,000，p.5 寫精確數字 941,652，是同一個數。</p></div></div>
+
+<div class="slide"><div class="pno">p.6</div><div><h3>Where the Money Is：2024 年前 20 大藥物銷售按領域</h3>
+<p>橫條圖（2024 年全球銷售前 20 名的藥，依治療領域加總）：</p>
+<div class="tbl"><table><tr><th>領域（前 20 名裡有幾個藥）</th><th>2024 銷售</th></tr>
+<tr><td><b>CV and metabolic（6 個）</b></td><td class="num">$92.8B</td></tr>
+<tr><td>Oncology 腫瘤（4）</td><td class="num">$57.0B</td></tr>
+<tr><td>Immunology 免疫（4）</td><td class="num">$45.2B</td></tr>
+<tr><td>Infectious disease and vaccines 感染與疫苗（3）</td><td class="num">$29.9B</td></tr>
+<tr><td>Other 其他（3）</td><td class="num">$27.2B</td></tr></table></div>
+<p>右邊三個重點框：</p>
+<ul><li><b>$93B</b>：CV＋代謝佔前 20 大藥物中的 6 個。</li>
+<li><b>約 $45B</b> 其中是 <b>GLP-1</b>（Ozempic 家族＋Mounjaro/Zepbound）。也就是說 CV＋代謝這一大塊，將近一半是減重／糖尿病藥。</li>
+<li><b>約 6%</b>：2000–2020 年新上市藥物裡只有這麼多是 CV。</li></ul>
+<p>結論：<b>營收大、新創新少</b>，大多數 CV blockbuster 是<b>老藥、面臨專利到期</b>。</p>
+<p class="src">講義註明：資料是 PharmaShots 彙整的 2024 公司財報；Eliquis 的數字是 BMS＋Pfizer 兩家報的營收加總，所以會<b>高估</b>實際市場銷售；整份講義一律用 2024 年以求一致。</p></div></div>
+
+<h2 class="sec" id="R-b"><small>p.7–10</small>藥怎麼開發：階段、臨床試驗、FDA 快速途徑、機率與成本</h2>
+
+<div class="slide"><div class="pno">p.7</div><div><h3>Stages of Drug Discovery（藥物開發五階段）</h3>
+<p>這頁是一張五個箭頭的流程圖（文字抽不出來，以下照圖整理）：</p>
+<div class="flow">
+<div class="step"><b>1 Early Drug Discovery</b>Target identification &amp; validation（找標靶並驗證）、hit discovery、assay development &amp; screening、high throughput screening（高通量篩選）、hit to lead、lead optimization</div>
+<div class="step"><b>2 Preclinical Studies</b>in vivo／in vitro／ex vivo assays、ADME、proof of concept、drug delivery、formulation optimization &amp; bioavailability、dose range finding、IND-enabling studies、<b>IND application</b></div>
+<div class="step"><b>3 Clinical Development</b>Phase I 健康受試者；Phase II 和 III 病人族群；dose escalation、single／multiple ascending dose；safety &amp; efficacy；pharmacokinetic analysis；bioanalytical method development and validation</div>
+<div class="step"><b>4 FDA Review</b>NDA／ANDA／BLA application、FDA approval、drug registration</div>
+<div class="step"><b>5 Post-market Monitoring</b>FAERS<span class="full">（FDA Adverse Event Reporting System，不良事件通報系統）</span></div>
+</div>
+<p>怎麼記：先找到「打哪裡」（target）和「用什麼打」（lead 分子）→ 在實驗室和動物證明安全、了解 ADME<span class="full">（吸收、分布、代謝、排除）</span>，送 <b>IND</b><span class="full">（Investigational New Drug application，試驗用新藥申請）</span> → 才能進人體 → 送上市申請：小分子送 <b>NDA</b>、生物製劑送 <b>BLA</b>、學名藥送 <b>ANDA</b> → 上市後靠 FAERS 繼續監測。</p></div></div>
+
+<div class="slide"><div class="pno">p.8</div><div><h3>Phases of Clinical Trials（臨床試驗各期）</h3>
+<div class="tbl"><table><tr><th>階段</th><th>平均時間</th><th>受試者</th><th>要回答的問題</th></tr>
+<tr><td>Phase 1</td><td class="num">2.3 年</td><td>健康受試者（數十人）</td><td>安全嗎？怎麼吸收、怎麼清除？</td></tr>
+<tr><td>Phase 2</td><td class="num">3.6 年</td><td>病人（數十到約 1,000 人）</td><td>第一個有效的跡象；<b>選劑量</b></td></tr>
+<tr><td>Phase 3</td><td class="num">3.3 年</td><td>數百到數千位病人</td><td>和對照組比有沒有效？用<b>臨床結局（outcomes）</b>或<b>被接受的替代指標（accepted surrogate，例如 LDL-C）</b></td></tr>
+<tr><td>FDA review</td><td class="num">1.3 年</td><td>送 NDA／BLA</td><td>60 天收件檢查（filing check），然後標準審查約 <b>10 個月</b>、優先審查約 <b>6 個月</b></td></tr></table></div>
+<div class="calc">2.3 + 3.6 + 3.3 + 1.3 = 10.5 年（Phase 1 到核准，所有領域平均；CV 通常更久）</div>
+<p>三個案例的範圍（底部三格）：</p>
+<ul><li><b>約 6 年</b>：Eliquis，從結盟（alliance）到核准。</li>
+<li><b>約 14 年</b>：tafamidis，從第一次人體試驗（first-in-human）到核准。</li>
+<li><b>約 7 年、沒有核准</b>：pelacarsen，從授權（license）到 Phase 3 失敗。</li></ul>
+<p class="note"><b>注意起算點不同：</b>三個「年數」的起點不一樣（結盟、首次人體、授權），所以不能直接比快慢；講義是用來展示範圍。</p>
+<p class="src">出處：BIO／Informa／QLS Clinical Development Success Rates 2011–2020（所有適應症的平均）；FDA 審查時程。</p></div></div>
+
+<div class="slide"><div class="pno">p.9</div><div><h3>Faster Paths to Approval：FDA 四種加速計畫（用 tafamidis 當例子）</h3>
+<div class="tbl"><table><tr><th>計畫</th><th>條件與好處</th><th>tafamidis</th></tr>
+<tr><td><b>Orphan Drug（孤兒藥）</b></td><td>美國患者 <b>&lt; 200,000 人</b>（Orphan Drug Act, 1983）。給 <b>7 年專屬權</b>、規費減免、稅務抵減</td><td class="num">2012 指定</td></tr>
+<tr><td><b>Fast Track</b></td><td>嚴重疾病、有未滿足需求（unmet need）。和 FDA 開會更頻繁，申請文件可<b>分段滾動送件（rolling submission）</b></td><td class="num">2017/6 取得</td></tr>
+<tr><td><b>Breakthrough（突破性療法）</b></td><td>早期證據顯示比現有療法有<b>實質改善</b>。開發期間 FDA 密集指導</td><td class="num">2018/5 取得</td></tr>
+<tr><td><b>Priority Review（優先審查）</b></td><td>FDA 目標約 <b>6 個月</b>內決定，標準審查約 10 個月（都是在 60 天收件檢查之後）</td><td class="num">2018/11 取得；2019/5 核准</td></tr></table></div>
+<p>結論：<b>法規可以加速審查，不能加速科學</b>。tafamidis 四個都拿到了，仍然需要一個 <b>441 人的隨機分派 Phase 3</b>。</p></div></div>
+
+<div class="slide"><div class="pno">p.10</div><div><h3>The Economics of a Drug：機率、成本與 rNPV</h3>
+<p>左邊長條圖：進入 Phase I 的藥，在每個階段還「活著」的比例：</p>
+<div class="diagram"><svg viewBox="0 0 560 230" width="100%" role="img" aria-label="Phase I 藥物在各階段存活比例長條圖">
+<g style="stroke:var(--muted)"><line x1="30" y1="190" x2="550" y2="190"/></g>
+<g style="fill:var(--muted)"><rect x="45" y="30" width="70" height="160"/><rect x="145" y="107" width="70" height="83"/><rect x="245" y="166" width="70" height="24"/><rect x="345" y="176" width="70" height="14"/></g>
+<g style="fill:var(--acc)"><rect x="445" y="177" width="70" height="13"/></g>
+<g font-size="13" text-anchor="middle"><text x="80" y="24">100%</text><text x="180" y="101">52.0%</text><text x="280" y="160">15.0%</text><text x="380" y="170">8.7%</text><text x="480" y="171">7.9%</text></g>
+<g font-size="12" text-anchor="middle"><text x="80" y="208">Enter Phase I</text><text x="180" y="208">Reach Phase II</text><text x="280" y="208">Reach Phase III</text><text x="380" y="208">Reach filing</text><text x="480" y="208">Approved</text></g>
+</svg></div>
+<ul><li><b>約 8%</b> 進入 Phase I 的藥最後核准（所有領域；<b>CV 更低</b>）。</li>
+<li>每個核准藥物的資本化成本 <b>$1.0–2.6B</b>（JAMA 2020 中位數約 $1B；Tufts 2016：$2.6B）。</li></ul>
+<p><b>How companies decide（公司怎麼決定）：</b></p>
+<ul><li><b>rNPV</b><span class="full">（risk-adjusted net present value，風險調整後淨現值）</span>＝ 成功機率 × 利潤 − 成本，<b>每一期分別算</b>。</li>
+<li>贏家要支付那約 <b>92% 失敗</b>藥物的成本。</li>
+<li><b>越晚失敗（Phase 3）代價越大</b>。</li></ul>
+<p>結論：<b>開發決策是對「機率 × 報酬」下注，不是看科學有不有趣</b>。</p>
+<p class="src">（推論）從圖上看，最大一刀在 Phase II → III（52% → 15%），這呼應 p.35 說 AI 分子 Phase II 成功率仍只有約 40%。講義註明累積數字是從各階段轉移率算出來的。</p></div></div>
+
+<h2 class="sec" id="R-c"><small>p.11–16</small>案例 1：Tafamidis，罕見病、慢科學、大回報</h2>
+
+<div class="slide"><div class="pno">p.11</div><div><h3>Three Cases, Three Lessons（三個案例總覽）</h3>
+<div class="tbl"><table><tr><th></th><th>Tafamidis</th><th>Eliquis</th><th>Pelacarsen</th></tr>
+<tr><td>類型</td><td>RARE DISEASE 罕見病</td><td>BLOCKBUSTER</td><td>FAILURE 失敗</td></tr>
+<tr><td>一句話</td><td>慢、小、只為少數人定價</td><td>超大試驗＋合作夥伴</td><td>犯錯的代價</td></tr>
+<tr><td>時間</td><td>約 14 年到核准</td><td>—</td><td>約 7 年（從授權起）</td></tr>
+<tr><td>試驗</td><td class="num">441 人樞紐試驗</td><td class="num">18,201 人</td><td class="num">8,323 人</td></tr>
+<tr><td>錢</td><td>孤兒藥價約 <b>$225–275K／年</b></td><td>前金 $250M、開發費 60/40；2024 BMS 銷售 <b>$13.3B</b></td><td>前金 $150M、最多 $675M 里程碑</td></tr>
+<tr><td>結果</td><td>核准</td><td>核准</td><td>Lp(a) 降約 80%，<b>事件沒有減少</b></td></tr></table></div>
+<p>每個案例都要看：<b>時程、障礙、成本與報酬</b>。老師問：換成你，你會怎麼決定？</p></div></div>
+
+<div class="slide"><div class="pno">p.12</div><div><h3>Tafamidis：一個沒有藥可用的罕見心臟病</h3>
+<ul><li><b>ATTR-CM</b><span class="full">（transthyretin amyloid cardiomyopathy，轉甲狀腺素蛋白類澱粉心肌病變）</span>：摺疊錯誤的 <b>TTR</b><span class="full">（transthyretin）</span>蛋白以類澱粉（amyloid）堆積在心臟，讓心臟<b>變厚、變硬</b>。</li>
+<li>罕見、會惡化、不治療會致命；<b>2019 年以前沒有核准的藥</b>。</li>
+<li>Tafamidis <b>穩定 TTR，讓它不會摺錯</b>。是第一個核准的 ATTR-CM 藥（美國，2019 年 5 月）。</li>
+<li>樞紐試驗 <b>ATTR-ACT</b>：Phase 3、隨機、雙盲、安慰劑對照、<b>30 個月</b>。</li></ul>
+<div class="tbl"><table><tr><th>結果</th><th>tafamidis vs placebo</th></tr>
+<tr><td>全死因死亡</td><td class="num">29.5% vs 42.9%（HR 0.70）</td></tr>
+<tr><td>CV 相關住院</td><td class="num">少 32%（RR 0.68）</td></tr>
+<tr><td>規模</td><td class="num">441 人、48 個試驗點、13 個國家</td></tr></table></div>
+<p>講義形容它是「改變臨床實務的小試驗」。商業問題：<b>公司怎麼替一個罕見病、441 人、5 年的試驗說服自己值得做？</b>（答案在 p.14：孤兒藥經濟學。）</p>
+<p class="src">（背景補充）HR 0.70 的意思是藥物組在任一時間點死亡的風險約是安慰劑組的 70%。RR 0.68 → 1 − 0.68 ＝ 少 32%。出處：Maurer et al., NEJM 2018；Vyndamax 仿單。</p></div></div>
+
+<div class="slide"><div class="pno">p.13</div><div><h3>Tafamidis 時間軸：首次人體到核准約 14 年</h3>
+<div class="flow">
+<div class="step"><b>1990s</b>TTR stabilizer 的概念</div>
+<div class="step"><b>2005</b>First-in-human study（第一次人體試驗）</div>
+<div class="step"><b>2011</b>EU 核准（<b>神經病變</b> neuropathy 適應症）</div>
+<div class="step"><b>2013–2018</b>Phase 3 ATTR-ACT</div>
+<div class="step"><b>May 2019</b>FDA 核准 ATTR-CM</div>
+</div>
+<ul><li><b>約 14 年</b>：首次人體（2005）到美國核准（2019）。</li>
+<li><b>約 5 年</b>：光是 Phase 3 就花了，2013 年開始、2018 年 8 月出結果。</li>
+<li><b>2012</b>（紅框）：FDA <b>沒有核准神經病變的申請</b>，美國要的是<b>臨床結局（outcome）資料</b>。</li></ul>
+<p><b>Pivot（轉向）：</b>公司回頭在<b>心肌病變族群</b>做了一個結果試驗（就是 ATTR-ACT）。</p>
+<div class="tip"><b>教訓：</b>一個已被驗證的機轉（TTR 穩定）還不夠，<b>法規單位要的是臨床結局</b>。這句和 pelacarsen（p.26 Lp(a) 不是可接受的替代指標）是同一個主題。</div>
+<p class="src">講義註明：TTR 穩定的概念在 1990 年代就有，所以從第一個想法算起其實更久。</p></div></div>
+
+<div class="slide"><div class="pno">p.14</div><div><h3>為什麼這麼慢？花多少錢、賺多少錢？</h3>
+<div class="grid2"><div class="box"><h4>為什麼 441 人要約 5 年？</h4><ul><li>罕見病：病人少，分散在 13 國 48 個試驗點</li><li>自然病程不清楚，<b>終點（endpoint）很難選</b></li><li>很多被篩檢的病人<b>不符合收案條件</b></li><li>每個病人都要追蹤 <b>30 個月</b></li></ul></div>
+<div class="box"><h4>錢</h4><ul><li><b>約 $270K／年</b>：Vyndamax 美國定價（list price）</li><li><b>$6.4B</b>：Pfizer 2025 年 tafamidis 銷售（<b>+17%</b>）</li></ul></div></div>
+<p>結論公式：<b>Orphan economics（孤兒藥經濟學）＝ 病人少 × 價格很高 × 專屬權很長 ＝ 一個 blockbuster</b>。</p></div></div>
+
+<div class="slide"><div class="pno">p.15</div><div><h3>tafamidis 之後：競爭者與專利懸崖</h3>
+<div class="tbl"><table><tr><th>藥（公司）</th><th>機轉</th><th>美國核准 ATTR-CM</th><th>年定價</th></tr>
+<tr><td>Tafamidis／Vyndamax（Pfizer）</td><td>TTR stabilizer</td><td class="num">2019/5</td><td class="num">~$268K</td></tr>
+<tr><td>Acoramidis／Attruby（BridgeBio）</td><td>TTR stabilizer（近乎完全穩定）</td><td class="num">2024/11</td><td class="num">~$244K</td></tr>
+<tr><td>Vutrisiran／Amvuttra（Alnylam）</td><td><b>RNAi silencer</b>，一年打 4 針</td><td class="num">2025/3</td><td class="num">~$477K</td></tr>
+<tr><td>Eplontersen（Ionis／AstraZeneca）</td><td>Antisense silencer（反義寡核苷酸）</td><td>未核准：Phase 3 失敗（2026/7）</td><td>n/a</td></tr></table></div>
+<ul><li><b>1 → 3 個藥</b>：路徑被證明後 6 年內就從 1 個變 3 個。</li>
+<li><b>$6.4B</b>：Pfizer 2025 年 tafamidis 銷售，還在成長。</li>
+<li><b>約 2031 年中</b>：美國學名藥最早預計上市（依和解協議 settlements）。</li></ul>
+<p>結論：<b>專屬權擋住學名藥；先行者優勢加上市場變大，緩衝了競爭者對 ROI 的影響</b>。</p>
+<p class="src">（背景補充）stabilizer 是讓已經做出來的 TTR 不要散開摺錯；silencer（RNAi、antisense）是讓肝臟少做 TTR，從源頭減量。價格是上市時或接近上市時的定價；FDA 核准日 Attruby 2024/11/22、Amvuttra 2025/3/20。</p></div></div>
+
+<div class="slide"><div class="pno">p.16</div><div><h3>Case 1 Recap（案例 1 總結）</h3>
+<div class="tbl"><table><tr><th>Timeline</th><th>Barrier</th><th>Price</th><th>ROI</th></tr>
+<tr><td class="num">~14 年</td><td class="num">441 人</td><td class="num">~$270K／年</td><td class="num">$6.4B</td></tr>
+<tr><td>首次人體到核准</td><td>試驗小，但<b>必須有臨床結局</b></td><td>孤兒藥定價</td><td>2025 銷售；學名藥延到約 2031</td></tr></table></div>
+<p><b>教訓：</b>罕見病代表科學又慢又難，但<b>孤兒藥定價＋專屬權</b>仍然可以做出 blockbuster。下一個案例 Eliquis 是光譜的另一端：常見病、18,201 人試驗、擁擠的市場。</p>
+<p class="note"><b>講義數字不一致：</b>tafamidis 年價 p.11、p.29 寫 ~$225–275K，p.14、p.16 寫 ~$270K，p.15 表格寫 ~$268K。考試若問 Vyndamax 美國定價，答「約 $270K」最安全；問範圍就寫 $225–275K。</p></div></div>
+
+<h2 class="sec" id="R-d"><small>p.17–23</small>案例 2：Eliquis，靠大型試驗和合作夥伴打贏便宜的 warfarin</h2>
+
+<div class="slide"><div class="pno">p.17</div><div><h3>Eliquis（apixaban）是什麼、要解決什麼問題</h3>
+<ul><li><b>Factor Xa inhibitor（第十凝血因子抑制劑）</b>：口服抗凝血劑，用於預防<b>非瓣膜性心房顫動（non-valvular AF）</b>的中風，以及治療／預防<b>靜脈血栓栓塞（venous thromboembolism）</b>。</li>
+<li><b>問題</b>：warfarin 便宜又是學名藥，但要做 <b>INR</b><span class="full">（international normalized ratio）</span>監測、交互作用多、會出血。</li>
+<li><b>開發的賭注</b>：一個約 18,000 人、和 warfarin <b>頭對頭（head-to-head）</b>比較的試驗 <b>ARISTOTLE</b>，由兩家公司合作執行。</li>
+<li><b>合作（2007）</b>：Pfizer 付 <b>$250M 前金（upfront）</b>，出 <b>60%</b> 開發費；利潤和商業成本 <b>50/50</b>。</li></ul>
+<div class="tbl"><table><tr><th>數字</th><th>意思</th></tr>
+<tr><td class="num">18,201</td><td>ARISTOTLE 的病人數</td></tr>
+<tr><td class="num">~1,000 sites／~40 國</td><td>約 1,000 個試驗點、約 40 個國家</td></tr>
+<tr><td class="num">$250M</td><td>Pfizer 付給 BMS 的前金</td></tr>
+<tr><td class="num">60 / 40</td><td>開發費用分攤（Pfizer / BMS）</td></tr></table></div>
+<p>商業問題：<b>怎麼打贏一個便宜的學名藥標準治療？</b></p>
+<p class="src">講義在此頁再次揭露：講者受雇於 BMS。p.17 寫「18,000-patient」是約數，正式數字是 18,201。</p></div></div>
+
+<div class="slide"><div class="pno">p.18</div><div><h3>Eliquis 開發時間軸</h3>
+<div class="flow">
+<div class="step"><b>2007</b>BMS–Pfizer 結盟</div>
+<div class="step"><b>2010</b>APPRAISE-2 中止：出血 HR 2.6</div>
+<div class="step"><b>2011</b>ARISTOTLE 主要結果公布（topline）</div>
+<div class="step"><b>2012</b>FDA 發 CRL（6 月），12/28 核准</div>
+<div class="step"><b>2024–28</b>2024 BMS 銷售 $13.3B，之後降價、學名藥</div>
+</div>
+<ul><li>從結盟到 AF 核准<b>約 6 年</b>（tafamidis 是從首次人體約 14 年）：原因是<b>硬終點、已驗證的標靶、病人族群大</b>。</li>
+<li>鄰近適應症的失敗沒有殺掉整個計畫：<b>APPRAISE-2</b>（7,392 位 <b>ACS</b><span class="full">（acute coronary syndrome，急性冠心症）</span>病人）失敗，但那是<b>不同族群、不同風險效益</b>。</li>
+<li>法規挫折：FDA <b>complete response letter（CRL，2012/6）</b>、重新送件、<b>2012/12/28 核准</b>。</li>
+<li>價值很快創造出來，但時鐘在走：<b>Medicare 議價價格每 30 天份 $231</b>（2026/1 起）；美國學名藥預計<b>約 2028 年</b>。</li></ul>
+<p>結論：<b>開發是在和專利時鐘賽跑：最大的價值集中在前面（front-loaded）</b>。</p>
+<p class="src">（背景補充）APPRAISE-2 出血 HR 2.6：在已經使用抗血小板藥的 ACS 病人身上再加 apixaban，大出血風險約變 2.6 倍，所以提前中止。講義註明美國學名藥日期依來源不同。</p></div></div>
+
+<div class="slide"><div class="pno">p.19</div><div><h3>Eliquis：這個賭注回收了什麼</h3>
+<div class="tbl"><table><tr><th>ARISTOTLE（vs warfarin）</th><th>HR</th></tr>
+<tr><td>中風／全身栓塞（stroke / systemic embolism）</td><td class="num">0.79</td></tr>
+<tr><td>大出血（major bleeding）</td><td class="num">0.69</td></tr>
+<tr><td>全死因死亡（all-cause mortality）</td><td class="num">0.89</td></tr>
+<tr><td>2024 BMS 認列淨銷售</td><td class="num">$13.3B（美國 $9.6B）</td></tr></table></div>
+<div class="grid2"><div class="box"><h4>為什麼商業上成功</h4><ul><li>療效<b>和</b>安全性都<b>優於（superior）</b>標準治療，不只是不劣於（non-inferior）</li><li>不用驗 INR：醫師和病人都感受得到的方便</li><li>兩家公司分攤成本，也合併商業力量</li></ul></div>
+<div class="box"><h4>ROI 邏輯（舉例說明）</h4><ul><li>每個核准藥物的基準成本：約 <b>$2.6B</b>（Tufts CSDD；有爭議）</li><li>BMS 一年認列的銷售約是這個基準的 <b>5 倍</b>，這還沒扣掉分攤成本、利潤率和 Pfizer 的利潤分成</li><li>但價值集中在前面：<b>IRA</b><span class="full">（Inflation Reduction Act）</span>議價和學名藥會壓縮尾巴</li></ul></div></div>
+<div class="calc">$13.3B ÷ $2.6B ≈ 5.1 → 「約 5 倍」</div>
+<p>教訓：<b>大型結果試驗是很大的前期成本，但只要能「優於」學名藥，仍能回本很多倍</b>。講義強調 ROI 比較是教學用的示意，不是公司資料。</p></div></div>
+
+<div class="slide"><div class="pno">p.20</div><div><h3>Why Eliquis Won：五個理由</h3>
+<div class="tbl"><table><tr><th>#</th><th>理由</th><th>內容</th></tr>
+<tr><td class="num">1</td><td>Better than the standard（比標準好）</td><td>中風 HR 0.79、大出血 HR 0.69、死亡 HR 0.89 都贏 warfarin</td></tr>
+<tr><td class="num">2</td><td>Easier to use（好用）</td><td>不用驗 INR、食物和藥物交互作用較少、固定劑量</td></tr>
+<tr><td class="num">3</td><td>Hard endpoint, big population（硬終點、大族群）</td><td>中風沒有模糊空間，AF 很常見：收了 18,201 人</td></tr>
+<tr><td class="num">4</td><td>Resilient program（計畫有韌性）</td><td>APPRAISE-2 在 ACS 失敗（2010），AF 計畫繼續</td></tr>
+<tr><td class="num">5</td><td>Two partners（兩個夥伴）</td><td>分攤成本、風險和商業觸及（下一張）</td></tr></table></div>
+<ul><li><b>$13.3B</b>：2024 BMS 認列淨銷售（<b>美國 $9.6B、國際 $3.7B</b>）。</li>
+<li><b>約 5 倍</b>：一年 BMS 銷售 vs 約 $2.6B 的每藥基準成本。</li></ul>
+<p>結論：<b>贏的藥解決醫師本來就有感的問題，並用硬終點證明它</b>。</p></div></div>
+
+<div class="slide"><div class="pno">p.21</div><div><h3>The Power of Partnership：分攤成本、分享利潤</h3>
+<div class="grid2"><div class="box"><h4>核准前：分攤成本</h4><ul><li><b>60 / 40</b>：開發費 Pfizer / BMS</li><li><b>$250M</b> 前金給 BMS（<b>＋最多 $750M 里程碑款</b>）</li></ul></div>
+<div class="box"><h4>核准後：分享利潤</h4><ul><li><b>50 / 50</b>：全球商業成本與利潤</li><li><b>2 本帳</b>：BMS 認列大部分銷售；Pfizer 認列利潤分成＋自己的直接銷售</li></ul></div></div>
+<div class="grid2"><div class="box"><h4>BMS 得到什麼</h4><ul><li>資金：一個 18,000 人試驗只要出 40%</li><li>一個有全球心臟科銷售網的夥伴</li><li>試驗失敗時只承擔一半損失</li></ul></div>
+<div class="box"><h4>Pfizer 得到什麼</h4><ul><li>一個大市場裡的<b>後期資產（late-stage asset）</b>，不用承擔藥物發現的風險</li><li>一個 blockbuster 的一半利益</li><li>在指導委員會（steering committee）有席位，參與關鍵試驗決策</li></ul></div></div>
+<p>取捨：<b>雙方各放棄一半上檔利益，換來風險減半</b>。</p>
+<p class="src">（推論）這也解釋了 p.6 的註：Eliquis 的銷售數字是兩家各自報的營收加總，因為「兩本帳」都有記，所以會高估實際市場銷售。</p></div></div>
+
+<div class="slide"><div class="pno">p.22</div><div><h3>三種合作方式：誰扛風險？</h3>
+<div class="tbl"><table><tr><th>Structure（結構）</th><th>例子</th><th>誰出開發費</th><th>誰拿報酬</th></tr>
+<tr><td><b>Co-develop and co-commercialize</b>（共同開發、共同商業化）</td><td>Eliquis：BMS＋Pfizer（2007）</td><td>分攤：Pfizer 60%、BMS 40%</td><td>分享：利潤 50/50</td></tr>
+<tr><td><b>License-in</b>（授權引進，付里程碑和權利金）</td><td>Pelacarsen：Ionis → Novartis（2019）</td><td>Novartis</td><td>Novartis 擁有產品；Ionis 拿 $150M 前金、最多 $675M 里程碑、權利金（royalties）</td></tr>
+<tr><td><b>Acquisition</b>（收購）</td><td>Tafamidis：Pfizer 買下 FoldRx（2010）</td><td>Pfizer</td><td>Pfizer 拿 100%（2025 年 $6.4B）</td></tr></table></div>
+<p>由上往下：<b>越往上風險越分攤；越往下自己擁有越多風險和報酬</b>。</p>
+<p>討論題：<b>pelacarsen 失敗了，Novartis 和 Ionis 誰輸比較多？</b>（推論）Novartis 付了 $150M 前金又出全部開發費（試驗估約 $0.6–1.0B，p.27）；Ionis 已經收到前金，損失的是拿不到的里程碑和權利金。所以金錢上 Novartis 輸得多，Ionis 失去的是未來的上檔。</p></div></div>
+
+<div class="slide"><div class="pno">p.23</div><div><h3>Case 2 Recap（案例 2 總結）</h3>
+<div class="tbl"><table><tr><th>Timeline</th><th>Barrier</th><th>Evidence</th><th>ROI</th></tr>
+<tr><td class="num">~6 年</td><td class="num">18,201 人</td><td class="num">HR 0.79</td><td class="num">$13.3B</td></tr>
+<tr><td>結盟（2007）到核准（2012/12）</td><td>ARISTOTLE vs warfarin，擁擠的領域</td><td>中風／栓塞 vs warfarin；出血更少</td><td>2024 BMS 認列淨銷售</td></tr></table></div>
+<p>標題叫 <b>Late Entrant</b>（後進者）：抗凝血市場已經有 warfarin，Eliquis 是後來才進場的。教訓同 p.19：大型結果試驗前期成本高，但優於學名藥就能回本很多倍。下一個：一個押在新標靶上的大賭注沒有成功，會怎樣？</p></div></div>
+
+<h2 class="sec" id="R-e"><small>p.24–29</small>案例 3：Pelacarsen，一個合理但輸掉的賭注；三個案例的共通模式</h2>
+
+<div class="slide"><div class="pno">p.24</div><div><h3>Pelacarsen 和 Lp(a)：為什麼看起來是高把握的賭注</h3>
+<ul><li><b>Lp(a)</b><span class="full">（lipoprotein(a)，脂蛋白(a)）</span>：一種像 LDL 的顆粒，多帶一個 <b>apolipoprotein(a)</b>；約 <b>90% 由基因決定</b>；大約 <b>每 5 人有 1 人</b>濃度偏高。</li>
+<li>和<b>心肌梗塞、中風、主動脈瓣狹窄（aortic stenosis）</b>有很強的基因與流行病學關聯。</li>
+<li><b>沒有核准的療法</b>：飲食、statins、PCSK9 inhibitors 幾乎動不了它。</li>
+<li>Pelacarsen（Ionis 的 <b>antisense</b> 藥，<b>2019 年授權給 Novartis</b>）在 Phase 2 把 Lp(a) 降了約 <b>72–80%</b>。</li>
+<li>賭注：一個 <b>8,323 人</b>的結果試驗 <b>Lp(a)HORIZON</b>。</li></ul>
+<div class="tbl"><table><tr><th>數字</th><th>意思</th></tr>
+<tr><td class="num">$150M</td><td>給 Ionis 的前金（2019）</td></tr>
+<tr><td class="num">$675M</td><td>可能的里程碑款（＋權利金）</td></tr>
+<tr><td class="num">8,323</td><td>有 CVD 且 <b>Lp(a) ≥ 70 mg/dL</b> 的病人</td></tr>
+<tr><td class="num">~80%</td><td>Phase 2 的 Lp(a) 降幅（最佳劑量方案）</td></tr></table></div>
+<p>老師的問句：<b>強的遺傳學證據＋很大的生物標記效果＝高把握的賭注？</b>（下一頁揭曉：不是。）</p></div></div>
+
+<div class="slide"><div class="pno">p.25</div><div><h3>2026/9/4：Lp(a)HORIZON 沒有達到主要終點</h3>
+<div class="grid2"><div class="box"><h4>Lp(a) lowered</h4>目標有打到（target engaged），生物標記有動</div>
+<div class="box"><h4>No fewer events</h4>和安慰劑比，主要終點沒有達到</div></div>
+<p>8,323 人、<b>event-driven（事件驅動）</b>：試驗要跑到累積夠多事件才結束。</p>
+<p><b>為什麼可能失敗？</b>（講義強調這些是<b>拿來辯論的假說，不是研究發現</b>）</p>
+<ul><li><b>因果模型錯了</b>：Lp(a) 可能比較像是風險的「標記（marker）」，而不是在疾病晚期還能靠修改它來改變結局的「驅動因子（driver）」。</li>
+<li><b>降得不夠多或不夠久</b>：已經有 CVD 的人，可能要更深或更早降。</li>
+<li><b>背景治療太好</b>：平均 LDL-C 約 <b>66 mg/dL</b>，剩下可以去除的殘餘風險變少。</li>
+<li><b>族群和終點</b>：次級預防（secondary prevention）裡用複合終點（composite endpoint），可能把某些次族群的好處稀釋掉。</li>
+<li><b>完整資料還沒出來</b>：次族群和劑量反應的結果可能改變結論。</li></ul>
+<p>Novartis：「These are not the results we hoped for.」<b>The biomarker moved; the outcomes did not.</b></p>
+<p class="src">講義註明：寫講義時完整結果尚未發表。</p></div></div>
+
+<div class="slide"><div class="pno">p.26</div><div><h3>Pelacarsen 開發時間軸與障礙</h3>
+<div class="flow">
+<div class="step"><b>2017</b>Ionis–Novartis collaboration（合作）</div>
+<div class="step"><b>2019</b>License（$150M 前金）</div>
+<div class="step"><b>2019–25</b>Phase 3：8,323 人，累積事件</div>
+<div class="step"><b>2025 → 2026</b>出結果的時間<b>延後兩次</b>（事件比預期少）</div>
+<div class="step"><b>Sep 2026</b>主要終點失敗</div>
+</div>
+<div class="grid2"><div class="box"><h4>這個案例顯示的障礙</h4><ul><li><b>事件驅動試驗</b>：背景照護越好 → 事件越少 → 試驗越長</li><li><b>沒有被接受的替代指標</b>：光降 Lp(a) 不能讓藥核准</li><li><b>門檻選擇</b>（Lp(a) ≥ 70 mg/dL）是在「試驗規模」和「市場規模」之間取捨</li></ul></div>
+<div class="box"><h4>和前面案例比</h4><ul><li><b>LDL-C 藥</b>：有被接受的替代指標，可以在結果資料出來前先核准</li><li><b>Eliquis</b>：硬終點＋大試驗，約 6 年交出成果</li><li><b>Pelacarsen</b>：從授權（2019）到一個否定的答案約 7 年</li></ul></div></div>
+<p>結論：<b>大型結果試驗可能比預期更久，而且最後答案還是「不」</b>。</p>
+<p class="src">（推論）門檻的取捨：門檻設高（≥ 70）→ 病人風險高、事件多、試驗可以小一點；但將來能用藥的市場也被限縮在高 Lp(a) 的人。</p></div></div>
+
+<div class="slide"><div class="pno">p.27</div><div><h3>The Cost of Being Wrong：pelacarsen 的經濟學</h3>
+<div class="grid2"><div class="box"><h4>已知（What is known）</h4><ul><li>$150M 前金給 Ionis（2019）</li><li>最多 $675M 里程碑，加權利金</li><li>授權（2019）到答案約 7 年；結果延後兩次</li></ul></div>
+<div class="box"><h4>講者估計（Estimates）</h4><ul><li>結果試驗成本：約 <b>$0.6–1.0B</b>（8,323 人、多年）</li><li>沒算進去的：製造、上市準備、<b>機會成本</b></li></ul></div></div>
+<p><b>這個賭注合理嗎？（示意計算）</b></p>
+<div class="tbl"><table><tr><th>輸入</th><th>假設</th></tr>
+<tr><td>Peak sales（尖峰年銷售）</td><td class="num">$3B／年</td></tr>
+<tr><td>Commercial window（商業期）</td><td class="num">10 年</td></tr>
+<tr><td>Operating margin（營業利益率）</td><td class="num">30%</td></tr>
+<tr><td>Profit if it works（成功時利潤）</td><td class="num">$9B</td></tr>
+<tr><td>P(success)（成功機率）</td><td class="num">50%（CV Phase 3）</td></tr>
+<tr><td>Expected value（期望值）</td><td class="num">$4.5B vs 約 $0.8B 成本</td></tr></table></div>
+<div class="calc">$3B × 10 年 × 30% = $9B
+$9B × 50% = $4.5B 期望利潤  &gt;  約 $0.8B 試驗成本 → 事前（ex ante）值得賭</div>
+<p>結論：<b>一個賭注可以事前（ex ante）合理，事後（ex post）仍然輸</b>；管理產品組合（portfolio）就是管理損失。講義註明這些是教學假設，不是公司資料；交易條件來自 2026/9 的新聞報導。</p></div></div>
+
+<div class="slide"><div class="pno">p.28</div><div><h3>Case 3 Recap：一個合理但輸掉的賭注</h3>
+<div class="tbl"><table><tr><th>Timeline</th><th>Barrier</th><th>Cost</th><th>Result</th></tr>
+<tr><td class="num">~7 年</td><td class="num">8,323 人</td><td class="num">~$0.8B</td><td>No approval</td></tr>
+<tr><td>授權（2019）到答案（2026/9）</td><td>Lp(a)HORIZON：假說從未被證實</td><td>估計試驗成本，另加 $150M 前金</td><td>Lp(a) 降了，事件沒減少</td></tr></table></div>
+<p>教訓：<b>Portfolio management is loss management.</b>（產品組合管理就是損失管理。）</p></div></div>
+
+<div class="slide"><div class="pno">p.29</div><div><h3>Three Cases, One Pattern：什麼決定成功</h3>
+<div class="tbl"><table><tr><th>案例</th><th>樞紐試驗</th><th>到核准時間</th><th>關鍵障礙</th><th>商業結果</th></tr>
+<tr><td>Tafamidis（ATTR-CM）</td><td class="num">441 人</td><td>~14 年</td><td>罕見病；自然病程不清楚</td><td>孤兒藥價（~$225–275K／年）；美國學名藥延到 ~2031</td></tr>
+<tr><td>Eliquis（AF）</td><td class="num">18,201 人</td><td>從結盟 ~6 年</td><td>超大試驗的成本；ACS 失敗</td><td>2024 BMS 銷售 $13.3B；現在面臨 LOE<span class="full">（loss of exclusivity，專屬權到期）</span>和 IRA</td></tr>
+<tr><td>Pelacarsen（Lp(a)）</td><td class="num">8,323 人</td><td>失敗（2026/9）</td><td>生物標記沒有被證明的因果效益</td><td>輸掉的賭注；對整個領域都有連帶影響（field-wide read-through）</td></tr></table></div>
+<div class="tip"><b>共通模式：</b>贏家有<b>硬終點（或罕見病的未滿足需求）</b>，加上<b>一個扛得起試驗的出資者</b>。失敗者缺的是證據：沒有證明「移動這個標記就能改變結局」。</div>
+<p class="src">（推論）「field-wide read-through」的意思是：別家正在做的 Lp(a) 藥（p.42 的 olpasiran、lepodisiran）也會被市場重新評估。</p></div></div>
+
+<h2 class="sec" id="R-f"><small>p.30–33</small>CV 為什麼落後腫瘤？為什麼失敗？十年進展與四個槓桿</h2>
+
+<div class="slide"><div class="pno">p.30</div><div><h3>The Innovation Gap：腫瘤 vs 心血管</h3>
+<p>分組長條圖（淺色腫瘤、深色心血管）：</p>
+<div class="tbl"><table><tr><th>指標</th><th>Oncology</th><th>Cardiovascular</th></tr>
+<tr><td>2025 FDA novel approvals（新藥核准占比）</td><td class="num">28%</td><td class="num">8%</td></tr>
+<tr><td>New launches 2000–2020（新上市占比）</td><td class="num">30%</td><td class="num">6%</td></tr>
+<tr><td>R&amp;D investment share 2024（研發投資占比）</td><td class="num">35%</td><td class="num">8%</td></tr>
+<tr><td>Phase I to approval success（成功率）</td><td class="num">15%</td><td class="num">7%</td></tr></table></div>
+<p><b>Why oncology pulls ahead（為什麼腫瘤跑在前面）：</b></p>
+<ul><li><b>反應率（response rate）終點</b>就能拿到核准，所以試驗<b>更小、更快</b>。</li>
+<li>付款方（payers）<b>接受</b>的價格。</li>
+<li>新的藥物類型：2025 年有 <b>3 個 ADC</b><span class="full">（antibody-drug conjugate，抗體藥物複合體）</span>和 <b>1 個雙特異性抗體（bispecific）</b>。</li>
+<li><b>CV 試驗大 67–107%、長 28–32%</b>。</li></ul>
+<p>結論：<b>CV：營收大、新創新少。腫瘤：每個試驗病人較少、上市路徑較快</b>。</p>
+<p class="src">講義註明：範圍型數字畫在中點，計數依來源不同。（推論）對照 p.10：所有領域平均約 8%，CV 7% 略低，符合 p.10「CV is lower」。</p></div></div>
+
+<div class="slide"><div class="pno">p.31</div><div><h3>Why Do Cardiovascular Trials Fail?（CV 試驗為什麼失敗）</h3>
+<div class="grid2">
+<div class="box"><h4>Science 科學</h4><ul><li><b>缺乏療效（lack of efficacy）</b>：<b>最常見</b>的原因。在大族群裡，一點點額外好處很難偵測出來</li><li>安全性問題：意外的不良事件，或風險大於效益</li></ul></div>
+<div class="box"><h4>Trial design 試驗設計</h4><ul><li>檢定力不足（underpowered）、收案差：事件率低、招募困難</li><li>設計有缺陷：終點、劑量、族群選擇</li></ul></div>
+<div class="box"><h4>Economics 經濟</h4><ul><li>複雜又貴：比其他領域更長、更大、更貴</li><li>競爭：很難勝過已建立的標準治療</li></ul></div>
+<div class="box"><h4>Strategy and operations 策略與營運</h4><ul><li>贊助者撤出或法規改變</li><li>受試者多樣性不足，削弱可推廣性</li><li>資料錯誤和試驗點問題</li></ul></div></div>
+<p>對應到三個案例：<b>pelacarsen 敗在療效</b>；<b>Eliquis 打贏了強的標準治療</b>；<b>tafamidis 被罕見病的收案拖慢</b>。</p></div></div>
+
+<div class="slide"><div class="pno">p.32</div><div><h3>過去 10 年 CV 藥物開發的重大進展</h3>
+<div class="tbl"><table><tr><th>年份</th><th>主題</th><th>事件</th></tr>
+<tr><td class="num">2015–17</td><td>Surprise benefits（意外的好處）</td><td>SGLT2 inhibitors 在<b>糖尿病</b>試驗中顯示 CV 好處；Repatha（PCSK9）2015 核准</td></tr>
+<tr><td class="num">2018–19</td><td>Rare disease breaks through（罕見病突破）</td><td>Tafamidis 2019 核准 ATTR-CM；SGLT2 inhibitors 被認定為<b>心衰竭藥</b></td></tr>
+<tr><td class="num">2020–21</td><td>Proof in heart failure（心衰竭的證據）</td><td><b>DAPA-HF</b> 和 <b>EMPEROR-Reduced</b>：CV 死亡或 HF 住院少約 <b>25%</b>；Inclisiran（<b>siRNA</b>）2021 核准</td></tr>
+<tr><td class="num">2022–24</td><td>Obesity meets CV（肥胖遇上 CV）</td><td><b>SELECT</b>：semaglutide 減少 <b>MACE</b><span class="full">（major adverse cardiovascular events）</span> <b>20%</b>（CV 適應症 2024）；Acoramidis 2024/11 核准；基因編輯試驗開始</td></tr>
+<tr><td class="num">2025–26</td><td>Hits and misses（有中有失）</td><td><b>Baxdrostat</b> 核准用於高血壓（2026/5）；2026 年結果試驗失敗：<b>ZEUS、eplontersen、Lp(a)HORIZON</b></td></tr></table></div>
+<p>十年總結：<b>藥物再利用（SGLT2i）、遺傳學引導的標靶、新的藥物型態（RNA、基因編輯）</b>重塑了這個領域。</p>
+<p class="src">（背景補充）ZEUS 是 ziltivekimab（抗 IL-6）的結果試驗，所以 p.43 說 ziltivekimab 降了 IL-6 和 hsCRP 但沒有減少事件；baxdrostat 是醛固酮合成酶抑制劑。SGLT2i 原本是降血糖藥，「意外」在心衰竭有效，這就是「repurposed」。</p></div></div>
+
+<div class="slide"><div class="pno">p.33</div><div><h3>Closing the Gap：四個槓桿（討論頁）</h3>
+<div class="grid2">
+<div class="box"><h4>A　Market incentives 市場誘因</h4>讓報酬獎勵風險：孤兒藥地位、專屬權、證明結局後給高價。<br>辯論：價格管制（IRA）是降低成本，還是減少投資？</div>
+<div class="box"><h4>B　Prevention and access 預防與可近性</h4>Statins、ACE inhibitors、血壓控制已經有效又便宜。<b>缺口在使用，不在發明（The gap is use, not invention）</b>。篩檢、服藥順從性、鈉和反式脂肪政策。</div>
+<div class="box"><h4>C　Policy and trial economics 政策與試驗經濟學</h4>讓預防試驗值得做：延長專屬權、公私合作試驗、<b>按結局付費（outcome-based pricing）</b>。<br>連結：Eliquis 試驗回本了；預防試驗比較難說服人。</div>
+<div class="box"><h4>D　Precision and technology 精準與技術</h4>遺傳學引導的標靶、AI 和適應性試驗（adaptive trials）、一次性基因編輯。<br>提醒：<b>pelacarsen 有遺傳學支持，仍然失敗</b>。</div></div>
+<p>問題：哪一個槓桿在未來 5 年對 CV 病人幫助最大？講義說<b>沒有標準答案</b>，論點整理自政策辯論，不是講者的意見。</p></div></div>
+
+<h2 class="sec" id="R-g"><small>p.34–39</small>AI 如何改變藥物開發：能降成本，還不能提高成功機率</h2>
+
+<div class="slide"><div class="pno">p.34</div><div><h3>How AI Is Reshaping Drug Development（AI 在五個階段的例子）</h3>
+<div class="tbl"><table><tr><th>階段</th><th>AI 做什麼</th><th>例子</th></tr>
+<tr><td>Discovery 發現</td><td>找標靶、設計分子</td><td><b>Rentosertib（Insilico）</b>：AI 找到的標靶＋AI 設計的分子，治療 <b>IPF</b><span class="full">（idiopathic pulmonary fibrosis，特發性肺纖維化）</span>；從標靶到候選藥約 <b>18 個月</b></td></tr>
+<tr><td>Preclinical 臨床前</td><td>ADMET 和毒性預測</td><td><b>Predictive safety models</b>：在動物實驗前就標出肝毒性、心臟毒性（<b>hERG</b>）等</td></tr>
+<tr><td>Clinical 臨床</td><td>試驗設計、招募、數位雙胞胎（twins）</td><td><b>AI-ECG（Mayo／Anumana）</b>：從一般心電圖找出 <b>low EF</b><span class="full">（低射出分率）</span>；在 <b>22,641</b> 人中測試</td></tr>
+<tr><td>Regulatory 法規</td><td>送件文件、安全訊號</td><td><b>FDA credibility framework</b>：<b>7 步驟</b>評估一個 AI 模型能不能支持法規決策（FDA 2025/1 草案指引）</td></tr>
+<tr><td>Post-market 上市後</td><td>RWD<span class="full">（real-world data）</span>、醫學事務</td><td><b>Real-world data</b>：挖 EHR 和保險申報資料，找病人、找照護缺口、找安全訊號</td></tr></table></div>
+<p>關鍵問句：<b>AI 降低每一次射門（shot on goal）的成本和時間。它有提高「假說是對的」的機率嗎？</b></p></div></div>
+
+<div class="slide"><div class="pno">p.35</div><div><h3>AI in Discovery：誠實的計分板（2026/10）</h3>
+<div class="tbl"><table><tr><th>數字</th><th>意思</th></tr>
+<tr><td class="num">~18 個月</td><td>rentosertib 從標靶到候選藥（<b>公司宣稱</b>），一般約 5–6 年</td></tr>
+<tr><td class="num">80–90%</td><td>AI 分子的 <b>Phase I 成功率</b>（傳統 40–65%）</td></tr>
+<tr><td class="num">~40%</td><td>AI 分子的 <b>Phase II 成功率</b>：和歷史一樣</td></tr>
+<tr><td class="num">0</td><td>完全被 FDA 核准的 AI 發現藥物（2026/10）</td></tr></table></div>
+<div class="grid2"><div class="box"><h4>真的有的（What is real）</h4><ul><li>Rentosertib：Phase IIa（71 人）<b>FVC +98 mL vs 安慰劑 −20 mL</b>；Phase III 於 2026/7 開始</li><li>Takeda <b>zasocitinib</b> 在 FDA 審查中（決定日 2027 Q1），但它是不是「AI 發現」<b>有爭議</b></li></ul></div>
+<div class="box"><h4>還沒證明的（What is still unproven）</h4><ul><li>也有失敗：<b>DSP-1181</b> Phase I 後停止；<b>BEN-2293</b> Phase 2a 失敗</li><li>臨床開發中的藥只有約 <b>1%</b> 是 AI 發現的分子</li><li><b>還沒有 CV 專屬的 AI 發現藥物結果</b></li></ul></div></div>
+<p>結論：<b>AI 很會回答「做得出來嗎、安全嗎？」，還沒證明能回答「對病人有效嗎？」</b>（推論）Phase I 測的是安全和藥動，AI 擅長預測毒性所以 Phase I 過得多；Phase II 才第一次看療效，這取決於標靶假說對不對，AI 還沒改變它。</p></div></div>
+
+<div class="slide"><div class="pno">p.36</div><div><h3>AI 在 CV 開發的具體例子</h3>
+<div class="tbl"><table><tr><th>數字</th><th>意思</th></tr>
+<tr><td class="num">22,641</td><td><b>EAGLE</b> AI-ECG 試驗的病人數</td></tr>
+<tr><td class="num">+32%</td><td>有 AI-ECG 提醒時，<b>low EF 的診斷多 32%</b></td></tr>
+<tr><td class="num">5 per 1,000</td><td>每篩檢 1,000 人多找到 5 個新診斷</td></tr>
+<tr><td class="num">510(k)</td><td>Anumana 的 AI-ECG low EF 拿到 FDA 510(k) 許可</td></tr></table></div>
+<div class="grid2">
+<div class="box"><h4>Find patients 找病人</h4>AI-ECG 和 EHR 探勘找出未被診斷的疾病（low EF），<b>擴大可治療族群</b></div>
+<div class="box"><h4>Run smaller trials 試驗變小</h4>EMA 認可的<b>數位雙胞胎（digital-twin）</b>方法（2022）可在 Phase 2/3 減少樣本數或提高檢定力</div>
+<div class="box"><h4>Pick better targets 選更好的標靶</h4>人類遺傳學（PCSK9、Lp(a)）引導標靶；<b>仍然需要結果試驗</b></div></div>
+<p>商業角度：<b>找病人的 AI 讓市場變大；縮小試驗的 AI 砍掉最大的成本項目</b>。</p>
+<p class="src">出處：Yao et al., Nature Medicine 2021（EAGLE；Mayo Clinic）；Unlearn／EMA qualification opinion（2022/9）。</p></div></div>
+
+<div class="slide"><div class="pno">p.37</div><div><h3>AI 在 CV 哪裡最划算？生意的角度</h3>
+<div class="tbl"><table><tr><th>階段</th><th>成本／風險在哪</th><th>AI 槓桿</th><th>法規審視程度</th></tr>
+<tr><td>Discovery</td><td>成本小、淘汰率高</td><td>找標靶、生成式設計</td><td>低（不在 FDA 草案範圍）</td></tr>
+<tr><td>Phase 1–2</td><td>中等成本</td><td>安全預測、病人篩選</td><td>中</td></tr>
+<tr><td><b>Phase 3 結果試驗</b></td><td><b>最大的成本項目；約 50% 失敗</b></td><td>招募、數位雙胞胎、終點</td><td>高（需要 credibility plan）</td></tr>
+<tr><td>Medical affairs、法規文件撰寫</td><td>小而穩定的成本</td><td>證據整理、起草</td><td>低</td></tr></table></div>
+<div class="note"><b>關鍵句：</b>AI 修不好一個錯誤的假說：<b>為一個錯的想法設計更好的試驗，仍然是失敗的試驗</b>（例子：ziltivekimab、pelacarsen）。</div>
+<p><b>要批判檢視的業界說法：</b>試驗資料管理最多省 50%（McKinsey 估計）；發現期從 4–5 年縮到 12–18 個月（BCC Research，<b>沒寫方法</b>）；每個核准藥 ~$2.6B（Tufts CSDD，<b>有爭議</b>）。各階段評估是講者判斷，不是測量資料。</p></div></div>
+
+<div class="slide"><div class="pno">p.38</div><div><h3>Does AI Pay for Itself?（AI 划得來嗎？成本 vs 節省）</h3>
+<div class="grid2"><div class="box"><h4>AI 的成本（公開例子）</h4><ul><li><b>$2.75B</b>：Lilly–Insilico 交易，但前金只有 <b>$115M</b>（2026/3）</li><li><b>$688M</b>：Recursion 收購 Exscientia（2024/11）</li><li>運算：Lilly 建製藥公司自有的 AI 超級電腦（價格未公開）</li><li>很少被算進去的：資料、人才、濕實驗驗證、法規文件</li></ul></div>
+<div class="box"><h4>省了什麼（大多是公司說法）</h4><ul><li><b>~18 個月</b>：rentosertib 標靶到候選藥（一般要好幾年）</li><li><b>~$150K</b>：Insilico 候選藥的支出（不含實驗室成本）</li><li><b>速度不等於成功</b>：DSP-1181 約 12 個月就進 Phase I，然後停了</li><li>Phase II 成功率沒變（約 40%）</li></ul></div></div>
+<p><b>淨 ROI：目前無法衡量</b>，沒有公司公布「AI 花費扣掉節省」的數字。</p>
+<div class="calc">每年花 $100M 在 AI × 8 年 = $800M ≈ 一個失敗的 Phase 3（約 $0.8B）
+→ 只要每 8 年幫你避開一次錯誤的 Phase 3，就打平（示意）</div>
+<p>結論：<b>AI 在便宜的早期階段省最多；真正的大錢在於「不要跑錯的 Phase 3」</b>。</p></div></div>
+
+<div class="slide"><div class="pno">p.39</div><div><h3>Think About It：設計一個用 AI 的 CV 試驗（情境題）</h3>
+<p>情境：你負責開發一個新的<b>口服 Lp(a) 降低藥</b>，Phase 2 生物標記資料很強，而 pelacarsen 剛失敗。要思考的四件事：</p>
+<div class="tbl"><table><tr><th>面向</th><th>問題</th></tr>
+<tr><td>Patients 病人</td><td>收誰？AI 怎麼幫你找到他們？</td></tr>
+<tr><td>Endpoint 終點</td><td>硬結局、替代指標、還是兩者？FDA 接受什麼？</td></tr>
+<tr><td>AI</td><td>AI 在哪裡降成本？你會在哪裡<b>拒絕</b>用 AI？</td></tr>
+<tr><td>Stop/go</td><td>什麼樣的期中結果會讓你提早停止試驗？</td></tr></table></div>
+<p>想想看你要怎麼對一個<b>多疑的財務長（CFO）</b>辯護你的設計。（推論）可以串前面：Lp(a) 不是被接受的替代指標（p.26），所以一定要硬終點；pelacarsen 的失敗原因假說（p.25：族群、降幅、背景 LDL-C）都可以拿來調整設計。</p></div></div>
+
+<h2 class="sec" id="R-h"><small>p.40–43</small>未滿足需求、2060 預測、未來五年、重點整理</h2>
+
+<div class="slide"><div class="pno">p.40</div><div><h3>Highest Unmet Need in Cardiology（心臟科最大的未滿足需求）</h3>
+<div class="tbl"><table><tr><th>領域</th><th>為什麼還沒解決</th></tr>
+<tr><td>Heart failure with preserved EF（HFpEF）</td><td>約佔<b>一半</b>心衰竭。SGLT2 inhibitors 和 GLP-1 藥有幫助，但存活仍差</td></tr>
+<tr><td>年輕成人的預防</td><td>事件率低，所以試驗會<b>超大</b>；很少藥在發病前就被研究</td></tr>
+<tr><td>Women's heart health 女性心臟健康</td><td>試驗中代表性不足；性別特有的生理和妊娠併發症（例如子癇前症 preeclampsia）了解很少</td></tr>
+<tr><td>Cardio-oncology 心臟腫瘤學</td><td>癌症治療會傷心臟，很少療法是設計來預防它的</td></tr>
+<tr><td>Obesity and access 肥胖與可近性</td><td>GLP-1 減少 CV 事件（SELECT），但價格和取得限制了誰能受益</td></tr>
+<tr><td>Rare and under-diagnosed 罕見與診斷不足</td><td>ATTR-CM 病人被發現得太晚；AI-ECG 和篩檢可以擴大可治療族群</td></tr></table></div>
+<p>結論：<b>未滿足需求要變成一個藥物計畫，需要三樣東西：可測量的結局、可行的試驗、願意付錢的付款方</b>。講義註明這些需求的選擇是講者判斷。</p></div></div>
+
+<div class="slide"><div class="pno">p.41</div><div><h3>CVD Is Not Going Away：美國到 2060 年的預測</h3>
+<div class="tbl"><table><tr><th>危險因子</th><th>2025→2060 變化</th><th>2060 人數</th></tr>
+<tr><td>Diabetes 糖尿病</td><td class="num">+39%</td><td class="num">55M</td></tr>
+<tr><td>Hypertension 高血壓</td><td class="num">+25%</td><td class="num">162M</td></tr>
+<tr><td>Dyslipidemia 血脂異常</td><td class="num">+28%</td><td class="num">126M</td></tr>
+<tr><td>Obesity 肥胖</td><td class="num">+18%</td><td class="num">126M</td></tr></table></div>
+<div class="tbl"><table><tr><th>疾病</th><th>2025→2060 變化</th><th>2060 病例</th></tr>
+<tr><td>Ischemic heart disease 缺血性心臟病</td><td class="num">+31%</td><td class="num">29M</td></tr>
+<tr><td>Heart failure 心衰竭</td><td class="num">+33%</td><td class="num">13M</td></tr>
+<tr><td>Heart attack（MI）心肌梗塞</td><td class="num">+17%</td><td class="num">16M</td></tr>
+<tr><td><b>Stroke 中風</b></td><td class="num">+34%（最多）</td><td class="num">15M</td></tr></table></div>
+<ul><li><b>每 10 個成人有 6 個</b>預計在 2050 年有 CVD（AHA, 2024）。</li>
+<li><b>$1.8 trillion</b>：預計 2050 年美國每年 CVD 花費，約是現在的<b>三倍</b>（AHA, 2024）。</li></ul>
+<p>結論：<b>病人變多＝市場變大，也＝付款方的帳單變大</b>。預測假設現在的趨勢不變（Mohebi et al., JACC 2022；US Census＋NHANES）。</p>
+<p class="src">（推論）記法：危險因子裡糖尿病漲最多（+39%）；疾病裡中風（+34%）和心衰竭（+33%）漲最多，MI 最少（+17%）。</p></div></div>
+
+<div class="slide"><div class="pno">p.42</div><div><h3>未來 5 年（2026–2031）要看的事件</h3>
+<div class="tbl"><table><tr><th>年</th><th>事件</th></tr>
+<tr><td class="num">2026</td><td><b>Enlicitide</b>：第一個<b>口服 PCSK9 inhibitor</b>，靠 LDL-C 核准（7 月）；結果試驗（&gt; 14,500 人）還沒出來</td></tr>
+<tr><td class="num">2027</td><td><b>Ziltivekimab</b>：HERMES（心衰竭）和 ARTEMIS（心梗後）預計 2027 上半年出結果</td></tr>
+<tr><td class="num">2028</td><td><b>Olpasiran</b> OCEAN(a)-Outcomes 完成（3 月）；<b>Eliquis 美國學名藥</b>預計上市</td></tr>
+<tr><td class="num">2029</td><td><b>Lepodisiran</b> ACCLAIM-Lp(a) 完成（3 月，約 17,300 人）</td></tr>
+<tr><td class="num">2031</td><td><b>Tafamidis（Vyndamax）美國學名藥</b>預計 2031 年中起（依和解，仍有其他訴訟）</td></tr>
+<tr><td>Ongoing</td><td>IRA 價格議價；FDA AI 指引（草案）；更多 RNA 和基因編輯計畫</td></tr></table></div>
+<div class="tip"><b>大轉變：</b>從「<b>降低指標</b>」轉向「<b>證明結局</b>」；從第一代 blockbuster 走向<b>專利懸崖</b>。</div>
+<p class="src">（推論）enlicitide 的例子正好對照 p.26：LDL-C 是被接受的替代指標，所以能先核准、結果試驗後補；olpasiran、lepodisiran 是另外兩個降 Lp(a) 的藥，要靠結果試驗，pelacarsen 的失敗讓它們更受關注。日期是贊助者或登錄的估計，可能會變。</p></div></div>
+
+<div class="slide"><div class="pno">p.43</div><div><h3>Key Takeaways（五個重點，考前必看）</h3>
+<div class="tbl"><table><tr><th>#</th><th>重點</th><th>證據</th></tr>
+<tr><td class="num">1</td><td>CV 是最大的市場，最少的新創新</td><td>前 20 大銷售中約 $93B，但新上市只有約 6%</td></tr>
+<tr><td class="num">2</td><td>開發＝機率 × 成本 × 時間</td><td>約 8% 的 Phase I 藥會核准；CV 更低，試驗更大</td></tr>
+<tr><td class="num">3</td><td>贏家＝硬終點＋扛得起試驗的出資者或夥伴</td><td>Eliquis（18,201 人）；tafamidis（罕見病未滿足需求、孤兒藥定價）</td></tr>
+<tr><td class="num">4</td><td>生物標記動了，不等於結局被證明</td><td>pelacarsen 降 Lp(a) 約 80%；ziltivekimab 降了 IL-6 和 hsCRP；<b>兩者都沒減少事件</b></td></tr>
+<tr><td class="num">5</td><td>AI 降低每次嘗試的成本和時間，<b>不是</b>提高假說正確的機率</td><td>發現速度是真的；Phase II 成功率沒變（約 40%）</td></tr></table></div>
+<p>未來 5 年：<b>結果試驗出爐、專利懸崖與藥價、更清楚的 AI 規則</b>。</p></div></div>
+
+<h2 class="sec" id="R-cheat"><small>Cheat sheet</small>必背一張表</h2>
+<div class="tbl"><table>
+<tr><th>項目</th><th>重點</th><th>頁</th></tr>
+<tr><td>美國 CVD</td><td class="num">&gt; 1,800 萬人；2022 死亡 941,652（約 94 萬）；CVD 每 36 秒一人（2,396／天）、中風每 3 分 30 秒（411／天）</td><td>p.4–5</td></tr>
+<tr><td>全球 CVD 死亡</td><td class="num">1990→2021 +70%（12.1M → 20.5M）</td><td>p.4</td></tr>
+<tr><td>CV paradox</td><td>藥更多（statin、ACEi、β-blocker、抗凝、SGLT2i、GLP-1、PCSK9i），死亡率下降停滯；比癌症＋意外還多；HF 死亡上升</td><td>p.5</td></tr>
+<tr><td>2024 前 20 大銷售</td><td class="num">CV＋代謝 $92.8B（6 藥，GLP-1 約 $45B）；腫瘤 $57.0B；免疫 $45.2B；感染 $29.9B；其他 $27.2B；但 CV 新上市只有約 6%（2000–2020）</td><td>p.4, 6</td></tr>
+<tr><td>開發五階段</td><td>Early discovery → Preclinical（IND）→ Clinical → FDA review（NDA／ANDA／BLA）→ Post-market（FAERS）</td><td>p.7</td></tr>
+<tr><td>各期平均年數</td><td class="num">P1 2.3；P2 3.6；P3 3.3；FDA 1.3；合計約 10.5 年；FDA 60 天收件檢查＋標準 ~10 月／優先 ~6 月</td><td>p.8–9</td></tr>
+<tr><td>四種加速計畫</td><td>Orphan（&lt; 200,000 人、7 年專屬權）；Fast Track（滾動送件）；Breakthrough（密集指導）；Priority Review（~6 月）</td><td>p.9</td></tr>
+<tr><td>tafamidis 法規日期</td><td class="num">Orphan 2012；Fast Track 2017/6；Breakthrough 2018/5；Priority 2018/11；核准 2019/5</td><td>p.9</td></tr>
+<tr><td>Phase I 存活率</td><td class="num">100 → 52 → 15 → 8.7 → 7.9%（約 8%，CV 更低）</td><td>p.10</td></tr>
+<tr><td>成本與 rNPV</td><td>每核准藥 $1.0–2.6B（JAMA 2020 ~$1B；Tufts 2016 $2.6B）；rNPV＝成功機率 × 利潤 − 成本（逐期）；贏家付 ~92% 失敗的帳；越晚失敗越貴</td><td>p.10</td></tr>
+<tr><td>ATTR-CM／tafamidis</td><td>TTR 摺錯成類澱粉 → 心臟厚硬；tafamidis 穩定 TTR；2019/5 第一個核准</td><td>p.12</td></tr>
+<tr><td>ATTR-ACT</td><td class="num">441 人、48 點、13 國、30 個月；死亡 29.5% vs 42.9%（HR 0.70）；CV 住院 −32%（RR 0.68）</td><td>p.12</td></tr>
+<tr><td>tafamidis 時間軸</td><td class="num">1990s 概念；2005 首次人體；2011 EU（神經病變）；2012 FDA 不核准神經病變；2013–18 Phase 3；2019/5 核准</td><td>p.13</td></tr>
+<tr><td>tafamidis 經濟</td><td class="num">~$270K／年（範圍 $225–275K）；2025 銷售 $6.4B（+17%）；學名藥 ~2031 年中</td><td>p.14–16</td></tr>
+<tr><td>ATTR-CM 競爭者</td><td>Acoramidis（BridgeBio，2024/11，~$244K）；Vutrisiran（Alnylam RNAi，2025/3，~$477K）；Eplontersen Phase 3 失敗（2026/7）</td><td>p.15</td></tr>
+<tr><td>Eliquis 是什麼</td><td>apixaban，Factor Xa inhibitor；非瓣膜性 AF 中風預防、VTE 治療／預防</td><td>p.17</td></tr>
+<tr><td>ARISTOTLE</td><td class="num">18,201 人、~1,000 點、~40 國；中風／栓塞 HR 0.79；大出血 HR 0.69；死亡 HR 0.89</td><td>p.17, 19</td></tr>
+<tr><td>BMS–Pfizer 結盟（2007）</td><td class="num">前金 $250M（＋最多 $750M 里程碑）；開發 60/40（Pfizer/BMS）；利潤 50/50</td><td>p.17, 21</td></tr>
+<tr><td>Eliquis 時間軸</td><td class="num">2007 結盟；2010 APPRAISE-2 中止（7,392 ACS、出血 HR 2.6）；2011 topline；2012/6 CRL；2012/12/28 核准</td><td>p.18</td></tr>
+<tr><td>Eliquis 回報與尾巴</td><td class="num">2024 BMS $13.3B（美 $9.6B、國際 $3.7B）≈ $2.6B 的 5 倍；Medicare $231／30 天（2026/1）；學名藥 ~2028；五個贏的理由：更好、更好用、硬終點大族群、計畫有韌性、兩個夥伴</td><td>p.18–20</td></tr>
+<tr><td>三種合作</td><td>共同開發（Eliquis）；授權 License-in（pelacarsen：Ionis → Novartis 2019）；收購（Pfizer 買 FoldRx 2010）</td><td>p.22</td></tr>
+<tr><td>Lp(a)</td><td>像 LDL＋apo(a)；~90% 基因決定；~1/5 人偏高；連到 MI、中風、主動脈瓣狹窄；無核准療法</td><td>p.24</td></tr>
+<tr><td>Pelacarsen 交易與試驗</td><td class="num">2017 合作；2019 授權 $150M 前金、最多 $675M 里程碑；Phase 2 降 Lp(a) 72–80%；Lp(a)HORIZON 8,323 人、Lp(a) ≥ 70 mg/dL</td><td>p.24, 26</td></tr>
+<tr><td>Lp(a)HORIZON 結果</td><td>2026/9/4 主要終點失敗；結果延後兩次；背景 LDL-C ~66 mg/dL</td><td>p.25–26</td></tr>
+<tr><td>Pelacarsen 示意計算</td><td class="num">$3B × 10 年 × 30% = $9B；× 50% = $4.5B vs 試驗 ~$0.8B（估 $0.6–1.0B）</td><td>p.27</td></tr>
+<tr><td>共通模式</td><td>贏家：硬終點（或罕見病未滿足需求）＋扛得起試驗的出資者；輸家：標記沒證明因果</td><td>p.29</td></tr>
+<tr><td>腫瘤 vs CV</td><td class="num">核准 28 vs 8%；上市 30 vs 6%；R&amp;D 35 vs 8%；成功率 15 vs 7%；CV 試驗大 67–107%、長 28–32%</td><td>p.30</td></tr>
+<tr><td>CV 試驗失敗最常見原因</td><td>缺乏療效（lack of efficacy）</td><td>p.31</td></tr>
+<tr><td>十年進展</td><td>SGLT2i（DAPA-HF、EMPEROR-Reduced −25%）；inclisiran 2021；SELECT MACE −20%；baxdrostat 2026/5；2026 失敗 ZEUS、eplontersen、Lp(a)HORIZON</td><td>p.32</td></tr>
+<tr><td>四個槓桿</td><td>A 市場誘因；B 預防與可近性（gap is use, not invention）；C 政策與試驗經濟；D 精準與技術</td><td>p.33</td></tr>
+<tr><td>AI 計分板（2026/10）</td><td class="num">標靶→候選 ~18 月（vs 5–6 年）；Phase I 80–90%（vs 40–65%）；Phase II ~40%（不變）；FDA 核准 0 個；臨床藥 ~1% 是 AI</td><td>p.35</td></tr>
+<tr><td>EAGLE AI-ECG</td><td class="num">22,641 人；low EF 診斷 +32%；每 1,000 人多 5 個；Anumana 510(k)</td><td>p.34, 36</td></tr>
+<tr><td>AI 成本與打平</td><td class="num">Lilly–Insilico $2.75B（前金 $115M）；Recursion 買 Exscientia $688M；$100M／年 × 8 年 ≈ 一個 $0.8B Phase 3</td><td>p.38</td></tr>
+<tr><td>2060 預測</td><td class="num">糖尿病 +39%；高血壓 +25%；中風 +34%；HF +33%；2050 年 6/10 成人有 CVD；$1.8 兆／年</td><td>p.41</td></tr>
+<tr><td>未來 5 年</td><td>2026 enlicitide（口服 PCSK9）；2027 ziltivekimab；2028 olpasiran、Eliquis 學名藥；2029 lepodisiran；2031 tafamidis 學名藥</td><td>p.42</td></tr>
+</table></div>
+
+<h2 class="sec" id="R-quiz"><small>Self-test</small>自我測驗 <span class="score" id="score-cvdev"></span><button class="reset" data-reset="cvdev">重來</button></h2>
+<div class="quiz" id="quiz-cvdev"></div>
+</main>
+
+<main id="auto" role="tabpanel" aria-labelledby="tab-auto" hidden>
+<div class="big">整堂課的主線：<b>抗藥性（selective pressure，選擇壓力）讓每一個藥都有「保存期限」</b>。以瘧疾為例：每年仍有約 60 萬人死亡、大多是 5 歲以下兒童，但從 chloroquine 到 artemisinin，每一個抗瘧藥用了幾年到幾十年就出現抗藥性，而且<b>自 1992 年（atovaquone）以來沒有新藥類別</b>。疫苗 RTS,S 花了 30 年、效果只有 3–4 成。講者用 <b>first principles thinking（第一原理思考）</b>提出「<b>chemical vaccine（化學疫苗）</b>」：在肝臟期就把寄生蟲擋下來。可是新藥開發要 <b>&gt;10 年、&gt;$2B</b>，窮國的病又賺不到錢，所以要靠技術縮短時程：<b>HTS（高通量篩選）＋聲波移液＋自動化實驗室</b>，再加上 <b>AI 虛擬篩選</b>先縮小範圍。KAF156（ganaplacide）的故事示範了從篩選命中到 Phase 3（2025 年 11 月）要十多年，而且單用還是會產生抗藥性。</div>
+<div class="toc" aria-label="本講目錄">
+  <a href="#M-abbr">縮寫全名</a><a href="#M-memo">記憶法</a><a href="#M-a">p.1–4 開場與目標</a><a href="#M-b">p.5–9 瘧疾現況、生活史、抗藥性、疫苗</a><a href="#M-c">p.10–11 第一原理與化學疫苗</a><a href="#M-d">p.12–14 進入門檻：錢與時間</a><a href="#M-e">p.15–22 從哪裡開始找新藥：HTS</a><a href="#M-f">p.23–25 KAF156 的故事</a><a href="#M-g">p.26–31 技術：AI 與自動化</a><a href="#M-h">p.32–34 總結</a><a href="#M-cheat">必背表</a><a href="#M-quiz">測驗</a>
+</div>
+
+<details class="card" id="M-abbr"><summary>縮寫全名表（53 個）</summary><div class="in"><div class="tbl"><table><tr><th>縮寫</th><th>全名</th></tr>
+<tr><td class="num">NTD</td><td>neglected tropical disease，被忽視的熱帶疾病（講義 Outline 寫成 Neglected tropical diseases）</td></tr>
+<tr><td class="num">WHO</td><td>World Health Organization，世界衛生組織</td></tr>
+<tr><td class="num">WMR</td><td>World Malaria Report，WHO 世界瘧疾報告</td></tr>
+<tr><td class="num">GTS</td><td>Global Technical Strategy for Malaria 2016–2030，WHO 全球瘧疾技術策略</td></tr>
+<tr><td class="num">P. falciparum</td><td><i>Plasmodium falciparum</i>，惡性瘧原蟲（RTS,S 只針對它）</td></tr>
+<tr><td class="num">P. vivax</td><td><i>Plasmodium vivax</i>，間日瘧原蟲（有 hypnozoite 休眠期）</td></tr>
+<tr><td class="num">P. ovale</td><td><i>Plasmodium ovale</i>，卵形瘧原蟲（也有 hypnozoite）</td></tr>
+<tr><td class="num">P. berghei</td><td><i>Plasmodium berghei</i>，伯氏瘧原蟲，感染囓齒類，用來做肝臟期篩選</td></tr>
+<tr><td class="num">RTS,S</td><td>GSK 的瘧疾疫苗；把瘧原蟲 CS protein 和 B 型肝炎表面抗原結合</td></tr>
+<tr><td class="num">CS protein</td><td>circumsporozoite protein，環子孢子蛋白（sporozoite 表面蛋白）</td></tr>
+<tr><td class="num">GSK</td><td>GlaxoSmithKline，葛蘭素史克藥廠</td></tr>
+<tr><td class="num">WRAIR</td><td>Walter Reed Army Institute of Research，美國華特里德陸軍研究所</td></tr>
+<tr><td class="num">MVI</td><td>Malaria Vaccine Initiative，瘧疾疫苗倡議組織（背景補充：屬於 PATH）</td></tr>
+<tr><td class="num">PoC</td><td>proof of concept，概念驗證</td></tr>
+<tr><td class="num">EMA</td><td>European Medicines Agency，歐洲藥品管理局</td></tr>
+<tr><td class="num">NEJM</td><td>New England Journal of Medicine，新英格蘭醫學期刊</td></tr>
+<tr><td class="num">MMV</td><td>Medicines for Malaria Venture，瘧疾藥物事業組織（p.7 生活史圖與 p.25 新聞來源）</td></tr>
+<tr><td class="num">R&amp;D</td><td>research and development，研究與開發</td></tr>
+<tr><td class="num">p(TS)</td><td>probability of technical success，各階段技術成功（通過）的機率</td></tr>
+<tr><td class="num">FDA</td><td>Food and Drug Administration，美國食品藥物管理局</td></tr>
+<tr><td class="num">HTS</td><td>high-throughput screening，高通量篩選</td></tr>
+<tr><td class="num">BSL1／BSL2</td><td>biosafety level 1／2，生物安全等級 1／2</td></tr>
+<tr><td class="num">DMSO</td><td>dimethyl sulfoxide，二甲基亞碸（溶化合物的溶劑）</td></tr>
+<tr><td class="num">Da</td><td>dalton，道爾頓（分子量單位；small molecule &lt; 500 Da）</td></tr>
+<tr><td class="num">H-bond</td><td>hydrogen bond，氫鍵</td></tr>
+<tr><td class="num">µL／nL</td><td>microliter 微升（10⁻⁶ L）／nanoliter 奈升（10⁻⁹ L）</td></tr>
+<tr><td class="num">Echo</td><td>Labcyte Echo，用聲波移液的機器（acoustic liquid handler）</td></tr>
+<tr><td class="num">HepG2</td><td>人類肝癌細胞株，當作被感染的肝細胞</td></tr>
+<tr><td class="num">CD81</td><td>細胞表面分子；背景補充：sporozoite 進入肝細胞需要它，所以細胞株特別表現 CD81</td></tr>
+<tr><td class="num">EGFP</td><td>enhanced green fluorescent protein，增強型綠色螢光蛋白</td></tr>
+<tr><td class="num">Pb-luc</td><td><i>P. berghei</i> 帶 luciferase（螢光素酶）報導基因的品系，活的寄生蟲會發光</td></tr>
+<tr><td class="num">KAF156</td><td>ganaplacide 的開發代號（Novartis；背景補充）</td></tr>
+<tr><td class="num">GanLum</td><td>ganaplacide ＋ lumefantrine 的複方</td></tr>
+<tr><td class="num">EC50</td><td>half maximal effective concentration，達到一半最大效果的濃度（越小越強）</td></tr>
+<tr><td class="num">3D7／W2</td><td>兩株 <i>P. falciparum</i> 實驗室品系（背景補充：3D7 對 chloroquine 敏感、W2 對 chloroquine 抗藥）</td></tr>
+<tr><td class="num">AI／ML</td><td>artificial intelligence 人工智慧／machine learning 機器學習</td></tr>
+<tr><td class="num">cmpd</td><td>compound，化合物</td></tr>
+<tr><td class="num">in silico</td><td>在電腦裡做（＝ virtual screening 虛擬篩選）；對照 in vitro 在試管裡</td></tr>
+<tr><td class="num">Kd</td><td>dissociation constant，解離常數（結合強度，越小結合越緊）</td></tr>
+<tr><td class="num">Ki</td><td>inhibition constant，抑制常數（越小抑制越強）</td></tr>
+<tr><td class="num">CPU／GPU</td><td>central／graphics processing unit，中央處理器／圖形處理器</td></tr>
+<tr><td class="num">FSP1</td><td>ferroptosis suppressor protein 1，鐵死亡抑制蛋白 1（p.28 的標靶；中文名為背景補充）</td></tr>
+<tr><td class="num">NAD⁺／FAD</td><td>nicotinamide adenine dinucleotide／flavin adenine dinucleotide，兩種輔酶，p.28 結構圖中和 FSP1 結合</td></tr>
+<tr><td class="num">NCCN</td><td>National Comprehensive Cancer Network，美國國家綜合癌症網絡（癌症治療指引）</td></tr>
+<tr><td class="num">CPMC</td><td>California Pacific Medical Center（Sutter Health），加州太平洋醫學中心</td></tr>
+<tr><td class="num">PDX</td><td>patient-derived xenograft，病人來源的異種移植（把腫瘤種到小鼠）</td></tr>
+<tr><td class="num">PDC</td><td>patient-derived cells，病人來源的細胞（培養皿裡的腫瘤細胞）</td></tr>
+<tr><td class="num">HBsAg</td><td>hepatitis B surface antigen，B 型肝炎表面抗原（RTS,S 的一半）</td></tr>
+<tr><td class="num">HIV</td><td>human immunodeficiency virus，人類免疫缺乏病毒（Biktarvy 的適應症）</td></tr>
+<tr><td class="num">BMS</td><td>Bristol Myers Squibb，必治妥施貴寶藥廠</td></tr>
+<tr><td class="num">DVT／PE</td><td>deep vein thrombosis 深部靜脈血栓／pulmonary embolism 肺栓塞（Eliquis 的適應症）</td></tr>
+<tr><td class="num">BRAF／MEK</td><td>兩個癌症訊號傳遞激酶（背景補充：p.31 的 vemurafenib、dabrafenib 打 BRAF；trametinib、selumetinib 打 MEK）</td></tr>
+<tr><td class="num">SoC</td><td>standard of care，標準治療（講義寫全名 standard-of-care）</td></tr>
+</table></div></div></details>
+
+<h2 class="sec" id="M-memo"><small>Memory aids</small>記憶法（比喻、畫面、推理、數字分組）</h2><div class="memo">
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.5</div><div class="k">30 億、60 萬、77%、1992</div><div class="d">&gt; 3 billion 人有風險；2023 年 597,000 人死亡；其中 77% 是 &lt; 5 歲兒童；最後一個新藥類別是 1992 年的 atovaquone。</div></div>
+<div class="mm"><div class="pg"><span class="ty">畫面</span>p.7</div><div class="k">一個時鐘、兩個宿主</div><div class="d">紅色半圈在人身上：叮咬後 15–30 分鐘到肝 → 肝臟期 5.4 天 → 血液期每 43–48 小時一輪（發燒）→ 約 9 天出現 gametocytes。灰色半圈在蚊子身上：15 分鐘、1 小時、12–36 小時、9–12 天後 sporozoites 又到唾液腺。</div></div>
+<div class="mm"><div class="pg"><span class="ty">口訣</span>p.7</div><div class="k">「維卵」會睡覺</div><div class="d"><i>P. <b>vi</b>vax</i> 與 <i>P. <b>ov</b>ale</i> 在肝臟留下 hypnozoite（休眠體）。睡著的蟲以後可以再醒來。</div></div>
+<div class="mm"><div class="pg"><span class="ty">對比</span>p.7</div><div class="k">肝臟期安靜、血液期發燒</div><div class="d">症狀來自血液期的循環（Cycle leading to clinical symptoms，43–48 h）。肝臟期沒有症狀，這正是 chemical vaccine 想要下手的地方（p.11）。</div></div>
+<div class="mm"><div class="pg"><span class="ty">畫面</span>p.8</div><div class="k">一排橘色橫棒，每根都會斷</div><div class="d">chloroquine、sulfadoxine-pyrimethamine、proguanil、pyrimethamine、mefloquine、halofantrine、atovaquone、atovaquone-proguanil、artemisinin：每一根棒子的終點都是抗藥性出現。只有 chloroquine 撐了二十多年。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.9</div><div class="k">3 ＋ 1；44.5 → 31.5</div><div class="d">RTS,S：每月一劑共 3 劑，18 個月再打 1 劑 booster；預防重症瘧疾 1 年 44.5%，2 年掉到 31.5%。只對 <i>P. falciparum</i>。1984 開始合作，2016 Phase 3 完成才出名。</div></div>
+<div class="mm"><div class="pg"><span class="ty">比喻</span>p.10–11</div><div class="k">化學疫苗＝在門口擋人</div><div class="d">不等小偷進客廳（血液期、發燒）才抓，而是在玄關（肝臟期）就擋下來。人不發病，蚊子也吸不到 gametocytes，傳播鏈就斷了。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.14</div><div class="k">&gt;10 年、&gt;$2B、$1.8B</div><div class="d">傳統藥物研發超過 10 年、超過 20 億美元；2010 年的開發成本（從找到標靶以後算）是 18 億美元。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.14</div><div class="k">80–75–85–69–54–34–70–91</div><div class="d">各階段通過率 p(TS)：target-to-hit 80%、hit-to-lead 75%、lead optimization 85%、preclinical 69%、Phase I 54%、<b>Phase II 34%（最低）</b>、Phase III 70%、submission to launch 91%。</div></div>
+<div class="mm"><div class="pg"><span class="ty">比喻</span>p.18</div><div class="k">不是大海撈針，是把乾草一根根抽出來</div><div class="d">HTS 不是只找那根針；是把每一根草都拿起來評估它「像不像針」。每一根草的資料，以後的篩選也用得到。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.19–22</div><div class="k">384 / 1536；3–12 µL；2.5 nL；50 nL；6 分鐘</div><div class="d">化合物庫存放在 384 孔盤（工作體積 3–12 µL，溶在 DMSO）；篩選用 1536 孔盤。Echo 每滴 2.5 nL，10 nL 打滿一整盤 1536 孔約 6 分鐘；P. berghei 篩選每孔加 50 nL 化合物。</div></div>
+<div class="mm"><div class="pg"><span class="ty">畫面</span>p.22</div><div class="k">−24、−18、0、48</div><div class="d">肝臟期篩選時間軸：−24 h 種 HepG2 細胞 → −18 h 加化合物 → 0 h 加 sporozoites → 48 h 加 BrightGlo 讀發光。暗的孔＝寄生蟲被殺了＝hit。</div></div>
+<div class="mm"><div class="pg"><span class="ty">推理</span>p.23–25</div><div class="k">單打會被破，所以找隊友</div><div class="d">KAF156 單一療法出現抗藥寄生蟲 → 和 lumefantrine 合併成 GanLum。2025 年 11 月 Phase 3 和 Coartem 比達到 non-inferior。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.27</div><div class="k">$1000＋$0.05–1；&lt; 1%；$80,899 vs $23,000</div><div class="d">HTS：每個化合物約 $1000 ＋ 每孔 $0.05–$1，hit rate 通常 &lt; 1%；理想估算 50 萬化合物要 $80,899。虛擬篩選 10 億個化合物約 55 萬 CPU 小時、約 $23,000。</div></div>
+<div class="mm"><div class="pg"><span class="ty">對比</span>p.29</div><div class="k">HTS 看得到假陰性，虛擬篩選看不到</div><div class="d">HTS 全部都測；虛擬篩選只把預測的 hit 拿去實驗室測，被模型丟掉的那些永遠沒人測，所以 false-negative rate 量不到。</div></div>
+<div class="mm"><div class="pg"><span class="ty">畫面</span>p.31</div><div class="k">病人 → 切片 → 小鼠 → 培養皿 → 48 種藥</div><div class="d">Micro-biopsy → PDX → PDC → HTS（48 drugs targeting cancer）。結果：vemurafenib、dabrafenib 抗藥；trametinib、selumetinib 敏感。</div></div>
+</div>
+
+<h2 class="sec" id="M-a"><small>p.1–4</small>開場：題目、揭露、學習目標、大綱</h2>
+
+<div class="slide"><div class="pno">p.1</div><div><h3>題目在說什麼</h3>
+<p>講者是 UCSD Skaggs School of Pharmacy 的 Matt Abraham, PhD, PharmD（日期 10/27/2026）。題目：<i>How Selective Pressure Impacts Pharmacologic Diversity and the Role of Automated Drug Discovery</i>。拆成兩半：</p>
+<ul><li><b>Selective pressure → pharmacologic diversity</b>：用藥本身就是一種選擇壓力，會把抗藥的病原挑出來，所以我們需要一直有<b>不同種類（diverse）的新藥</b>。</li>
+<li><b>Automated drug discovery</b>：找新藥太慢太貴，所以要用自動化（機器人、AI）來加速。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.2</div><div><h3>Disclosures（利益揭露）</h3>
+<p>講者沒有財務揭露，和他展示的 peer-reviewed 文獻或數據沒有利益衝突；這堂課也沒有拿財務或非財務報酬。（講義把 peer-reviewed 拼成 <i>pier-reviewed</i>，是錯字。）</p></div></div>
+
+<div class="slide"><div class="pno">p.3</div><div><h3>學習目標（考試方向）</h3>
+<ul><li>Describe the <b>influence of resistance on drug discovery</b>：抗藥性怎麼影響找藥。</li>
+<li>How to apply <b>“first principles thinking”</b> to solve complex problems in drug development：用第一原理思考解決藥物開發的難題。</li>
+<li>Describe <b>unique approaches to novel drug discovery</b>：新藥探索的特殊方法。</li>
+<li>Describe the <b>role of automation in the drug development pipeline</b>：自動化在藥物開發流程中的角色。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.4</div><div><h3>Outline：五個站</h3>
+<p>圖上是五個方塊連成階梯，每塊配一個小圖示：</p>
+<div class="flow">
+<div class="step"><b>1 蚊子</b>Neglected tropical diseases（被忽視的熱帶疾病）</div>
+<div class="step"><b>2 病原體圖示</b>Challenges of resistance（抗藥性的挑戰）</div>
+<div class="step"><b>3 小豬撲滿</b>Cost of entry（進入門檻：要花的錢）</div>
+<div class="step"><b>4 藏寶圖</b>Search for new therapies（尋找新療法）</div>
+<div class="step"><b>5 機器人</b>Technological advances（技術進步）</div>
+</div>
+<p>後面 p.12、p.15 會重複這張大綱，把已經講過的方塊變灰，提示現在講到哪裡。</p></div></div>
+
+<h2 class="sec" id="M-b"><small>p.5–9</small>瘧疾現況、生活史、抗藥性與疫苗</h2>
+
+<div class="slide"><div class="pno">p.5</div><div><h3>Malaria today：六個重點</h3>
+<p>中間是一隻蚊子寫著 MALARIA，周圍六個框：</p>
+<div class="grid2">
+<div class="box"><h4>病原</h4>Caused by the <b>apicoplexan parasite <i>Plasmodium</i></b>（頂複門寄生蟲，瘧原蟲屬）。</div>
+<div class="box"><h4>風險人口</h4><b>&gt; 3 billion</b> people at risk（WHO Report 2024）。</div>
+<div class="box"><h4>死亡</h4><b>597,000 deaths in 2023</b>；其中 <b>77% 是 &lt; 5 歲兒童</b>。</div>
+<div class="box"><h4>沒有新藥</h4><b>No novel drug classes since 1992（atovaquone）</b>（Baggish &amp; Hill 2002）。</div>
+<div class="box"><h4>抗藥性</h4>Ever-present threat of resistance：抗藥性的威脅一直都在。</div>
+<div class="box"><h4>經濟</h4>Major burden to <b>low-economy countries</b>：主要負擔落在低收入國家。</div>
+</div>
+<div class="note"><b>注意講義前後不一致：</b>p.5 說最後的新藥類別是 <b>1992 年</b>（atovaquone），但 p.25 說 GanLum 會是「<b>since 1999</b>」以來第一個新類別。考試照題目給的那一頁回答；兩個年份都記一下。</div></div></div>
+
+<div class="slide"><div class="pno">p.6</div><div><h3>Malaria worldwide impact：WHO 的三張圖表</h3>
+<p><b>左：WHO Fig 8.1</b>，比較兩種情境（藍＝維持現在的軌跡；綠虛線＝達成 GTS 目標，以 2015 為基準）：</p>
+<div class="tbl"><table><tr><th>指標</th><th>實際（藍實線）</th><th>GTS 目標（綠）</th><th>照現在趨勢預測（淺藍）</th></tr>
+<tr><td>a) 發生率（每 1000 名風險人口的病例）</td><td class="num">2010 約 70 → 2015 59 → 2019 56 → 2020 59</td><td class="num">2019 41；2020 35；2025 15；2030 6</td><td class="num">2025 54；2030 50</td></tr>
+<tr><td>b) 死亡率（每 10 萬名風險人口）</td><td class="num">2010 約 20 → 2015 14.8 → 2019 13.8 → 2020 15.3</td><td class="num">2019 10.2；2020 8.9；2025 3.7；2030 1.5</td><td class="num">2025 13.3；2030 11.5</td></tr>
+</table></div>
+<p>重點：2015 年以後實際曲線<b>幾乎是平的</b>，2020 年還往上翹；照這樣下去 2030 年發生率 50、死亡率 11.5，遠遠達不到 GTS 的 6 和 1.5。</p>
+<p><b>右上：WHO Fig 3.2 世界地圖</b>（2000 年有本土病例的國家，到 2022 年的狀態）：紅色＝仍有本土病例（撒哈拉以南非洲、南美洲北部、中美洲、南亞、東南亞、巴布亞紐幾內亞一帶）；綠色＝2000 年後被認證無瘧疾（例如中國、阿根廷、阿爾及利亞）；藍色＝連續 &gt; 3 年零本土病例；黃色＝2021–2022 零本土病例；粉紅＝2022 年零本土病例；白色＝沒有瘧疾。</p>
+<p><b>右下：WHO Table 2.1</b>（2000–2023 全球估計病例與死亡，括號是 95% 信賴區間）：</p>
+<div class="tbl"><table><tr><th>年</th><th>病例（千）</th><th>% <i>P. vivax</i></th><th>死亡</th></tr>
+<tr><td>2000</td><td class="num">238,000（223,000–258,000）</td><td class="num">6.1%</td><td class="num">861,000</td></tr>
+<tr><td>2015</td><td class="num">226,000（最低點）</td><td class="num">2.9%</td><td class="num">578,000</td></tr>
+<tr><td>2019</td><td class="num">236,000</td><td class="num">2.3%</td><td class="num">567,000（最低點）</td></tr>
+<tr><td>2020</td><td class="num">247,000</td><td class="num">1.7%</td><td class="num">622,000</td></tr>
+<tr><td>2023</td><td class="num">263,000（238,000–294,000）</td><td class="num">3.5%</td><td class="num">597,000（548,000–723,000）</td></tr>
+</table></div>
+<div class="tip"><b>串起來：</b>2000–2015 死亡從 86 萬降到 58 萬，進步很大；但之後卡住，病例數 2023 年（2.63 億）甚至比 2000 年（2.38 億）還多。p.5 的「597,000 deaths in 2023」就是這張表最後一列。</div></div></div>
+
+<div class="slide"><div class="pno">p.7</div><div><h3>Lifecycle of the malaria parasite（瘧原蟲生活史）</h3>
+<p>投影片角落印 8，因為原本的第 7 張被拿掉了；以下一律用 PDF 頁序。圖是一個大時鐘，外圈分成兩個宿主（Modified from MMV；Dondorp 2005、Taylor 1997）。時間標在時鐘內圈，下面依圖上位置對應到各階段：</p>
+<p><b>在人身上（紅色那一圈，順時針）</b></p>
+<div class="flow">
+<div class="step"><b>TRANSMISSION TO MAN</b>蚊子叮人，注入 sporozoites</div>
+<div class="step"><b>15–30 mins</b>sporozoites 經血流到 <b>LIVER</b>，進入肝細胞</div>
+<div class="step"><b>5.4 days</b>infected hepatocyte → 肝內 schizont（裂殖體）→ 釋出 merozoites</div>
+<div class="step"><b>43–48 h</b>紅血球內循環：ring → trophozoite → schizont → merozoites 再感染新紅血球（Cycle leading to clinical symptoms）</div>
+<div class="step"><b>9 days</b>一部分變成 gametocytes（♀ 雌、♂ 雄配子母細胞）</div>
+</div>
+<p><b>在蚊子身上（灰色那一圈）</b></p>
+<div class="flow">
+<div class="step"><b>TRANSMISSION TO MOSQUITO</b>蚊子吸血把 gametocytes 吸進去</div>
+<div class="step"><b>15 mins</b>macrogametocyte（雌）＋ microgametocyte（雄，exflagellation 鞭毛出芽）</div>
+<div class="step"><b>1 h</b>受精成 diploid zygote（二倍體合子）</div>
+<div class="step"><b>12–36 h</b>ookinete（動合子）</div>
+<div class="step"><b>9–12 days</b>oocysts（卵囊）→ 新的 sporozoites，跑到唾液腺，再叮下一個人</div>
+</div>
+<ul><li>右上的支線：<b>Hypnozoite</b>，標註 <i><b>P. vivax &amp; ovale</b> dormant stage</i>：這兩種會在肝臟裡留下休眠體，之後可以再醒過來。</li>
+<li>只有血液期那一圈（43–48 h）會造成臨床症狀；肝臟期沒有症狀。</li></ul>
+<div class="note"><b>判讀說明：</b>「15 mins／1 h／12–36 h」對應到哪個蚊子階段，是依時鐘上的位置判讀的；講義只標了時間和階段名稱，沒有用文字一一對應。</div></div></div>
+
+<div class="slide"><div class="pno">p.8</div><div><h3>Strategies and challenges with malaria eradication</h3>
+<p><b>上排：三種病媒（蚊子）控制方法</b>（照片）：</p>
+<ul><li><b>Insecticide treated bednets</b>：殺蟲劑處理過的蚊帳。</li>
+<li><b>Indoor residual spraying</b>：室內殘效噴灑（穿防護衣的人在室內牆上噴藥）。</li>
+<li><b>Larval control</b>：幼蟲控制（處理積水的水坑）。</li></ul>
+<p><b>下排：抗瘧藥時間軸</b>（McClure &amp; Day, Proc Biol Sci 2014），橫軸 1930–2010，每個藥一根橘色橫棒，棒子的尾端就是出現抗藥性的時候。目測大約：</p>
+<div class="tbl"><table><tr><th>藥</th><th>橫棒大約的年份（目測）</th></tr>
+<tr><td>chloroquine</td><td class="num">~1934 → 1950 年代後期（最長，二十多年）</td></tr>
+<tr><td>sulfadoxine-pyrimethamine</td><td class="num">~1940 → 1950 年代中</td></tr>
+<tr><td>proguanil</td><td class="num">~1948 → ~1952（很短）</td></tr>
+<tr><td>pyrimethamine</td><td class="num">~1952 → ~1955（很短）</td></tr>
+<tr><td>mefloquine</td><td class="num">~1977 → ~1985</td></tr>
+<tr><td>halofantrine</td><td class="num">~1988 → ~1995</td></tr>
+<tr><td>atovaquone</td><td class="num">~1996 → ~1999（只有淺色一小段）</td></tr>
+<tr><td>atovaquone-proguanil</td><td class="num">~1997 → ~2004</td></tr>
+<tr><td>artemisinin</td><td class="num">~2000 → ~2009–2012</td></tr>
+</table></div>
+<p>每根棒子都分深橘和淺橘兩段，講義沒有說明兩段的差別（推論：淺色可能是抗藥性報告年份的不確定範圍）。</p>
+<div class="tip"><b>這張圖要說的：</b>這就是 selective pressure。每一個新藥用了幾年到幾十年就被寄生蟲「破解」；而且 artemisinin 之後就沒有新的棒子了，對應 p.5 的「沒有新藥類別」。</div>
+<p class="src">講義來源寫成 www.wikepedia.com（應為 wikipedia，錯字）。</p></div></div>
+
+<div class="slide"><div class="pno">p.9</div><div><h3>Vaccine development – long and limited（疫苗：又久又有限）</h3>
+<p>左邊是 GSK 的 <b>RTS,S timeline</b>：</p>
+<div class="tbl"><table><tr><th>年</th><th>事件</th></tr>
+<tr><td class="num">1984</td><td>GSK／WRAIR 開始合作</td></tr>
+<tr><td class="num">1987</td><td>RTS,S 誕生：把瘧原蟲的 <b>CS protein</b> 和 <b>hepatitis B surface antigen</b>（B 肝表面抗原）結合</td></tr>
+<tr><td class="num">1995</td><td>第一次人體臨床試驗，在美國成人</td></tr>
+<tr><td class="num">1997</td><td>關鍵 PoC：challenge trial（故意讓受試者感染）中 7 個志願者有 6 個 100% 被保護</td></tr>
+<tr><td class="num">1998</td><td>在非洲（甘比亞 Gambia）開始試驗</td></tr>
+<tr><td class="num">2001</td><td>GSK／MVI 合作</td></tr>
+<tr><td class="num">2004</td><td>莫三比克（Mozambique）兒童的關鍵 PoC 研究</td></tr>
+<tr><td class="num">2007</td><td>非洲兒童與嬰兒的 Phase II 結果，刊於 Lancet、NEJM</td></tr>
+<tr><td class="num">2009</td><td>Phase III 開始</td></tr>
+<tr><td class="num">2011</td><td>Phase III 第一批結果：5–17 個月大兒童，12 個月追蹤，NEJM；同年 Phase II 療效結果刊於 Lancet、NEJM</td></tr>
+<tr><td class="num">2012</td><td>Phase III 第二批結果：6–12 週大嬰兒，NEJM</td></tr>
+<tr><td class="num">2013</td><td>Phase III 18 個月追蹤結果，在 MIM PAN African Malaria Conference 發表，2014 刊於 PLoS Medicine</td></tr>
+<tr><td class="num">2014</td><td>3–4 年追蹤與 booster 最終結果；送件給 EMA</td></tr>
+<tr><td class="num">2015</td><td>含 booster 的 Phase III 最終結果刊於 The Lancet</td></tr>
+</table></div>
+<p>右邊四個重點：</p>
+<ul><li><b>2016</b> 年因為完成 Phase 3 而出名（Notoriety）。</li>
+<li><b><i>P. falciparum</i> only</b>：只防惡性瘧。</li>
+<li>劑量：<b>每月一劑共 3 劑（x3）＋ 18 個月時 1 劑 booster</b>。</li>
+<li>效果（預防 <b>severe malaria</b>）：<b>1 年 44.5%，2 年掉到 31.5%</b>。</li></ul>
+<div class="tip"><b>串起來：</b>從 1984 到 2016 超過 30 年，保護力還不到一半，而且會隨時間下降、只管一種瘧原蟲。所以標題說 long and limited：光靠疫苗不夠。</div></div></div>
+
+<h2 class="sec" id="M-c"><small>p.10–11</small>第一原理思考與「化學疫苗」</h2>
+
+<div class="slide"><div class="pno">p.10</div><div><h3>First principles thinking（第一原理思考）</h3>
+<ul><li>Oxford Languages 的定義：<i>“the basic ideas on which a theory, system or method is based”</i>（一個理論、系統或方法所根據的最基本想法）。</li>
+<li>實務上：把複雜的網絡<b>拆解成最基本的組成</b>，而且<b>不帶任何預設（devoid of assumptions）</b>。</li></ul>
+<p>（講義標題寫成 First <i>principals</i> thinking，應為 principles，錯字；p.3 的寫法是對的。）</p>
+<div class="tip"><b>套到瘧疾（推論，串接 p.7 與 p.11）：</b>不要先假設「抗瘧藥就是要治發燒的病人」。回到基本：瘧疾要成立，寄生蟲一定要先經過肝臟，再到血液，再回到蚊子。哪一個環節最好打？下一頁的答案是肝臟期。</div></div></div>
+
+<div class="slide"><div class="pno">p.11</div><div><h3>What about a “chemical vaccine”（化學疫苗）</h3>
+<p>圖的左下角是 p.7 生活史放大的一角：TRANSMISSION TO MAN → LIVER → sporozoites（標了 nucleus）→ infected hepatocyte → schizont。一個藥物分子的圖示用一條<b>抑制線（⊣）</b>指向剛進入肝臟的那一段：意思是<b>在肝臟期就擋下寄生蟲</b>。</p>
+<p>右邊是三個畫面，用箭頭串起來，箭頭上都畫著那個藥物分子：</p>
+<div class="flow">
+<div class="step"><b>開始</b>兩個家庭，周圍有 7 隻蚊子</div>
+<div class="step"><b>給藥一次</b>家庭還在，蚊子剩 3 隻</div>
+<div class="step"><b>再給藥</b>家庭還在，剩 1 隻蚊子而且是翻倒的（死掉）</div>
+</div>
+<p>意思是：像疫苗一樣<b>預防性</b>地給藥，人不會發病，寄生蟲也到不了血液期、產生不了 gametocytes，蚊子就沒有東西可以傳，傳播鏈慢慢斷掉。</p>
+<div class="note"><b>背景補充（講義沒寫）：</b>肝臟期的寄生蟲數量比血液期少很多，一般認為族群越小，出現抗藥突變的機會越低；這也是一些人主張打肝臟期的理由。p.32 的總結也說 chemical vaccine 是「降低抗藥性出現」的創意策略。</div></div></div>
+
+<h2 class="sec" id="M-d"><small>p.12–14</small>Cost of entry：藥物開發的錢與時間</h2>
+
+<div class="slide"><div class="pno">p.12</div><div><h3>Outline（第二次）</h3>
+<p>同 p.4 的大綱，但 Neglected tropical diseases 和 Challenges of resistance 已經變灰；接下來講 <b>Cost of entry</b>、Search for new therapies、Technological advances。</p></div></div>
+
+<div class="slide"><div class="pno">p.13</div><div><h3>The business of drug development：2024 年銷售前 50 名的藥</h3>
+<p>一張大表（改自 Drug Discovery Trends 2024 blockbusters），欄位：藥名、廠商、2024 年銷售額（百萬美元）、2023→2024 成長率、疾病領域。前幾名：</p>
+<div class="tbl"><table><tr><th>名次</th><th>藥（成分）</th><th>廠商</th><th>2024 銷售</th><th>成長</th><th>疾病</th></tr>
+<tr><td>1</td><td>Keytruda（pembrolizumab）</td><td>Merck</td><td class="num">$29,482M</td><td class="num">17.9%</td><td>多種癌症／單株抗體</td></tr>
+<tr><td>2</td><td>Eliquis（apixaban）</td><td>BMS／Pfizer</td><td class="num">$20,703M</td><td class="num">9.2%</td><td>非瓣膜性心房顫動、DVT、PE</td></tr>
+<tr><td>3</td><td>Ozempic（semaglutide）</td><td>Novo Nordisk</td><td class="num">$17,451M</td><td class="num">25.8%</td><td>第 2 型糖尿病與肥胖</td></tr>
+<tr><td>4</td><td>Dupixent（dupilumab）</td><td>Sanofi／Regeneron</td><td class="num">$14,147M</td><td class="num">22.1%</td><td>介白素抑制劑／單株抗體</td></tr>
+<tr><td>5</td><td>Biktarvy（bictegravir/emtricitabine/tenofovir alafenamide）</td><td>Gilead</td><td class="num">$13,423M</td><td class="num">13.3%</td><td><b>HIV-1 infection</b>（表上用橘色標出）</td></tr>
+</table></div>
+<ul><li>表上其他顯眼的數字：Mounjaro（tirzepatide）成長 <b>123.5%</b>、Wegovy 85.7%、Paxlovid <b>346.9%</b>；Comirnaty（COVID 疫苗）<b>−49.1%</b>、Humira <b>−37.6%</b>。第 50 名 Enbrel 也還有 $3,316M。</li>
+<li>藍底的列大多是<b>單株抗體</b>（monoclonal antibody）藥物。</li>
+<li>整張表<b>沒有任何一個抗瘧藥或熱帶病用藥</b>；以癌症、自體免疫、糖尿病／肥胖、心血管為主。</li></ul>
+<div class="tip"><b>這張表要說的（推論）：</b>藥廠的錢集中在富裕國家的大市場。瘧疾的病人在低收入國家（p.5），付不起高價，所以投資新抗瘧藥的商業誘因很小，這就是 Outline 裡的「Cost of entry」。Biktarvy 被特別標出，可能是要指出：感染症藥物要進前五名，靠的是富裕國家也有大量病人的 HIV。</div></div></div>
+
+<div class="slide"><div class="pno">p.14</div><div><h3>A classical view of the drug development pipeline</h3>
+<p>標題：<b>Traditional drug R&amp;D takes &gt; 10 years and &gt; $2B</b>（From the discovery to the launch of a new drug；改自 Paul et al., Nat Rev Drug Discov 2010）。圖是一個由寬變窄的漏斗，下面有三列數字：</p>
+<div class="tbl"><table><tr><th>階段</th><th>p(TS) 通過率</th><th>Cycle time（年）</th><th>每個上市藥分攤成本（百萬美元，2010）</th></tr>
+<tr><td>Disease hypothesis and target discovery</td><td class="num">1–5%</td><td class="num">1–10</td><td class="num">$0–1000</td></tr>
+<tr><td>Target-to-hit</td><td class="num">80%</td><td class="num">1.0</td><td class="num">$94</td></tr>
+<tr><td>Hit-to-lead</td><td class="num">75%</td><td class="num">1.5</td><td class="num">$166</td></tr>
+<tr><td>Lead optimization</td><td class="num">85%</td><td class="num">2.0</td><td class="num">$414（最貴）</td></tr>
+<tr><td>Preclinical</td><td class="num">69%</td><td class="num">1.0</td><td class="num">$150</td></tr>
+<tr><td>Phase I</td><td class="num">54%</td><td class="num">1.5</td><td class="num">$273</td></tr>
+<tr><td>Phase II</td><td class="num"><b>34%（最低）</b></td><td class="num">2.5</td><td class="num">$319</td></tr>
+<tr><td>Phase III</td><td class="num">70%</td><td class="num">2.5</td><td class="num">$314</td></tr>
+<tr><td>Submission to launch</td><td class="num">91%</td><td class="num">1.5</td><td class="num">$48</td></tr>
+</table></div>
+<ul><li>Target-to-hit 到 submission to launch 加起來：<b>$1.8B</b> = Development cost in 2010（after target discovery，不含找標靶）。</li>
+<li>第一格 disease hypothesis and target discovery 的說明：通常要<b>幾個月到幾十年</b>，多半在<b>學術機構、用政府經費</b>做（根據藥業高層訪談）。</li>
+<li>漏斗後面還有 sales and marketing、real world evidence 兩格。底部的大分段：Discovery（到 preclinical）→ Development（Phase I 到上市）→ Sales and marketing。</li></ul>
+<div class="calc">cycle time（target-to-hit 到 launch）：1.0 + 1.5 + 2.0 + 1.0 + 1.5 + 2.5 + 2.5 + 1.5 = 13.5 年
+→ 所以說 &gt; 10 年（還沒算找標靶的 1–10 年）</div>
+<p>（上面的加總是用講義數字自己算的。）</p></div></div>
+
+<h2 class="sec" id="M-e"><small>p.15–22</small>Search for new therapies：從哪裡開始？高通量篩選</h2>
+
+<div class="slide"><div class="pno">p.15–16</div><div><h3>Outline（第三次）與一個問題</h3>
+<p>p.15 的大綱只剩 <b>Search for new therapies</b> 和 <b>Technological advances</b> 是亮的。p.16 整頁一句話：<i>So you want to find a chemical vaccine to eradicate malaria… where do you even start?!</i>（你想找一個能根除瘧疾的化學疫苗……到底要從哪裡開始？）</p></div></div>
+
+<div class="slide"><div class="pno">p.17</div><div><h3>Approaches to drug development：兩條路</h3>
+<ul><li>Data mining literature for unexplored, <u>druggable</u>, pathways：從文獻挖還沒被探索、而且<b>可成藥（druggable）</b>的路徑。</li>
+<li>Do you have a specific enzyme in mind worth targeting?：你心中有沒有一個值得打的特定酵素？</li>
+<li>How much is known about druggable pathways (e.g. malaria)? How does that change the drug discovery approach?：如果像瘧疾這樣，對可成藥路徑所知不多，找藥方法要怎麼變？</li></ul>
+<p>下方的圖（Lorente Macías 2019）比較兩種方法：</p>
+<div class="grid2">
+<div class="box"><h4>Phenotype-based drug discovery（表現型導向）</h4>Assay development → Screening → <b>Hits and leads</b> → <b>Target deconvolution</b>（事後再找出標靶）。<br>先找到有效的分子，再回頭找它打的是什麼標靶。</div>
+<div class="box"><h4>Target-based drug discovery（標靶導向）</h4><b>Target</b> → Target validation → Assay development → Screening → Hits and leads。<br>先確認並驗證標靶，才開始找分子。</div>
+</div>
+<div class="tip"><b>和瘧疾連起來（推論）：</b>瘧原蟲的可成藥標靶所知有限，所以適合 phenotype-based：直接拿活的寄生蟲（p.22 的肝臟期篩選）測一大堆化合物，看誰能殺死它，標靶以後再說。</div></div></div>
+
+<div class="slide"><div class="pno">p.18</div><div><h3>High-throughput screening with small molecule chemical libraries</h3>
+<ul><li><b>Small molecules</b>：獨特的化學個體，有特定的物理性質，例如 <b>&lt; 500 daltons</b>、氫鍵數目（# H-bonds）、極性（polarity）……</li>
+<li>這種分子的 library（化合物庫）從<b>幾千到幾百萬個</b>結構都有，看公司的資源。</li>
+<li>比喻：篩選<b>不太像大海撈針</b>（needle in a haystack），比較像<b>把乾草一根一根抽出來，評估每一根有多「像針」</b>。</li>
+<li>對每一根草的了解，<b>在今天這次篩選之外也有用</b>（資料可以重複利用）。</li></ul>
+<p>配圖是一捆圓形乾草。（講義 it's 應為 its，小錯字。）</p></div></div>
+
+<div class="slide"><div class="pno">p.19</div><div><h3>What do compound libraries look like?</h3>
+<p>三張照片：</p>
+<ul><li>左：一個結霜的冷凍櫃，裡面是一格一格的不鏽鋼抽屜，標籤 S1R1、S1R2…S4R4（看起來是 Shelf 1–4、Rack 1–4，共 16 格；命名意義為推論）。</li>
+<li>右上：藍色箭頭指出抽屜拉出來後，裡面整齊直立排滿一盒一盒的化合物盤，每盤有條碼標籤。</li>
+<li>右下：手拿一個 <b>384-well plate</b>，有些孔有顏色（化合物本身的顏色）。</li></ul>
+<div class="note"><b>必背：</b>384-well plate、<b>“Low dead volume”</b>（死體積小，吸不到的殘液少）、<b>working volume 3–12 µL</b>、compounds <b>solubilized in DMSO</b>。</div></div></div>
+
+<div class="slide"><div class="pno">p.20</div><div><h3>What is high-throughput screening (HTS)?</h3>
+<ul><li>一種可以把 <b>10 萬到幾百萬個（100,000s or 1,000,000s）</b>不同化合物，<u>快速</u>拿去做 <b>biochemical（生化）或 cell-based（細胞）assay</b> 的流程。</li>
+<li>重要因素：<b>速度、可靠度（reliability）、再現性（reproducibility）</b>，以及符合安全標準（例如 <b>BSL1 或 BSL2</b>）。</li>
+<li>HTS <b>人做不到</b>：規模太大、人會出錯，而且人要吃飯、要休息（sustenance and breaks）。</li></ul>
+<p>配圖：PerkinElmer 的 OptiPlate-1536 白色 1536 孔盤，以及它的工程尺寸圖（外框約 127.76 × 85.48 mm）。</p></div></div>
+
+<div class="slide"><div class="pno">p.21</div><div><h3>Acoustic transfer：用聲波、不碰液體地做出測試盤</h3>
+<p>照片是 Labcyte <b>Echo</b> 650T 機器（白色、藍色波紋面板）。</p>
+<ul><li>Echo 用<b>聲波能量（sound energy）</b>移動溶在 DMSO 的化合物，<b>完全不接觸液體</b>（contactless）。</li>
+<li>每一滴是 <b>2.5 nL</b>，重複打好幾滴來達到想要的濃度。</li>
+<li>把 <b>10 nL</b> 化合物打到一整盤 <b>1536-well plate</b>，大約只要 <b>6 分鐘</b>。</li></ul>
+<div class="calc">10 nL ÷ 2.5 nL = 4 滴／孔
+4 滴 × 1536 孔 = 6,144 滴，約 6 分鐘完成</div>
+<p>（上面的除法是用講義數字自己算的。）</p></div></div>
+
+<div class="slide"><div class="pno">p.22</div><div><h3>實際怎麼做：<i>P. berghei</i> liver-stage assay（Swann 2016）</h3>
+<p>左邊是照片（顯微鏡下處理蚊子，推論是在解剖蚊子取出 sporozoites）和一個<b>老鼠</b>圖示：<i>Plasmodium berghei</i> 是感染囓齒類的瘧原蟲。右上是流程（每步之間在 37°C、5% CO₂ 培養）：</p>
+<div class="flow">
+<div class="step"><b>−24 hrs</b>每孔種 <b>3×10³ HepG2-CD81EGFP</b> 肝細胞（5 µL/well）</div>
+<div class="step"><b>−18 hrs</b>加 <b>compound in DMSO（50 nL/well）</b></div>
+<div class="step"><b>0 hrs</b>加 <b>1×10³ Pb-luc sporozoites</b>（5 µL/well）</div>
+<div class="step"><b>48 hrs</b>移除培養液，加 <b>2 µL BrightGlo</b>，測 <b>bioluminescence（生物發光）</b></div>
+</div>
+<ul><li>中間兩張黑白方格圖是兩盤 1536 孔盤的結果（列 A–AF、行 1–48）：<b>白色＝發光強＝寄生蟲活著</b>；<b>黑色＝不發光＝寄生蟲被殺</b>。大部分孔是白的，零星的黑點就是 <b>hits</b>。右側有一整行是黑的，一條線把它連到 <b>atovaquone</b>：那一行是加了 atovaquone 的<b>陽性對照（positive control）</b>。</li>
+<li>右下：atovaquone 的劑量反應曲線，橫軸濃度 100E-6 到 10 µM（log），縱軸 % inhibition 0–100。曲線是 S 形，從約 0.001 µM 開始上升，<b>約 0.1 µM 以上就達到 100% 抑制</b>；50% 抑制點落在 0.001 到 0.01 µM 之間（目測）。</li></ul>
+<div class="tip"><b>串起來：</b>這就是 p.11「chemical vaccine」的實作版：直接測化合物能不能在<b>肝臟期</b>殺死寄生蟲（phenotype-based），用 p.19 的化合物庫、p.21 的 Echo 打 50 nL、1536 孔盤。atovaquone 會出現在這裡，是因為它本來就是有肝臟期活性的藥（atovaquone-proguanil 用於預防，背景補充）。</div></div></div>
+
+<h2 class="sec" id="M-f"><small>p.23–25</small>找到 lead 以後：KAF156（ganaplacide）的故事</h2>
+
+<div class="slide"><div class="pno">p.23</div><div><h3>從 screening hit 到 ganaplacide：結構優化（Wu 2011、Nagle 2012）</h3>
+<p>左上是篩選找到的 <b>screening hit</b>（imidazolopiperazine 骨架，名稱為背景補充），三個地方被虛線框起來：</p>
+<ul><li><b>R1</b>：glycine 醯胺（H₂N–CH₂–C=O）那一端。</li>
+<li><b>R2</b>：苯環，標註 <b>possible metabolic soft spot</b>（可能容易被代謝的弱點）。</li>
+<li><b>R3</b>：methylenedioxyphenyl（苯並二氧五環），標註 <b>possible metabolic soft spot &amp; toxicity alert</b>（代謝弱點＋毒性警訊）。</li></ul>
+<p>右上是最終的 <b>ganaplacide</b>：兩個苯環都換成 <b>4-氟苯（4-F-phenyl）</b>，旁邊多了兩個甲基（gem-dimethyl）。兩個大箭頭從 hit 繞到下面的表、再從表繞到 ganaplacide：代表<b>反覆修改、測試（iterative）</b>。</p>
+<p>下面的表（compounds 15–30）列出改 R1–R6 後，對兩株 <i>P. falciparum</i>（<b>3D7</b>、<b>W2</b>）的 <b>EC50（nM）</b>：</p>
+<div class="tbl"><table><tr><th>例子</th><th>改了什麼</th><th>3D7／W2 EC50 (nM)</th></tr>
+<tr><td>15</td><td>R1=R2=H，R6=4-FPh</td><td class="num">24 / 23</td></tr>
+<tr><td>16</td><td>R6=3Cl,4F-Ph</td><td class="num">4 / 4</td></tr>
+<tr><td>19、20</td><td>R1 換成大的異丙基（i-Pr）</td><td class="num">343 / 470；168 / 202（變差很多）</td></tr>
+<tr><td>22</td><td>R1=R2=Me（兩個甲基）、gly、4-FPh</td><td class="num">10 / 6</td></tr>
+<tr><td>25、26</td><td>甲基放到 R4 或 R5</td><td class="num">82 / 111；80 / 76（變差）</td></tr>
+<tr><td>29</td><td>Me, Me、α-Me-Ala、4-MePh</td><td class="num">2 / 4（表中最強）</td></tr>
+</table></div>
+<ul><li>讀表重點：EC50 越小越強；體積大的 i-Pr 讓效價掉 10 倍以上；甲基放在 R1/R2 可以，放在 R4/R5 不行。</li>
+<li>推論：化合物 22 的取代基（Me, Me, gly, 4-FPh）跟右上 ganaplacide 的結構一致。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.24</div><div><h3>這個過程花了多久？</h3>
+<p>同一張圖蓋上一段大字：</p>
+<ul><li>This <b>iterative process took years</b> to go from the screening hit to KAF156.（從 hit 到 KAF156 花了好幾年。）</li>
+<li>KAF156 優化完到現在已經<b>超過十年</b>。</li>
+<li>現在要和另一個抗瘧藥 <b>lumefantrine 合併成複方（coformulated）</b>，因為 <b>KAF156 單一療法（monotherapy）出現了抗藥寄生蟲</b>。</li></ul>
+<div class="tip"><b>回到主題：</b>這就是 selective pressure。即使是全新的藥，單獨用也很快被挑出抗藥株，所以要用合併療法讓寄生蟲同時對兩個藥抗藥的機會變小（合併療法原理為背景補充）。</div></div></div>
+
+<div class="slide"><div class="pno">p.25</div><div><h3>Phase 3 for GanLum meets primary endpoint（Nov 2025）</h3>
+<ul><li>GanLum（<b>ganaplacide ＋ lumefantrine</b>）的合併療法，證明 <b>non-inferior（不劣於）Coartem</b>（標準治療，standard of care）。</li>
+<li>如果核准，會是 <b>1999 年以來第一個新類別的抗瘧藥</b>（first novel class of antimalarial since 1999）。</li></ul>
+<p>來源：MMV newsroom。背景補充：Coartem 是 artemether-lumefantrine，所以新舊兩組都含 lumefantrine。</p>
+<div class="note"><b>注意：</b>這頁說「since 1999」，p.5 說「since 1992 (atovaquone)」，講義前後不一致。</div></div></div>
+
+<h2 class="sec" id="M-g"><small>p.26–31</small>Technological advances：AI、虛擬篩選與自動化實驗室</h2>
+
+<div class="slide"><div class="pno">p.26</div><div><h3>How do we shrink this timeline?</h3>
+<p>把 p.14 的漏斗圖淡化，上面加兩個雙向箭頭，把流程切成兩半：</p>
+<div class="grid2">
+<div class="box"><h4>前半：Discovery（target discovery → preclinical）</h4>靠 <b>Engineering, novel screening strategies, AI/ML leveraging Big Data</b>（工程、新篩選策略、運用大數據的 AI/ML）來縮短。</div>
+<div class="box"><h4>後半：Development（Phase I → real world evidence）</h4>靠 <b>Regulatory bodies &amp; FDA</b>（法規單位）。</div>
+</div>
+<p>意思：科學家和工程師能直接改變的是前半段；臨床試驗到上市那一段要靠法規面。</p></div></div>
+
+<div class="slide"><div class="pno">p.27</div><div><h3>The potential of AI in drug discovery</h3>
+<p><b>HTS 很貴：</b></p>
+<ul><li>約 <b>$1000／化合物</b>（library 裡的每個化合物）＋ 每測一孔 <b>$0.05–$1</b>（Sunkari 2021）。</li>
+<li><b>Hit rate 很低，通常 &lt; 1%</b>（Lloyd 2020）。Hit rate 定義：被判定為 “active” 的樣本數 ÷ 測試的總樣本數。</li>
+<li>例子：前面的瘧疾篩選當時每孔 <b>$0.10–0.20</b>。</li></ul>
+<div class="calc">理想估算：$0.15/well × 500,000 cmpd × (1536 well / plate) × (1 plate / 1424 cmpd) = $80,899</div>
+<ul><li>這個數字是<b>極度理想</b>的：假設幾個月內 assay 都完美、只做 n=1、沒有 counter screening（反篩選）、不算人力、不算自動化系統維護……</li>
+<li>推論：一盤 1536 孔只放 1424 個化合物，剩下 112 孔應該是給對照組用（講義沒說明）。</li></ul>
+<p><b>In silico（virtual）screening 可以補強傳統方法：</b></p>
+<ul><li>用在大型資料集上訓練的模型，預測 <b>molecule:protein、protein:protein</b> 的交互作用、<b>antibody folding</b>（抗體摺疊）等。</li>
+<li>先在電腦上篩選，把可能的 hit 大幅縮小到<b>幾百到幾千個</b>分子，再到 <b>in vitro</b> 做確認篩選。</li>
+<li>虛擬篩選 <b>約 10 億個化合物</b>需要約 <b>550,000 CPU core hours</b>，花費約 <b>$23,000</b>（Francois 2026）；用 GPU 加速效率更好。</li></ul>
+<div class="tip"><b>對比：</b>實體 HTS 50 萬個化合物、而且是最理想的情況就要約 $8 萬；虛擬篩選 10 億個（多 2000 倍）只要約 $2.3 萬。</div></div></div>
+
+<div class="slide"><div class="pno">p.28</div><div><h3>實例：FSP1 抑制劑（Cecchini 2026, Nat Biotechnol）</h3>
+<p>這頁沒有標題，只有一張論文圖（推論：當作虛擬篩選找到真實分子的例子）：</p>
+<ul><li><b>a</b>：蛋白質 <b>FSP1</b> 的立體結構（白色帶狀），粉紅色表面是結合口袋；裡面有輔酶 <b>NAD⁺</b>（淺藍）、<b>FAD</b>（黃），以及綠色的抑制劑 <b>afi-FSP1-1</b>（外面套著藍色的電子密度網格，表示這是實驗解出來的結構）。</li>
+<li><b>b、c、d</b>：放大口袋，分別看 afi-FSP1-1（綠）、afi-FSP1-3（紫）、afi-FSP1-4（粉紅）怎麼和胺基酸（F15、F354、K357、Y290、L323、T321 等）以及 FAD 互動；黑色虛線＝氫鍵，紅點＝水分子。</li></ul>
+<div class="tbl"><table><tr><th>化合物</th><th>Ki</th><th>Kd</th></tr>
+<tr><td>afi-FSP1-1</td><td class="num">0.283 ± 0.05</td><td class="num">0.098</td></tr>
+<tr><td>afi-FSP1-2</td><td class="num">0.777 ± 0.22</td><td class="num">0.266</td></tr>
+<tr><td>afi-FSP1-3</td><td class="num">0.520 ± 0.11</td><td class="num">0.184</td></tr>
+<tr><td>afi-FSP1-4</td><td class="num">0.284 ± 0.07</td><td class="num">0.198</td></tr>
+<tr><td>afi-FSP1-5</td><td class="num">1.000 ± 0.32</td><td class="num">n.d.</td></tr>
+<tr><td>afi-FSP1-6</td><td class="num">3.940 ± 0.71</td><td class="num">n.d.</td></tr>
+</table></div>
+<p>講義的表沒寫單位；n.d. = not determined（沒測）。數字越小結合越強，所以 afi-FSP1-1 和 -4 最好。</p></div></div>
+
+<div class="slide"><div class="pno">p.29</div><div><h3>Limitations of virtual screening（虛擬篩選的限制）</h3>
+<ul><li><b>Resolved binding site required</b>：必須先有解出來的結合位置（結構）。</li>
+<li>只會給出<b>預測的</b>結合數值（<b>Kd、Ki</b>），<b>沒有保證</b>：
+ <ul><li>頂多分得出 <b>binders vs non-binders</b>（會結合／不會結合），在「binders」之間<b>排不出先後順序</b>。</li>
+ <li>大規模篩選要花時間；算得越深越久。</li></ul></li>
+<li><b>Predictions must always be validated in the lab</b>：預測一定要回實驗室驗證。</li>
+<li><b>False negatives are invisible and essentially unauditable</b>（假陰性看不見、也無法稽核）：
+ <ul><li>HTS 每一個都測；虛擬篩選只拿預測的 “hits” 去實驗室測。</li>
+ <li>所以 <b>false-negative rate 沒被量過</b>，hit rate 也無法被證偽（cannot be falsified）。</li>
+ <li>很少研究把整個 library 同時做虛擬和實驗室篩選；最後一個有名的例子是 <b>2010 年</b>（Ferreira, J Med Chem），那時 AI 還沒進步。</li></ul></li></ul></div></div>
+
+<div class="slide"><div class="pno">p.30</div><div><h3>Enter lab automation：讓虛擬和實體篩選接起來</h3>
+<ul><li>目標：把<b>一連串人工操作</b>轉成由<b>機器人執行</b>。</li>
+<li>需要<b>工程師和科學家跨領域合作</b>（講義這句話寫到 “using” 就斷了，句子不完整）。</li>
+<li>主要好處：<b>產能（throughput）大幅增加，同時減少錯誤</b>。</li></ul>
+<p>最後一句 <i>Let’s watch it in action</i>：課堂上播放影片，講義裡沒有內容。</p></div></div>
+
+<div class="slide"><div class="pno">p.31</div><div><h3>The cloud lab paradigm in practice（雲端實驗室）</h3>
+<ul><li>癌症治療計畫多半是<b>公式化的</b>，主要依照 <b>NCCN</b> 指引。</li>
+<li>Sutter Health 的 <b>California Pacific Medical Center（CPMC）</b>除了做癌症研究，也替<b>對傳統標準治療沒有反應的病人</b>發展治療策略。</li>
+<li>CPMC 和 <b>Strateos</b> 合作多年，用真實數據支持<b>病人專屬（patient-specific）</b>的治療計畫。</li></ul>
+<p>下方流程圖：</p>
+<div class="flow">
+<div class="step"><b>病人</b>腫瘤</div>
+<div class="step"><b>Micro-biopsy</b>微切片</div>
+<div class="step"><b>PDX</b>種到小鼠身上</div>
+<div class="step"><b>PDC</b>做成培養皿細胞</div>
+<div class="step"><b>HTS</b>測 <b>48 drugs targeting cancer</b></div>
+</div>
+<p>箭頭指向一台大型自動化實驗室（玻璃櫃裡的機械手臂和儀器），再分成兩邊的劑量反應曲線（縱軸 viability 存活率 %，橫軸 log M 濃度）：</p>
+<div class="grid2">
+<div class="box"><h4>resistant（抗藥）</h4><b>Vemurafenib</b>：到 10⁻⁶ M 左右存活率還有約 75%。<br><b>Dabrafenib</b>：存活率從約 90% 慢慢降到約 40%。</div>
+<div class="box"><h4>sensitive（敏感）</h4><b>Trametinib</b>：10⁻¹⁰ 到 10⁻⁷ M 存活率都只有 25% 以下。<br><b>Selumetinib</b>：約 10⁻⁸ M 就降到 25% 以下。</div>
+</div>
+<p class="src">背景補充：vemurafenib、dabrafenib 是 BRAF 抑制劑；trametinib、selumetinib 是 MEK 抑制劑。講義沒有寫藥物類別。</p>
+<div class="tip"><b>串起來：</b>這是 p.20–21 的 HTS 技術用在<b>一個病人</b>身上：同樣的自動化，不只找新藥，也能替個別病人挑出「他的腫瘤對哪個藥敏感」，回到 p.32 說的「resistance 在 oncology 也是問題」。</div></div></div>
+
+<h2 class="sec" id="M-h"><small>p.32–34</small>總結</h2>
+
+<div class="slide"><div class="pno">p.32</div><div><h3>Summary：四句話</h3>
+<ul><li><b>抗藥性</b>威脅藥物能用多久，特別是<b>感染症和腫瘤科</b>。</li>
+<li>降低抗藥性出現的<b>創意策略（例如 “chemical vaccine”）是必要的，但單靠它幫不了今天的病人</b>。</li>
+<li>要縮短藥物開發週期、又要顧到<b>病人安全和投資人的興趣</b>，需要技術進步。</li>
+<li><b>把基礎科學流程自動化</b>可以減少人為錯誤、提高再現性，同時把效率最大化。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.33–34</div><div><h3>Questions? 與空白頁</h3>
+<p>p.33 是 Questions?；p.34 是只有校徽的空白頁（角落印 35）。沒有內容。</p></div></div>
+
+<h2 class="sec" id="M-cheat"><small>Cheat sheet</small>必背一張表</h2>
+<div class="tbl"><table>
+<tr><th>項目</th><th>重點</th><th>頁</th></tr>
+<tr><td>瘧疾病原</td><td>apicoplexan parasite <i>Plasmodium</i></td><td>p.5</td></tr>
+<tr><td>瘧疾負擔</td><td class="num">&gt; 30 億人有風險；2023 年 597,000 死亡，77% &lt; 5 歲</td><td>p.5</td></tr>
+<tr><td>最後一個新藥類別</td><td>1992（atovaquone）；但 p.25 寫 since 1999（講義不一致）</td><td>p.5, 25</td></tr>
+<tr><td>WHO 發生率／死亡率</td><td class="num">2020 實際 59／15.3；GTS 2030 目標 6／1.5；照趨勢 2030 為 50／11.5</td><td>p.6</td></tr>
+<tr><td>WHO 病例與死亡</td><td class="num">2000：2.38 億例、86.1 萬死；2023：2.63 億例、59.7 萬死</td><td>p.6</td></tr>
+<tr><td>生活史（人）</td><td class="num">到肝 15–30 min；肝臟期 5.4 天；血液期循環 43–48 h；gametocytes 約 9 天</td><td>p.7</td></tr>
+<tr><td>生活史（蚊）</td><td class="num">15 min → 1 h → 12–36 h → 9–12 天（gamete → zygote → ookinete → oocyst/sporozoites）</td><td>p.7</td></tr>
+<tr><td>Hypnozoite</td><td><i>P. vivax</i> &amp; <i>P. ovale</i> 的肝臟休眠期</td><td>p.7</td></tr>
+<tr><td>造成症狀的階段</td><td>血液期（ring → trophozoite → schizont，43–48 h）</td><td>p.7</td></tr>
+<tr><td>病媒控制</td><td>insecticide treated bednets、indoor residual spraying、larval control</td><td>p.8</td></tr>
+<tr><td>抗藥性時間軸</td><td>chloroquine 撐最久（約 1934 → 1950 年代後期）；之後每個藥都在幾年內出現抗藥性；artemisinin 約 2000 → 2009–2012</td><td>p.8</td></tr>
+<tr><td>RTS,S</td><td>CS protein ＋ HBsAg；1984 開始、2016 Phase 3 完成；只防 <i>P. falciparum</i>；3 劑每月 ＋ 18 個月 booster；重症保護 1 年 44.5% → 2 年 31.5%</td><td>p.9</td></tr>
+<tr><td>First principles thinking</td><td>“the basic ideas on which a theory, system or method is based”；拆成基本組成、不帶預設</td><td>p.10</td></tr>
+<tr><td>Chemical vaccine</td><td>在肝臟期擋下寄生蟲 → 不發病、不傳回蚊子</td><td>p.11</td></tr>
+<tr><td>2024 銷售第一</td><td class="num">Keytruda $29,482M；HIV 的 Biktarvy 第 5（$13,423M）；沒有抗瘧藥</td><td>p.13</td></tr>
+<tr><td>傳統研發</td><td class="num">&gt; 10 年、&gt; $2B；2010 開發成本 $1.8B（不含找標靶）</td><td>p.14</td></tr>
+<tr><td>各階段 p(TS)</td><td class="num">80 / 75 / 85 / 69 / 54 / <b>34（Phase II 最低）</b> / 70 / 91%；找標靶 1–5%</td><td>p.14</td></tr>
+<tr><td>最貴階段</td><td class="num">Lead optimization $414M（2.0 年）</td><td>p.14</td></tr>
+<tr><td>兩種找藥路線</td><td>Phenotype-based：先 hits 再 target deconvolution；Target-based：先 target validation 再篩選</td><td>p.17</td></tr>
+<tr><td>Small molecule</td><td class="num">&lt; 500 Da、H-bonds、polarity；library 幾千到幾百萬</td><td>p.18</td></tr>
+<tr><td>化合物庫</td><td class="num">384-well、low dead volume、3–12 µL、溶在 DMSO</td><td>p.19</td></tr>
+<tr><td>HTS 定義</td><td>10 萬到百萬個化合物快速測 biochemical／cell-based assay；速度、可靠、再現、BSL1/2；人做不到</td><td>p.20</td></tr>
+<tr><td>Labcyte Echo</td><td class="num">聲波、不接觸液體；2.5 nL／滴；10 nL 打滿 1536 孔約 6 分鐘</td><td>p.21</td></tr>
+<tr><td><i>P. berghei</i> 肝臟期篩選</td><td class="num">−24 h 3×10³ HepG2-CD81EGFP → −18 h 化合物 50 nL → 0 h 1×10³ Pb-luc sporozoites → 48 h BrightGlo 測發光；陽性對照 atovaquone</td><td>p.22</td></tr>
+<tr><td>KAF156 優化</td><td>hit 的 R2 苯環＝代謝弱點；R3 benzodioxole＝代謝弱點＋毒性警訊；最終兩個 4-F-phenyl ＋ gem-dimethyl；EC50 測 3D7、W2</td><td>p.23</td></tr>
+<tr><td>KAF156 抗藥性</td><td>單一療法出現抗藥 → 與 lumefantrine 合併（GanLum）</td><td>p.24</td></tr>
+<tr><td>GanLum Phase 3</td><td>2025 年 11 月；non-inferior to Coartem；first novel class since 1999</td><td>p.25</td></tr>
+<tr><td>縮短時程</td><td>前半（discovery）：工程、新篩選策略、AI/ML；後半（development）：法規單位與 FDA</td><td>p.26</td></tr>
+<tr><td>HTS 成本</td><td class="num">~$1000/cmpd ＋ $0.05–1/well；hit rate &lt; 1%；瘧疾篩選 $0.10–0.20/well；理想估算 $80,899</td><td>p.27</td></tr>
+<tr><td>虛擬篩選成本</td><td class="num">~10 億化合物 ≈ 550,000 CPU core hours ≈ $23,000；縮小到 100s–1000s 再 in vitro 確認</td><td>p.27</td></tr>
+<tr><td>虛擬篩選限制</td><td>要有結合位置結構；只分 binder／non-binder、不能排序；一定要實驗驗證；假陰性看不見；最後完整對照研究在 2010</td><td>p.29</td></tr>
+<tr><td>Lab automation</td><td>人工步驟交給機器人；工程師＋科學家；產能大增、錯誤減少</td><td>p.30</td></tr>
+<tr><td>Cloud lab（CPMC × Strateos）</td><td>micro-biopsy → PDX → PDC → HTS 48 種抗癌藥；vemurafenib、dabrafenib 抗藥；trametinib、selumetinib 敏感</td><td>p.31</td></tr>
+</table></div>
+
+<h2 class="sec" id="M-quiz"><small>Self-test</small>自我測驗 <span class="score" id="score-auto"></span><button class="reset" data-reset="auto">重來</button></h2>
+<div class="quiz" id="quiz-auto"></div>
+</main>
+
+<main id="dm" role="tabpanel" aria-labelledby="tab-dm" hidden>
+<div class="big">整堂課的主線：<b>糖尿病＝葡萄糖進不了組織</b>：第一型是胰臟不做胰島素（只能打胰島素），第二型是組織對胰島素不反應（佔 90–95%，可用多種口服藥從不同器官下手）。診斷看三個切點（HbA1c 6.5%、空腹 126、OGTT 200）。第二部分講<b>挑戰</b>：2007 年 rosiglitazone 心肌梗塞風波之後，FDA 要求所有新的第二型糖尿病藥都要做<b>心血管結果試驗（CVOT）</b>，一個約 5 億美元，結果反而證明 GLP-1RA、SGLT2i 對心臟有好處。第三部分是<b>肥胖藥爆發</b>：semaglutide（Wegovy）減約 15 kg、tirzepatide（Zepbound）減約 22 kg，還能降心血管事件、改善 HFpEF；但真實世界常常<b>劑量不足或停藥</b>、可能<b>營養缺乏</b>、<b>肌肉（lean mass）跟著掉</b>，而且<b>停藥就復胖</b>。</div>
+<div class="toc" aria-label="本講目錄">
+  <a href="#W-abbr">縮寫全名</a><a href="#W-memo">記憶法</a><a href="#W-a">p.1–11 糖尿病概論與診斷</a><a href="#W-b">p.12–17 治療：生活型態、胰島素、口服藥</a><a href="#W-c">p.18–27 糖尿病治療的挑戰（第一型、CVOT）</a><a href="#W-d">p.28–37 肥胖藥物與試驗</a><a href="#W-e">p.38–47 肥胖治療的未解問題與總結</a><a href="#W-cheat">必背表</a><a href="#W-quiz">測驗</a>
+</div>
+
+<details class="card" id="W-abbr"><summary>縮寫全名表（43 個）</summary><div class="in"><div class="tbl"><table><tr><th>縮寫</th><th>全名</th></tr>
+<tr><td class="num">DM</td><td>diabetes mellitus，糖尿病</td></tr>
+<tr><td class="num">DM1／T1D</td><td>type 1 diabetes，第一型糖尿病（講義兩種寫法都有）</td></tr>
+<tr><td class="num">DM2</td><td>type 2 diabetes，第二型糖尿病</td></tr>
+<tr><td class="num">HbA1c</td><td>glycated hemoglobin（hemoglobin A1c），糖化血色素（講義寫全名 glycated hemoglobin）</td></tr>
+<tr><td class="num">FPG</td><td>fasting plasma glucose，空腹血漿葡萄糖</td></tr>
+<tr><td class="num">OGTT</td><td>oral glucose tolerance test，口服葡萄糖耐受試驗</td></tr>
+<tr><td class="num">ADA</td><td>American Diabetes Association，美國糖尿病學會</td></tr>
+<tr><td class="num">CDC</td><td>Centers for Disease Control and Prevention，美國疾病管制與預防中心</td></tr>
+<tr><td class="num">WHO</td><td>World Health Organization，世界衛生組織</td></tr>
+<tr><td class="num">GLUT4</td><td>glucose transporter type 4，第 4 型葡萄糖轉運蛋白</td></tr>
+<tr><td class="num">NPH</td><td>neutral protamine Hagedorn，中效胰島素（背景補充：全名講義沒寫）</td></tr>
+<tr><td class="num">SGLT2i</td><td>sodium-glucose cotransporter 2 inhibitor，鈉-葡萄糖共同轉運蛋白 2 抑制劑</td></tr>
+<tr><td class="num">TZD</td><td>thiazolidinedione，噻唑烷二酮類（講義寫全名 Thiazolidinediones）</td></tr>
+<tr><td class="num">DPP4i</td><td>dipeptidyl peptidase-4 inhibitor，二肽基肽酶-4 抑制劑</td></tr>
+<tr><td class="num">GLP-1</td><td>glucagon-like peptide-1，類升糖素胜肽-1</td></tr>
+<tr><td class="num">GLP-1RA</td><td>glucagon-like peptide-1 receptor agonist，GLP-1 受體促效劑</td></tr>
+<tr><td class="num">GIP</td><td>glucose-dependent insulinotropic polypeptide，葡萄糖依賴性促胰島素多肽</td></tr>
+<tr><td class="num">GIPRA</td><td>GIP receptor agonist，GIP 受體促效劑</td></tr>
+<tr><td class="num">GCG</td><td>glucagon（receptor agonist），升糖素（受體促效劑）</td></tr>
+<tr><td class="num">CV</td><td>cardiovascular，心血管</td></tr>
+<tr><td class="num">CVOT</td><td>cardiovascular outcomes trial，心血管結果試驗</td></tr>
+<tr><td class="num">MACE</td><td>major adverse cardiovascular events，重大心血管不良事件</td></tr>
+<tr><td class="num">MACE-3</td><td>3-point MACE：心血管死亡、非致死性心肌梗塞、非致死性中風</td></tr>
+<tr><td class="num">MI</td><td>myocardial infarction，心肌梗塞（heart attack）</td></tr>
+<tr><td class="num">HF</td><td>heart failure，心衰竭</td></tr>
+<tr><td class="num">HFrEF</td><td>heart failure with reduced ejection fraction，射出分率降低的心衰竭</td></tr>
+<tr><td class="num">HFpEF</td><td>heart failure with preserved ejection fraction，射出分率保留的心衰竭</td></tr>
+<tr><td class="num">FDA</td><td>U.S. Food and Drug Administration，美國食品藥物管理局</td></tr>
+<tr><td class="num">REMS</td><td>Risk Evaluation and Mitigation Strategy，風險評估與降低策略</td></tr>
+<tr><td class="num">KCCQ</td><td>Kansas City Cardiomyopathy Questionnaire，堪薩斯市心肌病變問卷（生活品質，分數越高越好）</td></tr>
+<tr><td class="num">BMI</td><td>body mass index，身體質量指數（kg/m²）</td></tr>
+<tr><td class="num">SC</td><td>subcutaneous，皮下注射</td></tr>
+<tr><td class="num">HR</td><td>hazard ratio，風險比</td></tr>
+<tr><td class="num">CI</td><td>confidence interval，信賴區間</td></tr>
+<tr><td class="num">SD</td><td>standard deviation，標準差</td></tr>
+<tr><td class="num">Rx</td><td>prescription，處方（p.39 的 1st Rx＝第一次處方）</td></tr>
+<tr><td class="num">PAD</td><td>peripheral artery disease，周邊動脈疾病</td></tr>
+<tr><td class="num">NEJM</td><td>New England Journal of Medicine，新英格蘭醫學期刊</td></tr>
+<tr><td class="num">DPP（試驗）</td><td>Diabetes Prevention Program，糖尿病預防計畫（背景補充：p.14 圖的來源試驗，講義沒寫名字；別和 DPP4i 搞混）</td></tr>
+<tr><td class="num">RRR</td><td>relative risk reduction，相對風險下降</td></tr>
+<tr><td class="num">LS mean</td><td>least-squares mean，最小平方平均（p.20）</td></tr>
+<tr><td class="num">PharmD</td><td>Doctor of Pharmacy，藥學博士（臨床藥師學位）</td></tr>
+<tr><td class="num">BCCP</td><td>Board Certified Cardiology Pharmacist，心臟科專科藥師認證</td></tr>
+</table></div></div></details>
+
+<h2 class="sec" id="W-memo"><small>Memory aids</small>記憶法（比喻、畫面、推理、數字分組）</h2><div class="memo">
+<div class="mm"><div class="pg"><span class="ty">比喻</span>p.6</div><div class="k">鑰匙沒了 vs 鎖生鏽了</div><div class="d">胰島素是鑰匙、受體是鎖、GLUT4 是門。第一型：胰臟不做鑰匙（doesn't make insulin）。第二型：鑰匙還在，但鎖鈍掉了（desensitized insulin receptor，tissues don't respond）。兩種結果一樣：葡萄糖留在血裡。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.7</div><div class="k">37 百萬，一成 vs 九成</div><div class="d">美國 3,700 萬成人有糖尿病；第一型 5–10%、第二型 90–95%。所以多數藥都是為第二型設計的。</div></div>
+<div class="mm"><div class="pg"><span class="ty">對比</span>p.8</div><div class="k">第一型只有家族史一格</div><div class="d">第一型風險因子只有 family history；第二型有五個：obesity、age &gt;35、race/ethnicity、family history、physical inactivity（樹懶圖示）。家族史兩型都有。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.10</div><div class="k">5.7 / 6.5、100 / 126、140 / 200</div><div class="d">每一組「前面是糖尿病前期門檻，後面是糖尿病門檻」：HbA1c 5.7%／6.5%；空腹 100／126 mg/dL；OGTT 140／200 mg/dL。</div></div>
+<div class="mm"><div class="pg"><span class="ty">畫面</span>p.11</div><div class="k">紅血球身上黏糖，黏 3 個月</div><div class="d">葡萄糖黏在血紅素上（-gluc），紅血球活多久就記錄多久，所以 HbA1c 反映<b>過去約 3 個月的平均血糖</b>，不是當下。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.13–14</div><div class="k">150 分鐘、58%</div><div class="d">每週 150 分鐘中等強度運動＋蔬菜、少加糖、全穀、瘦肉。生活型態對比安慰劑讓第二型糖尿病相對風險下降 <b>58%</b>，比 metformin 還有效（圖上 metformin 線在中間）。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.16</div><div class="k">3–6–12–24</div><div class="d">胰島素作用時間：rapid（aspart、lispro、glulisine）3 小時；short（regular）6 小時；intermediate（NPH）12 小時；long（glargine、detemir、degludec）18–24 小時。每一級大約翻倍。</div></div>
+<div class="mm"><div class="pg"><span class="ty">畫面</span>p.15</div><div class="k">一條平線＋三座山</div><div class="d">長效胰島素是整天的平底線（basal，約 50%）；短效／速效是三餐的三座山（bolus，另外約 50%）。打針是在模仿正常胰臟。</div></div>
+<div class="mm"><div class="pg"><span class="ty">口訣</span>p.17</div><div class="k">字尾認藥：-gliflozin 腎、-gliptin 腸、-glitazone 肝脂肌、-glutide 胃腸</div><div class="d">-gliflozin＝SGLT2i（腎臟排糖）；-gliptin＝DPP4i（↑GLP-1）；-glitazone＝TZD（↑胰島素敏感性、↑葡萄糖攝取）；-glutide＝GLP-1RA（↓胃排空、↑飽足、↑胰島素）；gli-pizide／gli-mepiride＝sulfonylurea（↑胰島素釋放）。</div></div>
+<div class="mm"><div class="pg"><span class="ty">畫面</span>p.17</div><div class="k">Metformin 到處跑三個器官</div><div class="d">Metformin（biguanide）出現在三處：肝 ↓gluconeogenesis、肌肉 ↑glucose uptake、腸 ↑GLP-1 且 ↓glucose absorption。</div></div>
+<div class="mm"><div class="pg"><span class="ty">推理</span>p.19</div><div class="k">第一型沒鑰匙，口服藥都在修鎖</div><div class="d">口服藥大多靠「已經有的胰島素」或增加分泌；第一型胰臟根本不做胰島素，所以講義說 Insulin only。GLP-1RA 在第一型只是研究中（ADJUST-T1D，HbA1c 只降 0.3%）。</div></div>
+<div class="mm"><div class="pg"><span class="ty">推理</span>p.21</div><div class="k">一個藥的醜聞，整類藥都得做 CVOT</div><div class="d">2007 rosiglitazone 心肌梗塞 → 2008 FDA 505(o)(3) 要求所有新 DM2 藥做 CVOT → 結果 GLP-1RA 降 MACE、SGLT2i 對 HFrEF 有益 → 2019–2020 連沒糖尿病的 HFrEF 也受益。壞事變好事，但代價是每個試驗約 5 億美元。</div></div>
+<div class="mm"><div class="pg"><span class="ty">對比</span>p.31, 35</div><div class="k">同一個藥，兩個牌子</div><div class="d">Ozempic（糖尿病）／Wegovy（肥胖）＝semaglutide；Mounjaro（糖尿病）／Zepbound（肥胖）＝tirzepatide。都是皮下注射。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.29</div><div class="k">一受體、二受體、三受體</div><div class="d">GLP-1RA（semaglutide、dulaglutide、orforglipron）→ ＋GIP＝tirzepatide → 再＋glucagon＝retatrutide，多一個「↑ Metabolism」。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.32, 36, 43</div><div class="k">12.4 → 15；17.8 → 22；肌肉 45% vs 26%</div><div class="d">STEP 1 semaglutide 比安慰劑多減 12.4%（約 15 kg）；SURMOUNT-1 tirzepatide 15 mg 多減 17.8%（約 22 kg）。減掉的重量裡 lean mass 佔：semaglutide 約 45%、tirzepatide 約 26%。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.23, 33, 37</div><div class="k">HR 0.74、0.80、0.62</div><div class="d">SUSTAIN 6（semaglutide、DM2、MACE）0.74；SELECT（semaglutide、肥胖＋心血管病、不需 DM2）0.80；SUMMIT（tirzepatide、肥胖＋HFpEF、CV 死亡或 HF 惡化）0.62。</div></div>
+</div>
+
+<h2 class="sec" id="W-a"><small>p.1–11</small>糖尿病概論：病生理、流行病學、診斷</h2>
+
+<div class="slide"><div class="pno">p.1–2</div><div><h3>講者與學習目標</h3>
+<p>講題：<i>Diabetes and Obesity Pharmacotherapy</i>（糖尿病與肥胖的藥物治療），講者 Andrew Willeford, PharmD, PhD, BCCP（email 在 health.ucsd.edu；BCCP 是心臟科藥師的專科認證）。三個學習目標，也就是考試的方向：</p>
+<ul><li><b>Explain the pathophysiology of diabetes</b>：解釋糖尿病的病理生理（p.5–6）。</li>
+<li><b>List current therapies</b> for diabetes and obesity：列出目前糖尿病與肥胖的治療（p.13–17、p.29–37）。</li>
+<li><b>Describe treatment gaps and challenges</b>：描述治療上的缺口與挑戰（p.19–27 的 CVOT、p.38–45 的劑量不足、營養、肌肉、復胖）。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.3–4</div><div><h3>Outline（四站）</h3>
+<p>路線圖四站：<b>Overview</b>（概論）→ <b>Treatment</b>（治療）→ <b>Challenges in DM therapy</b>（糖尿病治療的挑戰）→ <b>Obesity therapy</b>（肥胖治療）。p.4 亮 Overview；之後 p.12、18、28 依序亮下一站，p.46 四站全亮表示結束。這些重複頁不再另外說明。</p></div></div>
+
+<div class="slide"><div class="pno">p.5</div><div><h3>正常人吃完東西後的血糖調控</h3>
+<p>圖是一個循環：吃甜甜圈 → <b>↑ blood glucose</b>（血糖上升）→ 刺激<b>胰臟（pancreas）</b>釋放胰島素（promotes insulin release）→ <b>Insulin</b> 讓<b>組織細胞（tissue cells）</b>把葡萄糖吃進去（promotes glucose uptake）→ 血糖回落。</p>
+<p>記住兩個動作：胰臟「放」胰島素、組織「收」葡萄糖。糖尿病就是這兩個動作其中之一壞掉（下一頁）。</p></div></div>
+
+<div class="slide"><div class="pno">p.6</div><div><h3>糖尿病：葡萄糖進不了組織</h3>
+<p>三格圖比較細胞膜上發生的事：</p>
+<div class="tbl"><table><tr><th></th><th>Healthy</th><th>Type I Diabetes</th><th>Type II Diabetes</th></tr>
+<tr><td>血中胰島素</td><td>有</td><td><b>沒有</b></td><td>有（甚至很多）</td></tr>
+<tr><td>Insulin receptor</td><td>正常，接上胰島素後送出訊號（綠色虛線箭頭）</td><td>正常但沒東西接</td><td><b>Desensitized insulin receptor</b>（去敏感化，訊號被打叉）</td></tr>
+<tr><td>GLUT4（glucose transporter）</td><td>被叫到膜上，葡萄糖進入細胞</td><td>葡萄糖進不去（打叉）</td><td>葡萄糖進不去（打叉）</td></tr>
+<tr><td>一句話</td><td></td><td><b>The pancreas doesn't make insulin</b></td><td><b>Tissues don't respond to insulin</b></td></tr></table></div>
+<p>所以第一型是「缺胰島素」，第二型是「胰島素阻抗」。這個差異決定了治療：第一型一定要補胰島素（p.19），第二型可以用各種口服藥增加敏感性或分泌（p.17）。</p></div></div>
+
+<div class="slide"><div class="pno">p.7</div><div><h3>第二型比第一型常見得多</h3>
+<p>CDC 資料：美國有 <b>3,700 萬成人（37 million US adults）</b>有糖尿病，其中 <b>5–10% 是第一型、90–95% 是第二型</b>。</p></div></div>
+
+<div class="slide"><div class="pno">p.8</div><div><h3>Risk factors（WHO）</h3>
+<div class="grid2"><div class="box"><h4>Type 1 diabetes</h4><p>只有一個：<b>Family history</b>（家族史，DNA 圖示）。</p></div>
+<div class="box"><h4>Type 2 diabetes</h4><ul><li><b>Obesity</b>（肥胖）</li><li><b>Age &gt;35 yrs</b></li><li><b>Race/ethnicity</b>：Black、Native American、Asian、Latino、Pacific Islander</li><li><b>Family history</b></li><li><b>Physical inactivity</b>（缺乏運動，圖是一隻樹懶）</li></ul></div></div>
+<p>第二型的風險因子大多和生活型態有關（肥胖、不動），這就是為什麼 p.13–14 說生活型態介入很有效，也解釋了為何「肥胖治療」會和糖尿病放在同一堂課。</p></div></div>
+
+<div class="slide"><div class="pno">p.9</div><div><h3>Complications of diabetes（併發症）</h3>
+<p>人體圖上連出六個併發症，可以分成兩群（分群是背景補充，方便記）：</p>
+<ul><li><b>大血管（macrovascular）</b>：<b>Stroke</b>（中風）、<b>Heart attack</b>（心肌梗塞）、<b>Peripheral artery disease</b>（周邊動脈疾病）。</li>
+<li><b>小血管／神經（microvascular）</b>：<b>Retinopathy</b>（視網膜病變）、<b>Kidney damage</b>（腎臟損傷）、<b>Peripheral neuropathy</b>（周邊神經病變）。</li></ul>
+<p>總結頁（p.47）第一句就是「Diabetes is a complex disorder with complications affecting multiple body parts」。心血管併發症多，也是後面 FDA 要求 CVOT 的背景。</p></div></div>
+
+<div class="slide"><div class="pno">p.10</div><div><h3>Diagnosis：三個檢查、兩個門檻（必考）</h3>
+<div class="tbl"><table><tr><th>檢查</th><th>Normal</th><th>Prediabetes（糖尿病前期）</th><th>Diabetes</th></tr>
+<tr><td><b>Glycated hemoglobin</b>（HbA1c）</td><td class="num">&lt;5.7%</td><td class="num">≥5.7% 且 &lt;6.5%</td><td class="num"><b>≥6.5%</b></td></tr>
+<tr><td><b>Fasting plasma glucose</b>（空腹血糖）</td><td class="num">&lt;100 mg/dL</td><td class="num">≥100 且 &lt;126 mg/dL</td><td class="num"><b>≥126 mg/dL</b></td></tr>
+<tr><td><b>Oral glucose tolerance test</b>（OGTT）</td><td class="num">&lt;140 mg/dL</td><td class="num">≥140 且 &lt;200 mg/dL</td><td class="num"><b>≥200 mg/dL</b></td></tr></table></div>
+<p>講義用三個往上的箭頭表示：數值越高越往「Diabetes」走。來源是 ADA（American Diabetes Association）的 Diagnosis Overview。</p>
+<p class="src">背景補充（講義沒寫）：OGTT 的數值是喝 75 g 葡萄糖後 2 小時的血糖。</p></div></div>
+
+<div class="slide"><div class="pno">p.11</div><div><h3>HbA1c 是過去 3 個月血糖的平均</h3>
+<p>圖：一顆紅血球放大，裡面的血紅素（hemoglobin）上黏了幾個 glucose（標成「-gluc」），旁邊還有游離的 glucose。血糖越高、黏上去的越多。</p>
+<p>因為紅血球的壽命大約幾個月，HbA1c 就像是「這段期間血糖的累積紀錄」，所以講義說它是 <b>average measure of glucose over 3 months</b>。後面所有糖尿病試驗（SUSTAIN 1、SURPASS-2、ADJUST-T1D）都用 HbA1c 當療效指標。</p>
+<p class="src">背景補充：紅血球壽命約 120 天。</p></div></div>
+
+<h2 class="sec" id="W-b"><small>p.12–17</small>治療：生活型態、胰島素、口服藥</h2>
+
+<div class="slide"><div class="pno">p.13</div><div><h3>Lifestyle modification is key</h3>
+<ul><li>運動：<b>每週 150 分鐘、中等強度（moderate-intensity exercise）</b>。</li>
+<li>飲食：<b>Veggies（蔬菜）、few added sugars（少加糖）、whole grain foods（全穀）、lean meats（瘦肉）</b>。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.14</div><div><h3>生活型態的威力：比 metformin 還強</h3>
+<p>圖（N Engl J Med 2002;346:393-403）：橫軸 0–4 年，縱軸是糖尿病發生率（%）。三條線：</p>
+<ul><li><b>Placebo</b> 最高，4 年約接近 40%。</li>
+<li><b>Metformin</b>（虛線）在中間，約 28–29%。</li>
+<li><b>Lifestyle</b> 最低，約 20%。</li></ul>
+<div class="note"><b>必背：</b>Lifestyle vs placebo，第二型糖尿病<b>相對風險下降 58%</b>（58% relative risk reduction）。</div>
+<p class="src">背景補充（講義沒寫）：這是 Diabetes Prevention Program（DPP）試驗，對象是糖尿病前期的人；metformin 組的相對風險下降約 31%。（曲線上的數值是從圖上目測。）</p></div></div>
+
+<div class="slide"><div class="pno">p.15</div><div><h3>注射胰島素是在模仿正常分泌</h3>
+<p>圖：橫軸是一天（0400 → 隔天 0400），縱軸是血漿胰島素。灰色區域是正常人的胰島素：早餐、午餐、晚餐各有一個尖峰，其他時間有一層低而穩定的底。</p>
+<ul><li><b>Long-acting insulin</b>（橘色平線）：模仿那層底，占 <b>total daily insulin 的 50%</b>（basal）。</li>
+<li><b>Short/rapid-acting insulin</b>（藍色三個山丘）：在三餐時打，模仿餐後尖峰，占另外 <b>50%</b>。</li></ul>
+<p>重點：一天總量大約一半長效、一半短效／速效。</p>
+<p class="src">背景補充：這種打法常叫 basal-bolus regimen。</p></div></div>
+
+<div class="slide"><div class="pno">p.16</div><div><h3>胰島素的四種長度（必考）</h3>
+<div class="tbl"><table><tr><th>類別</th><th>藥名</th><th>Duration of action</th></tr>
+<tr><td><b>Rapid</b>（速效）</td><td>Aspart、Lispro、Glulisine</td><td class="num">3 hours</td></tr>
+<tr><td><b>Short</b>（短效）</td><td>Regular</td><td class="num">6 hours</td></tr>
+<tr><td><b>Intermediate</b>（中效）</td><td>NPH</td><td class="num">12 hours</td></tr>
+<tr><td><b>Long</b>（長效）</td><td>Glargine、Detemir、Degludec</td><td class="num">18–24 hours</td></tr></table></div>
+<p>對回 p.15：p.15 的「short/rapid」就是前兩列（餐前打），「long-acting」就是最後一列（一天一次當底）。</p></div></div>
+
+<div class="slide"><div class="pno">p.17</div><div><h3>口服降血糖藥從身體多個部位下手（必考）</h3>
+<p>人體圖，每類藥連到它作用的器官：</p>
+<div class="tbl"><table><tr><th>器官</th><th>藥物類別</th><th>代表藥</th><th>作用</th></tr>
+<tr><td>胰臟</td><td><b>Sulfonylureas</b>（磺醯尿素類）</td><td>Glipizide、Glimepiride</td><td>↑ insulin release</td></tr>
+<tr><td>腎臟</td><td><b>SGLT2i</b></td><td>Canagliflozin、Dapagliflozin、Empagliflozin、Ertugliflozin</td><td>↑ glucose excretion（從尿排糖）</td></tr>
+<tr><td>肝臟</td><td><b>Thiazolidinediones</b></td><td>Rosiglitazone、pioglitazone</td><td>↑ insulin sensitivity</td></tr>
+<tr><td>肝臟</td><td><b>Biguanides</b></td><td>Metformin</td><td>↓ gluconeogenesis（減少肝臟造糖）</td></tr>
+<tr><td>肌肉</td><td><b>Biguanides</b></td><td>Metformin</td><td>↑ glucose uptake</td></tr>
+<tr><td>肌肉＋脂肪組織</td><td><b>Thiazolidinediones</b></td><td>Rosiglitazone、Posaglitazone（應為 pioglitazone）</td><td>↑ glucose uptake</td></tr>
+<tr><td>腸道</td><td><b>DPP4i</b>（Dipeptidyl peptidase 4 inhibitors）</td><td>Linagliptin、sitagliptin、saxagliptin</td><td>↑ GLP-1</td></tr>
+<tr><td>腸道</td><td><b>Biguanides</b></td><td>Metformin</td><td>↑ GLP-1；↓ glucose absorption</td></tr>
+<tr><td>腸道（胃腸）</td><td><b>GLP-1RA</b>（Glucagon-like peptide-1 receptor agonists）</td><td>Semaglutide、dulaglutide 等</td><td>↓ Gastric emptying；↑ Satiety；↑ Insulin secretion</td></tr></table></div>
+<ul><li><b>Metformin 出現三次</b>（肝、肌肉、腸），TZD 出現兩次（肝、肌肉／脂肪）。</li>
+<li>DPP4i 和 GLP-1RA 都和 GLP-1 有關：DPP4i 是阻止 GLP-1 被分解（所以 ↑GLP-1），GLP-1RA 是直接當 GLP-1 用。（DPP4 會分解 GLP-1 是背景補充。）</li></ul>
+<div class="note"><b>講義錯字／注意：</b>肌肉／脂肪那欄寫「Posaglitazone」，沒有這個藥，應該是 <b>pioglitazone</b>（肝臟那欄寫對了）。另外標題說「Oral」，但 GLP-1RA 多數是注射劑（semaglutide 有口服版）（推論，講義沒特別說明）。</div></div></div>
+
+<h2 class="sec" id="W-c"><small>p.18–27</small>糖尿病治療的挑戰：第一型與心血管結果試驗</h2>
+
+<div class="slide"><div class="pno">p.19</div><div><h3>第一型不能用口服降血糖藥</h3>
+<p>整頁只有一句：<b>Insulin only</b>。原因對回 p.6：第一型的胰臟不做胰島素，口服藥（例如 sulfonylurea 增加胰島素釋放、TZD／metformin 增加敏感性）都需要病人自己還有胰島素才有用（推論）。這是第一型治療的「缺口」。</p></div></div>
+
+<div class="slide"><div class="pno">p.20</div><div><h3>GLP-1RA 正在第一型研究中：ADJUST-T1D</h3>
+<ul><li>設計：<b>Semaglutide 1 mg weekly vs placebo</b>，對象第一型糖尿病。</li>
+<li>結果：HbA1c 從基線到第 26 週的 least-squares mean difference ＝ <b>−0.3 個百分點（95% CI −0.6 to −0.05）</b>。</li>
+<li>來源：ADJUST-T1D clinical trial，NEJM Evidence 2025。</li></ul>
+<p>怎麼讀：信賴區間全部在 0 以下，所以有統計上的下降，但 <b>0.3% 很小</b>，和第二型 SUSTAIN 1 降約 2%（p.22）比差很多。所以講義標題用「being studied」：還在研究，不是標準治療。</p></div></div>
+
+<div class="slide"><div class="pno">p.21</div><div><h3>所有新的糖尿病藥都要做心血管結果試驗（CVOT）</h3>
+<p>時間線（必考）：</p>
+<div class="tbl"><table><tr><th>年</th><th>事件</th><th>內容</th></tr>
+<tr><td class="num">2007</td><td><b>Rosiglitazone</b></td><td>Nissen and Wolski 的 meta-analysis 報告 rosiglitazone 和<b>心肌梗塞（MI）風險顯著增加</b>有關*</td></tr>
+<tr><td class="num">2008</td><td><b>FDA 505(o)(3)</b></td><td>FDA 規定<b>所有之後的第二型糖尿病新藥都要做 CV outcome trial</b>，並要求 rosiglitazone 實施 <b>REMS</b>*</td></tr>
+<tr><td class="num">2013–2017</td><td><b>Incretin therapies</b></td><td>DPP-4i 和 GLP-1 agonists 完成 CVOT，其中 <b>GLP-1 agonists 大多顯示 MACE 下降</b></td></tr>
+<tr><td class="num">2015–2020</td><td><b>SGLT2i for DM2</b></td><td>CANVAS、EMPA-REG、DECLARE-TIMI、VERTIS CV 顯示「程度不一但整體有益」的 <b>HFrEF</b> 結果（在糖尿病病人）</td></tr>
+<tr><td class="num">2019–2020</td><td><b>A bright future</b></td><td><b>DAPA-HF</b> 和 <b>EMPEROR-Reduced</b> 證明對 <b>HFrEF 病人、而且沒有糖尿病的人</b>也有好處</td></tr></table></div>
+<p>*註：rosiglitazone 的 MI 風險<b>後來被推翻，REMS 要求也已解除</b>（Risk for MI has since been refuted and REMS requirement lifted）。</p>
+<div class="tip"><b>串起來：</b>一個後來被推翻的訊號，讓 FDA 對整個 DM2 藥物領域加了 CVOT 規定；而這些試驗意外地證明 GLP-1RA 降 MACE、SGLT2i 對心衰竭有益，甚至延伸到非糖尿病病人。右下角大字：<b>CV outcome (CVOT) trials are still mandated</b>（到現在仍是強制的）。</div></div></div>
+
+<div class="slide"><div class="pno">p.22</div><div><h3>SUSTAIN 1：semaglutide 降 HbA1c（第二型）</h3>
+<ul><li>藥：semaglutide，<b>GLP-1 receptor agonist</b>；0.5 mg、1.0 mg vs placebo，30 週。</li>
+<li>圖：三組從約 8% 開始；placebo 一直在 8% 左右；兩個 semaglutide 劑量在約 16 週降到約 <b>6%</b> 後持平，1.0 mg 略低一點。<b>P&lt;0.0001</b>。</li>
+<li>來源：Lancet Diabetes Endocrinol 2017。</li></ul>
+<div class="note"><b>講義錯字：</b>縱軸刻度由上到下是 8.5、8.0、<b>8.0</b>、7.0、6.0，中間那個 8.0 應該是 7.5。</div></div></div>
+
+<div class="slide"><div class="pno">p.23</div><div><h3>SUSTAIN 6：semaglutide 的 CVOT</h3>
+<ul><li>Event（主要終點）＝ <b>cardiovascular death, non-fatal MI, or non-fatal stroke</b>（也就是 MACE-3）。</li>
+<li>追蹤到 109 週：placebo 約 9% 有事件，semaglutide 約 6.6%（圖上目測）。</li>
+<li><b>Hazard ratio 0.74（95% CI 0.58–0.95）</b>；<b>P&lt;0.001 for noninferiority</b>；<b>P=0.02 for superiority</b>。</li></ul>
+<p>怎麼讀：FDA 要求的最低標準是「不比安慰劑差」（noninferiority，證明安全）；semaglutide 不只過關，還達到 superiority（真的降低心血管事件約 26%）。</p></div></div>
+
+<div class="slide"><div class="pno">p.24</div><div><h3>SURPASS-2：tirzepatide vs semaglutide（第二型）</h3>
+<ul><li>Tirzepatide：<b>Dual GLP-1 receptor agonist and glucose-dependent insulinotropic polypeptide（first-in-class）</b>，第一個 GLP-1／GIP 雙重促效劑。</li>
+<li>比較：tirzepatide 5、10、15 mg vs <b>semaglutide 1 mg</b>（不是安慰劑，是活性對照），40 週。</li>
+<li>圖：全部從約 8.3% 開始；semaglutide 1 mg 降到約 6.4%（最高那條）；tirzepatide 5 mg 約 6.2%；10 mg 和 15 mg 最低，約 5.8–5.9%（圖上目測）。</li></ul>
+<p>結論：每個 tirzepatide 劑量降 HbA1c 都比 semaglutide 1 mg 多，劑量越高越多。</p>
+<p class="src">講義小瑕疵：寫「glucose-dependent insulinotropic polypeptide」少了「receptor agonist」，p.29 有完整寫法。</p></div></div>
+
+<div class="slide"><div class="pno">p.25</div><div><h3>SURPASS-CVOT：tirzepatide vs dulaglutide</h3>
+<p>對照組不是安慰劑，而是 <b>Trulicity（dulaglutide）</b>：箭頭註明它是「<b>GLP1RA with known protection from MACE-3</b>」（已知能保護 MACE-3 的 GLP-1RA）。</p>
+<div class="tbl"><table><tr><th>終點</th><th>Mounjaro（tirzepatide）vs Trulicity（dulaglutide）</th></tr>
+<tr><td>Primary：Time-to-first occurrence of MACE-3</td><td class="num">HR 0.92；95.3% CI 0.83 to 1.01；p=0.086</td></tr>
+<tr><td>Secondary：Time to all-cause death</td><td class="num">HR 0.84；95.0% CI 0.75 to 0.94；p=0.002</td></tr></table></div>
+<p>講義結論：<b>Tirzepatide was non-inferior to dulaglutide</b>。主要終點的 CI 上限 1.01 跨過 1，所以沒有證明「比 dulaglutide 好」（p=0.086），只證明「不比它差」（推論：p=0.086 是優越性檢定）。全因死亡的 HR 0.84 是次要終點。</p>
+<p class="src">來源：NEJM 2025;393(24):2409-2420。</p></div></div>
+
+<div class="slide"><div class="pno">p.26</div><div><h3>CVOT 資料很好，但很貴</h3>
+<p>大字：<b>$500 million per trial</b>（每個試驗約 5 億美元），而且這是<b>在證明降血糖效果的試驗之外</b>另外要做的（In addition to trials demonstrating effects on glucose）。來源 Nature Reviews Drug Discovery 2018。</p>
+<p>總結頁（p.47）把這點說成：CVOT 雖然帶來有益資料，但<b>增加研發成本，也可能延遲臨床採用</b>。</p></div></div>
+
+<div class="slide"><div class="pno">p.27</div><div><h3>很貴，但藥廠還是照做：CVOT 時間線</h3>
+<div class="tbl"><table><tr><th>年</th><th>試驗</th><th>藥</th></tr>
+<tr><td class="num">2016</td><td>LEADER</td><td>liraglutide</td></tr>
+<tr><td class="num">2016</td><td>SUSTAIN（即 p.23 的 SUSTAIN 6）</td><td>semaglutide</td></tr>
+<tr><td class="num">2017</td><td>EXSCEL</td><td>exenatide</td></tr>
+<tr><td class="num">2019</td><td>REWIND</td><td>dulaglutide</td></tr>
+<tr><td class="num">2019</td><td>PIONEER 6</td><td>semaglutide oral</td></tr>
+<tr><td class="num">2025</td><td>SOUL</td><td>semaglutide oral</td></tr>
+<tr><td class="num">2025</td><td>SURPASS-CVOT</td><td>tirzepatide</td></tr>
+<tr><td class="num">2026</td><td>ACHIEVE-4</td><td>orforglipron oral</td></tr>
+<tr><td class="num">2029</td><td>TRIUMPH-OUTCOMES</td><td>retatrutide</td></tr></table></div>
+<p>看得出來：全部都是 incretin 類（GLP-1 系列）的藥，從 2016 一路排到 2029。藥廠願意花錢，是因為正面的 CVOT 結果能變成賣點（推論）。</p></div></div>
+
+<h2 class="sec" id="W-d"><small>p.28–37</small>肥胖藥物：機轉、品牌與關鍵試驗</h2>
+
+<div class="slide"><div class="pno">p.29</div><div><h3>GLP-1RA 與 GIPRA 在肥胖的作用機轉（必考）</h3>
+<div class="tbl"><table><tr><th>類別</th><th>藥</th><th>作用</th></tr>
+<tr><td><b>GLP-1RA</b>（Glucagon-like peptide-1 receptor agonists）</td><td>Semaglutide、dulaglutide、orforglipron</td><td>↓ Gastric emptying；↑ Satiety；↑ Insulin secretion</td></tr>
+<tr><td><b>GLP-1RA/GIPRA</b>（＋Glucose-dependent insulinotropic polypeptide receptor agonist）</td><td>Tirzepatide</td><td>↓ Gastric emptying；↑ Satiety；↑ Insulin secretion</td></tr>
+<tr><td><b>GLP-1RA/GIPRA/GCG</b>（再＋glucagon receptor agonist）</td><td>Retatrutide</td><td>↓ Gastric emptying；↑ Satiety；↑ Insulin secretion；<b>↑ Metabolism</b></td></tr></table></div>
+<p>三類共同的三個作用：胃排空變慢、飽足感增加、胰島素分泌增加；<b>只有三重促效劑 retatrutide 多了「↑ Metabolism」</b>（來自 glucagon 受體）。</p>
+<p class="src">背景補充：orforglipron 是小分子、口服的 GLP-1RA（p.27 也寫「orforglipron oral」）。</p></div></div>
+
+<div class="slide"><div class="pno">p.30</div><div><h3>肥胖試驗大爆發</h3>
+<div class="tbl"><table><tr><th>年</th><th>試驗</th><th>藥</th></tr>
+<tr><td class="num">2015</td><td>SCALE Obesity Prediabetes</td><td>Liraglutide 3.0 mg</td></tr>
+<tr><td class="num">2015</td><td>SCALE Diabetes</td><td>Liraglutide 3.0 mg</td></tr>
+<tr><td class="num">2016</td><td>SCALE Maintenance</td><td>Liraglutide 3.0 mg</td></tr>
+<tr><td class="num">2016</td><td>SCALE Sleep Apnea</td><td>Liraglutide 3.0 mg</td></tr>
+<tr><td class="num">2021</td><td>STEP 1、2、3、4</td><td>Semaglutide SC 2.4 mg</td></tr>
+<tr><td class="num">2022</td><td>STEP 5</td><td>Semaglutide SC 2.4 mg</td></tr>
+<tr><td class="num">2022</td><td>STEP 8</td><td>Semaglutide SC vs. Liraglutide</td></tr>
+<tr><td class="num">2022</td><td>SURMOUNT-1</td><td>Tirzepatide</td></tr>
+<tr><td class="num">2023</td><td>STEP HFpEF</td><td>Semaglutide SC 2.4 mg</td></tr>
+<tr><td class="num">2023</td><td>SELECT</td><td>Semaglutide SC 2.4 mg（CVOT）</td></tr>
+<tr><td class="num">2023</td><td>SURMOUNT-2、SURMOUNT-3</td><td>Tirzepatide</td></tr>
+<tr><td class="num">2024</td><td>STEP HFpEF DM</td><td>Semaglutide SC 2.4 mg</td></tr>
+<tr><td class="num">2024</td><td>SURMOUNT-4</td><td>Tirzepatide</td></tr>
+<tr><td class="num">2024</td><td>OASIS 1</td><td>Oral semaglutide 50 mg</td></tr>
+<tr><td class="num">2025</td><td>ATTAIN-1</td><td>Orforglipron</td></tr>
+<tr><td class="num">2025</td><td>SURMOUNT-1 (3-yr)</td><td>Tirzepatide</td></tr>
+<tr><td class="num">2026</td><td>ATTAIN-2</td><td>Orforglipron</td></tr>
+<tr><td>Ongoing</td><td>TRIUMPH-1 to 4</td><td>Retatrutide</td></tr></table></div>
+<p>試驗名稱對藥：<b>SCALE＝liraglutide、STEP＝semaglutide、SURMOUNT＝tirzepatide、OASIS＝口服 semaglutide、ATTAIN＝orforglipron、TRIUMPH＝retatrutide</b>。肥胖試驗中唯一標 CVOT 的是 SELECT。</p></div></div>
+
+<div class="slide"><div class="pno">p.31</div><div><h3>Semaglutide：糖尿病叫 Ozempic，肥胖叫 Wegovy</h3>
+<p>同一個成分 semaglutide：<b>Ozempic</b> 用於 <b>Diabetes type 2</b>（盒上劑量 0.25／0.5 mg）；<b>Wegovy</b> 用於 <b>Obesity</b>（盒上 2.4 mg，一週一次）。<b>Both are injected subcutaneously</b>（都是皮下注射）。</p></div></div>
+
+<div class="slide"><div class="pno">p.32</div><div><h3>STEP 1：semaglutide 治療肥胖</h3>
+<ul><li>Patients ＝ <b>BMI 30，或 BMI 27 合併風險因子</b>（BMI 30 or 27 with risk factors）。</li>
+<li>Semaglutide <b>titrated to 2.4 mg weekly</b>（逐步調升到每週 2.4 mg）vs placebo。</li>
+<li>圖：semaglutide 體重一路下降到約 −15%（約第 60 週後持平），placebo 只降約 −2.5%。</li>
+<li><b>Difference −12.4%（95% CI −13.4 to −11.5）</b>，P&lt;0.001，<b>約 15 kg</b>（about 15 kg weight loss!）。</li></ul>
+<p class="src">來源：NEJM 2021;384(11):989-1002。背景補充：「BMI 30」意思是 BMI ≥30。</p></div></div>
+
+<div class="slide"><div class="pno">p.33</div><div><h3>SELECT：semaglutide 對有心血管疾病的肥胖者</h3>
+<ul><li>Patients ＝ <b>BMI ≥27</b> 且有 <b>MI、stroke 或有症狀的 PAD</b> 病史。</li>
+<li><b>Did not have to have DM2</b>：不需要有第二型糖尿病（這是重點，和 SUSTAIN 6 不同）。</li>
+<li>Event ＝ death from CV cause、nonfatal MI、nonfatal stroke（MACE-3）。</li>
+<li><b>HR 0.80（95% CI 0.72–0.90）</b>，P&lt;0.001；追蹤 48 個月，placebo 約 9.5%、semaglutide 約 7.5%（圖上目測）。</li></ul>
+<p>講義結論：semaglutide 顯著降低心血管事件，<b>主要是靠「非致死性心肌梗塞」推到顯著</b>（driven to significance by nonfatal myocardial infarction）。</p>
+<div class="note"><b>講義錯字：</b>縱軸刻度由上到下 10、8、6、4、<b>6</b>、0，最下面那個 6 應該是 2。</div></div></div>
+
+<div class="slide"><div class="pno">p.34</div><div><h3>STEP HFpEF：semaglutide 改善 HFpEF 病人的生活品質</h3>
+<ul><li>Patients ＝ <b>BMI 30</b> 且有 <b>HFpEF</b>（heart failure with preserved ejection fraction）。</li>
+<li>終點：<b>KCCQ</b>（Kansas City Cardiomyopathy Questionnaire），生活品質問卷，<b>分數越高越好</b>。</li>
+<li>圖：52 週時 semaglutide 增加約 17 分，placebo 約 10 分。</li>
+<li><b>Difference 7.8 points（95% CI 4.8 to 10.9）</b>，P&lt;0.001。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.35</div><div><h3>Tirzepatide：糖尿病叫 Mounjaro，肥胖叫 Zepbound</h3>
+<p>同一成分 tirzepatide：<b>Mounjaro</b> → Diabetes type 2；<b>Zepbound</b> → Obesity。兩者都皮下注射。（Mounjaro 盒上寫 Once weekly；Zepbound 盒上 15 mg、Use one pen every week。）</p></div></div>
+
+<div class="slide"><div class="pno">p.36</div><div><h3>SURMOUNT-1：tirzepatide 治療肥胖</h3>
+<ul><li>Patients ＝ BMI 30 或 27 合併風險因子（和 STEP 1 一樣的收案條件）。</li>
+<li>Tirzepatide 5、10、15 mg weekly vs placebo，72 週。</li>
+<li>圖：72 週時 placebo 約 −2%；5 mg 約 −16%；10 mg 約 −21%；15 mg 約 −22%（圖上目測）。</li>
+<li><b>15 mg vs placebo：Difference −17.8%（95% CI −19.34 to −16.3）</b>，P&lt;0.001，<b>約 22 kg</b>。</li></ul>
+<div class="tip"><b>對比 STEP 1：</b>semaglutide −12.4%（約 15 kg）vs tirzepatide 15 mg −17.8%（約 22 kg）。注意這是兩個不同試驗各自比安慰劑，不是頭對頭比較（推論）。</div></div></div>
+
+<div class="slide"><div class="pno">p.37</div><div><h3>SUMMIT：tirzepatide 治療肥胖合併 HFpEF</h3>
+<p>Patients ＝ BMI 30 且有 HFpEF。兩張圖：</p>
+<div class="grid2"><div class="box"><h4>CV death or worsening HF event</h4><p><b>HR 0.62（95% CI 0.41–0.95）</b>，P=0.026。72 週時 placebo 約 19–20%，tirzepatide（titrated to 15 mg weekly）約 11%（圖上目測）。</p></div>
+<div class="box"><h4>Quality of life（KCCQ）</h4><p>52 週組間中位數差異 <b>6.9 points（95% CI 3.3–10.6）</b>，P&lt;0.001。</p></div></div>
+<p>和 STEP HFpEF（p.34）比：兩個都改善 KCCQ（7.8 vs 6.9 分），但 SUMMIT 還多了「硬終點」（CV 死亡或心衰竭惡化）下降 38%。</p></div></div>
+
+<h2 class="sec" id="W-e"><small>p.38–47</small>肥胖治療的未解問題與總結</h2>
+
+<div class="slide"><div class="pno">p.38</div><div><h3>真實世界：semaglutide 常常劑量不足或停藥</h3>
+<p>Sankey 流量圖（Xu et al., Obesity 2025），追蹤每個月病人在哪個劑量、或停藥：</p>
+<ul><li>第 1 個月：大多數從 <b>0.25 mg（69%）</b>開始，0.5 mg 11%、1.0 mg 6%、1.7 mg 10%、2.4 mg 4%。</li>
+<li>第 5 個月（還在用藥者）：<b>2.4 mg 只有 53%</b>，1.7 mg 29%、1.0 mg 11%、0.5 mg 5%、0.25 mg 2%。</li>
+<li>各月停藥：Month 2 3,767／15,811（<b>24%</b>）、Month 3 1,133／12,044（9%）、Month 4 1,259／10,911（12%）、Month 5 1,084／9,652（11%）。</li></ul>
+<p>講義重點：<b>Not all patients reached 2.4 mg (max dose targeted in trials) and lots discontinued</b>。</p>
+<div class="note"><b>劑量不足／停藥的四個原因：</b>Financial barriers（費用）、Clinical inertia（臨床惰性：醫師沒有繼續往上調）、Side effects（副作用）、Patient preference（病人偏好）。</div></div></div>
+
+<div class="slide"><div class="pno">p.39</div><div><h3>Tirzepatide 在真實世界也劑量不足</h3>
+<p>Tirzepatide Dose Transitions，<b>N=692</b> 位病人（Diabetes Obes Metab 2025）。第 1 次處方時 2.5 mg 28%、5 mg 9.4%、7.5 mg 13%、10 mg 26%、12.5 mg 18%、15 mg 4.3%；一路到第 12 次處方左右，<b>15 mg 只有 39%</b>（12.5 mg 24%、10 mg 16%、7.5 mg 12%）。</p>
+<p>講義：<b>Not everyone reaches 15 mg (max dose targeted in trials)</b>。</p></div></div>
+
+<div class="slide"><div class="pno">p.40</div><div><h3>沒達到目標劑量，會不會少拿到效果？</h3>
+<p>一個困惑的臉：<b>No idea. Obesity trials didn't study multiple doses</b>。也就是說，肥胖試驗大多只測「調到最高劑量」，所以不知道停在較低劑量時效果會打多少折。</p>
+<p class="src">推論：SURMOUNT-1 其實有 5／10／15 mg 三個劑量（p.36），但 STEP 1、SELECT、STEP HFpEF 都只測 2.4 mg。講者的說法應理解為「多數肥胖試驗」。</p></div></div>
+
+<div class="slide"><div class="pno">p.41–42</div><div><h3>長期營養影響不清楚，早期證據顯示有缺乏</h3>
+<p>p.41 推理鏈：<b>Increased satiety from therapy leads to decreased appetite → Are there long-term nutritional consequences?</b>（藥讓人更飽、吃更少，長期會不會營養不良？）</p>
+<p>p.42 早期證據（Butsch et al., Obes Pillars 2025）：12 個月時有營養缺乏的比例 <b>GLP-1RA 18.6% vs control 16.5%，P&lt;0.01</b>；<b>大多是維生素缺乏（mostly vitamin deficiency）</b>。</p></div></div>
+
+<div class="slide"><div class="pno">p.43</div><div><h3>Lean mass（瘦體組織／肌肉）也一起掉</h3>
+<div class="tbl"><table><tr><th></th><th>STEP 1（semaglutide）</th><th>SURMOUNT-1（tirzepatide）</th></tr>
+<tr><td>Total weight loss</td><td class="num">−15.3 kg</td><td class="num">−22.1 kg</td></tr>
+<tr><td>Lean mass decrease</td><td class="num">−6.92 kg</td><td class="num">−5.67 kg</td></tr>
+<tr><td>佔減掉體重的比例</td><td class="num"><b>~45%</b></td><td class="num"><b>~26%</b></td></tr></table></div>
+<div class="calc">6.92 ÷ 15.3 ≈ 0.45 → 約 45%
+5.67 ÷ 22.1 ≈ 0.26 → 約 26%</div>
+<p>Tirzepatide 減得更多，但掉的肌肉反而比例較少。</p></div></div>
+
+<div class="slide"><div class="pno">p.44</div><div><h3>保住肌肉的策略</h3>
+<div class="grid2"><div class="box"><h4>Resistance Training（阻力訓練）</h4><p><b>The most evidence-supported intervention</b>：目前證據最多的方法。</p></div>
+<div class="box"><h4>Crazy Upcoming Stuff（未來的新藥）</h4><ul><li><b>Bimagrumab</b>（inhibits <b>activin type II receptor</b>）＋ Semaglutide：<b>67%</b> lean mass preserved（BELIEVE trial）</li>
+<li><b>Apitegromab</b>（inhibits <b>myostatin activation</b>）＋ Tirzepatide：<b>55%</b> lean mass preserved（EMBRAZE trial）</li></ul></div></div>
+<p class="src">背景補充：myostatin 是抑制肌肉生長的訊號，activin type II receptor 是它的受體之一；擋掉這條路就能保住肌肉。</p></div></div>
+
+<div class="slide"><div class="pno">p.45</div><div><h3>停藥就復胖</h3>
+<p>圖（Diabetes Obes Metab 2022）：semaglutide 調到 2.4 mg weekly，體重降到約 −17%；在虛線「<b>Withdrawal of therapy</b>」（約第 68 週）停藥後，體重快速回升，到第 120 週只剩約 −5.6%。Placebo 組一直在 0 到 −2% 附近。</p>
+<div class="note"><b>必背：</b>停藥後 <b>Regained 11.6%（SD 7.7）</b>。</div>
+<p>這就是總結說的「necessity to continue therapy indefinitely」：肥胖藥可能要一直用下去。</p>
+<p class="src">背景補充：此圖是 STEP 1 的延伸追蹤（講義沒寫試驗名）；停藥週數是從圖上虛線位置判斷。</p></div></div>
+
+<div class="slide"><div class="pno">p.46–47</div><div><h3>Summary（五句話）</h3>
+<ol><li>糖尿病是複雜的疾病，<b>併發症影響全身多處</b>（p.9）。</li>
+<li>治療包括<b>胰島素與多重標靶的口服降血糖藥</b>（p.15–17）。</li>
+<li><b>CVOT 是強制的</b>，雖然帶來有益資料，但<b>增加研發成本，也可能延遲臨床採用</b>（p.21–27）。</li>
+<li>肥胖藥對健康有很大好處，但使用受限於<b>費用（cost）、臨床惰性（clinical inertia）、需要無限期持續用藥</b>（p.38, 45）。</li>
+<li><b>Lean mass loss 是個問題</b>，肥胖藥的<b>長期效果還沒有被充分描述</b>（p.41–44）。</li></ol></div></div>
+
+<h2 class="sec" id="W-cheat"><small>Cheat sheet</small>必背一張表</h2>
+<div class="tbl"><table>
+<tr><th>項目</th><th>重點</th><th>頁</th></tr>
+<tr><td>第一型 vs 第二型機轉</td><td>T1：pancreas doesn't make insulin；T2：tissues don't respond（desensitized receptor），GLUT4 不上膜</td><td>p.6</td></tr>
+<tr><td>美國盛行</td><td class="num">3,700 萬成人；T1 5–10%；T2 90–95%</td><td>p.7</td></tr>
+<tr><td>風險因子</td><td>T1：family history；T2：obesity、age &gt;35、race/ethnicity、family history、physical inactivity</td><td>p.8</td></tr>
+<tr><td>併發症</td><td>Stroke、heart attack、PAD、retinopathy、kidney damage、peripheral neuropathy</td><td>p.9</td></tr>
+<tr><td>HbA1c 切點</td><td class="num">Normal &lt;5.7%；Prediabetes 5.7–&lt;6.5%；Diabetes ≥6.5%</td><td>p.10</td></tr>
+<tr><td>空腹血糖切點</td><td class="num">&lt;100；100–&lt;126；≥126 mg/dL</td><td>p.10</td></tr>
+<tr><td>OGTT 切點</td><td class="num">&lt;140；140–&lt;200；≥200 mg/dL</td><td>p.10</td></tr>
+<tr><td>HbA1c 意義</td><td>過去約 3 個月的平均血糖</td><td>p.11</td></tr>
+<tr><td>生活型態</td><td>每週 150 分鐘中等強度運動；lifestyle vs placebo RRR 58%（優於 metformin）</td><td>p.13–14</td></tr>
+<tr><td>胰島素分配</td><td class="num">長效 50%（basal）＋短效／速效 50%（三餐）</td><td>p.15</td></tr>
+<tr><td>胰島素作用時間</td><td class="num">Rapid（aspart、lispro、glulisine）3 h；Short（regular）6 h；Intermediate（NPH）12 h；Long（glargine、detemir、degludec）18–24 h</td><td>p.16</td></tr>
+<tr><td>Sulfonylureas</td><td>glipizide、glimepiride：胰臟 ↑insulin release</td><td>p.17</td></tr>
+<tr><td>SGLT2i</td><td>cana-／dapa-／empa-／ertu-gliflozin：腎 ↑glucose excretion</td><td>p.17</td></tr>
+<tr><td>TZD</td><td>rosiglitazone、pioglitazone：肝 ↑insulin sensitivity；肌肉／脂肪 ↑glucose uptake</td><td>p.17</td></tr>
+<tr><td>Metformin（biguanide）</td><td>肝 ↓gluconeogenesis；肌肉 ↑uptake；腸 ↑GLP-1、↓absorption</td><td>p.17</td></tr>
+<tr><td>DPP4i</td><td>lina-／sita-／saxa-gliptin：腸 ↑GLP-1</td><td>p.17</td></tr>
+<tr><td>GLP-1RA</td><td>↓gastric emptying、↑satiety、↑insulin secretion</td><td>p.17, 29</td></tr>
+<tr><td>第一型治療</td><td>Insulin only；ADJUST-T1D semaglutide 1 mg HbA1c −0.3%（−0.6 to −0.05）</td><td>p.19–20</td></tr>
+<tr><td>CVOT 時間線</td><td>2007 rosiglitazone MI（後被推翻）→ 2008 FDA 505(o)(3)＋REMS → 2013–17 incretin（GLP-1 降 MACE）→ 2015–20 SGLT2i HFrEF → 2019–20 DAPA-HF、EMPEROR-Reduced（無 DM 也有益）</td><td>p.21</td></tr>
+<tr><td>SUSTAIN 1</td><td>semaglutide 0.5／1.0 mg，HbA1c 約 8% → 6%，P&lt;0.0001</td><td>p.22</td></tr>
+<tr><td>SUSTAIN 6</td><td class="num">MACE HR 0.74（0.58–0.95）；非劣性 P&lt;0.001、優越性 P=0.02</td><td>p.23</td></tr>
+<tr><td>SURPASS-2</td><td>tirzepatide 5／10／15 mg 降 HbA1c 都比 semaglutide 1 mg 多</td><td>p.24</td></tr>
+<tr><td>SURPASS-CVOT</td><td class="num">vs dulaglutide：MACE-3 HR 0.92（0.83–1.01），p=0.086 → 非劣性；全因死亡 HR 0.84（0.75–0.94）</td><td>p.25</td></tr>
+<tr><td>CVOT 成本</td><td class="num">約 $500 million／試驗</td><td>p.26</td></tr>
+<tr><td>三代 incretin 肥胖藥</td><td>GLP-1RA（sema、dula、orforglipron）；GLP-1/GIP（tirzepatide）；GLP-1/GIP/GCG（retatrutide，多 ↑metabolism）</td><td>p.29</td></tr>
+<tr><td>試驗家族</td><td>SCALE＝liraglutide 3.0；STEP＝semaglutide 2.4；SURMOUNT＝tirzepatide；OASIS＝口服 sema 50；ATTAIN＝orforglipron；TRIUMPH＝retatrutide</td><td>p.30</td></tr>
+<tr><td>品牌</td><td>Ozempic／Wegovy＝semaglutide；Mounjaro／Zepbound＝tirzepatide（前者 DM2、後者肥胖，皆 SC）</td><td>p.31, 35</td></tr>
+<tr><td>STEP 1</td><td class="num">−12.4%（−13.4 to −11.5），約 15 kg</td><td>p.32</td></tr>
+<tr><td>SELECT</td><td class="num">BMI ≥27＋CVD、不需 DM2；HR 0.80（0.72–0.90）；主要靠非致死 MI</td><td>p.33</td></tr>
+<tr><td>STEP HFpEF</td><td class="num">KCCQ ＋7.8（4.8–10.9）</td><td>p.34</td></tr>
+<tr><td>SURMOUNT-1</td><td class="num">15 mg −17.8%（−19.34 to −16.3），約 22 kg</td><td>p.36</td></tr>
+<tr><td>SUMMIT</td><td class="num">CV 死亡或 HF 惡化 HR 0.62（0.41–0.95），P=0.026；KCCQ ＋6.9（3.3–10.6）</td><td>p.37</td></tr>
+<tr><td>劑量不足</td><td class="num">semaglutide 第 5 月 2.4 mg 只 53%；tirzepatide 15 mg 只 39%（N=692）；原因：費用、臨床惰性、副作用、病人偏好</td><td>p.38–39</td></tr>
+<tr><td>營養缺乏</td><td class="num">12 個月 GLP-1RA 18.6% vs 16.5%，P&lt;0.01，多為維生素</td><td>p.42</td></tr>
+<tr><td>Lean mass</td><td class="num">STEP 1 −6.92／−15.3 kg ≈ 45%；SURMOUNT-1 −5.67／−22.1 kg ≈ 26%</td><td>p.43</td></tr>
+<tr><td>保肌策略</td><td>Resistance training 證據最多；bimagrumab（activin II R）＋sema 67%；apitegromab（myostatin）＋tirz 55%</td><td>p.44</td></tr>
+<tr><td>停藥復胖</td><td class="num">Regained 11.6%（SD 7.7）</td><td>p.45</td></tr>
+</table></div>
+
+<h2 class="sec" id="W-quiz"><small>Self-test</small>自我測驗 <span class="score" id="score-dm"></span><button class="reset" data-reset="dm">重來</button></h2>
+<div class="quiz" id="quiz-dm"></div>
+</main>
+
 <!-- ======================= LC-MS/MS ======================= -->
 <main id="lcms" role="tabpanel" aria-labelledby="tab-lcms" hidden>
 <div class="big">整堂課的主線：<b>LC-MS/MS 是量藥物濃度最靈敏、最專一的工具</b>，但它不是「丟進去就出答案」的黑盒子。<b>Validation</b> 是一套事先寫好允收標準的實驗，用來證明這個方法量出來的數字可以信。講義原話：沒確效好的 LC-MS/MS，有研究顯示甚至比亂數產生器還不準。</div>
@@ -5056,6 +6547,607 @@ ca: [
  ["帶抗原 off switch、可用對應藥物關掉的 CAR-T","有列，用在出現危及生命毒性的病人。"],
  ["把 CAR-T 改成口服劑型","正確（不是講義內容）。CAR-T 是細胞，經輸注給予；口服是 TKI 的優點（p.24）。"]],3,"CAR-T 未來：異體、實體腫瘤、off switch；挑戰是排序與合併。"]
 ],
+cvdev: [
+["p.4","依 p.4，全球 CVD 死亡人數 1990–2021 年的變化是？",[
+ ["下降約 30%","方向錯了。p.4 寫的是上升約 70%，這也是 p.5 所說「死亡率下降停滯」的背景。"],
+ ["持平，大約都是 1,200 萬","1,210 萬是 1990 年的數字，2021 年已經到 2,050 萬。"],
+ ["上升約 70%，從 1,210 萬到 2,050 萬","正確。p.4：CVD deaths rose ~70% globally from 1990–2021（12.1M → 20.5M）。"],
+ ["上升約 2 倍，從 2,050 萬到 4,100 萬","數字不對；2,050 萬是 2021 年的終點，不是起點。"]],2,"全球 CVD 死亡 +70%：12.1M → 20.5M。"],
+["p.4","依 p.4 的計時器圖（2019 資料），美國平均多久有一人死於 CVD？",[
+ ["每 36 秒","正確。約每天 2,396 人死於 CVD。"],
+ ["每 3 分 30 秒","這是中風（stroke）的數字，約每天 411 人。"],
+ ["每 10 分鐘","講義沒有這個數字。"],
+ ["每 1 小時","差太多；每天約 2,396 人，平均不到一分鐘就有一人。"]],0,"CVD 36 秒、中風 3 分 30 秒。"],
+["p.5","下列何者<b>不是</b> p.5「Cardiovascular Paradox」中 YET 那一欄的內容？",[
+ ["CVD 死亡率的下降已經停滯","有列：The decline in CVD death rates has stalled。"],
+ ["CVD 死亡比癌症加意外事故加起來還多","有列：More deaths than cancer and accidents combined。"],
+ ["心衰竭死亡在上升","有列：Deaths from heart failure rising。"],
+ ["CVD 死亡人數已經低於癌症","正確（不是講義內容）。剛好相反，p.5 說 CVD 死亡比癌症＋意外加起來還多。"]],3,"More drugs. Same deaths. Why?"],
+["p.6","2024 年全球前 20 大藥物銷售中，CV＋代謝這一類的情況是？",[
+ ["4 個藥、$57.0B","那是腫瘤（oncology）的數字。"],
+ ["6 個藥、約 $93B，其中約 $45B 是 GLP-1","正確。p.6：$92.8B，6 個藥；GLP-1（Ozempic 家族＋Mounjaro/Zepbound）約 $45B。"],
+ ["4 個藥、$45.2B","那是免疫（immunology）的數字；$45B 也容易和 GLP-1 的約 $45B 混淆。"],
+ ["3 個藥、$29.9B","那是感染與疫苗的數字。"]],1,"CV＋代謝 6 藥 $93B，近一半是 GLP-1。"],
+["p.7","依 p.7 的五階段流程圖，<b>IND application</b> 是在哪一個階段的最後一步？",[
+ ["Early Drug Discovery","這一段是找標靶、hit discovery、篩選、hit to lead、lead optimization。"],
+ ["Preclinical Studies","正確。臨床前的最後是 IND-enabling studies 和 IND application，送了 IND 才能進人體。"],
+ ["Clinical Development","進到臨床時 IND 已經送了。"],
+ ["FDA Review","FDA Review 送的是 NDA／ANDA／BLA，不是 IND。"]],1,"IND 是進人體前的門票。"],
+["p.7","p.7 中，上市後監測（Post-market Monitoring）列的系統是？",[
+ ["FAERS","正確。FDA Adverse Event Reporting System，FDA 不良事件通報系統。"],
+ ["ANDA","ANDA 是學名藥的上市申請，屬於 FDA Review 階段。"],
+ ["ADME","ADME 是吸收、分布、代謝、排除，屬於臨床前。"],
+ ["BLA","BLA 是生物製劑上市申請，屬於 FDA Review。"]],0,"上市後＝FAERS。"],
+["p.8","依 p.8，臨床試驗哪一期平均花的時間最長？",[
+ ["Phase 1（2.3 年）","Phase 1 是 2.3 年，不是最長。"],
+ ["Phase 3（3.3 年）","Phase 3 是 3.3 年，比 Phase 2 少一點。"],
+ ["FDA review（1.3 年）","FDA 審查最短。"],
+ ["Phase 2（3.6 年）","正確。2.3＋3.6＋3.3＋1.3＝10.5 年，Phase 2 最久。"]],3,"Phase 2 最久 3.6 年；總計約 10.5 年。"],
+["p.8","p.8 說 Phase 3 要證明藥物有效，可以用「臨床結局」或下列哪一種東西？",[
+ ["任何會改變的生物標記","不對。Lp(a) 會動但不被接受（p.26），所以不是「任何」標記。"],
+ ["被接受的替代指標（accepted surrogate），例如 LDL-C","正確。p.8：Outcomes or an accepted surrogate（LDL-C）。"],
+ ["健康受試者的藥動學資料","那是 Phase 1 的問題：How is it absorbed and cleared?"],
+ ["動物實驗的療效","那屬於臨床前，不是 Phase 3。"]],1,"LDL-C 是被接受的替代指標。"],
+["p.9","依 p.9，取得 Orphan Drug 資格的條件與好處是？",[
+ ["美國患者 &lt; 200,000 人；7 年專屬權、規費減免、稅務抵減","正確。Orphan Drug Act, 1983。"],
+ ["美國患者 &lt; 1,000,000 人；10 年專屬權","人數和年數都不對。"],
+ ["有早期證據顯示比現有療法實質改善","那是 Breakthrough 的條件。"],
+ ["FDA 在 6 個月內做決定","那是 Priority Review。"]],0,"孤兒藥：&lt; 20 萬人、7 年。"],
+["p.9","tafamidis 取得 FDA 各項資格的時間順序，何者正確？",[
+ ["Breakthrough → Orphan → Fast Track → Priority","順序錯；Orphan 最早（2012）。"],
+ ["Fast Track → Orphan → Priority → Breakthrough","順序錯；Breakthrough（2018/5）在 Priority（2018/11）之前。"],
+ ["Priority → Breakthrough → Fast Track → Orphan","完全顛倒。"],
+ ["Orphan（2012）→ Fast Track（2017/6）→ Breakthrough（2018/5）→ Priority（2018/11）→ 核准 2019/5","正確。p.9 的四格時間。"]],3,"孤快突優：12、17、18、18 → 19。"],
+["p.10","依 p.10 的長條圖，進入 Phase I 的藥最後約有多少比例被核准？",[
+ ["52%","52% 是「進到 Phase II」的比例。"],
+ ["15%","15% 是「進到 Phase III」的比例。"],
+ ["約 8%（7.9%），而且 CV 更低","正確。100 → 52 → 15 → 8.7 → 7.9%。"],
+ ["約 30%","講義沒有這個數字。"]],2,"約 8% 會核准，約 92% 失敗。"],
+["p.10","關於 rNPV 與公司怎麼做決定，下列何者<b>錯誤</b>？",[
+ ["rNPV＝成功機率 × 利潤 − 成本，每期分別算","正確敘述（所以不是答案）。"],
+ ["成功的藥要支付約 92% 失敗藥物的成本","正確敘述：Winners pay for the ~92% that fail。"],
+ ["越早失敗代價越大，Phase 1 失敗最貴","正確答案（這句是錯的）。p.10：Late failure（Phase 3）costs the most。"],
+ ["開發決策是對機率 × 報酬下注，不是看科學多有趣","正確敘述，是 p.10 的結論句。"]],2,"越晚失敗越貴。"],
+["p.12","ATTR-ACT 試驗中，tafamidis vs placebo 的全死因死亡率是？",[
+ ["42.9% vs 29.5%（HR 1.43）","數字顛倒了；藥物組是較低的 29.5%。"],
+ ["29.5% vs 42.9%（HR 0.70）","正確。另外 CV 相關住院少 32%（RR 0.68）。"],
+ ["29.5% vs 42.9%（HR 0.68）","0.68 是住院的 RR，死亡的 HR 是 0.70。"],
+ ["沒有差異，只減少住院","死亡也有顯著降低（HR 0.70）。"]],1,"死亡 HR 0.70；住院 RR 0.68。"],
+["p.13","tafamidis 為什麼在美國多花了好幾年？",[
+ ["2012 年 FDA 沒核准神經病變適應症，要求臨床結局資料，公司轉去心肌病變做結果試驗","正確。p.13 的 pivot：validated mechanism 不夠，法規要 clinical outcome。"],
+ ["因為 EU 拒絕核准","EU 在 2011 年就核准了神經病變適應症。"],
+ ["因為首次人體試驗出現嚴重毒性","講義沒有提到。"],
+ ["因為沒有取得孤兒藥資格","2012 年就拿到孤兒藥資格（p.9）。"]],0,"機轉被驗證不夠，要臨床結局。"],
+["p.14","p.14 列出 ATTR-ACT 這麼慢（441 人卻約 5 年）的原因，下列何者<b>不在</b>其中？",[
+ ["病人少、分散在 13 國 48 個點","有列。"],
+ ["自然病程不清楚，終點難選","有列。"],
+ ["每個病人要追蹤 30 個月","有列。"],
+ ["FDA 要求先做頭對頭比較 warfarin","正確（不在其中）。warfarin 頭對頭是 Eliquis 的 ARISTOTLE；p.14 另一條原因是很多被篩檢的病人不符合條件。"]],3,"罕見、自然病程不明、篩檢失敗多、追蹤 30 個月。"],
+["p.15","下列 ATTR-CM 藥物的配對，何者正確？",[
+ ["Vutrisiran：TTR stabilizer，年價約 $244K","vutrisiran 是 RNAi silencer、一年 4 針、約 $477K；$244K 是 acoramidis。"],
+ ["Acoramidis：RNAi silencer，2025/3 核准","acoramidis 是（近乎完全的）TTR stabilizer，2024/11 核准；2025/3 是 vutrisiran。"],
+ ["Eplontersen：antisense silencer，Phase 3 失敗（2026/7），未核准","正確。p.15 表格最後一列。"],
+ ["Tafamidis：antisense，2024/11 核准","tafamidis 是 stabilizer，2019/5 核准。"]],2,"stabilizer：tafamidis、acoramidis；silencer：vutrisiran（RNAi）、eplontersen（antisense，失敗）。"],
+["p.17, 21","BMS 與 Pfizer 2007 年合作的條件，何者正確？",[
+ ["BMS 付 Pfizer $250M；開發費 BMS 60%","方向反了：是 Pfizer 付 BMS，Pfizer 出 60%。"],
+ ["Pfizer 收購 BMS 的 apixaban 部門","這是共同開發，不是收購；收購的例子是 Pfizer 買 FoldRx。"],
+ ["Pfizer 付 BMS $250M 前金（＋最多 $750M 里程碑）；開發費 Pfizer 60%／BMS 40%；利潤 50/50","正確。p.17、p.21。"],
+ ["開發費和利潤都是 60/40","利潤是 50/50，只有開發費是 60/40。"]],2,"60／40 出錢，50／50 分錢。"],
+["p.18","APPRAISE-2 的結果對 Eliquis 計畫的意義是？",[
+ ["它是 AF 的樞紐試驗，結果正面","AF 的樞紐試驗是 ARISTOTLE；APPRAISE-2 是 ACS。"],
+ ["它失敗導致 Eliquis 被 FDA 拒絕","FDA 的 CRL 和 APPRAISE-2 不同件；Eliquis 在 2012/12/28 核准。"],
+ ["它失敗後 BMS 退出合作","講義沒有這樣說，結盟持續。"],
+ ["2010 年在 7,392 位 ACS 病人中因出血（HR 2.6）中止，但不同族群、不同風險效益，所以沒有殺掉 AF 計畫","正確。p.18、p.20 第 4 個理由「Resilient program」。"]],3,"鄰近適應症的失敗 ≠ 整個計畫失敗。"],
+["p.18","Eliquis 在美國的核准過程，何者正確？",[
+ ["2012/6 收到 CRL，重新送件後 2012/12/28 核准","正確。p.18 的 regulatory setback。"],
+ ["2011 年一次就核准","2011 年是 ARISTOTLE topline，不是核准。"],
+ ["2010 年因 APPRAISE-2 被拒","2010 年是 APPRAISE-2 中止，不是 FDA 決定。"],
+ ["2007 年就核准","2007 年是結盟。"]],0,"2012/6 CRL → 2012/12/28 核准。"],
+["p.19–20","ARISTOTLE 中 apixaban vs warfarin 的大出血風險比是？",[
+ ["HR 0.79","0.79 是中風／全身栓塞。"],
+ ["HR 0.89","0.89 是全死因死亡。"],
+ ["HR 2.6","2.6 是 APPRAISE-2（ACS）的出血，不是 ARISTOTLE。"],
+ ["HR 0.69","正確。大出血少約 31%。"]],3,"0.79 中風、0.69 出血、0.89 死亡。"],
+["p.19–20","p.19 說 Eliquis 一年的 BMS 銷售約是每藥基準成本的 5 倍。這是怎麼算的？",[
+ ["$13.3B ÷ $1.0B（JAMA 2020）","講義用的基準是 Tufts 的 ~$2.6B，不是 $1B。"],
+ ["$13.3B ÷ ~$2.6B（Tufts CSDD）≈ 5","正確。講義也提醒：還沒扣分攤成本、利潤率和 Pfizer 的利潤分成，且 $2.6B 有爭議。"],
+ ["$9.6B ÷ $2.0B","$9.6B 只是美國部分。"],
+ ["$6.4B ÷ $1.3B","$6.4B 是 tafamidis 的銷售。"]],1,"13.3 ÷ 2.6 ≈ 5（示意，不是公司資料）。"],
+["p.20","p.20「Why Eliquis Won」的五個理由，<b>不包括</b>下列哪一項？",[
+ ["療效和安全性都優於標準治療","有列（第 1 點）。"],
+ ["不用驗 INR、固定劑量","有列（第 2 點）。"],
+ ["比 warfarin 便宜","正確（不包括）。warfarin 是便宜的學名藥；Eliquis 贏在更好、更好用，而不是更便宜。"],
+ ["兩個合作夥伴分攤成本與風險","有列（第 5 點）。"]],2,"更好、更好用、硬終點大族群、有韌性、兩夥伴。"],
+["p.22","依 p.22，三種合作方式從「最分攤風險」到「最自己擁有風險與報酬」的排列是？",[
+ ["共同開發（Eliquis）→ 授權（pelacarsen）→ 收購（tafamidis）","正確。Pfizer 買 FoldRx（2010）後拿 100%。"],
+ ["收購 → 授權 → 共同開發","方向相反。"],
+ ["授權 → 共同開發 → 收購","共同開發分攤最多，應排第一。"],
+ ["共同開發（pelacarsen）→ 授權（Eliquis）→ 收購（tafamidis）","例子配錯：Eliquis 是共同開發，pelacarsen 是授權。"]],0,"Co-develop → License-in → Acquisition。"],
+["p.24","關於 Lp(a)，下列何者正確？",[
+ ["主要由飲食決定，statin 可以大幅降低","p.24：約 90% 由基因決定；飲食、statin、PCSK9i 都幾乎動不了。"],
+ ["已經有核准的專門降 Lp(a) 藥物","講義說 No approved therapy。"],
+ ["約每 5 人有 1 人偏高，和心肌梗塞、中風、主動脈瓣狹窄有強關聯","正確。p.24。"],
+ ["只和靜脈血栓有關","講義列的是 MI、中風、主動脈瓣狹窄。"]],2,"Lp(a)：90% 基因、1/5 人高、無核准藥。"],
+["p.24","Lp(a)HORIZON 的收案條件與規模是？",[
+ ["8,323 位有 CVD 且 Lp(a) ≥ 70 mg/dL 的病人","正確。p.24。"],
+ ["18,201 位 AF 病人","那是 ARISTOTLE。"],
+ ["441 位 ATTR-CM 病人","那是 ATTR-ACT。"],
+ ["8,323 位沒有 CVD 的健康成人（初級預防）","收的是已有 CVD 的病人，是次級預防（p.25）。"]],0,"8,323 人、CVD＋Lp(a) ≥ 70。"],
+["p.25","p.25 列出 Lp(a)HORIZON 可能失敗的原因時，講義強調這些是什麼？",[
+ ["已被完整資料證實的發現","講義明說完整資料還沒出來。"],
+ ["Novartis 官方公布的失敗原因","Novartis 只說「These are not the results we hoped for」。"],
+ ["拿來辯論的假說，不是研究發現（hypotheses to debate, not findings）","正確。包括因果模型錯、降得不夠深或不夠久、背景 LDL-C 約 66 mg/dL、族群與複合終點、資料未完整。"],
+ ["FDA 的審查意見","藥沒有送審，這是試驗結果。"]],2,"失敗原因是假說，不是結論。"],
+["p.25–26","pelacarsen 和 LDL-C 降低藥最關鍵的差別是？",[
+ ["pelacarsen 降得比較少","它降了約 80%，降幅不小。"],
+ ["LDL-C 是被接受的替代指標，可以在結果資料前先核准；Lp(a) 不是，一定要證明事件減少","正確。p.26 Barriers：No accepted surrogate。"],
+ ["LDL-C 藥都不需要 Phase 3","LDL-C 藥也要 Phase 3，只是可以用替代指標當終點。"],
+ ["Lp(a) 和心血管病沒有關係","p.24 說有很強的基因和流行病學關聯。"]],1,"指標動了 ≠ 結局動了。"],
+["p.26","p.26 說事件驅動（event-driven）試驗的障礙是什麼？",[
+ ["事件太多，試驗太快結束","剛好相反。"],
+ ["事件驅動試驗不需要安慰劑","講義沒有這樣說；Lp(a)HORIZON 有安慰劑對照。"],
+ ["事件驅動試驗只能用替代指標","事件驅動就是在數臨床事件。"],
+ ["背景照護越好，事件越少，試驗就越長；pelacarsen 出結果延後兩次","正確。p.26：better background care means fewer events and a longer trial。"]],3,"照護越好 → 事件越少 → 試驗越長。"],
+["p.27","p.27 的示意計算：尖峰年銷 $3B、10 年、營業利益率 30%、成功率 50%，期望值是多少？",[
+ ["$9B","$9B 是「成功時」的利潤，還要乘以成功率 50%。"],
+ ["$4.5B，大於約 $0.8B 的試驗成本，所以事前合理","正確。3 × 10 × 0.3 = 9；9 × 0.5 = 4.5。"],
+ ["$1.5B","算錯；可能只乘了 3 × 0.5。"],
+ ["$0.8B，剛好打平","$0.8B 是試驗成本估計，不是期望值。"]],1,"3 × 10 × 30% × 50% ＝ $4.5B &gt; $0.8B。"],
+["p.29","p.29「Three Cases, One Pattern」總結贏家的共同點是？",[
+ ["硬終點（或罕見病的未滿足需求），加上一個扛得起試驗的出資者","正確。失敗者缺的是「移動標記會改變結局」的證據。"],
+ ["試驗越小越容易贏","Eliquis 的試驗最大（18,201 人）卻成功。"],
+ ["有遺傳學支持就一定成功","pelacarsen 有遺傳學支持仍失敗（p.33 的提醒）。"],
+ ["取得 FDA 快速審查就會成功","p.9：法規能加速審查，不能加速科學。"]],0,"硬終點＋扛得起的出資者。"],
+["p.30","p.30 說腫瘤藥開發跑在 CV 前面的原因，下列何者<b>不是</b>？",[
+ ["反應率終點就能拿到核准，試驗小又快","有列。"],
+ ["付款方接受的價格","有列。"],
+ ["CV 試驗通常比腫瘤試驗小 67–107%","正確（不是原因，而且說反了）。p.30：CV 試驗<b>大</b> 67–107%、<b>長</b> 28–32%。"],
+ ["新藥物型態：2025 年 3 個 ADC 和 1 個雙特異性抗體","有列。"]],2,"CV 試驗大 67–107%、長 28–32%。"],
+["p.31","依 p.31，CV 試驗失敗<b>最常見</b>的原因是？",[
+ ["受試者多樣性不足","有列在策略與營運，但不是最常見。"],
+ ["缺乏療效（lack of efficacy）：大族群中很小的額外好處很難偵測","正確。p.31 Science 第一條：the most common reason。"],
+ ["資料錯誤","有列，但不是最常見。"],
+ ["贊助者撤出","有列，但不是最常見。"]],1,"最常見：缺乏療效。"],
+["p.32","依 p.32，下列年份與事件的配對何者<b>錯誤</b>？",[
+ ["2015：Repatha（PCSK9）核准","正確配對。"],
+ ["2021：Inclisiran（siRNA）核准","正確配對。"],
+ ["2026/5：Baxdrostat 核准用於高血壓","正確配對。"],
+ ["SELECT：semaglutide 使心衰竭住院減少 25%","正確答案（這是錯的）。SELECT 是 MACE 減少 20%；約 25% 是 DAPA-HF／EMPEROR-Reduced 的 CV 死亡或 HF 住院。"]],3,"SELECT MACE −20%；DAPA-HF／EMPEROR −25%。"],
+["p.33","p.33 四個槓桿中，「The gap is use, not invention」屬於哪一個？",[
+ ["A　Market incentives","A 講孤兒藥、專屬權、高價，以及 IRA 的辯論。"],
+ ["B　Prevention and access","正確。statin、ACEi、血壓控制已經有效又便宜，缺的是使用。"],
+ ["C　Policy and trial economics","C 講讓預防試驗值得做：延長專屬權、公私合作、按結局付費。"],
+ ["D　Precision and technology","D 講遺傳學標靶、AI、基因編輯，並提醒 pelacarsen 有遺傳學支持仍失敗。"]],1,"缺口在使用，不在發明。"],
+["p.35","依 p.35 的 AI 計分板（2026/10），下列何者正確？",[
+ ["AI 分子 Phase II 成功率約 80–90%","80–90% 是 Phase I；Phase II 約 40%，和歷史一樣。"],
+ ["已有 3 個 AI 發現的藥物獲 FDA 完全核准","p.35：0 個。"],
+ ["AI 分子 Phase I 成功率 80–90%（傳統 40–65%），但 Phase II 約 40% 沒有改善","正確。AI 會回答「做得出來、安全嗎」，還沒證明「有沒有效」。"],
+ ["臨床開發中約 30% 是 AI 發現的分子","只有約 1%。"]],2,"Phase I 變好、Phase II 沒變、核准 0 個。"],
+["p.34, 36","EAGLE AI-ECG 試驗的結果，何者正確？",[
+ ["22,641 人；有 AI 提醒時 low EF 診斷多 32%，每篩 1,000 人多 5 個新診斷","正確。p.36；Anumana 的 AI-ECG low EF 有 FDA 510(k)。"],
+ ["71 人；FVC +98 mL","那是 rentosertib 的 IPF Phase IIa。"],
+ ["AI-ECG 被 FDA 拒絕","它拿到 510(k) 許可。"],
+ ["AI-ECG 用來找出高 Lp(a) 的病人","EAGLE 找的是 low EF（低射出分率）。"]],0,"EAGLE：22,641 人、+32%、5／1,000。"],
+["p.37–38","p.37–38 對「AI 在 CV 哪裡最有價值」的核心結論是？",[
+ ["AI 最大的價值是加快法規文件撰寫","p.37 把 medical affairs／regulatory writing 列為小而穩定的成本。"],
+ ["AI 能把 Phase II 成功率提高一倍","Phase II 成功率沒變（約 40%）。"],
+ ["AI 已經證明能讓所有 Phase 3 成功","p.37 說 Phase 3 約 50% 失敗，且 AI 修不好錯的假說。"],
+ ["AI 修不好錯誤的假說；最大的錢在於「不要跑錯的 Phase 3」，例如每年 $100M 只要每 8 年避開一次 $0.8B 的失敗就打平","正確。p.37 關鍵句與 p.38 示意打平計算。"]],3,"為錯的想法設計更好的試驗，仍是失敗的試驗。"],
+["p.41","依 p.41 的 2025→2060 美國預測，下列何者正確？",[
+ ["心肌梗塞是增加最多的疾病（+34%）","MI 是 +17%，增加最少；+34% 是中風。"],
+ ["糖尿病 +39%（55M），是危險因子中增加最多的；中風 +34%","正確。其他：高血壓 +25%、血脂異常 +28%、肥胖 +18%；缺血性心臟病 +31%、心衰竭 +33%。"],
+ ["2050 年每 10 個成人有 3 個有 CVD","講義是 6 in 10。"],
+ ["2050 年美國每年 CVD 花費約 $1.8 billion","是 $1.8 trillion（兆），約現在的三倍。"]],1,"糖尿病 +39% 最多；中風 +34%；6/10 成人；$1.8 兆。"],
+["p.42","依 p.42「未來 5 年」，下列配對何者正確？",[
+ ["2026：enlicitide，第一個口服 PCSK9 inhibitor，靠 LDL-C 核准；結果試驗（&gt; 14,500 人）未出","正確。這也再次說明 LDL-C 是被接受的替代指標。"],
+ ["2027：Eliquis 美國學名藥","Eliquis 學名藥是 2028；2027 是 ziltivekimab 的 HERMES／ARTEMIS。"],
+ ["2029：tafamidis 學名藥","tafamidis 是約 2031 年中；2029 是 lepodisiran ACCLAIM-Lp(a)。"],
+ ["2028：lepodisiran 完成，約 17,300 人","lepodisiran 是 2029；2028 是 olpasiran OCEAN(a)-Outcomes。"]],0,"26 enlicitide、27 ziltivekimab、28 olpasiran＋Eliquis 學名藥、29 lepodisiran、31 tafamidis 學名藥。"],
+["p.43","p.43 Key Takeaway 第 4 點「A biomarker that moves is not a proven outcome」舉了哪兩個例子？",[
+ ["tafamidis 和 acoramidis","這兩個都核准了，不是反例。"],
+ ["Eliquis 和 warfarin","Eliquis 用的是硬終點（中風），不是生物標記。"],
+ ["enlicitide 和 Repatha","它們是 LDL-C 降低藥，LDL-C 是被接受的替代指標。"],
+ ["pelacarsen（Lp(a) 降約 80%）和 ziltivekimab（降 IL-6 和 hsCRP），兩者都沒減少事件","正確。p.43。"]],3,"標記動了不等於結局被證明。"]
+],
+auto: [
+["p.1","這堂課題目中的「selective pressure（選擇壓力）」和「pharmacologic diversity」的關係，最符合下列哪一句？",[
+ ["用藥會把抗藥的病原挑選出來，所以需要不斷有不同種類的新藥","正確。p.1 題目的前半句就是這個因果；p.8 的抗瘧藥時間軸、p.24 的 KAF156 抗藥都是例子。"],
+ ["選擇壓力指藥廠之間的市場競爭","題目講的是病原在用藥下被篩選；市場問題是 p.13 的 cost of entry，不是 selective pressure。"],
+ ["選擇壓力會讓病原對所有藥都變得更敏感","方向相反：選擇壓力留下來的是抗藥株。"],
+ ["藥物種類越多，選擇壓力越大，所以應該減少藥物種類","講義的結論是需要更多元的藥（p.32），不是減少。"]],0,"用藥＝選擇壓力 → 抗藥 → 需要新的、不同的藥。"],
+["p.3","下列哪一項<b>不是</b>這堂課列出的學習目標？",[
+ ["Describe the influence of resistance on drug discovery","這是 p.3 第一個目標。"],
+ ["How to apply first principles thinking to solve complex problems in drug development","這是 p.3 第二個目標。"],
+ ["Describe the role of automation in the drug development pipeline","這是 p.3 第四個目標。"],
+ ["Compare the efficacy of artemisinin-based combination therapies","正確答案（不是目標）。p.3 沒有比較 ACT 療效這一項；第三個目標是 describe unique approaches to novel drug discovery。"]],3,"四個目標：抗藥性、第一原理、新方法、自動化。"],
+["p.5","依 WHO 2024 報告，2023 年瘧疾死亡人數與其中 5 歲以下兒童的比例是？",[
+ ["約 86 萬人，50%","86.1 萬是 2000 年的死亡數（p.6 表格）；比例也不對。"],
+ ["約 22 萬人，77%","死亡數不對。"],
+ ["597,000 人，77%","正確。p.5：597,000 deaths in 2023，77% in children &lt; 5 years old。"],
+ ["597,000 人，23%","23% 是反過來的；兒童佔 77%。"]],2,"約 60 萬人死亡，四分之三以上是幼童。"],
+["p.5","p.5 說瘧疾最後一個新的藥物類別是哪一年、哪個藥？",[
+ ["1992 年，atovaquone","正確。p.5：No novel drug classes since 1992 (atovaquone)。注意 p.25 另寫「since 1999」，講義前後不一致。"],
+ ["1934 年，chloroquine","chloroquine 是 p.8 時間軸上最早的藥，不是最後一個新類別。"],
+ ["2000 年，artemisinin","p.5 寫的不是 artemisinin。"],
+ ["2025 年，ganaplacide","GanLum 2025 年 Phase 3 才達到主要終點，還不是已上市的類別（p.25）。"]],0,"1992、atovaquone（p.25 另說 1999）。"],
+["p.6","依 WHO Fig 8.1，如果維持現在的軌跡，2030 年瘧疾發生率（每 1000 名風險人口）預測約為多少？GTS 目標又是多少？",[
+ ["預測 6，GTS 目標 50","兩個數字放反了。"],
+ ["預測 35，GTS 目標 15","35 是 GTS 的 2020 年里程碑，15 是 GTS 2025 年里程碑。"],
+ ["預測 59，GTS 目標 41","59 是 2020 年實際值；41 是 GTS 2019 的里程碑。"],
+ ["預測 50，GTS 目標 6","正確。淺藍虛線 2030 年是 50，綠色 GTS 目標 2030 年是 6，差距很大。"]],3,"照現況 50 vs 目標 6：遠遠達不到。"],
+["p.6","依 WHO Table 2.1，下列關於 2000 到 2023 年的敘述何者正確？",[
+ ["病例數和死亡數都持續穩定下降","2015 年後就停滯，病例數反而上升。"],
+ ["死亡數從 86.1 萬降到 59.7 萬，但病例數從 2.38 億增加到 2.63 億","正確。死亡下降了，但 2023 年病例比 2000 年還多。"],
+ ["<i>P. vivax</i> 比例從 6.1% 增加到 35%","2023 年是 3.5%，不是 35%。"],
+ ["2020 年死亡數是全期最低","2020 年反而升到 62.2 萬；最低是 2019 年的 56.7 萬。"]],1,"死亡降、病例沒降，2015 年後停滯。"],
+["p.7","瘧原蟲生活史中，叮咬後 sporozoites 大約多久到達肝臟？肝臟期又大約多久？",[
+ ["1 小時；9–12 天","1 h 和 9–12 days 是蚊子體內的時間。"],
+ ["43–48 小時；9 天","43–48 h 是血液期一輪；9 天是 gametocyte 的時間。"],
+ ["15–30 分鐘；5.4 天","正確。時鐘最上方 15–30 mins，對應 sporozoites 到肝；5.4 days 對應肝臟期（infected hepatocyte → schizont → merozoites）。"],
+ ["15 分鐘；12–36 小時","這兩個是蚊子體內 gamete 與 ookinete 階段的時間。"]],2,"15–30 分到肝、肝臟期 5.4 天。"],
+["p.7","生活史圖中標示「Cycle leading to clinical symptoms」的是哪一段？每輪大約多久？",[
+ ["肝臟期，5.4 天","肝臟期沒有症狀；這正是 chemical vaccine 想要打的地方（p.11）。"],
+ ["蚊子體內 oocyst 期，9–12 天","那是在蚊子體內，不會讓人有症狀。"],
+ ["Hypnozoite 休眠期，數個月","講義沒有標休眠期的時間；它是休眠，不是造成症狀的循環。"],
+ ["紅血球內的 ring → trophozoite → schizont 循環，43–48 小時","正確。血液期每 43–48 h 一輪，merozoites 再感染新的紅血球，造成臨床症狀。"]],3,"症狀來自血液期，43–48 h 一輪。"],
+["p.7","生活史圖中，哪兩種瘧原蟲有 hypnozoite（肝臟休眠期）？",[
+ ["<i>P. vivax</i> 與 <i>P. ovale</i>","正確。圖上標註 P. vivax &amp; ovale dormant stage。"],
+ ["<i>P. falciparum</i> 與 <i>P. berghei</i>","講義沒有說這兩種有 hypnozoite；P. berghei 是 p.22 用的囓齒類瘧原蟲。"],
+ ["<i>P. falciparum</i> 與 <i>P. vivax</i>","P. falciparum 不在圖上的標註裡。"],
+ ["所有瘧原蟲都有","圖上只標 vivax 與 ovale。"]],0,"維（vivax）、卵（ovale）會睡覺。"],
+["p.7","在蚊子體內，從 gametocytes 被吸進去到新的 sporozoites 形成，依序是哪些階段？",[
+ ["Sporozoites → hepatocyte → schizont → merozoites","這是人體肝臟期。"],
+ ["Macro/microgametocyte（exflagellation）→ diploid zygote → ookinete → oocysts → sporozoites","正確。對應時鐘上的 15 min、1 h、12–36 h、9–12 days。"],
+ ["Ring → trophozoite → schizont → merozoites","這是人體血液期。"],
+ ["Oocysts → ookinete → zygote → gametocytes","順序倒過來了。"]],1,"配子 → 合子 → 動合子 → 卵囊 → 子孢子。"],
+["p.8","p.8 上排照片列出的三種瘧疾防治策略是？",[
+ ["疫苗、預防性用藥、篩檢","這三個不是 p.8 的照片內容；疫苗在 p.9。"],
+ ["基因改造蚊子、雄蚊絕育、篩檢","講義沒有提這些。"],
+ ["Insecticide treated bednets、indoor residual spraying、larval control","正確。殺蟲蚊帳、室內殘效噴灑、幼蟲控制。"],
+ ["隔離病人、焚燒衣物、戶外燻蒸","不是講義內容。"]],2,"蚊帳、室內噴藥、清積水。"],
+["p.8","p.8 下方的抗瘧藥時間軸（McClure &amp; Day 2014）最主要想傳達什麼？",[
+ ["新藥一旦上市，抗藥性就再也不會出現","剛好相反，每根棒子的尾端都是抗藥性。"],
+ ["Artemisinin 之後每十年都有新類別","artemisinin 之後就沒有新的棒子了。"],
+ ["後來的藥比 chloroquine 撐得更久","chloroquine 撐最久（約 1934 到 1950 年代後期）；之後大多只撐幾年。"],
+ ["每個抗瘧藥在使用幾年到幾十年後都出現抗藥性","正確。這就是 selective pressure 的證據，也是需要新藥的理由。"]],3,"每根棒子都會斷。"],
+["p.8","依 p.8 的時間軸，哪一個抗瘧藥的橫棒最長（用最久才出現抗藥性）？",[
+ ["Chloroquine","正確。目測約從 1934 年到 1950 年代後期，二十多年，遠長於其他藥。"],
+ ["Proguanil","proguanil 的棒子很短，約 1948 到 1952。"],
+ ["Atovaquone","atovaquone 只有很短一段淺色。"],
+ ["Halofantrine","約 1988 到 1995，不到十年。"]],0,"Chloroquine 撐最久。"],
+["p.9","關於 RTS,S 疫苗，下列哪一項正確？",[
+ ["對所有瘧原蟲都有效","p.9 寫 P. falciparum only。"],
+ ["只需要打一劑","需要每月一劑 x3 ＋ 18 個月 booster。"],
+ ["預防重症瘧疾的效果 1 年 44.5%，2 年降到 31.5%","正確。所以標題說 long and limited。"],
+ ["1995 年開始研發、2000 年完成 Phase 3","1984 開始合作，2016 年因完成 Phase 3 而出名；1995 是第一次人體試驗。"]],2,"44.5% → 31.5%，只防 falciparum。"],
+["p.10","依 Oxford Languages，first principles thinking 的定義是？",[
+ ["先做實驗，再找理論","不是講義的定義。"],
+ ["遵循最權威的指引","這剛好是第一原理思考要避免的「預設」。"],
+ ["“the basic ideas on which a theory, system or method is based”","正確。實務上是把複雜網絡拆成基本組成，devoid of assumptions。"],
+ ["用最多資料訓練模型","這是 p.27 的 AI 內容，不是第一原理的定義。"]],2,"回到最基本的想法，不帶預設。"],
+["p.11","p.11 的「chemical vaccine」概念，藥物要打生活史的哪一段？",[
+ ["蚊子體內的 oocyst 期","圖上的抑制線不是指向蚊子期。"],
+ ["紅血球內的血液期","血液期是造成症狀的階段，打那裡是治療、不是預防。"],
+ ["Gametocytes","圖上不是指向 gametocytes。"],
+ ["剛進入肝臟的 sporozoites／肝細胞期","正確。抑制線（⊣）指向 transmission to man 之後、剛進肝臟的那一段。"]],3,"在肝臟期（玄關）擋下。"],
+["p.11","p.11 右側的三格圖（家庭與蚊子）表示什麼？",[
+ ["每給一次化學疫苗，人都還在，蚊子越來越少，最後只剩一隻死蚊子：傳播被打斷","正確。7 隻 → 3 隻 → 1 隻翻倒的蚊子。"],
+ ["給藥後人口減少","家庭在三格中都還在。"],
+ ["蚊子對藥物產生抗藥性而增加","蚊子是減少的。"],
+ ["化學疫苗會殺死人類細胞","圖沒有這個意思。"]],0,"人在、蚊子少、傳播斷。"],
+["p.13","依 2024 年全球藥品銷售前 50 名，哪一項正確？",[
+ ["第一名是 Humira","Humira 在第 14 名附近，而且成長 −37.6%；第一名是 Keytruda $29,482M。"],
+ ["表中有多個抗瘧藥","整張表沒有抗瘧藥。"],
+ ["第一名是 Keytruda（pembrolizumab），2024 銷售約 $29,482M","正確。第二是 Eliquis $20,703M，第三 Ozempic $17,451M。"],
+ ["Paxlovid 銷售衰退 49.1%","−49.1% 是 Comirnaty；Paxlovid 是 +346.9%。"]],2,"Keytruda 第一；沒有抗瘧藥。"],
+["p.14","依傳統藥物開發漏斗圖，哪一個階段的技術成功率 p(TS) 最低？",[
+ ["Phase I（54%）","54% 不是最低。"],
+ ["Phase II（34%）","正確。Phase II 只有 34%，是 target-to-hit 之後最低的一關。"],
+ ["Phase III（70%）","70% 比 Phase II 高。"],
+ ["Submission to launch（91%）","這一關最高。"]],1,"Phase II 34%。（找標靶階段 1–5% 另外算。）"],
+["p.14","p.14 中，傳統藥物研發的整體時間與成本是？2010 年從找到標靶後的開發成本又是多少？",[
+ ["&gt; 10 年、&gt; $2B；$1.8B","正確。標題 Traditional drug R&amp;D takes &gt;10 years and &gt;$2B；$1.8B = development cost in 2010 (after target discovery)。"],
+ ["&gt; 5 年、&gt; $1B；$0.8B","數字都不對。"],
+ ["&gt; 20 年、&gt; $5B；$3.4B","數字都不對。"],
+ ["&gt; 10 年、&gt; $2B；$414M","$414M 是 lead optimization 單一階段的成本。"]],0,"&gt;10 年、&gt;$2B、$1.8B。"],
+["p.17","Phenotype-based 與 target-based drug discovery 最主要的差別是？",[
+ ["Phenotype-based 一定比較便宜","講義沒有比較價格。"],
+ ["Target-based 不需要做 screening","兩者都有 screening 步驟。"],
+ ["Phenotype-based 只能用在癌症","講義沒有這樣說；瘧疾的肝臟期篩選就是表現型篩選的例子（推論）。"],
+ ["Phenotype-based 先找到 hits/leads 再做 target deconvolution；target-based 先驗證標靶才篩選","正確。p.17 的圖：表現型路線最後才找出 target，標靶路線一開始就有 target validation。"]],3,"表現型：先分子後標靶；標靶型：先標靶後分子。"],
+["p.18","講義怎麼比喻 HTS？",[
+ ["像在大海裡撈一根針","講義說 less searching for a needle in a haystack。"],
+ ["像把乾草一根根抽出來，評估每一根像不像針","正確。而且每一根草的資料以後也有用。"],
+ ["像丟骰子碰運氣","講義沒有這樣比喻。"],
+ ["像用磁鐵把針吸出來","講義沒有這樣比喻。"]],1,"抽乾草、評估每一根。"],
+["p.19","p.19 的化合物庫存放盤，哪一組描述正確？",[
+ ["96-well plate，每孔 200 µL，溶在水","不是講義寫的。"],
+ ["1536-well plate，每孔 2.5 nL，溶在乙醇","1536 孔和 2.5 nL 是 p.20–21 的篩選盤與 Echo 液滴；溶劑也不對。"],
+ ["384-well plate，low dead volume，working volume 3–12 µL，溶在 DMSO","正確。"],
+ ["384-well plate，working volume 3–12 mL，溶在 DMSO","單位是 µL，不是 mL。"]],2,"384 孔、3–12 µL、DMSO。"],
+["p.20","依 p.20，為什麼 HTS 不能由人來做？",[
+ ["人的操作太精準，反而沒效率","講義說的是人會出錯。"],
+ ["規模太大、人會出錯，而且人需要吃飯和休息","正確。due to scale, errors, and basic needs like sustenance and breaks。"],
+ ["法規禁止人做 HTS","講義沒有這樣說。"],
+ ["人無法處理 DMSO","講義沒有這樣說。"]],1,"規模、錯誤、要吃飯休息。"],
+["p.21","關於 Labcyte Echo，下列何者正確？",[
+ ["用針頭吸取化合物，每滴 25 µL","Echo 是聲波、不接觸液體，每滴 2.5 nL。"],
+ ["用聲波移液、不接觸液體，每滴 2.5 nL；10 nL 打滿 1536 孔約 6 分鐘","正確。"],
+ ["用聲波移液，打滿一盤 1536 孔要 6 小時","是約 6 分鐘。"],
+ ["只能移動水溶性的化合物","講義說的是移動溶在 DMSO 的化合物。"]],1,"聲波、2.5 nL、6 分鐘。"],
+["p.22","<i>P. berghei</i> 肝臟期篩選的步驟順序，哪一個正確？",[
+ ["先加 sporozoites，再種肝細胞，最後加化合物","順序不對。"],
+ ["−24 h 種 HepG2 細胞 → −18 h 加化合物 → 0 h 加 Pb-luc sporozoites → 48 h 加 BrightGlo 測發光","正確。化合物在寄生蟲之前就先加，像「預防」。"],
+ ["0 h 加化合物，48 h 才加細胞","順序不對。"],
+ ["−24 h 加化合物 → 0 h 加 BrightGlo → 48 h 加 sporozoites","順序不對。"]],1,"−24 細胞、−18 藥、0 蟲、48 讀。"],
+["p.22","p.22 的 1536 孔盤結果圖中，黑色的孔代表什麼？右側整行黑色的是什麼？",[
+ ["黑色＝寄生蟲長得最好；整行黑色是空白孔","方向相反：發光的是活寄生蟲（白色）。"],
+ ["黑色＝化合物有毒殺死肝細胞；整行黑色是 DMSO","講義的線把整行黑色連到 atovaquone，不是 DMSO。"],
+ ["黑色＝沒有加化合物；整行黑色是 HepG2 細胞","不對。"],
+ ["黑色＝不發光＝寄生蟲被抑制（hit）；整行黑色是 atovaquone 陽性對照","正確。Pb-luc 活的會發光，被殺就變暗。"]],3,"暗＝蟲死＝hit；atovaquone＝陽性對照。"],
+["p.23","KAF156 的 screening hit 結構中，哪一部分被標記為「possible metabolic soft spot &amp; toxicity alert」？",[
+ ["Glycine 醯胺（R1）","R1 只被框起來，沒有這個標註。"],
+ ["苯環（R2）","R2 只標 possible metabolic soft spot，沒有 toxicity alert。"],
+ ["Methylenedioxyphenyl（benzodioxole，R3）","正確。R3 同時是代謝弱點與毒性警訊；最後被換成 4-氟苯。"],
+ ["Gem-dimethyl","gem-dimethyl 是優化後才加上的，不在 hit 上。"]],2,"R3 benzodioxole：代謝＋毒性。"],
+["p.24","為什麼 KAF156（ganaplacide）現在要和 lumefantrine 做成複方？",[
+ ["因為 KAF156 單一療法出現了抗藥寄生蟲","正確。due to emergence of resistant parasites from KAF156 monotherapy。"],
+ ["因為 KAF156 太貴","講義沒有這樣說。"],
+ ["因為 KAF156 只對肝臟期有效","講義給的理由是抗藥性。"],
+ ["因為 lumefantrine 可以降低 KAF156 的毒性","講義沒有這樣說。"]],0,"單打會被破 → 合併療法。"],
+["p.25","GanLum 在 2025 年 11 月的 Phase 3 結果是？",[
+ ["優於 Coartem，死亡率下降一半","講義寫的是 non-inferior，沒有死亡率數字。"],
+ ["因抗藥性而失敗","講義說達到主要終點。"],
+ ["和安慰劑比較達到統計顯著","比較對象是 Coartem（標準治療），不是安慰劑。"],
+ ["Non-inferior to Coartem（標準治療），可能成為 1999 年以來第一個新類別抗瘧藥","正確。"]],3,"不劣於 Coartem；since 1999。"],
+["p.26","p.26 把藥物開發漏斗切成兩半。前半（discovery 到 preclinical）靠什麼縮短？",[
+ ["Engineering、novel screening strategies、AI/ML leveraging Big Data","正確。後半（Phase I 以後）才是 Regulatory bodies &amp; FDA。"],
+ ["Regulatory bodies &amp; FDA","那是後半段（development）。"],
+ ["增加臨床試驗的病人數","講義沒有這樣寫。"],
+ ["提高藥價","講義沒有這樣寫。"]],0,"前半靠技術、後半靠法規。"],
+["p.27","p.27 估算 50 萬個化合物做 HTS 的「理想」成本約 $80,899。下列哪一項<b>不是</b>這個估算的假設？",[
+ ["每孔 $0.15","是假設：取瘧疾篩選 $0.10–0.20 的中間值。"],
+ ["每盤 1536 孔放 1424 個化合物","是公式中的換算。"],
+ ["只做 n=1、沒有 counter screening、不算人力","這是講義列出的理想化假設。"],
+ ["包含每個化合物 $1000 的化合物庫成本","正確答案（不是假設）。$1000/cmpd 是前一點 HTS 整體成本的描述，沒有放進 $80,899 的算式；算式只有每孔費用。"]],3,"$0.15 × 500,000 × 1536/1424 ≈ $80,899。"],
+["p.27","虛擬篩選約 10 億個化合物，講義估計需要多少運算與花費？",[
+ ["約 550,000 CPU core hours，約 $23,000","正確。GPU 加速效率更好（Francois 2026）。"],
+ ["約 5,500 CPU core hours，約 $230","少了 100 倍。"],
+ ["約 550,000 CPU core hours，約 $2.3 億","花費數字不對。"],
+ ["約 1536 CPU core hours，約 $80,899","把 1536 孔和 HTS 估算混在一起了。"]],0,"55 萬 CPU 小時、$2.3 萬。"],
+["p.29","下列哪一項是講義列出的虛擬篩選限制？",[
+ ["不需要蛋白結構就能做","相反：Resolved binding site required。"],
+ ["可以精確排出所有 binders 的強弱順序","相反：binders vs non-binders at best; no rank order among binders。"],
+ ["False negatives 看不見、無法稽核，因為只有預測的 hits 會被拿去實驗室測","正確。HTS 全部都測，虛擬篩選沒測的那些永遠不知道是不是漏掉。"],
+ ["預測結果不需要實驗驗證","相反：Predictions must always be validated in the lab。"]],2,"假陰性是看不見的。"],
+["p.29","講義說，同一個完整 library 同時做虛擬篩選和實驗室篩選的最後一個知名例子是哪一年？",[
+ ["2026 年","2026 是 p.27–28 的引用年份。"],
+ ["2010 年","正確。Ferreira, J Med Chem 2010，在 AI 進步之前。"],
+ ["1992 年","1992 是 atovaquone（p.5）。"],
+ ["2016 年","2016 是 RTS,S Phase 3 完成（p.9）與 Swann 的篩選論文。"]],1,"2010，AI 進步前。"],
+["p.30","依 p.30，lab automation 的主要好處是？",[
+ ["產能大幅增加，同時減少錯誤","正確。Primary advantages are a massive increase in throughput while reducing errors。"],
+ ["可以完全不需要科學家","講義強調工程師與科學家跨領域合作。"],
+ ["讓虛擬篩選不再需要實驗驗證","p.29 說預測一定要實驗驗證。"],
+ ["降低藥品售價","講義沒有這樣說。"]],0,"產能↑、錯誤↓。"],
+["p.31","CPMC 與 Strateos 的 cloud lab 流程，從病人到篩選依序是？",[
+ ["病人 → PDC → PDX → micro-biopsy → HTS","順序不對。"],
+ ["病人 → HTS → micro-biopsy → PDX","順序不對。"],
+ ["病人 → micro-biopsy → PDX → PDC → HTS（48 種抗癌藥）","正確。"],
+ ["病人 → 全基因定序 → NCCN 指引","講義的流程圖沒有定序。"]],2,"切片 → 小鼠 → 培養皿 → 48 藥。"],
+["p.31","p.31 的劑量反應圖中，哪兩個藥被歸為「sensitive」（腫瘤細胞敏感）？",[
+ ["Vemurafenib、dabrafenib","這兩個在 resistant 那邊，存活率一直很高。"],
+ ["Vemurafenib、trametinib","vemurafenib 是 resistant。"],
+ ["Dabrafenib、selumetinib","dabrafenib 是 resistant。"],
+ ["Trametinib、selumetinib","正確。低濃度存活率就降到 25% 以下。"]],3,"敏感：trametinib、selumetinib。"],
+["p.32","依 summary，下列哪一句<b>不符合</b>講者的結論？",[
+ ["抗藥性威脅藥物能用多久，特別是感染症和腫瘤科","這是 summary 第一點。"],
+ ["Chemical vaccine 這類策略已足以幫助今天的病人，不需要其他技術","正確答案（不符合）。講義說這類策略是必要的，但 alone do not help people today。"],
+ ["縮短開發週期又要兼顧病人安全與投資人興趣，需要技術進步","這是 summary 第三點。"],
+ ["自動化基礎科學流程可以減少人為錯誤、提高再現性","這是 summary 第四點。"]],1,"化學疫苗必要，但單靠它不夠。"]
+],
+dm: [
+["p.6","依 p.6 的圖，第一型與第二型糖尿病「葡萄糖進不了細胞」的原因分別是？",[
+ ["第一型：胰臟不做胰島素；第二型：組織對胰島素不反應","正確。p.6 兩格下方的字：The pancreas doesn't make insulin／Tissues don't respond to insulin（受體 desensitized）。"],
+ ["第一型：受體去敏感化；第二型：胰臟不做胰島素","剛好相反。第一型受體正常但沒有胰島素；第二型才是 desensitized insulin receptor。"],
+ ["兩型都是 GLUT4 基因缺損","講義沒有說 GLUT4 缺損；GLUT4 是因為上游訊號斷掉才沒把葡萄糖帶進去。"],
+ ["兩型都是吃太多糖造成胰島素分泌過多","p.5–6 沒有這種說法；第二型血中仍有胰島素，但問題在組織不反應。"]],0,"T1 缺鑰匙，T2 鎖生鏽。"],
+["p.6","p.6 健康細胞圖中，負責把葡萄糖運進細胞的轉運蛋白是？",[
+ ["SGLT2","SGLT2 在腎臟，是 SGLT2i 的標靶（p.17），不是 p.6 圖上的那個。"],
+ ["DPP4","DPP4 是酵素，DPP4i 抑制它來增加 GLP-1（p.17）。"],
+ ["GLUT4","正確。圖上標 Glucose transporter (GLUT4)，胰島素接上受體後讓它把葡萄糖帶進細胞。"],
+ ["Insulin receptor","受體是接胰島素的，不是運葡萄糖的；它送訊號給 GLUT4。"]],2,"胰島素 → 受體 → GLUT4 開門。"],
+["p.7","依 CDC 資料，美國成人糖尿病約多少人、第二型佔多少？",[
+ ["3,700 萬；5–10%","5–10% 是第一型的比例。"],
+ ["370 萬；90–95%","人數少了一個零：講義是 37 million。"],
+ ["2.4 億；50%","數字都不對。"],
+ ["3,700 萬；90–95%","正確。37 million US adults，type 1 5–10%、type 2 90–95%。"]],3,"37 百萬，九成是第二型。"],
+["p.8","下列哪一項是講義列出「第一型」糖尿病的風險因子？",[
+ ["Obesity","肥胖是第二型的風險因子。"],
+ ["Family history","正確。第一型那格只有 family history；第二型那格也有 family history。"],
+ ["Age &gt;35 yrs","年齡 &gt;35 歲是第二型的風險因子。"],
+ ["Physical inactivity","缺乏運動（樹懶圖）是第二型的風險因子。"]],1,"第一型只有家族史。"],
+["p.9","下列何者<b>不是</b> p.9 列出的糖尿病併發症？",[
+ ["Retinopathy","有列（視網膜病變）。"],
+ ["Peripheral neuropathy","有列（周邊神經病變）。"],
+ ["Peripheral artery disease","有列（周邊動脈疾病）。"],
+ ["Hepatic encephalopathy","正確。肝腦病變是肝硬化的併發症，不在 p.9。p.9 六個：stroke、heart attack、PAD、retinopathy、kidney damage、peripheral neuropathy。"]],3,"六個併發症：腦、心、腳血管、眼、腎、神經。"],
+["p.10","一位病人 HbA1c 6.1%、空腹血糖 104 mg/dL。依 p.10 應歸類為？",[
+ ["Normal","HbA1c ≥5.7% 且空腹 ≥100 都已超過正常上限。"],
+ ["Prediabetes","正確。HbA1c 5.7–&lt;6.5%、空腹 100–&lt;126 mg/dL 都落在糖尿病前期。"],
+ ["Diabetes","糖尿病要 HbA1c ≥6.5% 或空腹 ≥126 mg/dL。"],
+ ["無法判斷，一定要做 OGTT","三個檢查各自有切點，不需要非做 OGTT 不可。"]],1,"5.7／6.5、100／126。"],
+["p.10","口服葡萄糖耐受試驗（OGTT）診斷糖尿病的切點是？",[
+ ["≥126 mg/dL","這是空腹血糖（FPG）的糖尿病切點。"],
+ ["≥140 mg/dL","這是 OGTT 的糖尿病「前期」下限。"],
+ ["≥200 mg/dL","正確。OGTT ≥200 mg/dL 為 diabetes；140–&lt;200 為 prediabetes。"],
+ ["≥6.5%","這是 HbA1c 的切點，單位是 %。"]],2,"OGTT：140／200。"],
+["p.13","講義建議的運動量是？",[
+ ["每週 150 分鐘中等強度運動","正確。150 minutes per week, moderate-intensity exercise。"],
+ ["每天 150 分鐘高強度運動","不是每天，也不是高強度。"],
+ ["每週 60 分鐘高強度運動","數字不對。"],
+ ["每週 300 分鐘低強度散步","講義沒有這個數字。"]],0,"一週 150 分鐘。"],
+["p.14","依 p.14（NEJM 2002）的圖，下列敘述何者正確？",[
+ ["Metformin 降低糖尿病發生率的效果比生活型態好","圖上 metformin 線在 placebo 和 lifestyle 中間，lifestyle 最低。"],
+ ["三組 4 年的發生率沒有差別","三條線分得很開。"],
+ ["Lifestyle vs placebo，第二型糖尿病相對風險下降 58%","正確。講義大字：58% relative risk reduction of type 2 diabetes (lifestyle vs placebo)。"],
+ ["Lifestyle vs metformin 相對風險下降 58%","58% 是和 placebo 比，不是和 metformin 比。"]],2,"生活型態 58%，比藥還強。"],
+["p.15","依 p.15，注射胰島素一天總量大約如何分配？",[
+ ["全部用長效","這樣模仿不了三餐的尖峰。"],
+ ["約 50% 長效（基礎）、約 50% 短效／速效（三餐）","正確。圖右兩個括號各標 50% total daily insulin。"],
+ ["約 80% 短效、20% 長效","比例不對。"],
+ ["只在早餐打一次中效","講義是模仿三餐＋基礎量。"]],1,"一條平線＋三座山，各半。"],
+["p.16","下列哪一個是「速效（rapid）」胰島素？",[
+ ["Lispro","正確。Rapid：aspart、lispro、glulisine，作用約 3 小時。"],
+ ["Regular","Regular 是 short（短效），約 6 小時。"],
+ ["NPH","NPH 是 intermediate（中效），約 12 小時。"],
+ ["Degludec","Degludec 是 long（長效），約 18–24 小時。"]],0,"aspart、lispro、glulisine＝rapid。"],
+["p.16","依 p.16，NPH 的作用時間約為？",[
+ ["3 小時","那是 rapid（aspart、lispro、glulisine）。"],
+ ["6 小時","那是 short（regular）。"],
+ ["12 小時","正確。NPH 是 intermediate，12 hours。"],
+ ["18–24 小時","那是 long（glargine、detemir、degludec）。"]],2,"3–6–12–24。"],
+["p.17","Empagliflozin 屬於哪一類、作用在哪？",[
+ ["DPP4i，在腸道 ↑GLP-1","DPP4i 是 -gliptin（linagliptin、sitagliptin、saxagliptin）。"],
+ ["Sulfonylurea，在胰臟 ↑insulin release","Sulfonylurea 是 glipizide、glimepiride。"],
+ ["TZD，在肝臟 ↑insulin sensitivity","TZD 是 rosiglitazone、pioglitazone。"],
+ ["SGLT2i，在腎臟 ↑glucose excretion","正確。-gliflozin（cana、dapa、empa、ertu）都是 SGLT2i，讓糖從尿排出。"]],3,"-gliflozin＝腎臟排糖。"],
+["p.17","下列哪一個藥在 p.17 圖上同時出現在肝、肌肉、腸三個部位？",[
+ ["Glipizide","只在胰臟（↑insulin release）。"],
+ ["Sitagliptin","只在腸道（↑GLP-1）。"],
+ ["Metformin","正確。Biguanide：肝 ↓gluconeogenesis、肌肉 ↑glucose uptake、腸 ↑GLP-1 與 ↓glucose absorption。"],
+ ["Dapagliflozin","只在腎臟（↑glucose excretion）。"]],2,"Metformin 跑三個器官。"],
+["p.17","Sulfonylureas（例如 glimepiride）的作用是？",[
+ ["↑ insulin release（胰臟）","正確。p.17 左上：Sulfonylureas → pancreas，↑insulin release。"],
+ ["↑ glucose excretion（腎臟）","這是 SGLT2i。"],
+ ["↓ gluconeogenesis（肝臟）","這是 metformin。"],
+ ["↓ gastric emptying（胃腸）","這是 GLP-1RA。"]],0,"Glipizide／glimepiride 擠胰島素。"],
+["p.17","p.17 圖中 GLP-1RA 的三個作用，下列哪一組正確？",[
+ ["↑ Gastric emptying、↓ Satiety、↓ Insulin secretion","方向全部相反。"],
+ ["↑ glucose excretion、↑ insulin sensitivity、↓ gluconeogenesis","這是 SGLT2i、TZD、metformin 的作用。"],
+ ["↓ Gastric emptying、↑ Satiety、↑ Insulin secretion","正確。胃排空變慢、更有飽足感、胰島素分泌增加（p.29 也一樣）。"],
+ ["只有 ↑GLP-1","那是 DPP4i 的寫法。"]],2,"慢、飽、分泌。"],
+["p.17","p.17 在 TZD（肌肉／脂肪）那一格寫的「Posaglitazone」，最可能的正確藥名是？",[
+ ["Pioglitazone","正確。同一頁肝臟那格寫 Rosiglitazone, pioglitazone；Posaglitazone 是講義錯字。"],
+ ["Saxagliptin","這是 DPP4i（-gliptin）。"],
+ ["Posaconazole","這是抗黴菌藥，和糖尿病無關。"],
+ ["Glipizide","這是 sulfonylurea。"]],0,"TZD 就兩個：rosi-、pio-glitazone。"],
+["p.19","講義說第一型糖尿病的藥物治療是？",[
+ ["Metformin 為第一線","講義：Can't use oral anti-diabetics in type 1 diabetes。"],
+ ["Sulfonylurea 加 insulin","第一型沒有胰島素可以「擠」，講義寫 Insulin only。"],
+ ["SGLT2i 單獨使用","口服藥不能用於第一型。"],
+ ["Insulin only","正確。p.19 整頁只有這兩個字。"]],3,"第一型只能打胰島素。"],
+["p.20","ADJUST-T1D（semaglutide 1 mg weekly vs placebo，第一型）在 26 週的 HbA1c 差異是？",[
+ ["−2.0 個百分點","差太多；那是 SUSTAIN 1 第二型的幅度（約 8% → 6%）。"],
+ ["−0.3 個百分點（95% CI −0.6 to −0.05）","正確。效果有、但很小，所以還在 being studied。"],
+ ["+0.3 個百分點，沒有效","方向錯；是下降。"],
+ ["−12.4%","這是 STEP 1 的體重差異，不是 HbA1c。"]],1,"第一型只降 0.3%。"],
+["p.21","2007 年觸發 FDA 要求糖尿病新藥做 CVOT 的事件是？",[
+ ["SUSTAIN 6 顯示 semaglutide 降低 MACE","SUSTAIN 6 是 2016 年，而且是好消息。"],
+ ["DAPA-HF 證明對 HFrEF 有益","那是 2019–2020 的「bright future」。"],
+ ["Nissen and Wolski 的 meta-analysis 報告 rosiglitazone 增加心肌梗塞風險","正確。2007 rosiglitazone → 2008 FDA 505(o)(3)。"],
+ ["Metformin 造成乳酸中毒","講義沒有提到。"]],2,"rosiglitazone 2007 → FDA 2008。"],
+["p.21","依 p.21 時間線，DAPA-HF 與 EMPEROR-Reduced（2019–2020）的重點是？",[
+ ["證明 GLP-1RA 降低 MACE","那是 2013–2017 incretin 那一格。"],
+ ["證明 rosiglitazone 安全","不是這兩個試驗的內容。"],
+ ["證明 DPP-4i 減重","講義沒這樣說。"],
+ ["證明對 HFrEF 病人有益，即使沒有糖尿病","正確。benefits in patients with HFrEF and without diabetes。"]],3,"SGLT2i 從糖尿病藥走到心衰竭藥。"],
+["p.23","SUSTAIN 6（semaglutide，第二型）的主要結果是？",[
+ ["HR 0.74（95% CI 0.58–0.95），非劣性 P&lt;0.001、優越性 P=0.02","正確。事件＝CV death、non-fatal MI、non-fatal stroke。"],
+ ["HR 0.80（95% CI 0.72–0.90）","這是 SELECT（肥胖、不需 DM2）。"],
+ ["HR 0.62（95% CI 0.41–0.95）","這是 SUMMIT（tirzepatide、HFpEF）。"],
+ ["HR 0.92（95.3% CI 0.83–1.01），只有非劣性","這是 SURPASS-CVOT（tirzepatide vs dulaglutide）。"]],0,"SUSTAIN 6＝0.74。"],
+["p.24","SURPASS-2 的比較組與結果是？",[
+ ["Tirzepatide vs placebo，降體重 17.8%","那是 SURMOUNT-1（肥胖）。"],
+ ["Tirzepatide vs dulaglutide，比 MACE","那是 SURPASS-CVOT。"],
+ ["Tirzepatide 5／10／15 mg vs semaglutide 1 mg，三個劑量降 HbA1c 都比 semaglutide 多","正確。40 週圖上 semaglutide 1 mg 那條最高（降最少）。"],
+ ["Semaglutide 0.5／1.0 mg vs placebo","那是 SUSTAIN 1。"]],2,"SURPASS-2：活性對照 semaglutide。"],
+["p.25","SURPASS-CVOT 中 tirzepatide 的對照組，以及選它的理由是？",[
+ ["Placebo，因為 FDA 只要求比安慰劑","講義的對照是 Trulicity。"],
+ ["Semaglutide，因為同公司","講義的對照是 dulaglutide，不是 semaglutide。"],
+ ["Insulin glargine，因為是標準治療","不對。"],
+ ["Dulaglutide，因為它是已知能保護 MACE-3 的 GLP-1RA","正確。箭頭註明 GLP1RA with known protection from MACE-3；結果 tirzepatide non-inferior。"]],3,"拿已證實有效的藥來比。"],
+["p.25","SURPASS-CVOT 主要終點 MACE-3 的 HR 0.92（95.3% CI 0.83–1.01），p=0.086。正確解讀是？",[
+ ["Tirzepatide 顯著優於 dulaglutide","CI 上限 1.01 跨過 1、p=0.086，沒有證明優越。"],
+ ["Tirzepatide 不劣於 dulaglutide（non-inferior）","正確。講義：Tirzepatide was non-inferior to dulaglutide。"],
+ ["Tirzepatide 顯著較差","HR &lt;1 且 CI 下限 0.83，沒有較差。"],
+ ["試驗失敗，無法解讀","不是失敗，達到非劣性。"]],1,"跨 1＝不劣，但沒證明更好。"],
+["p.26","依講義，一個 CVOT 大約花多少錢？",[
+ ["5 千萬美元","少了一個零。"],
+ ["5 億美元（$500 million），而且是在降血糖試驗之外","正確。$500 million per trial, in addition to trials demonstrating effects on glucose。"],
+ ["50 億美元","多了一個零。"],
+ ["不用錢，FDA 補助","講義沒有這種說法。"]],1,"5 億美元一個。"],
+["p.27","下列 CVOT 與藥物的配對，何者<b>錯誤</b>？",[
+ ["LEADER — liraglutide","正確配對（2016）。"],
+ ["REWIND — dulaglutide","正確配對（2019）。"],
+ ["EXSCEL — tirzepatide","正確答案（這是錯誤配對）。EXSCEL（2017）是 exenatide；tirzepatide 是 SURPASS-CVOT（2025）。"],
+ ["ACHIEVE-4 — orforglipron oral","正確配對（2026）。"]],2,"EXSCEL＝exenatide。"],
+["p.29","Retatrutide 和 tirzepatide 在作用機轉上最大的差別是？",[
+ ["Retatrutide 多作用在 glucagon 受體，多了「↑ Metabolism」","正確。Retatrutide＝GLP-1RA/GIPRA/GCG 三重促效劑。"],
+ ["Retatrutide 只作用在 GLP-1 受體","那是 semaglutide 等單一 GLP-1RA。"],
+ ["Retatrutide 會加快胃排空","三類都是 ↓ gastric emptying。"],
+ ["Retatrutide 是 SGLT2 抑制劑","不是；它是 incretin 類。"]],0,"一、二、三受體；第三個是 glucagon。"],
+["p.29","下列哪一個是 GLP-1 與 GIP 受體的雙重促效劑？",[
+ ["Orforglipron","單一 GLP-1RA（口服）。"],
+ ["Retatrutide","三重（GLP-1/GIP/glucagon）。"],
+ ["Dulaglutide","單一 GLP-1RA。"],
+ ["Tirzepatide","正確。GLP-1RA/GIPRA，SURPASS-2 說它是 first-in-class。"]],3,"Tirzepatide＝雙重。"],
+["p.31, 35","下列品牌與成分、適應症的配對，何者正確？",[
+ ["Wegovy＝tirzepatide，肥胖","Wegovy 是 semaglutide。"],
+ ["Ozempic＝semaglutide，第二型糖尿病","正確。Wegovy 才是 semaglutide 的肥胖品牌；兩者都皮下注射。"],
+ ["Zepbound＝semaglutide，第二型糖尿病","Zepbound 是 tirzepatide 的肥胖品牌。"],
+ ["Mounjaro＝tirzepatide，肥胖","Mounjaro 是 tirzepatide 的第二型糖尿病品牌。"]],1,"Ozempic／Wegovy、Mounjaro／Zepbound。"],
+["p.32","STEP 1（semaglutide 2.4 mg）體重與安慰劑的差異是？",[
+ ["−17.8%，約 22 kg","這是 SURMOUNT-1 tirzepatide 15 mg。"],
+ ["−5%，約 5 kg","太少。"],
+ ["−12.4%（95% CI −13.4 to −11.5），約 15 kg","正確。收案 BMI 30 或 27 合併風險因子。"],
+ ["+11.6%","這是 p.45 停藥後復胖的幅度。"]],2,"STEP 1：12.4%、15 kg。"],
+["p.33","SELECT 試驗的收案條件中，下列何者正確？",[
+ ["必須有第二型糖尿病","講義特別寫 Did not have to have DM2。"],
+ ["BMI ≥27 且有 MI、stroke 或有症狀的 PAD 病史，不需有 DM2","正確。結果 HR 0.80（0.72–0.90），主要靠非致死性 MI 推到顯著。"],
+ ["BMI ≥30 且有 HFpEF","那是 STEP HFpEF／SUMMIT。"],
+ ["第一型糖尿病","那是 ADJUST-T1D。"]],1,"SELECT：肥胖＋心血管病，不需糖尿病。"],
+["p.34, 37","STEP HFpEF 和 SUMMIT 都用 KCCQ。下列敘述何者正確？",[
+ ["KCCQ 分數越低越好","講義：Higher score = better。"],
+ ["STEP HFpEF 差異 6.9 分、SUMMIT 差異 7.8 分","剛好相反。"],
+ ["兩個試驗都只看 KCCQ，沒有臨床事件","SUMMIT 另有 CV death or worsening HF event，HR 0.62。"],
+ ["STEP HFpEF 差異 7.8 分（semaglutide）；SUMMIT 差異 6.9 分（tirzepatide）","正確。兩者 P&lt;0.001。"]],3,"7.8（sema）、6.9（tirz）。"],
+["p.37","SUMMIT（tirzepatide，肥胖＋HFpEF）的「CV death or worsening HF event」結果是？",[
+ ["HR 0.62（95% CI 0.41–0.95），P=0.026","正確。72 週 placebo 約 20%、tirzepatide 約 11%。"],
+ ["HR 0.80（95% CI 0.72–0.90）","這是 SELECT。"],
+ ["HR 0.74（95% CI 0.58–0.95）","這是 SUSTAIN 6。"],
+ ["沒有差異","有顯著差異（P=0.026）。"]],0,"SUMMIT＝0.62。"],
+["p.38","真實世界 semaglutide 劑量不足或停藥的原因，<b>不包括</b>下列哪一項？",[
+ ["Financial barriers","有列（費用）。"],
+ ["Clinical inertia","有列（臨床惰性）。"],
+ ["Side effects","有列（副作用）。"],
+ ["FDA 禁止使用 2.4 mg","正確。講義四個原因是 financial barriers、clinical inertia、side effects、patient preference；FDA 沒有禁止。"]],3,"錢、惰性、副作用、偏好。"],
+["p.40","「沒調到目標劑量會不會少拿到效果？」講者的回答是？",[
+ ["會，少一半效果","講義沒有這個數字。"],
+ ["不會，低劑量效果一樣","講義沒有這樣說。"],
+ ["不知道，因為肥胖試驗沒有研究多個劑量","正確。No idea. Obesity trials didn't study multiple doses。"],
+ ["不知道，因為沒有人做過肥胖試驗","p.30 列了一大堆肥胖試驗。"]],2,"No idea：試驗只測最高劑量。"],
+["p.42","Butsch 2025 的資料：12 個月時有營養缺乏的比例？",[
+ ["GLP-1RA 18.6% vs control 16.5%，P&lt;0.01，多為維生素缺乏","正確。早期證據顯示有缺乏問題。"],
+ ["GLP-1RA 16.5% vs control 18.6%","數字對調了。"],
+ ["GLP-1RA 45% vs control 26%","這是 p.43 lean mass 佔減重比例（sema vs tirz）。"],
+ ["兩組沒有差異","P&lt;0.01，有差異。"]],0,"18.6 vs 16.5，多是維生素。"],
+["p.43","STEP 1 與 SURMOUNT-1 中，lean mass 減少佔總減重的比例分別約為？",[
+ ["26%；45%","對調了。tirzepatide 才是 26%。"],
+ ["45%（semaglutide）；26%（tirzepatide）","正確。6.92／15.3 ≈ 45%；5.67／22.1 ≈ 26%。"],
+ ["15%；22%","這比較像兩者減重的公斤數（15.3、22.1 kg）。"],
+ ["67%；55%","這是 p.44 新藥保住 lean mass 的比例。"]],1,"sema 45%、tirz 26%。"],
+["p.44","Bimagrumab 的作用機轉是？",[
+ ["抑制 myostatin activation","那是 apitegromab。"],
+ ["GLP-1 受體促效劑","不是；它是保肌肉的新藥，和 semaglutide 合用。"],
+ ["抑制 SGLT2","無關。"],
+ ["抑制 activin type II receptor","正確。Bimagrumab＋semaglutide：67% lean mass preserved。"]],3,"Bima-→activin II；Apite-→myostatin。"],
+["p.45","Semaglutide 停藥後發生什麼事？",[
+ ["體重維持不變","圖上停藥後體重快速回升。"],
+ ["體重回升，regained 11.6%（SD 7.7）","正確。這就是 summary 說的 necessity to continue therapy indefinitely。"],
+ ["體重繼續下降","不對。"],
+ ["回到比基線更重","到 120 週仍約在基線下 5–6%，並沒有超過基線。"]],1,"停藥就復胖 11.6%。"]
+],
 lcms: [
 ["p.3","一個藥要送 NDA，樞紐 PK 研究用的生物分析方法需要？",[
  ["只要 pre-validation","Pre-validation 只是正式確效前的小規模測試，用來先抓問題，不能取代正式確效。"],
@@ -5477,7 +7569,7 @@ onco: [
 ]};
 
 
-const TABNAME={pd:"藥效學",pk:"藥動學",cv:"心血管",hep:"肝炎",ca:"癌症總論",lcms:"LC-MS/MS",onco:"精準腫瘤"};
+const TABNAME={pd:"藥效學",pk:"藥動學",cv:"心血管",hep:"肝炎",ca:"癌症總論",cvdev:"CV 藥物開發",auto:"自動化藥物探索",dm:"糖尿病與肥胖",lcms:"LC-MS/MS",onco:"精準腫瘤"};
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 
 function renderQuiz(key){
