@@ -18,16 +18,18 @@
   --cvdev:#b34d12; --cvdev-soft:#f8e6da;
   --auto:#0f6e8c; --auto-soft:#dcedf3;
   --dm:#5c6b00; --dm-soft:#ecefd2;
+  --imsc:#1b6b4f; --imsc-soft:#dcefe6;
+  --ci:#4a4f9c; --ci-soft:#e6e7f6;
   --acc:var(--lab); --acc-soft:var(--lab-soft);
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0f1719; --paper:#162224; --ink:#e3ecec; --muted:#9db0b3; --line:#2b3b3e;
   --lab:#5cc6c1; --lab-soft:#163634; --onc:#e48ab9; --onc-soft:#3a1d2c;
-  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3b1b19; --warn-soft:#352a10; --warn:#f2c76b;  --pd:#8fb4ff; --pd-soft:#1a2840;  --pk:#c4a3f0; --pk-soft:#2a1f3a;  --cv:#ff9a90; --cv-soft:#3a1c1a;  --hep:#e8c160; --hep-soft:#33290f;  --ca:#8fd48a; --ca-soft:#1b3019;  --cvdev:#ffa36b; --cvdev-soft:#3a2314;  --auto:#6cc7e6; --auto-soft:#14303a;  --dm:#c9d66a; --dm-soft:#2a2f10; color-scheme:dark}}
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3b1b19; --warn-soft:#352a10; --warn:#f2c76b;  --pd:#8fb4ff; --pd-soft:#1a2840;  --pk:#c4a3f0; --pk-soft:#2a1f3a;  --cv:#ff9a90; --cv-soft:#3a1c1a;  --hep:#e8c160; --hep-soft:#33290f;  --ca:#8fd48a; --ca-soft:#1b3019;  --cvdev:#ffa36b; --cvdev-soft:#3a2314;  --auto:#6cc7e6; --auto-soft:#14303a;  --dm:#c9d66a; --dm-soft:#2a2f10;  --imsc:#6fd3ad; --imsc-soft:#143328;  --ci:#a9adf5; --ci-soft:#20223f; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0f1719; --paper:#162224; --ink:#e3ecec; --muted:#9db0b3; --line:#2b3b3e;
   --lab:#5cc6c1; --lab-soft:#163634; --onc:#e48ab9; --onc-soft:#3a1d2c;
-  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3b1b19; --warn-soft:#352a10; --warn:#f2c76b;  --pd:#8fb4ff; --pd-soft:#1a2840;  --pk:#c4a3f0; --pk-soft:#2a1f3a;  --cv:#ff9a90; --cv-soft:#3a1c1a;  --hep:#e8c160; --hep-soft:#33290f;  --ca:#8fd48a; --ca-soft:#1b3019;  --cvdev:#ffa36b; --cvdev-soft:#3a2314;  --auto:#6cc7e6; --auto-soft:#14303a;  --dm:#c9d66a; --dm-soft:#2a2f10; color-scheme:dark}
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3b1b19; --warn-soft:#352a10; --warn:#f2c76b;  --pd:#8fb4ff; --pd-soft:#1a2840;  --pk:#c4a3f0; --pk-soft:#2a1f3a;  --cv:#ff9a90; --cv-soft:#3a1c1a;  --hep:#e8c160; --hep-soft:#33290f;  --ca:#8fd48a; --ca-soft:#1b3019;  --cvdev:#ffa36b; --cvdev-soft:#3a2314;  --auto:#6cc7e6; --auto-soft:#14303a;  --dm:#c9d66a; --dm-soft:#2a2f10;  --imsc:#6fd3ad; --imsc-soft:#143328;  --ci:#a9adf5; --ci-soft:#20223f; color-scheme:dark}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
 body.onc{--acc:var(--onc);--acc-soft:var(--onc-soft)}
@@ -39,6 +41,8 @@ body[data-tab="ca"]{--acc:var(--ca);--acc-soft:var(--ca-soft)}
 body[data-tab="cvdev"]{--acc:var(--cvdev);--acc-soft:var(--cvdev-soft)}
 body[data-tab="auto"]{--acc:var(--auto);--acc-soft:var(--auto-soft)}
 body[data-tab="dm"]{--acc:var(--dm);--acc-soft:var(--dm-soft)}
+body[data-tab="imsc"]{--acc:var(--imsc);--acc-soft:var(--imsc-soft)}
+body[data-tab="ci"]{--acc:var(--ci);--acc-soft:var(--ci-soft)}
 .wrap{max-width:760px;margin:0 auto}
 header.top{padding-block:28px 8px}
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -154,7 +158,7 @@ nav.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin} .tab{flex:none;w
 <div class="wrap">
 <header class="top">
   <div class="eyebrow">期中／期末複習 · 照投影片頁碼</div>
-  <h1>藥理學 · 藥動學 · 心血管 · 肝炎 · 癌症 · 藥物開發 · 糖尿病 · LC-MS/MS</h1>
+  <h1>藥理學 · 藥動學 · 心血管 · 肝炎 · 癌症 · 藥物開發 · 糖尿病 · LC-MS/MS · 腫瘤 · 注射給藥 · 競爭情報</h1>
   <p class="lede">每一段前面的 <span class="en">p.X</span> 是老師投影片的頁碼，可以對照原檔看圖。用中文講清楚，但考試要的細節（數字、名詞、例題算法）都保留；英文關鍵字照考卷上會出現的寫法。最後是自我測驗，點選項就有詳解。</p>
 </header>
 
@@ -169,6 +173,8 @@ nav.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin} .tab{flex:none;w
   <button class="tab" role="tab" id="tab-dm" aria-controls="dm" aria-selected="false">⑧ 糖尿病與肥胖 W7（47 頁）</button>
   <button class="tab" role="tab" id="tab-lcms" aria-controls="lcms" aria-selected="false">⑨ LC-MS/MS 確效（62 頁）</button>
   <button class="tab" role="tab" id="tab-onco" aria-controls="onco" aria-selected="false">⑩ 精準腫瘤醫學（89 頁）</button>
+  <button class="tab" role="tab" id="tab-imsc" aria-controls="imsc" aria-selected="false">⑪ IM 與皮下給藥（31 頁）</button>
+  <button class="tab" role="tab" id="tab-ci" aria-controls="ci" aria-selected="false">⑫ 競爭情報（27 頁）</button>
 </nav>
 
 <!-- ======================= 藥效學 ======================= -->
@@ -5551,6 +5557,502 @@ Matrix 1：1.08 ÷ 0.961 × 100 = 112%      Matrix 4：0.841 ÷ 0.961 × 100 = 8
 <h2 class="sec" id="P-quiz"><small>Self-test</small>自我測驗 <span class="score" id="score-onco"></span><button class="reset" data-reset="onco">重來</button></h2>
 <div class="quiz" id="quiz-onco"></div>
 </main>
+
+<!-- ======================= IM / Subcut ======================= -->
+<main id="imsc" role="tabpanel" aria-labelledby="tab-imsc" hidden>
+<div class="big">整堂課的主線：<b>打進肌肉或皮下的藥，靠什麼進到血液，取決於分子大小</b>。<b>小分子（&lt; 2000 g/mol）</b>直接穿過鬆散的微血管壁，速度只看血流（<b>perfusion rate-limited</b>），所以平均 5–40 分鐘就吸收完、常比口服更早達峰；例外是在注射部位<b>沉澱</b>的藥（chlordiazepoxide、phenytoin），會拖上好幾天。<b>大分子（&gt; 20,000 Da）</b>穿不過微血管，只能走<b>淋巴</b>，淋巴流動極慢（回到血液比血流慢 5000 倍）又含<b>蛋白水解酶</b>，所以蛋白質藥吸收<b>又慢（5–48 小時；抗體 2–8 天）又不完全（F &lt; 1）</b>。最後記六個影響因子：分子大小（最關鍵）、注射部位、共同給藥、運動、注射深度、注射體積。</div>
+<div class="toc" aria-label="本講目錄">
+  <a href="#I-abbr">縮寫全名</a><a href="#I-memo">記憶法</a><a href="#I-a">p.1–3 學習目標</a><a href="#I-b">p.4–8 小分子：血流決定</a><a href="#I-c">p.9–12 注射部位沉澱</a><a href="#I-d">p.13–20 大分子與淋巴系統</a><a href="#I-e">p.21–26 吸收的程度與速度</a><a href="#I-f">p.27–30 影響因子</a><a href="#I-cheat">必背表</a><a href="#I-quiz">測驗</a>
+</div>
+
+<details class="card" id="I-abbr"><summary>縮寫全名表（14 個）</summary><div class="in"><div class="tbl"><table><tr><th>縮寫</th><th>全名</th></tr>
+<tr><td class="num">IM</td><td>intramuscular，肌肉注射</td></tr>
+<tr><td class="num">Subcut／s.c.</td><td>subcutaneous，皮下注射</td></tr>
+<tr><td class="num">IV／i.v.</td><td>intravenous，靜脈注射</td></tr>
+<tr><td class="num">GI</td><td>gastrointestinal，胃腸道</td></tr>
+<tr><td class="num">M.W.／MW</td><td>molecular weight，分子量（g/mol；大分子常寫 kg/mol 或 Dalton）</td></tr>
+<tr><td class="num">Da</td><td>Dalton，道爾頓；1 Da ≈ 1 g/mol</td></tr>
+<tr><td class="num">F</td><td>bioavailability，生體可用率（進到全身循環的比例）</td></tr>
+<tr><td class="num">pKa</td><td>酸解離常數的負對數，決定藥在某個 pH 下的游離程度</td></tr>
+<tr><td class="num">GH／hGH／rhGH</td><td>(recombinant) human growth hormone，(重組)人類生長激素</td></tr>
+<tr><td class="num">IGF-I</td><td>insulin-like growth factor I，類胰島素生長因子 I</td></tr>
+<tr><td class="num">GM-CSF</td><td>granulocyte macrophage colony-stimulating factor，顆粒球巨噬細胞群落刺激因子</td></tr>
+<tr><td class="num">TNF-α</td><td>tumor necrosis factor-α，腫瘤壞死因子 α</td></tr>
+<tr><td class="num">IL-2／-10／-11</td><td>interleukin-2／10／11，介白素</td></tr>
+<tr><td class="num">FUdR</td><td>floxuridine（5-fluoro-2′-deoxyuridine），p.28 圖中最小的分子</td></tr>
+</table></div></div></details>
+
+<h2 class="sec" id="I-memo"><small>Memory aids</small>記憶法（比喻、畫面、推理、數字分組）</h2><div class="memo">
+<div class="mm"><div class="pg"><span class="ty">比喻</span>p.4</div><div class="k">微血管壁＝籬笆；腸道上皮＝磚牆</div><div class="d">腸道上皮細胞排得很緊，藥要「穿過細胞」，極性、帶電的藥很難過。肌肉／皮下的微血管壁很鬆，小分子從縫隙直接鑽過去，帶不帶電都無所謂。</div></div>
+<div class="mm"><div class="pg"><span class="ty">推理</span>p.4</div><div class="k">Perfusion rate-limited＝等公車</div><div class="d">鑽過籬笆很快，真正卡住的是「血流把藥帶走」的速度。血流多（公車班次多）吸收就快；血流少就慢。</div></div>
+<div class="mm"><div class="pg"><span class="ty">例子</span>p.7</div><div class="k">Gentamicin：口服 1%，IM 幾乎 100%</div><div class="d">高極性、帶電的鹼，腸道磚牆過不去；肌肉的籬笆一鑽就過。一個藥同時證明了兩種屏障的差別。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.4, 13</div><div class="k">2000 以下是小，20,000 以上是大</div><div class="d">差一個 0。小分子走血管、大分子走淋巴，中間那段兩條路都有份（p.26：看多少從血管進去）。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.8</div><div class="k">IM 5 mL、皮下 1–2 mL</div><div class="d">肌肉比較大塊、裝得多；皮下薄薄一層，只能打一點點。</div></div>
+<div class="mm"><div class="pg"><span class="ty">畫面</span>p.10–11</div><div class="k">Chlordiazepoxide＝在注射部位結冰</div><div class="d">打進去時靠 pH 3 和溶劑撐著才溶得住；身體把 pH 拉回 7.4、溶劑被吸走，藥就析出成一大塊。之後只能慢慢「融冰」，拖好幾小時到好幾天，反而比口服慢。</div></div>
+<div class="mm"><div class="pg"><span class="ty">推理</span>p.11</div><div class="k">為什麼口服反而溶得快？</div><div class="d">腸胃一直在攪（agitation）、水多、血流大。注射部位剛好三樣都缺，加上表面積小、溶解度低。</div></div>
+<div class="mm"><div class="pg"><span class="ty">比喻</span>p.14, 24</div><div class="k">淋巴＝和血管一樣四通八達的鄉間小路</div><div class="d">到得了，但很慢：組織液進淋巴比血流慢 500 倍，淋巴回到血液慢 5000 倍。中途還要經過淋巴結（收費站）停一下。</div></div>
+<div class="mm"><div class="pg"><span class="ty">比喻</span>p.21, 23</div><div class="k">淋巴裡有碎紙機</div><div class="d">淋巴含蛋白水解酶，蛋白質藥在路上被切掉一部分，所以 F 很少到 1。越大、越怕被切的蛋白，F 越差（take home message）。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.8, 26</div><div class="k">分鐘 → 小時 → 天</div><div class="d">小分子 5–40 分鐘；大分子 5–48 小時；抗體 2–8 天。分子越大，時間單位就升一級。</div></div>
+<div class="mm"><div class="pg"><span class="ty">畫面</span>p.25</div><div class="k">GH：IV 是懸崖，皮下是高原</div><div class="d">IV 一開始最高、幾小時內掉光；皮下慢慢爬上高原，維持到 24 小時。皮下的「吸收」拖長了整條曲線（flip-flop 的味道）。</div></div>
+<div class="mm"><div class="pg"><span class="ty">口訣</span>p.27</div><div class="k">六因子：大小、部位、共同、運動、深度、體積</div><div class="d">Size, Site, Co-administration, Exercise, Depth, Volume。分子大小是 overriding factor，最先寫。</div></div>
+</div>
+
+<h2 class="sec" id="I-a"><small>p.1–3</small>學習目標</h2>
+
+<div class="slide"><div class="pno">p.1–3</div><div><h3>這堂課要學什麼</h3>
+<p>講者是 Brookie Best（Pharm.D., M.A.S.，Dean and Professor），屬於 Pharmaceutics 系列，主題是 Intramuscular and Subcutaneous Administration。三個學習目標就是三個考點：</p>
+<ol><li><b>A.</b> 說明為什麼 IM 或皮下給藥常常<b>比口服更早達峰</b>。→ 微血管壁鬆、吸收只受血流限制（p.4–8）。</li>
+<li><b>B.</b> 解釋為什麼<b>蛋白質藥</b>皮下／IM 後的全身可用率<b>又慢又不完全</b>。→ 走淋巴、淋巴慢、淋巴裡有蛋白水解酶（p.13–26）。</li>
+<li><b>C.</b> 討論決定經<b>淋巴系統</b>吸收的程度與持續時間的因素。→ 分子大小、部位、運動等（p.27–30）。</li></ol></div></div>
+
+<h2 class="sec" id="I-b"><small>p.4–8</small>小分子：吸收快慢只看血流</h2>
+
+<div class="slide"><div class="pno">p.4</div><div><h3>一般情況：perfusion rate-limited（必考）</h3>
+<p>針對 <b>small molecular weight drugs（M.W. &lt; 2000 g/mol）</b>、以溶液給藥：</p>
+<ul><li>和胃腸道不同，肌肉與皮下組織的全身吸收屬於 <b>perfusion rate-limited</b>（受灌流／血流速率限制）。</li>
+<li><b>血流增加 → 吸收加快；血流減少 → 吸收變慢。</b></li>
+<li>微血管壁比胃腸道上皮<b>鬆散得多（much more loosely knit）</b>，</li>
+<li>對藥物進入血液幾乎沒有阻力，<b>連極性、帶電的藥都一樣</b>。</li></ul>
+<div class="tip"><b>對照：</b>口服時，限制步驟常常是「穿過腸道上皮」（permeability）或溶離；IM／皮下時，穿過去不是問題，「血流帶多快」才是問題。</div></div></div>
+
+<div class="slide"><div class="pno">p.5</div><div><h3>Table 7-6：注射部位不同，lidocaine 峰濃度不同</h3>
+<p>同樣打 100 mg lidocaine，比較各部位的靜脈峰濃度。右邊箭頭表示<b>灌流速率由下往上增加</b>：</p>
+<div class="tbl"><table><tr><th>注射部位</th><th>Peak plasma lidocaine（mg/L）</th></tr>
+<tr><td>Intercostal（肋間）</td><td class="num">1.46</td></tr>
+<tr><td>Paracervical（子宮頸旁）</td><td class="num">1.20</td></tr>
+<tr><td>Caudal（薦尾）</td><td class="num">1.18</td></tr>
+<tr><td>Lumbar epidural（腰椎硬膜外）</td><td class="num">0.97</td></tr>
+<tr><td>Brachial plexus（臂神經叢）</td><td class="num">0.53</td></tr>
+<tr><td>Subarachnoid（蛛網膜下腔）</td><td class="num">0.44</td></tr>
+<tr><td>Subcutaneous（皮下）</td><td class="num">0.35</td></tr></table></div>
+<p>重點不是背每個數字，而是方向：<b>血流越豐富的部位，吸收越快、峰值越高</b>；皮下血流最少，峰值最低（約為肋間的 1/4）。這就是 p.4「perfusion rate-limited」的證據。資料來源：Covino 1984。</p></div></div>
+
+<div class="slide"><div class="pno">p.6</div><div><h3>Oral vs. IM or Subcut</h3>
+<p>這頁是圖（口服與注射的比較示意），文字只有標題。和學習目標 A 連在一起看：口服要先經胃排空、溶離、穿過腸道上皮，還可能有首渡效應；IM／皮下的小分子溶液直接鑽過鬆散的微血管，所以<b>常常比口服更早達峰</b>。（此頁圖片在本頁無法重現文字細節，請對照原檔。）</p></div></div>
+
+<div class="slide"><div class="pno">p.7</div><div><h3>Gentamicin：perfusion rate limitation 的經典例子</h3>
+<ul><li>Gentamicin 是<b>水溶性、帶電、極性的鹼</b>，分子量 <b>449–477 g/mol</b>。</li>
+<li>投影片問：小分子的切點是多少？→ <b>約 2000 g/mol</b>（p.4）。</li>
+<li><b>口服 F ≈ 1%</b>，但 <b>IM 後吸收快速而且完全</b>。</li>
+<li>肌肉與皮下微血管壁的低阻力，<b>不受以下因素影響</b>：<b>pKa</b>、<b>游離程度</b>、<b>分子大小（到約 2000 g/mol 為止）</b>。</li></ul>
+<div class="tip"><b>考法：</b>「一個高度游離的極性小分子，口服幾乎不吸收，IM 會怎樣？」→ 快速且完全吸收。因為 IM 的屏障是微血管，不是腸道上皮。</div></div></div>
+
+<div class="slide"><div class="pno">p.8</div><div><h3>Mean input time：5–40 分鐘</h3>
+<ul><li>小分子溶液經 IM 或皮下的<b>平均吸收時間約 5–40 分鐘</b>。</li>
+<li><b>皮下通常比 IM 慢</b>，但兩者都取決於<b>注射的確切部位</b>和<b>注射體積</b>。</li>
+<li>體積上限：<b>IM 最多 5 mL；皮下只有 1–2 mL</b>。</li></ul>
+<p>為什麼皮下較慢？呼應 p.5：皮下組織的血流比肌肉少。</p></div></div>
+
+<h2 class="sec" id="I-c"><small>p.9–12</small>例外：在注射部位沉澱</h2>
+
+<div class="slide"><div class="pno">p.9</div><div><h3>Precipitation at injection site</h3>
+<p>有些藥雖然以溶液注射，吸收卻被<b>大幅拉長</b>，原因是它們<b>在注射部位沉澱</b>。發生在三種情況：</p>
+<ol><li>給的是<b>難溶性弱酸或弱鹼的鹽類</b>（salt of a sparingly soluble acid or base）；</li>
+<li>藥溶在<b>油性溶液</b>中；</li>
+<li>藥溶在一種會被<b>快速稀釋並吸收掉的溶劑</b>中。</li></ol>
+<p>例子：<b>chlordiazepoxide hydrochloride</b> 和 <b>phenytoin sodium</b> 注射液。</p></div></div>
+
+<div class="slide"><div class="pno">p.10</div><div><h3>Chlordiazepoxide：為什麼會沉澱（逐步）</h3>
+<div class="flow">
+<div class="step"><b>① 本來就難溶</b>水溶解度約 2 mg/mL，但注射液有 50 mg/mL（25 倍）</div>
+<div class="step"><b>② 靠配方撐住</b>20% propylene glycol＋4% polysorbate 80（水溶性助溶劑）；強酸弱鹼鹽（pKa 4.5），pH 約 3.0</div>
+<div class="step"><b>③ 身體拉回 pH</b>組織與血液的緩衝能力把注射處 pH 慢慢拉回 7.4</div>
+<div class="step"><b>④ 析出</b>pH 上升＋水與助溶劑被吸收 → chlordiazepoxide 游離鹼沉澱</div>
+<div class="step"><b>⑤ 堆成一團</b>擴散很少，大量藥物堆積在注射部位周圍</div></div>
+<p><b>為什麼 pH 上升會沉澱？</b>它是弱鹼（pKa 4.5）。pH 3 時大部分是帶電的鹽、溶得住；pH 7.4 遠高於 pKa，幾乎全變成不帶電的游離鹼，而游離鹼的溶解度只有約 2 mg/mL，裝不下 50 mg/mL，就析出來了。</p></div></div>
+
+<div class="slide"><div class="pno">p.11–12</div><div><h3>結果：IM 反而比口服慢很多</h3>
+<ul><li>沉澱之後，吸收速率變成<b>受沉澱藥物的溶離速率限制</b>（dissolution rate-limited）。</li>
+<li>讓溶離變慢的四件事：<b>表面積小、溶解度低、灌流有限、幾乎沒有攪動</b>。</li>
+<li>結果：吸收<b>拖延好幾小時甚至好幾天</b>。</li>
+<li>對比：口服 chlordiazepoxide hydrochloride 吸收相對快，因為胃腸道<b>攪動大、液體量大、血流高</b>，溶離與吸收都快。</li></ul>
+<p><b>p.12 圖</b>（血中 chlordiazepoxide 濃度 vs 時間，0–70 小時）：</p>
+<ul><li><b>Oral</b>：約 2–3 小時就衝到約 1.6 mg/L 的尖峰，之後下降。</li>
+<li><b>Intramuscular</b>：一直爬不高，最高約 0.65 mg/L，平平地維持到 20 小時以後，下降比口服慢；約 20 小時後兩線交叉，IM 反而比較高。</li></ul>
+<div class="note"><b>常見陷阱：</b>學習目標 A 說 IM 常比口服<b>早</b>達峰，但 chlordiazepoxide 是反例。題目若提到「難溶鹽、pH 低的配方、助溶劑」，答案就是沉澱 → 比口服慢、峰值低、拖很久。</div></div></div>
+
+<h2 class="sec" id="I-d"><small>p.13–20</small>大分子：只能走淋巴</h2>
+
+<div class="slide"><div class="pno">p.13</div><div><h3>大分子 vs 小分子（必考）</h3>
+<ul><li>小分子很容易穿過肌肉和皮下組織的微血管膜；<b>macromolecules（&gt; 20,000 Daltons）不行</b>。</li>
+<li>因此大分子<b>只好（by default）進入淋巴微血管</b>，經<b>淋巴系統</b>才到達血液。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.14–15</div><div><h3>淋巴系統：和血管一樣遍布，但慢很多</h3>
+<p>p.14 圖上標示的構造：lymph capillaries、lymphatic vessels、lymphatic channels/ducts、lymph node、spleen（脾）、thymus（胸腺）、tonsils（扁桃腺）。標題：<b>Lots like blood system in its reach but MUCH SLOWER!</b></p>
+<div class="grid2">
+<div class="box"><h4>功能（p.15）</h4><ul><li>把從血液微血管漏到組織間隙的<b>含蛋白液體</b>引流回去</li><li>把<b>脂肪</b>從消化道運到血液</li><li>製造<b>淋巴球</b></li><li>幫助發展<b>免疫</b></li></ul></div>
+<div class="box"><h4>淋巴微血管（terminal lymphatics）</h4><ul><li>比血液微血管<b>稍大、通透性更高</b>（約 10–60 μm）</li><li>所有組織都有，<b>除了</b>：骨髓、大部分中樞神經系統、無血管組織（角膜、水晶體、軟骨）</li></ul></div></div></div></div>
+
+<div class="slide"><div class="pno">p.16</div><div><h3>淋巴微血管與 anchoring filaments</h3>
+<p>這頁是圖。淋巴微血管的內皮細胞像重疊的瓦片，靠 <b>anchoring filaments（錨定絲）</b>拉在周圍組織上；組織液變多、組織膨脹時，錨定絲把縫隙拉開，液體和大分子就能流進去（背景補充，用來解釋為什麼大分子進得了淋巴、卻進不了血液微血管）。</p></div></div>
+
+<div class="slide"><div class="pno">p.17</div><div><h3>集合淋巴管（collecting lymphatics）</h3>
+<ul><li>管壁<b>較薄</b>，<b>單向瓣膜</b>比靜脈多得多。</li>
+<li>人體有 <b>500–1000 個淋巴結</b>（直徑 1–25 mm），沿途分布。</li>
+<li><b>所有淋巴都至少經過一個淋巴結</b>，有些經過好幾個。</li>
+<li>最後由<b>胸管（thoracic duct，40–45 cm）</b>和<b>右淋巴管（right lymphatic duct，1.25 cm）</b>把淋巴送回血液。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.18</div><div><h3>淋巴怎麼流動（約 2 L/day）</h3>
+<ul><li>單向瓣膜</li><li>壓力差</li><li>集合淋巴管的肌肉層</li>
+<li>節律性收縮，受以下調控：管壁撐張（transmural distension）、體液性介質（humoral mediators）、神經刺激</li>
+<li><b>外在因素：骨骼肌收縮、呼吸、胃腸道蠕動</b></li></ul>
+<div class="tip"><b>連到 p.30：</b>骨骼肌收縮會推動淋巴，所以<b>運動</b>會加快經淋巴吸收的藥（GH 運動實驗）。</div></div></div>
+
+<div class="slide"><div class="pno">p.19</div><div><h3>Lymphatic transport 示意圖</h3>
+<div class="calc">IM 或皮下給藥 → Interstitial fluid（組織液）⇄ Bound to cell, etc.
+   ├─ 穿過 Blood capillary membrane（虛線）→ Plasma → 全身   ← 小分子走這條
+   └─ → LYMPH → Plasma                                   ← 大分子走這條</div>
+<p>注射後藥先在組織液。之後有兩條路進血漿：直接穿過<b>血液微血管膜</b>（圖中虛線，代表對大分子是有限的），或進入<b>淋巴</b>再匯入血漿。藥也可能和細胞結合、暫時留在局部。</p></div></div>
+
+<div class="slide"><div class="pno">p.20</div><div><h3>微血管通透性 vs 分子量</h3>
+<p>雙對數圖：橫軸分子量（10 到 1,000,000 g/mol），縱軸微血管通透性（cm/sec × 10⁻⁶）。貓腿、人前臂、狗腸、狗掌、狗心五種組織的趨勢都一樣：</p>
+<ul><li>分子量約 60 → 通透性約 30；</li>
+<li>約 5,000–6,000 → 掉到約 1–2；</li>
+<li>約 20,000 → 約 0.3；</li>
+<li>&gt; 50,000 → 只剩約 0.01–0.05。</li></ul>
+<p><b>分子量從幾十到幾十萬，通透性掉了三個數量級以上</b>，在約 10,000–50,000 之間掉得最陡。這解釋了 p.13 的切點：大分子實際上穿不過血液微血管，只能交給淋巴。</p></div></div>
+
+<h2 class="sec" id="I-e"><small>p.21–26</small>大分子吸收的「程度」與「速度」</h2>
+
+<div class="slide"><div class="pno">p.21</div><div><h3>程度（Extent）：常常不完全</h3>
+<p>淋巴系統有<b>蛋白水解酶（proteolytic enzymes）</b>，所以蛋白質藥皮下或 IM 後的全身遞送（<b>F</b>）<b>大多不完全</b>。</p></div></div>
+
+<div class="slide"><div class="pno">p.22</div><div><h3>Table 21-12：非抗體蛋白質藥皮下給藥</h3>
+<div class="tbl"><table><tr><th>蛋白</th><th>MW（kg/mol）</th><th>F</th><th>Tmax（hr）</th></tr>
+<tr><td>Insulin*</td><td class="num">5.6</td><td class="num">0.84</td><td class="num">1–2</td></tr>
+<tr><td>IGF-I</td><td class="num">7.6</td><td class="num">1.00</td><td class="num">7</td></tr>
+<tr><td>Interleukin-2</td><td class="num">15.5</td><td class="num">0.3–0.8</td><td class="num">2–4</td></tr>
+<tr><td>Interleukin-10†</td><td class="num">18.7</td><td class="num">0.42</td><td class="num">4–6</td></tr>
+<tr><td>Interleukin-11</td><td class="num">19</td><td class="num">0.65</td><td class="num">2–3</td></tr>
+<tr><td>TNF-α</td><td class="num">17.4</td><td class="num">&lt;0.1</td><td class="num">2</td></tr>
+<tr><td>GM-CSF‡</td><td class="num">15.5–19.5</td><td class="num">0.5</td><td class="num">3</td></tr>
+<tr><td>Human growth hormone</td><td class="num">22</td><td class="num">0.5–0.8</td><td class="num">5–8</td></tr>
+<tr><td>Interferon-α</td><td class="num">19.5</td><td class="num">&gt;0.8</td><td class="num">6–8</td></tr>
+<tr><td>Interferon-γ‡</td><td class="num">20–25</td><td class="num">0.3–0.7</td><td class="num">6–13</td></tr>
+<tr><td>Follicle-stimulating factor†‡</td><td class="num">36</td><td class="num">0.66</td><td class="num">0.5</td></tr>
+<tr><td>Erythropoietin‡</td><td class="num">34–39</td><td class="num">0.2–0.36</td><td class="num">13–18</td></tr></table></div>
+<p class="src">* 通常為六聚體；† 通常為二聚體；‡ 可能糖基化。來源：Porter & Charman, J Pharm Sci 2000。</p>
+<p><b>怎麼讀：</b>小的 insulin、IGF-I 的 F 高、達峰快；分子變大（EPO 34–39 kg/mol）F 掉到 0.2–0.36、Tmax 拉到 13–18 小時。但不是完美的直線：TNF-α 只有 17.4 kg/mol，F 卻 &lt; 0.1，代表除了大小，對蛋白酶的敏感度也很重要（p.23 的 take home message）。</p></div></div>
+
+<div class="slide"><div class="pno">p.23</div><div><h3>Table 21-13：單株抗體皮下／IM 單劑</h3>
+<div class="tbl"><table><tr><th>抗體</th><th>MW（kg/mol）</th><th>F</th><th>途徑</th><th>Peak（天）</th><th>t½（天）</th></tr>
+<tr><td>Adalimumab</td><td class="num">148</td><td class="num">0.64</td><td>s.c.</td><td class="num">5.5</td><td class="num">30</td></tr>
+<tr><td>Alefacept</td><td class="num">91.4</td><td class="num">0.80</td><td>i.m. and i.v.</td><td class="num">3.2</td><td class="num">11</td></tr>
+<tr><td>Efalizumab</td><td class="num">150</td><td class="num">0.50</td><td>s.c.</td><td class="num">–</td><td class="num">17</td></tr>
+<tr><td>Omalizumab</td><td class="num">149</td><td class="num">0.62</td><td>s.c.</td><td class="num">7.5</td><td class="num">26</td></tr>
+<tr><td>Palivizumab</td><td class="num">148</td><td class="num">–</td><td>i.m.</td><td class="num">2.0</td><td class="num">20（兒童）</td></tr></table></div>
+<p class="src">來源：2008 PDR；alefacept 的 peak 來自 Sweetser et al. 2006。</p>
+<p>抗體約 150 kg/mol，F 大約 0.5–0.8，<b>達峰以「天」計</b>。</p>
+<div class="big"><b>TAKE HOME MESSAGE：大型、對蛋白水解敏感的蛋白質，生體可用率差。</b></div></div></div>
+
+<div class="slide"><div class="pno">p.24</div><div><h3>速度（Rate）：為什麼大分子吸收慢</h3>
+<p>三個原因：</p>
+<ol><li>穿過微血管膜的速度比較慢；</li><li><b>淋巴流動慢</b>；</li><li>在<b>淋巴結內結合</b>（被留住）。</li></ol>
+<p><b>必背數字：</b>組織液進入淋巴管的速度比血流<b>慢 500 倍</b>；淋巴回到血液比血流<b>慢 5000 倍</b>。</p></div></div>
+
+<div class="slide"><div class="pno">p.25</div><div><h3>GH：IV vs 皮下（半對數圖）</h3>
+<ul><li><b>0.02 mg/kg IV（n=19）</b>：起點約 500 μg/L，3 小時內一路掉到 &lt; 1 μg/L。</li>
+<li><b>0.1 mg/kg 皮下（n=36）</b>：慢慢升到約 50 μg/L 的高原，維持約 2–10 小時，到 24 小時才降到約 1 μg/L。</li></ul>
+<p>同一個藥，IV 的下降代表真正的排除速度（很快）；皮下的曲線下降得慢很多，因為<b>吸收太慢、拖著整條曲線</b>：濃度下降的速度被吸收速度主導（背景補充：這叫 flip-flop kinetics）。注意皮下劑量是 IV 的 5 倍，峰值卻只有 IV 起點的約 1/10。</p></div></div>
+
+<div class="slide"><div class="pno">p.26</div><div><h3>大分子的 mean input time</h3>
+<ul><li>通常在 <b>5–48 小時</b>。</li>
+<li>取決於：<b>有多少從血液微血管直接進去</b>、在<b>淋巴結</b>停留多久、在<b>注射部位</b>停留多久。</li>
+<li><b>抗體藥：2–8 天。</b></li></ul></div></div>
+
+<h2 class="sec" id="I-f"><small>p.27–30</small>影響吸收的因素</h2>
+
+<div class="slide"><div class="pno">p.27</div><div><h3>六個因子</h3>
+<div class="grid2">
+<div class="box"><h4>Molecular size</h4><p>最關鍵（p.28）</p></div>
+<div class="box"><h4>Site of injection</h4><p>部位（p.5、p.29）</p></div>
+<div class="box"><h4>Co-administration</h4><p>共同給藥</p></div>
+<div class="box"><h4>Exercise</h4><p>運動（p.30）</p></div>
+<div class="box"><h4>Depth of injection</h4><p>注射深度（皮下 vs 肌肉）</p></div>
+<div class="box"><h4>Injection volume</h4><p>注射體積（p.8：IM 5 mL、皮下 1–2 mL）</p></div></div>
+<p>講義只列出 co-administration 和 depth 兩項名稱，沒有附例子。</p></div></div>
+
+<div class="slide"><div class="pno">p.28</div><div><h3>分子大小是壓倒性因素</h3>
+<p>圖：皮下注射後，在<b>輸出淋巴管（efferent lymphatic duct）</b>回收到的劑量百分比 vs 分子量，四個點幾乎排成一直線：</p>
+<div class="tbl"><table><tr><th>化合物</th><th>MW（約，kg/mol）</th><th>淋巴回收（約，% of dose）</th></tr>
+<tr><td>FUdR</td><td class="num">0.25</td><td class="num">5</td></tr>
+<tr><td>Inulin</td><td class="num">5.2</td><td class="num">21</td></tr>
+<tr><td>Cytochrome C</td><td class="num">12.3</td><td class="num">39</td></tr>
+<tr><td>Interferon-α-2a</td><td class="num">19</td><td class="num">59</td></tr></table></div>
+<p>（數值是從圖上讀的近似值。）<b>分子越大，走淋巴的比例越高</b>：小分子大多直接進血液，只有約 5% 走淋巴；接近 20 kg/mol 時已經有六成走淋巴。</p></div></div>
+
+<div class="slide"><div class="pno">p.29</div><div><h3>注射部位：腹部 vs 大腿（rhGH）</h3>
+<p>晚上 19:00 皮下注射 3 IU/m² rhGH，比較腹部（○）和大腿（●）。<b>大腿</b>組的 GH 上升得更快、峰值更高（約 25–26 mU/L，腹部約 20 mU/L），也下降得更早；<b>腹部</b>組峰值較低、較晚，但維持得較久。來源：Clinical Endocrinology 1994;40:373–378。</p>
+<p>結論：<b>同一個藥、同一種途徑（皮下），換個部位，吸收曲線就不一樣。</b></p></div></div>
+
+<div class="slide"><div class="pno">p.30</div><div><h3>運動加快吸收（GH）</h3>
+<p>皮下注射 3 mg GH 後，<b>有運動（●）</b>的那組在「運動 1 小時＋運動後 0.5 小時」那段時間 GH 濃度衝到約 13 ng/mL，<b>沒運動（○）</b>的只有約 7 ng/mL。來源：Growth Horm IGF Res 2014;24:198–204。</p>
+<p>機轉連回 p.18：骨骼肌收縮推動淋巴流動，加上運動時局部血流增加，吸收就加快。</p></div></div>
+
+<h2 class="sec" id="I-cheat"><small>Cheat sheet</small>必背數字一張表</h2>
+<div class="tbl"><table>
+<tr><th>項目</th><th>數字</th><th>頁</th></tr>
+<tr><td>小分子切點</td><td class="num">&lt; 2000 g/mol</td><td>p.4, 7</td></tr>
+<tr><td>大分子（走淋巴）</td><td class="num">&gt; 20,000 Da</td><td>p.13</td></tr>
+<tr><td>小分子 mean input time</td><td class="num">5–40 分鐘</td><td>p.8</td></tr>
+<tr><td>大分子 mean input time</td><td class="num">5–48 小時</td><td>p.26</td></tr>
+<tr><td>抗體 mean input time</td><td class="num">2–8 天</td><td>p.26</td></tr>
+<tr><td>注射體積上限</td><td class="num">IM 5 mL；皮下 1–2 mL</td><td>p.8</td></tr>
+<tr><td>Gentamicin</td><td class="num">MW 449–477；口服 F ≈ 1%；IM 快且完全</td><td>p.7</td></tr>
+<tr><td>Chlordiazepoxide 注射液</td><td class="num">溶解度 ~2 mg/mL；濃度 50 mg/mL；pKa 4.5；pH ~3.0</td><td>p.10</td></tr>
+<tr><td>助溶劑</td><td class="num">20% propylene glycol＋4% polysorbate 80</td><td>p.10</td></tr>
+<tr><td>淋巴微血管直徑</td><td class="num">~10–60 μm</td><td>p.15</td></tr>
+<tr><td>淋巴結</td><td class="num">500–1000 個，1–25 mm</td><td>p.17</td></tr>
+<tr><td>胸管／右淋巴管</td><td class="num">40–45 cm／1.25 cm</td><td>p.17</td></tr>
+<tr><td>淋巴流量</td><td class="num">~2 L/day</td><td>p.18</td></tr>
+<tr><td>比血流慢</td><td class="num">進淋巴 500×；回血液 5000×</td><td>p.24</td></tr>
+<tr><td>抗體 F</td><td class="num">約 0.5–0.8</td><td>p.23</td></tr>
+</table></div>
+
+<h2 class="sec" id="I-quiz"><small>Self-test</small>自我測驗 <span class="score" id="score-imsc"></span><button class="reset" data-reset="imsc">重來</button></h2>
+<div class="quiz" id="quiz-imsc"></div>
+</main>
+
+
+<!-- ======================= Competitive Surveillance ======================= -->
+<main id="ci" role="tabpanel" aria-labelledby="tab-ci" hidden>
+<div class="big">整堂課的主線：<b>藥廠決定「做什麼藥、要不要繼續做」，靠的是 competitive surveillance／competitive intelligence（CI）</b>：用<b>系統化、合法</b>的方式蒐集外部資訊，分析之後<b>預測競爭版圖</b>，拿來選 target、替藥定位。它不是只在某一階段做，而是<b>沿著整條 critical path</b>：探索期查<b>專利</b>（first-in-class？freedom to operate？），臨床前看資料庫，臨床期追 <b>clinicaltrials.gov</b>、學會、新聞稿，再把結果寫成 <b>Target Product Profile（TPP）</b>，最後追蹤核准。期末作業就是扮演 CI 團隊，向高層建議<b>繼續或停止開發</b>某個藥。</div>
+<div class="toc" aria-label="本講目錄">
+  <a href="#G-abbr">縮寫全名</a><a href="#G-memo">記憶法</a><a href="#G-a">p.1–8 什麼是 CI、放在哪裡</a><a href="#G-b">p.9–11 CI 的定義與工具</a><a href="#G-c">p.12–17 Target、專利、資訊蒐集</a><a href="#G-d">p.18–19 TPP</a><a href="#G-e">p.20–22 臨床設計、結果、核准</a><a href="#G-f">p.23 全部串起來</a><a href="#G-g">p.25–27 分組作業</a><a href="#G-cheat">必背表</a><a href="#G-quiz">測驗</a>
+</div>
+
+<details class="card" id="G-abbr"><summary>縮寫全名表（14 個）</summary><div class="in"><div class="tbl"><table><tr><th>縮寫</th><th>全名</th></tr>
+<tr><td class="num">CI</td><td>competitive intelligence，競爭情報（講義和 competitive surveillance 混用）</td></tr>
+<tr><td class="num">TPP</td><td>Target Product Profile，目標產品概況</td></tr>
+<tr><td class="num">MOA</td><td>mechanism of action，作用機轉</td></tr>
+<tr><td class="num">IND</td><td>Investigational New Drug application，人體試驗申請；pre-IND＝臨床前</td></tr>
+<tr><td class="num">FDA</td><td>Food and Drug Administration，美國食品藥物管理局</td></tr>
+<tr><td class="num">IPR</td><td>inter partes review，美國專利商標局的專利有效性複審程序（講義只寫縮寫）</td></tr>
+<tr><td class="num">POC</td><td>proof of concept，概念驗證試驗</td></tr>
+<tr><td class="num">OS</td><td>overall survival，整體存活期</td></tr>
+<tr><td class="num">PFS</td><td>progression-free survival，無惡化存活期</td></tr>
+<tr><td class="num">LCM</td><td>life cycle management，產品生命週期管理</td></tr>
+<tr><td class="num">MD</td><td>medical doctor，醫師（「TPP lite」拿去問醫師）</td></tr>
+<tr><td class="num">Ad Board</td><td>advisory board，顧問委員會</td></tr>
+<tr><td class="num">AD</td><td>講義寫「AD Global Market Insights and Competitive Intelligence, Celgene」，是職稱縮寫（推測 Associate Director），講義未說明</td></tr>
+<tr><td class="num">R&amp;D</td><td>research and development，研發</td></tr>
+</table></div></div></details>
+
+<h2 class="sec" id="G-memo"><small>Memory aids</small>記憶法（比喻、畫面、推理、數字分組）</h2><div class="memo">
+<div class="mm"><div class="pg"><span class="ty">比喻</span>p.10</div><div class="k">CI＝氣象預報，不是新聞報導</div><div class="d">新聞只講已經發生的事；CI 要「gives insights into what might happen」，所以一定要分析、一定要有假設（requires analysis (assumptions)）。</div></div>
+<div class="mm"><div class="pg"><span class="ty">對比</span>p.9</div><div class="k">三兄弟：BI 看公開、MR 問人、CI 挖不公開</div><div class="d">Business intelligence：公開資料、監測、品牌、上市版圖。Market research：問處方者與利害關係人、測試概念（盲測 TPP／不盲的 Ad Board）。Competitive intelligence：不在公開領域、較難找，靠廠商、學會、人脈，<b>嚴格遵守倫理規範</b>。</div></div>
+<div class="mm"><div class="pg"><span class="ty">口訣</span>p.10</div><div class="k">CI 四動作：選、收、解、發</div><div class="d">Selection、collection、interpretation、distribution，對象是有戰略重要性的資訊。</div></div>
+<div class="mm"><div class="pg"><span class="ty">口訣</span>p.11</div><div class="k">四個問題：誰、怎麼贏、做什麼何時出、我們怎麼打</div><div class="d">Who else is in the space? 競爭者怎麼搶市佔？他們在開發什麼、何時上市？我們怎麼競爭？</div></div>
+<div class="mm"><div class="pg"><span class="ty">畫面</span>p.11</div><div class="k">每一站一個工具</div><div class="d">探索期＝專利（Google Patents、訴訟警示、IPR）；臨床前＝資料庫（Cortellis）；臨床期＝clinicaltrials.gov＋學會；上市後＝clinicaltrials.gov。</div></div>
+<div class="mm"><div class="pg"><span class="ty">推理</span>p.13</div><div class="k">不是 first-in-class？就算時間差</div><div class="d">用演算法估「對手從找到 pathway 到上市花了多久」，就知道自己落後多少。要知道對手在研究什麼 pathway → 查專利。</div></div>
+<div class="mm"><div class="pg"><span class="ty">故事</span>p.14</div><div class="k">專利會說故事</div><div class="d">一家公司從 2001「組織再生」到 2012–2013「用胎盤／羊膜細胞治疼痛」再到 2015「糖尿病足潰瘍」，專利標題的順序就是它的研發路線圖。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.16</div><div class="k">65K、100K、6M</div><div class="d">資料庫有 &gt; 65,000 個藥物計畫、&gt; 100,000 家公司、600 萬件專利。千、十萬、百萬，一級比一級多。</div></div>
+<div class="mm"><div class="pg"><span class="ty">數字分組</span>p.17</div><div class="k">2500 → 150</div><div class="d">Celgene 的 CI 團隊消化了 2500 篇摘要，挑 150 篇深入追蹤，再分給組員。只追約 6%：CI 的功夫在篩選。</div></div>
+<div class="mm"><div class="pg"><span class="ty">比喻</span>p.18–19</div><div class="k">TPP＝蓋房子前的需求單</div><div class="d">先寫好「要幾房、預算多少、何時入住」，再開始畫設計圖。TPP 九項：適應症、族群、療效、安全、安定性、給藥途徑、頻率、成本、上市時間。</div></div>
+<div class="mm"><div class="pg"><span class="ty">推理</span>p.20</div><div class="k">POC 失敗不一定是藥不行</div><div class="d">資料顯示有效、但主要終點沒抓到 → 換一個更相關的終點，再跑一次 POC。終點選錯會殺掉好藥。</div></div>
+<div class="mm"><div class="pg"><span class="ty">口訣</span>p.21</div><div class="k">學會上：聽他們講什麼，也聽他們不講什麼</div><div class="d">What are people talking about? not talking about? 沒出現的資料本身就是訊號。</div></div>
+</div>
+
+<h2 class="sec" id="G-a"><small>p.1–8</small>什麼是 competitive surveillance、放在哪裡</h2>
+
+<div class="slide"><div class="pno">p.1–3</div><div><h3>講者與大綱</h3>
+<p>講者 Eileen Castronova（PharmD, MS），GSK 的 Director, Clinical Pharmacology Modeling and Simulation。p.2 是一排藥廠標誌（例如 Sanofi），提醒這是產業界的實務。</p>
+<p>p.3 大綱：</p>
+<ol><li>Competitive surveillance：是什麼、放在哪裡；業界例子</li>
+<li>Mechanisms of interest：藥物 target</li>
+<li>Patent claims（專利）</li>
+<li>Product attributes（Target Product Profile）與 druggability metrics</li>
+<li>Clinical designs and endpoints</li>
+<li>Phase II/III results</li>
+<li>Approvals</li></ol>
+<p>這個順序就是藥物開發的時間順序，每一站都有 CI 要做的事。</p></div></div>
+
+<div class="slide"><div class="pno">p.4</div><div><h3>藥物探索與開發的幾個步驟</h3>
+<div class="flow">
+<div class="step"><b>1</b>選一個治療領域</div>
+<div class="step"><b>2</b>找到藥物 target</div>
+<div class="step"><b>3</b>開發 agonist／antagonist</div>
+<div class="step"><b>4</b>說服自己它有效</div>
+<div class="step"><b>5</b>取得人體試驗許可</div>
+<div class="step"><b>6</b>取得上市許可</div></div>
+<p>（講義上這些步驟散排在圖中，這裡依開發邏輯排列。）</p></div></div>
+
+<div class="slide"><div class="pno">p.5–6</div><div><h3>兩個開場問題</h3>
+<ul><li><b>p.5</b>：How does a pharmaceutical company decide what to develop？藥廠怎麼決定要開發什麼？</li>
+<li><b>p.6</b>：What do you think competitive intelligence is？</li></ul>
+<p>答案就是整堂課：看<b>市場需求（病人、醫師）</b>和<b>競爭版圖（誰已經在做、做到哪）</b>，再看自己能不能在某處有競爭力。</p></div></div>
+
+<div class="slide"><div class="pno">p.7</div><div><h3>Competitive surveillance along the critical path</h3>
+<p>引用 FDA 2004 年 Critical Path Initiative 報告的 Figure 6「Working in Three Dimensions on the Critical Path」。橫軸是開發階段：</p>
+<div class="flow">
+<div class="step"><b>①</b>Basic research</div>
+<div class="step"><b>②</b>Prototype design or discovery</div>
+<div class="step"><b>③</b>Preclinical development</div>
+<div class="step"><b>④</b>Clinical development</div>
+<div class="step"><b>⑤</b>FDA filing／approval &amp; launch preparation</div></div>
+<div class="tbl"><table><tr><th>維度</th><th>沿途的活動</th></tr>
+<tr><td><b>Safety</b></td><td>材料選擇、結構活性關係 → 體外與動物試驗 → 人體與動物試驗 → 安全追蹤</td></tr>
+<tr><td><b>Medical utility</b></td><td>體外與電腦模型評估 → 體外與動物模型 → 人體療效評估</td></tr>
+<tr><td><b>Industrialization</b></td><td>物理設計 → 特性分析、小量生產 → 量產放大、規格確定 → 大量生產</td></tr></table></div>
+<p>講者用這張圖說明：<b>CI 不是某一站的事，而是貫穿整條路</b>，每一站都有要做的決策。</p></div></div>
+
+<div class="slide"><div class="pno">p.8</div><div><h3>CI 怎麼幫助決策：四個問題</h3>
+<ol><li>整個開發過程中，關鍵決策有哪些？</li>
+<li>每個重要里程碑時，決策是怎麼做的？</li>
+<li>有哪些資料／分析可以引導這些決策？</li>
+<li>決策能不能做得更好？怎麼做？</li></ol></div></div>
+
+<h2 class="sec" id="G-b"><small>p.9–11</small>CI 的定義、和其他市場洞察的差別、工具</h2>
+
+<div class="slide"><div class="pno">p.9</div><div><h3>Market insights 的三種形式（必考對比）</h3>
+<div class="tbl"><table><tr><th>形式</th><th>資訊來源</th><th>做什麼</th></tr>
+<tr><td><b>Business intelligence</b></td><td><b>公開領域（public domain）</b></td><td>監測、界定範圍（scoping）、外部活動／事件、品牌、上市版圖</td></tr>
+<tr><td><b>Market research</b></td><td>回饋：處方者、利害關係人</td><td>測試概念：<b>blinded（TPP）</b>、<b>unblinded（Ad Board）</b></td></tr>
+<tr><td><b>Competitive intelligence</b></td><td><b>不在公開領域（not public domain）</b>、較難找</td><td>指定的資訊廠商、學會、利用人脈與來源取得競爭優勢；<b>嚴格的倫理規範</b></td></tr></table></div>
+<div class="tip"><b>記法：</b>BI 看公開的、MR 去問人、CI 挖不公開的，而且挖的時候要守規矩。</div></div></div>
+
+<div class="slide"><div class="pno">p.10</div><div><h3>Competitive intelligence 的定義（必考）</h3>
+<ul><li>一個能<b>洞察可能會發生什麼事</b>的過程。</li>
+<li><b>需要分析（假設）</b>。</li>
+<li>對具有<b>戰略重要性</b>的資訊做<b>選擇、蒐集、解讀和分發</b>。</li>
+<li>以<b>系統化、合法</b>的方式蒐集廣泛資訊，<b>預測競爭版圖</b>，以便<b>選擇 target 和替藥物定位</b>。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.11</div><div><h3>各階段的 CI 工具</h3>
+<div class="tbl"><table><tr><th>階段</th><th>CI 做什麼</th></tr>
+<tr><td><b>Discovery</b></td><td><b>專利搜尋</b>（database mining）：法律資料庫、Google Patents、深入訂閱、所有專利訴訟（警示）、IPR、法院報告</td></tr>
+<tr><td><b>Preclinical（pre-IND）</b></td><td>研究搜尋：database mining、clinicaltrials.gov、<b>Cortellis</b>（Thomson Reuters）</td></tr>
+<tr><td><b>Clinical</b></td><td>資料搜尋：學術會議、Cortellis；人脈資訊：學會上<b>報告了什麼？沒報告什麼？</b></td></tr>
+<tr><td><b>Post-approval</b></td><td>研究搜尋：clinicaltrials.gov</td></tr></table></div>
+<p>CI 要回答的四個問題：</p>
+<ul><li>還有誰在這個領域？</li><li>競爭者怎麼搶市佔？</li><li>競爭者在開發什麼產品、何時上市？</li><li>我們要怎麼競爭？</li></ul>
+<div class="big">目的：<b>在自己有競爭力的地方開發</b>；<b>縮短反應時間</b>以加強競爭優勢；<b>找到新機會</b>。</div></div></div>
+
+<h2 class="sec" id="G-c"><small>p.12–17</small>Target、專利、資訊蒐集</h2>
+
+<div class="slide"><div class="pno">p.12–13</div><div><h3>藥廠怎麼選 drug target</h3>
+<p>p.12 是講者的截圖：PowerPoint 投影片「How do companies choose drug targets?」旁邊開著 <b>Pharmaprojects</b> 資料庫的說明（追蹤誰在開發什麼、在哪、何時、怎麼做；監測競爭者；找授權或共同行銷夥伴；找早期 lead 與相似結構）。</p>
+<p><b>p.13 整理資訊：</b></p>
+<ul><li><b>你是 first-in-class 嗎？</b></li>
+<li>如果不是：用<b>演算法</b>預測競爭者從 pathway 到藥物上市花了多久。</li>
+<li>怎麼知道對手在研究什麼 pathway？→ <b>專利搜尋</b>。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.14</div><div><h3>專利篩選案例（patents.justia.com）</h3>
+<div class="tbl"><table><tr><th>申請標題</th><th>狀態</th><th>年份</th></tr>
+<tr><td>Compositions and methods for promoting tissue regeneration</td><td>filed → grant</td><td class="num">2001 → 2007</td></tr>
+<tr><td>Carbohydrate epitope mimic compounds and uses thereof</td><td colspan="2">（講義未列狀態年份）</td></tr>
+<tr><td>Substituted quinazolin-4-ylamine analogues</td><td colspan="2">（講義未列狀態年份）</td></tr>
+<tr><td>Treatment of pain using placental stem cells</td><td>filed → grant</td><td class="num">2012 → 2015</td></tr>
+<tr><td>Treatment of pain using amnion derived adherent cells</td><td>filed</td><td class="num">2013</td></tr>
+<tr><td>Treatment of diabetic foot ulcer using placental stem cells</td><td>filed</td><td class="num">2015</td></tr></table></div>
+<p class="src">講義表格的文字抽取把狀態與年份擠在一起，以上依順序對應，若和原檔不同以原檔為準。</p>
+<p>讀法：從專利標題的時間順序，就能看出這家公司的研發方向（組織再生 → 胎盤／羊膜細胞治疼痛 → 糖尿病足潰瘍）。另外注意 filed 到 grant 要好幾年（2001→2007、2012→2015）。</p></div></div>
+
+<div class="slide"><div class="pno">p.15</div><div><h3>The in-between：臨床前</h3>
+<ul><li>你已經選好要做的 pathway；</li>
+<li>你已經界定了自己的 <b>freedom to operate</b>（做這個不會侵犯別人的專利）。</li>
+<li>CI 的下一次出場：<b>臨床前</b>。</li></ul>
+<p>臨床前在做的事：化學、分子生物、生化、組織培養、高通量篩選、選定候選藥物。</p></div></div>
+
+<div class="slide"><div class="pno">p.16</div><div><h3>資訊蒐集：資料庫訂閱</h3>
+<p>截圖是 Cortellis 類的商業資料庫。規模：</p>
+<ul><li><b>&gt; 65K</b> 個有完整臨床前資料的藥物計畫</li>
+<li><b>&gt; 100K</b> 家公司檔案</li>
+<li><b>6M</b> 件全球專利</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.17</div><div><h3>持續蒐集資訊</h3>
+<ul><li><b>追蹤臨床計畫</b>：clinicaltrials.gov；追蹤藥物上市，資料一出來就調整；參加學會與研討會。</li>
+<li><b>追蹤你的治療領域的核准</b>：時程（priority review？orphan drug 資格？）；資料如何？</li>
+<li><b>情報整合</b>：把外部資訊整理成分析。例：Celgene 的 Global Market Insights and Competitive Intelligence 團隊<b>消化了 2500 篇摘要（Cortellis），挑出 150 篇追蹤，分給組員</b>。</li></ul>
+<div class="tip"><b>轉折句：</b>When you have tracked everything you can externally, <b>turn the focus internally</b>。外部能追的都追完了，就回頭看自己（下一步就是 TPP）。</div></div></div>
+
+<h2 class="sec" id="G-d"><small>p.18–19</small>Target Product Profile（TPP）</h2>
+
+<div class="slide"><div class="pno">p.18</div><div><h3>TPP：每個疾病想要的研發成果</h3>
+<p>標題：<b>Target Product Profile (TPP): The desired R&amp;D outcome for each disease</b>。截圖是 FDA 2007 年 3 月的草案指引「Guidance for Industry and Review Staff — Target Product Profile: A Strategic Development Process Tool」。</p>
+<p>也就是說，TPP 是一份<b>事先寫好的「理想產品規格」</b>，研發和法規溝通都對照著它走。</p></div></div>
+
+<div class="slide"><div class="pno">p.19</div><div><h3>TPP 的九個項目（必考）</h3>
+<div class="tbl"><table><tr><th>項目</th><th>要回答的問題</th></tr>
+<tr><td>Indications</td><td>哪些疾病？</td></tr>
+<tr><td>Population</td><td>哪些病人、在哪裡？</td></tr>
+<tr><td>Clinical efficacy</td><td>有沒有有效地發揮作用？</td></tr>
+<tr><td>Safety and tolerability</td><td>什麼樣、多少不良事件？</td></tr>
+<tr><td>Stability</td><td>在現場可以存放多久？</td></tr>
+<tr><td>Route of administration</td><td>怎麼給病人？</td></tr>
+<tr><td>Dosing frequency</td><td>多久給一次、要給多久？</td></tr>
+<tr><td>Cost</td><td>目標族群負擔得起嗎？</td></tr>
+<tr><td>Time to availability</td><td>要開發多久？</td></tr></table></div>
+<p>寫好之後：<b>請顧問審閱</b>、<b>請前 FDA 顧問審閱</b>、<b>評估 druggability metrics</b>。</p></div></div>
+
+<h2 class="sec" id="G-e"><small>p.20–22</small>臨床設計與終點、Phase II/III 結果、核准</h2>
+
+<div class="slide"><div class="pno">p.20</div><div><h3>Clinical designs and endpoints</h3>
+<ul><li>主管機關<b>接受過什麼</b>？什麼是<b>黃金標準</b>？</li>
+<li>把試驗計畫書<b>送主管機關請求意見</b>。</li>
+<li>挖 clinicaltrials.gov、摘要、論文，看<b>終點有沒有改變</b>：目標換了嗎？<b>Overall survival</b>？<b>Progression-free survival</b>？</li>
+<li>我們的資料告訴我們什麼？例：<b>POC 試驗失敗</b>：資料顯示藥有效，但主要終點沒有反映出來 → 需要跑<b>第二個 POC</b>，<b>換成更相關的終點</b>。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.21</div><div><h3>Phase II/III results</h3>
+<ul><li><b>內部</b>：測試上市材料。</li>
+<li><b>外部</b>：監測新聞稿、投資人分析師電話會議（講義例：Health Ace）。</li>
+<li><b>學會</b>：大家在講什麼？<b>沒在講什麼？</b></li>
+<li><b>顧問委員會（advisory boards）</b>。</li></ul></div></div>
+
+<div class="slide"><div class="pno">p.22</div><div><h3>Approvals</h3>
+<ul><li><b>外部</b>：追蹤時程、priority review、各計畫狀態。</li>
+<li><b>調整預測</b>。</li></ul></div></div>
+
+<h2 class="sec" id="G-f"><small>p.23</small>Putting it all together（作業的骨架）</h2>
+
+<div class="slide"><div class="pno">p.23</div><div><h3>六步驟</h3>
+<ol><li><b>版圖與流行病學</b>（landscape, epidemiology）。</li>
+<li><b>內部 pipeline 的競爭分析</b>：早期／晚期、競爭者、時程、市場滲透。</li>
+<li><b>MOA</b>：我們有什麼資料？我們是大藥廠還是小生技？在跟誰競爭？</li>
+<li><b>怎麼做</b>：開發計畫、benchmarking 分析、找醫師做早期定位市調（「<b>TPP lite</b>」）。</li>
+<li><b>Phase II</b>：產生 TPP、拿去給醫師測試；<b>LCM（生命週期管理）</b>加入；<b>portfolio testing</b>：訂出清楚的 <b>go/no-go 標準</b>（啟動 Phase III 需要什麼）；組成全球專案團隊。</li>
+<li><b>Phase III</b> 樞紐試驗啟動；測試上市材料。</li></ol>
+<div class="note"><b>注意：</b>p.26 的作業說明寫「Using Slide 22, “Putting it all together”」，但在這份 PDF 裡它是第 23 頁（p.24 是致謝 Tanya Borsuk, PhD, Celgene）。指的是同一張。</div></div></div>
+
+<h2 class="sec" id="G-g"><small>p.25–27</small>分組作業：向高層建議繼續或停止</h2>
+
+<div class="slide"><div class="pno">p.25–26</div><div><h3>作業要求</h3>
+<p>情境：你們現在是 CI 專家，要和高層開會，建議<b>是否要開發被分配到的產品</b>。準備簡報表明立場並上台報告。格式：</p>
+<div class="grid2">
+<div class="box"><h4>1. 公司資訊</h4><ul><li>你們是誰？規模？營收？</li><li>有沒有已核准的藥？</li><li>資金來源：公開上市、私人、學術、政府、創投？</li></ul></div>
+<div class="box"><h4>2. 在開發什麼</h4><ul><li>藥物 target 的示意圖、藥怎麼和 target 作用</li><li>支持你立場的重要資訊</li><li>疾病與競爭版圖摘要</li><li>還有誰在做？first-in-class？機轉已知？對手進度（查他們的 pipeline）</li><li>預計何時上市 vs 對手何時上市</li><li>以前做過類似的嗎？</li><li>公司特性 vs 對手（我小他大等）</li><li>文獻／clinicaltrials.gov／新聞稿的結果摘要</li></ul></div>
+<div class="box"><h4>3. 建議</h4><ul><li>根據研究，給高層的建議是什麼？</li><li><b>繼續或停止開發？為什麼？</b></li></ul></div></div></div></div>
+
+<div class="slide"><div class="pno">p.27</div><div><h3>分組名單</h3>
+<div class="tbl"><table><tr><th>組</th><th>藥</th><th>適應症</th><th>立場（公司）</th></tr>
+<tr><td class="num">1</td><td>semaglutide</td><td>（講義空白）</td><td>（講義空白）</td></tr>
+<tr><td class="num">2</td><td>BNC117 + 10-1074</td><td>HIV</td><td>Gilead Sciences, Inc.</td></tr>
+<tr><td class="num">3</td><td>psilocybin</td><td>Group choice（自選）</td><td>Johns Hopkins University</td></tr>
+<tr><td class="num">4</td><td>bitopertin</td><td>（講義空白）</td><td>（講義空白）</td></tr>
+<tr><td class="num">5</td><td>（講義空白）</td><td>（講義空白）</td><td>（講義空白）</td></tr></table></div>
+<p>每組約 <b>15 分鐘報告＋5 分鐘問答</b>，之後全班討論。</p></div></div>
+
+<h2 class="sec" id="G-cheat"><small>Cheat sheet</small>必背一張表</h2>
+<div class="tbl"><table>
+<tr><th>項目</th><th>重點</th><th>頁</th></tr>
+<tr><td>CI 定義</td><td class="num">系統化、合法蒐集 → 預測競爭版圖 → 選 target、定位藥物</td><td>p.10</td></tr>
+<tr><td>CI 四動作</td><td class="num">選擇、蒐集、解讀、分發</td><td>p.10</td></tr>
+<tr><td>BI／MR／CI</td><td class="num">公開／問人（TPP 盲測、Ad Board）／不公開＋嚴守倫理</td><td>p.9</td></tr>
+<tr><td>探索期工具</td><td class="num">專利（Google Patents、訴訟、IPR）</td><td>p.11</td></tr>
+<tr><td>臨床前工具</td><td class="num">Cortellis、clinicaltrials.gov</td><td>p.11</td></tr>
+<tr><td>臨床／上市後</td><td class="num">學會（講了什麼、沒講什麼）、clinicaltrials.gov</td><td>p.11</td></tr>
+<tr><td>CI 三目的</td><td class="num">在有競爭力處開發、縮短反應時間、找新機會</td><td>p.11</td></tr>
+<tr><td>資料庫規模</td><td class="num">&gt;65K 計畫、&gt;100K 公司、6M 專利</td><td>p.16</td></tr>
+<tr><td>Celgene 例</td><td class="num">2500 篇摘要 → 150 篇追蹤</td><td>p.17</td></tr>
+<tr><td>TPP 九項</td><td class="num">適應症、族群、療效、安全、安定性、途徑、頻率、成本、上市時間</td><td>p.19</td></tr>
+<tr><td>TPP 之後</td><td class="num">顧問、前 FDA 顧問、druggability metrics</td><td>p.19</td></tr>
+<tr><td>Go/no-go</td><td class="num">Phase II 時訂出啟動 Phase III 的標準</td><td>p.23</td></tr>
+<tr><td>作業報告</td><td class="num">15 分鐘＋5 分鐘問答</td><td>p.27</td></tr>
+</table></div>
+
+<h2 class="sec" id="G-quiz"><small>Self-test</small>自我測驗 <span class="score" id="score-ci"></span><button class="reset" data-reset="ci">重來</button></h2>
+<div class="quiz" id="quiz-ci"></div>
+</main>
+
 </div>
 
 
@@ -7148,6 +7650,185 @@ dm: [
  ["體重繼續下降","不對。"],
  ["回到比基線更重","到 120 週仍約在基線下 5–6%，並沒有超過基線。"]],1,"停藥就復胖 11.6%。"]
 ],
+imsc: [
+["p.4","小分子藥物溶液經 IM 或皮下注射後，全身吸收的速率主要受什麼限制？",[
+ ["注射部位的血流（perfusion rate-limited）","正確。p.4：血流增加吸收加快，血流減少吸收變慢。"],
+ ["穿過微血管壁的通透性","p.4：微血管壁很鬆，對小分子幾乎沒有阻力，不是限制步驟。"],
+ ["藥物的 pKa","p.7：低阻力和 pKa、游離程度無關。"],
+ ["淋巴流動","淋巴是大分子（> 20,000 Da）的路徑（p.13）。"]],0,"小分子 IM／皮下＝等血流這班公車。"],
+["p.4–7","Gentamicin 口服 F 約 1%，IM 卻快速完全吸收。最好的解釋是？",[
+ ["IM 避開了肝臟首渡效應","講義的解釋不是首渡，而是屏障不同。"],
+ ["肌肉微血管壁比腸道上皮鬆散得多，帶電極性的小分子也能通過","正確。p.4、7。"],
+ ["Gentamicin 在肌肉中會變成不帶電","藥的性質沒變；p.7 說低阻力與游離程度無關。"],
+ ["Gentamicin 在肌肉中沉澱後慢慢釋放","沉澱會讓吸收變慢（p.9），和「快速完全」相反。"]],1,"腸道是磚牆，微血管是籬笆。"],
+["p.4, 7","講義把「小分子」的分子量切點定在大約多少？",[
+ ["200 g/mol","太小。Gentamicin 449–477 都還算小分子。"],
+ ["20,000 g/mol","這是大分子的切點（p.13：> 20,000 Da）。"],
+ ["2000 g/mol","正確。p.4：M.W. < 2000 g/mole；p.7：up to approximately 2000。"],
+ ["150,000 g/mol","這是抗體的大小（p.23）。"]],2,"2000 以下小、20,000 以上大。"],
+["p.5","Table 7-6 中，同樣 100 mg lidocaine，哪個部位峰濃度最高、哪個最低？",[
+ ["最高皮下、最低肋間","剛好相反。"],
+ ["最高硬膜外、最低臂神經叢","硬膜外 0.97、臂神經叢 0.53，都不是極端值。"],
+ ["各部位差不多","差了約 4 倍。"],
+ ["最高肋間（1.46 mg/L）、最低皮下（0.35 mg/L）","正確。灌流越高，峰值越高。"]],3,"皮下血流最少，峰值最低。"],
+["p.8","小分子溶液 IM／皮下的平均吸收時間（mean input time）與注射體積上限，何者正確？",[
+ ["5–40 分鐘；IM 最多 5 mL、皮下 1–2 mL","正確。p.8。"],
+ ["5–48 小時；IM 最多 10 mL","5–48 小時是大分子（p.26）。"],
+ ["2–8 天；皮下最多 5 mL","2–8 天是抗體（p.26）。"],
+ ["1–2 分鐘；兩者都最多 1 mL","不對。"]],0,"分鐘（小）→ 小時（大）→ 天（抗體）。"],
+["p.8","一般而言，皮下和 IM 吸收速度相比？",[
+ ["皮下通常比 IM 快","p.8：subcut absorption is usually slower than IM。"],
+ ["皮下通常比 IM 慢，但兩者都依部位和體積而定","正確。p.8。"],
+ ["兩者永遠相同","p.8 強調依部位和體積而定。"],
+ ["皮下不會被吸收","皮下會吸收，只是較慢。"]],1,"皮下血流較少（p.5 皮下峰值最低）。"],
+["p.9","下列哪一種情況「不是」講義列出的注射部位沉澱原因？",[
+ ["給予難溶性弱酸或弱鹼的鹽類","是原因之一。"],
+ ["藥物溶在油性溶液","是原因之一。"],
+ ["藥物是分子量 > 20,000 的蛋白質","正確（不是沉澱原因）。大分子的問題是走淋巴（p.13），不是沉澱。"],
+ ["藥物溶在會被快速稀釋吸收的溶劑","是原因之一。"]],2,"鹽、油、會被稀釋的溶劑。例：chlordiazepoxide HCl、phenytoin sodium。"],
+["p.10","Chlordiazepoxide HCl 注射後為什麼會在注射部位析出？",[
+ ["組織 pH 下降，讓弱鹼變得更難溶","方向反了：注射液 pH 約 3，組織把 pH 拉「回」7.4（上升）。"],
+ ["它被淋巴的蛋白酶分解","那是蛋白質藥的問題（p.21）。"],
+ ["它的分子太大穿不過微血管","Chlordiazepoxide 是小分子。"],
+ ["pH 從約 3 回到 7.4，加上水與助溶劑被吸收，游離鹼超過溶解度而沉澱","正確。p.10。它是弱鹼（pKa 4.5），pH 7.4 時幾乎全為游離鹼，溶解度僅約 2 mg/mL，但注射液有 50 mg/mL。"]],3,"pH 上升＋溶劑被吸走 → 弱鹼析出。"],
+["p.11–12","與口服相比，IM chlordiazepoxide 的濃度曲線特徵是？",[
+ ["峰值較低（約 0.65 mg/L），吸收拖延好幾小時到好幾天","正確。p.11–12：吸收變成受溶離限制。"],
+ ["峰值較高、達峰較早","那是口服（約 2–3 小時、約 1.6 mg/L）。"],
+ ["和口服完全重疊","兩條線形狀明顯不同。"],
+ ["完全不吸收","有吸收，只是很慢。"]],0,"沉澱 → 溶離限制 → 比口服慢。"],
+["p.11","為什麼口服 chlordiazepoxide 反而溶離吸收得快？",[
+ ["胃酸破壞藥物結構","講義沒有這樣說。"],
+ ["胃腸道攪動大、液體量大、血流高","正確。p.11。注射部位則是表面積小、溶解度低、灌流有限、幾乎不攪動。"],
+ ["口服走淋巴","口服小分子主要不走淋巴。"],
+ ["口服劑量比較大","講義的解釋是溶離環境不同。"]],1,"攪、水、血流，三樣注射部位都缺。"],
+["p.13","分子量 > 20,000 Da 的蛋白質藥皮下注射後，主要怎麼進入血液？",[
+ ["直接穿過血液微血管壁","p.13：macromolecules do not（穿不過）。"],
+ ["經由腸道吸收","皮下注射不經腸道。"],
+ ["進入淋巴微血管，經淋巴系統到血液","正確。p.13：by default。"],
+ ["先在注射部位沉澱再溶解","那是 chlordiazepoxide 這類小分子的情況。"]],2,"大分子只能走淋巴。"],
+["p.15","淋巴微血管存在於所有組織，「除了」下列哪一組？",[
+ ["皮膚、肌肉、腸道","這些都有淋巴。"],
+ ["肝、腎、肺","講義沒列這些為例外。"],
+ ["所有組織都有，沒有例外","p.15 列了例外。"],
+ ["骨髓、大部分中樞神經系統、無血管組織（角膜、水晶體、軟骨）","正確。p.15。"]],3,"骨髓、CNS、無血管組織。"],
+["p.21–23","蛋白質藥皮下或 IM 後 F 常常不完全，主因是？",[
+ ["淋巴系統含蛋白水解酶","正確。p.21；p.23 take home message：大型、對蛋白水解敏感的蛋白質 F 差。"],
+ ["肝臟首渡效應","皮下／IM 不經首渡；講義的解釋是淋巴的蛋白酶。"],
+ ["注射體積太小","體積影響速度，但不是 F 不完全的主因。"],
+ ["在注射部位沉澱","那是小分子難溶鹽的問題。"]],0,"淋巴裡有碎紙機。"],
+["p.24","講義說淋巴流動比血流慢多少？",[
+ ["組織液進淋巴慢 5 倍；回血液慢 50 倍","差了兩個數量級。"],
+ ["組織液進淋巴慢 500 倍；淋巴回血液慢 5000 倍","正確。p.24。"],
+ ["兩者都慢 10 倍","不對。"],
+ ["淋巴比血流快","p.14：MUCH SLOWER。"]],1,"500 和 5000。"],
+["p.24","下列哪一項「不是」講義列出的大分子吸收慢的原因？",[
+ ["穿過微血管膜比較慢","是原因之一。"],
+ ["淋巴流動慢","是原因之一。"],
+ ["注射部位 pH 太低導致沉澱","正確（不是原因）。這是 chlordiazepoxide 的機制。"],
+ ["在淋巴結內結合","是原因之一。"]],2,"慢穿膜、慢淋巴、淋巴結結合。"],
+["p.26","抗體藥物皮下注射的 mean input time 大約是？",[
+ ["5–40 分鐘","小分子。"],
+ ["5–48 小時","一般大分子。"],
+ ["1–2 個月","太長。"],
+ ["2–8 天","正確。p.26。"]],3,"抗體以天計（p.23 peak 2–7.5 天）。"],
+["p.25","GH 皮下給藥的濃度曲線比 IV 下降得慢很多，最好的解釋是？",[
+ ["皮下吸收很慢，持續的吸收拖長了整條曲線","正確。大分子經淋巴吸收慢（p.24），曲線下降被吸收速度主導。"],
+ ["皮下給藥讓 GH 的排除變慢","排除是藥本身的性質，不因途徑改變。"],
+ ["皮下劑量比較低","皮下劑量 0.1 mg/kg，反而是 IV 0.02 mg/kg 的 5 倍。"],
+ ["IV 的 GH 會沉澱","不是。"]],0,"IV 懸崖、皮下高原。"],
+["p.27–28","講義認為影響 IM／皮下吸收的「壓倒性」因素是？",[
+ ["注射體積","是因子之一，但不是 overriding。"],
+ ["分子大小","正確。p.28：Molecular size is overriding factor；分子越大，淋巴回收越多。"],
+ ["運動","是因子之一（p.30）。"],
+ ["共同給藥","是因子之一。"]],1,"六因子：大小、部位、共同、運動、深度、體積。"],
+["p.28","皮下注射後在輸出淋巴管回收的劑量百分比，和分子量的關係是？",[
+ ["分子越大，淋巴回收越少","方向相反。"],
+ ["沒有關係","p.28 寫 clearly related。"],
+ ["分子越大，淋巴回收越多（FUdR 約 5% → interferon-α-2a 約 60%）","正確。p.28 四點近乎直線。"],
+ ["只有小分子走淋巴","小分子主要走血液。"]],2,"越大越走淋巴。"],
+["p.29–30","下列關於注射部位與運動的敘述，何者符合講義資料？",[
+ ["腹部皮下的 GH 峰值比大腿高","圖上大腿峰值較高、上升較快。"],
+ ["運動會降低皮下 GH 的血中濃度","運動那段反而衝到約 13 ng/mL，未運動約 7。"],
+ ["部位和運動都不影響大分子吸收","兩者都有影響。"],
+ ["大腿皮下 GH 上升較快、峰值較高；運動會加快吸收、提高濃度","正確。p.29（Clin Endocrinol 1994）、p.30（GH IGF Res 2014）。"]],3,"骨骼肌收縮推動淋巴（p.18）。"]
+],
+ci: [
+["p.10","依講義定義，competitive intelligence 最核心的特徵是？",[
+ ["只蒐集已經公開的新聞","CI 需要分析與預測，且重點在不公開的資訊（p.9）。"],
+ ["以系統化、合法的方式蒐集資訊，經分析預測競爭版圖，用來選 target 和定位藥物","正確。p.10。"],
+ ["用任何手段取得競爭者機密","p.9、10 強調合法與嚴格倫理規範。"],
+ ["只在藥物上市後才做","CI 貫穿整條 critical path（p.7、11）。"]],1,"CI＝預報，不是新聞。"],
+["p.10","下列哪一組是講義描述 CI 處理資訊的四個動作？",[
+ ["研發、製造、行銷、銷售","那是公司功能，不是 CI 的動作。"],
+ ["申請、審查、核准、上市","那是法規流程。"],
+ ["選擇、蒐集、解讀、分發","正確。p.10：selection, collection, interpretation and distribution。"],
+ ["篩選、優化、臨床前、臨床","那是藥物開發階段。"]],2,"選、收、解、發。"],
+["p.9","依 p.9，「市場研究（market research）」的主要資訊來源與做法是？",[
+ ["公開領域監測、品牌、上市版圖","那是 business intelligence。"],
+ ["不公開資訊、透過廠商與人脈","那是 competitive intelligence。"],
+ ["只看專利資料庫","專利是 CI 在探索期的工具。"],
+ ["向處方者與利害關係人取得回饋，測試概念（盲測 TPP、不盲的 Ad Board）","正確。p.9。"]],3,"BI 看公開、MR 問人、CI 挖不公開。"],
+["p.9","關於 competitive intelligence 與 business intelligence 的差別，何者正確？",[
+ ["CI 的資訊不在公開領域、較難找，且受嚴格倫理規範約束","正確。p.9。"],
+ ["CI 只用公開資料","那是 BI。"],
+ ["BI 需要遵守倫理，CI 不需要","p.9 是在 CI 下寫 strict ethical guidelines。"],
+ ["兩者完全相同","p.9 分成三種不同形式。"]],0,"CI＝不公開＋守規矩。"],
+["p.11","在藥物「探索期（discovery）」，CI 最主要用的工具是？",[
+ ["clinicaltrials.gov","主要用在臨床前到上市後。"],
+ ["專利搜尋（法律資料庫、Google Patents、訴訟警示、IPR）","正確。p.11。"],
+ ["投資人電話會議","那是 Phase II/III 結果期（p.21）。"],
+ ["上市材料測試","那是 Phase II/III（p.21）。"]],1,"探索期查專利。"],
+["p.11","講義列出 CI 的目的，「不包括」下列哪一項？",[
+ ["在自己有競爭力的地方開發","是目的之一。"],
+ ["縮短反應時間以加強競爭優勢","是目的之一。"],
+ ["取代臨床試驗以縮短開發時間","正確（不包括）。CI 用來輔助決策，不能取代試驗。"],
+ ["找到新機會","是目的之一。"]],2,"開發在有競爭力處、縮短反應時間、找新機會。"],
+["p.13","如果你的藥「不是」first-in-class，講義建議 CI 怎麼做？",[
+ ["直接放棄","講義沒有這樣說。"],
+ ["只看競爭者的股價","不是講義內容。"],
+ ["等競爭者上市後再決定","CI 的重點是預測，不是等。"],
+ ["用演算法預測競爭者從 pathway 到上市花了多久，並以專利搜尋了解對手在研究什麼","正確。p.13。"]],3,"算時間差、查專利。"],
+["p.15","進入臨床前之前，講義說你應該已經完成哪兩件事？",[
+ ["選好 pathway，並界定 freedom to operate","正確。p.15。"],
+ ["完成 Phase I 與 Phase II","那是臨床階段。"],
+ ["取得上市許可與定價","太後面了。"],
+ ["找到 CRO 與製造廠","講義沒有這樣說。"]],0,"Freedom to operate＝做這個不會侵權。"],
+["p.17","講義舉的 Celgene CI 團隊例子是？",[
+ ["申請 150 件專利","不是。"],
+ ["消化 2500 篇摘要（Cortellis），挑 150 篇追蹤並分給組員","正確。p.17。"],
+ ["追蹤 65,000 個藥物計畫","65K 是資料庫規模（p.16）。"],
+ ["開了 2500 次顧問會議","不是。"]],1,"2500 → 150：CI 的功夫在篩選。"],
+["p.19","下列哪一項「不是」講義 TPP 的項目？",[
+ ["Dosing frequency","是 TPP 項目。"],
+ ["Stability","是 TPP 項目（在現場能存放多久）。"],
+ ["Competitor's stock price（競爭者股價）","正確（不是）。TPP 描述的是自己的產品。"],
+ ["Time to availability","是 TPP 項目。"]],2,"適應症、族群、療效、安全、安定性、途徑、頻率、成本、上市時間。"],
+["p.19","TPP 寫好之後，講義建議的下一步是？",[
+ ["直接送件上市","不是。"],
+ ["公開發表在期刊","不是。"],
+ ["交給競爭者確認","不是。"],
+ ["請顧問與前 FDA 顧問審閱，並評估 druggability metrics","正確。p.19。"]],3,"顧問、前 FDA 顧問、druggability。"],
+["p.20","POC 試驗失敗，但資料顯示藥物其實有效、只是主要終點沒有反映出來。講義建議？",[
+ ["再跑第二個 POC，改用更相關的終點","正確。p.20。"],
+ ["立刻終止開發","講義的例子是再跑一次。"],
+ ["改變藥物劑型","講義的重點是終點。"],
+ ["直接進 Phase III","沒有 POC 支持不會直接進 Phase III。"]],0,"終點選錯會殺掉好藥。"],
+["p.21","Phase II/III 結果期，CI 在學會上應該注意什麼？",[
+ ["只記錄自己公司的報告","要看別人。"],
+ ["大家在講什麼，以及「沒在講」什麼","正確。p.21。"],
+ ["只拿贈品","不是。"],
+ ["只聽 keynote","不是。"]],1,"沒出現的資料也是訊號。"],
+["p.23","依「Putting it all together」，go/no-go 標準（啟動 Phase III 需要什麼）是在哪一步訂出來的？",[
+ ["第 1 步：版圖與流行病學","第 1 步只看版圖。"],
+ ["第 3 步：MOA","第 3 步是看資料與自身定位。"],
+ ["第 5 步：Phase II，產生 TPP、LCM 加入、portfolio testing","正確。p.23。"],
+ ["第 6 步：Phase III 啟動","到第 6 步已經啟動 Phase III 了。"]],2,"Phase II 時訂好進 Phase III 的門檻。"],
+["p.26","期末作業簡報的最後一部分，必須回答什麼？",[
+ ["公司的營收","那是第 1 部分。"],
+ ["藥物 target 的示意圖","那是第 2 部分。"],
+ ["競爭者的人事名單","不是。"],
+ ["建議高層繼續或停止開發，並說明理由","正確。p.26 第 3 部分。"]],3,"公司 → 產品與版圖 → 建議（繼續／停止，為什麼）。"]
+],
 lcms: [
 ["p.3","一個藥要送 NDA，樞紐 PK 研究用的生物分析方法需要？",[
  ["只要 pre-validation","Pre-validation 只是正式確效前的小規模測試，用來先抓問題，不能取代正式確效。"],
@@ -7569,7 +8250,7 @@ onco: [
 ]};
 
 
-const TABNAME={pd:"藥效學",pk:"藥動學",cv:"心血管",hep:"肝炎",ca:"癌症總論",cvdev:"CV 藥物開發",auto:"自動化藥物探索",dm:"糖尿病與肥胖",lcms:"LC-MS/MS",onco:"精準腫瘤"};
+const TABNAME={pd:"藥效學",pk:"藥動學",cv:"心血管",hep:"肝炎",ca:"癌症總論",cvdev:"CV 藥物開發",auto:"自動化藥物探索",dm:"糖尿病與肥胖",lcms:"LC-MS/MS",onco:"精準腫瘤",imsc:"IM 與皮下給藥",ci:"競爭情報"};
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 
 function renderQuiz(key){
